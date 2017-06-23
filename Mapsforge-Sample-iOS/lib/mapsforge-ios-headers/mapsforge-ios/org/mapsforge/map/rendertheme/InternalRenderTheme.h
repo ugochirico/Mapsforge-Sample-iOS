@@ -3,21 +3,41 @@
 //  source: ./org/mapsforge/map/rendertheme/InternalRenderTheme.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeInternalRenderTheme_H_
-#define _OrgMapsforgeMapRenderthemeInternalRenderTheme_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeInternalRenderTheme")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeInternalRenderTheme
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeInternalRenderTheme 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeInternalRenderTheme 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeInternalRenderTheme
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapRenderthemeInternalRenderTheme_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeInternalRenderTheme || defined(INCLUDE_OrgMapsforgeMapRenderthemeInternalRenderTheme))
+#define OrgMapsforgeMapRenderthemeInternalRenderTheme_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderTheme 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeXmlRenderTheme 1
 #include "org/mapsforge/map/rendertheme/XmlRenderTheme.h"
 
+@class IOSObjectArray;
 @class JavaIoInputStream;
 @protocol OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback;
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeInternalRenderTheme) {
-  OrgMapsforgeMapRenderthemeInternalRenderTheme_OSMARENDER = 0,
+typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeInternalRenderTheme_Enum) {
+  OrgMapsforgeMapRenderthemeInternalRenderTheme_Enum_OSMARENDER = 0,
 };
 
-@interface OrgMapsforgeMapRenderthemeInternalRenderThemeEnum : JavaLangEnum < NSCopying, OrgMapsforgeMapRenderthemeXmlRenderTheme >
+@interface OrgMapsforgeMapRenderthemeInternalRenderTheme : JavaLangEnum < NSCopying, OrgMapsforgeMapRenderthemeXmlRenderTheme >
 
 #pragma mark Public
 
@@ -27,25 +47,36 @@ typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeInternalRenderTheme) {
 
 - (JavaIoInputStream *)getRenderThemeAsStream;
 
-#pragma mark Package-Private
++ (OrgMapsforgeMapRenderthemeInternalRenderTheme *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeInternalRenderThemeEnum_values();
 
-+ (OrgMapsforgeMapRenderthemeInternalRenderThemeEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeInternalRenderThemeEnum *OrgMapsforgeMapRenderthemeInternalRenderThemeEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeInternalRenderThemeEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeInternalRenderTheme)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeInternalRenderThemeEnum *OrgMapsforgeMapRenderthemeInternalRenderThemeEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeInternalRenderTheme *OrgMapsforgeMapRenderthemeInternalRenderTheme_values_[];
 
-#define OrgMapsforgeMapRenderthemeInternalRenderThemeEnum_OSMARENDER OrgMapsforgeMapRenderthemeInternalRenderThemeEnum_values_[OrgMapsforgeMapRenderthemeInternalRenderTheme_OSMARENDER]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeInternalRenderThemeEnum, OSMARENDER)
+inline OrgMapsforgeMapRenderthemeInternalRenderTheme *OrgMapsforgeMapRenderthemeInternalRenderTheme_get_OSMARENDER();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeInternalRenderTheme, OSMARENDER)
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeInternalRenderThemeEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeInternalRenderTheme_values();
 
-#endif // _OrgMapsforgeMapRenderthemeInternalRenderTheme_H_
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeInternalRenderTheme *OrgMapsforgeMapRenderthemeInternalRenderTheme_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeInternalRenderTheme *OrgMapsforgeMapRenderthemeInternalRenderTheme_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeInternalRenderTheme)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeInternalRenderTheme")

@@ -3,15 +3,25 @@
 //  source: src/main/java/org/mockito/internal/creation/ios/IosMockMaker.java
 //
 
-#ifndef _OrgMockitoInternalCreationIosIosMockMaker_H_
-#define _OrgMockitoInternalCreationIosIosMockMaker_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalCreationIosIosMockMaker")
+#ifdef RESTRICT_OrgMockitoInternalCreationIosIosMockMaker
+#define INCLUDE_ALL_OrgMockitoInternalCreationIosIosMockMaker 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalCreationIosIosMockMaker 1
+#endif
+#undef RESTRICT_OrgMockitoInternalCreationIosIosMockMaker
+
+#if !defined (OrgMockitoInternalCreationIosIosMockMaker_) && (INCLUDE_ALL_OrgMockitoInternalCreationIosIosMockMaker || defined(INCLUDE_OrgMockitoInternalCreationIosIosMockMaker))
+#define OrgMockitoInternalCreationIosIosMockMaker_
+
+#define RESTRICT_OrgMockitoPluginsMockMaker 1
+#define INCLUDE_OrgMockitoPluginsMockMaker 1
 #include "org/mockito/plugins/MockMaker.h"
 
 @class IOSClass;
 @class IOSObjectArray;
-@protocol JavaLangReflectInvocationHandler;
 @protocol OrgMockitoInvocationMockHandler;
 @protocol OrgMockitoMockMockCreationSettings;
 
@@ -43,7 +53,16 @@ FOUNDATION_EXPORT void OrgMockitoInternalCreationIosIosMockMaker_init(OrgMockito
 
 FOUNDATION_EXPORT OrgMockitoInternalCreationIosIosMockMaker *new_OrgMockitoInternalCreationIosIosMockMaker_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMockitoInternalCreationIosIosMockMaker *create_OrgMockitoInternalCreationIosIosMockMaker_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationIosIosMockMaker)
+
+#endif
+
+#if !defined (OrgMockitoInternalCreationIosIosMockMaker_ClassProxy_) && (INCLUDE_ALL_OrgMockitoInternalCreationIosIosMockMaker || defined(INCLUDE_OrgMockitoInternalCreationIosIosMockMaker_ClassProxy))
+#define OrgMockitoInternalCreationIosIosMockMaker_ClassProxy_
+
+@protocol JavaLangReflectInvocationHandler;
 
 @interface OrgMockitoInternalCreationIosIosMockMaker_ClassProxy : NSObject {
  @public
@@ -58,7 +77,6 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationIosIosMockMaker)
 
 - (void)setHandlerWithJavaLangReflectInvocationHandler:(id<JavaLangReflectInvocationHandler>)handler;
 
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMockitoInternalCreationIosIosMockMaker_ClassProxy)
@@ -69,6 +87,10 @@ FOUNDATION_EXPORT void OrgMockitoInternalCreationIosIosMockMaker_ClassProxy_init
 
 FOUNDATION_EXPORT OrgMockitoInternalCreationIosIosMockMaker_ClassProxy *new_OrgMockitoInternalCreationIosIosMockMaker_ClassProxy_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMockitoInternalCreationIosIosMockMaker_ClassProxy *create_OrgMockitoInternalCreationIosIosMockMaker_ClassProxy_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationIosIosMockMaker_ClassProxy)
 
-#endif // _OrgMockitoInternalCreationIosIosMockMaker_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalCreationIosIosMockMaker")

@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/reader/header/MapFileException.java
 //
 
-#ifndef _OrgMapsforgeMapReaderHeaderMapFileException_H_
-#define _OrgMapsforgeMapReaderHeaderMapFileException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileException")
+#ifdef RESTRICT_OrgMapsforgeMapReaderHeaderMapFileException
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileException 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileException 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderHeaderMapFileException
+
+#if !defined (OrgMapsforgeMapReaderHeaderMapFileException_) && (INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileException || defined(INCLUDE_OrgMapsforgeMapReaderHeaderMapFileException))
+#define OrgMapsforgeMapReaderHeaderMapFileException_
+
+#define RESTRICT_JavaLangIllegalArgumentException 1
+#define INCLUDE_JavaLangIllegalArgumentException 1
 #include "java/lang/IllegalArgumentException.h"
 
 @interface OrgMapsforgeMapReaderHeaderMapFileException : JavaLangIllegalArgumentException
@@ -23,6 +34,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderHeaderMapFileException_initWithNSStr
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderMapFileException *new_OrgMapsforgeMapReaderHeaderMapFileException_initWithNSString_(NSString *errorMessage) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderMapFileException *create_OrgMapsforgeMapReaderHeaderMapFileException_initWithNSString_(NSString *errorMessage);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderHeaderMapFileException)
 
-#endif // _OrgMapsforgeMapReaderHeaderMapFileException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileException")

@@ -3,51 +3,80 @@
 //  source: ./org/mapsforge/core/graphics/Join.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsJoin_H_
-#define _OrgMapsforgeCoreGraphicsJoin_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsJoin")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsJoin
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsJoin 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsJoin 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsJoin
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsJoin_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsJoin || defined(INCLUDE_OrgMapsforgeCoreGraphicsJoin))
+#define OrgMapsforgeCoreGraphicsJoin_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsJoin) {
-  OrgMapsforgeCoreGraphicsJoin_BEVEL = 0,
-  OrgMapsforgeCoreGraphicsJoin_MITER = 1,
-  OrgMapsforgeCoreGraphicsJoin_ROUND = 2,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsJoin_Enum) {
+  OrgMapsforgeCoreGraphicsJoin_Enum_BEVEL = 0,
+  OrgMapsforgeCoreGraphicsJoin_Enum_MITER = 1,
+  OrgMapsforgeCoreGraphicsJoin_Enum_ROUND = 2,
 };
 
-@interface OrgMapsforgeCoreGraphicsJoinEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsJoin : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeCoreGraphicsJoinEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeCoreGraphicsJoin *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeCoreGraphicsJoin *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsJoinEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsJoinEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoinEnum *OrgMapsforgeCoreGraphicsJoinEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsJoinEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsJoin)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoinEnum *OrgMapsforgeCoreGraphicsJoinEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_values_[];
 
-#define OrgMapsforgeCoreGraphicsJoinEnum_BEVEL OrgMapsforgeCoreGraphicsJoinEnum_values_[OrgMapsforgeCoreGraphicsJoin_BEVEL]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsJoinEnum, BEVEL)
+inline OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_get_BEVEL();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsJoin, BEVEL)
 
-#define OrgMapsforgeCoreGraphicsJoinEnum_MITER OrgMapsforgeCoreGraphicsJoinEnum_values_[OrgMapsforgeCoreGraphicsJoin_MITER]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsJoinEnum, MITER)
+inline OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_get_MITER();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsJoin, MITER)
 
-#define OrgMapsforgeCoreGraphicsJoinEnum_ROUND OrgMapsforgeCoreGraphicsJoinEnum_values_[OrgMapsforgeCoreGraphicsJoin_ROUND]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsJoinEnum, ROUND)
+inline OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_get_ROUND();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsJoin, ROUND)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoinEnum *OrgMapsforgeCoreGraphicsJoinEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsJoinEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsJoin_values();
 
-#endif // _OrgMapsforgeCoreGraphicsJoin_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsJoin *OrgMapsforgeCoreGraphicsJoin_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsJoin)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsJoin")

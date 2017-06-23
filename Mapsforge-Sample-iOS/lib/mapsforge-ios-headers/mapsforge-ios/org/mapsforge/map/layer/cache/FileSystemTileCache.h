@@ -3,18 +3,20 @@
 //  source: ./org/mapsforge/map/layer/cache/FileSystemTileCache.java
 //
 
-#ifndef _OrgMapsforgeMapLayerCacheFileSystemTileCache_H_
-#define _OrgMapsforgeMapLayerCacheFileSystemTileCache_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Runnable.h"
-#include "org/mapsforge/map/layer/cache/TileCache.h"
-#include "org/mapsforge/map/util/PausableThread.h"
 
-@class JavaIoFile;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache")
+#ifdef RESTRICT_OrgMapsforgeMapLayerCacheFileSystemTileCache
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerCacheFileSystemTileCache
+
+#if !defined (OrgMapsforgeMapLayerCacheStorageJob_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache || defined(INCLUDE_OrgMapsforgeMapLayerCacheStorageJob))
+#define OrgMapsforgeMapLayerCacheStorageJob_
+
 @class OrgMapsforgeMapLayerQueueJob;
-@protocol JavaUtilSet;
-@protocol OrgMapsforgeCoreGraphicsGraphicFactory;
 @protocol OrgMapsforgeCoreGraphicsTileBitmap;
 
 @interface OrgMapsforgeMapLayerCacheStorageJob : NSObject {
@@ -45,7 +47,29 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheStorageJob_initWithOrgMapsforgeM
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheStorageJob *new_OrgMapsforgeMapLayerCacheStorageJob_initWithOrgMapsforgeMapLayerQueueJob_withOrgMapsforgeCoreGraphicsTileBitmap_(OrgMapsforgeMapLayerQueueJob *key, id<OrgMapsforgeCoreGraphicsTileBitmap> bitmap) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheStorageJob *create_OrgMapsforgeMapLayerCacheStorageJob_initWithOrgMapsforgeMapLayerQueueJob_withOrgMapsforgeCoreGraphicsTileBitmap_(OrgMapsforgeMapLayerQueueJob *key, id<OrgMapsforgeCoreGraphicsTileBitmap> bitmap);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheStorageJob)
+
+#endif
+
+#if !defined (OrgMapsforgeMapLayerCacheFileSystemTileCache_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache || defined(INCLUDE_OrgMapsforgeMapLayerCacheFileSystemTileCache))
+#define OrgMapsforgeMapLayerCacheFileSystemTileCache_
+
+#define RESTRICT_OrgMapsforgeMapUtilPausableThread 1
+#define INCLUDE_OrgMapsforgeMapUtilPausableThread 1
+#include "org/mapsforge/map/util/PausableThread.h"
+
+#define RESTRICT_OrgMapsforgeMapLayerCacheTileCache 1
+#define INCLUDE_OrgMapsforgeMapLayerCacheTileCache 1
+#include "org/mapsforge/map/layer/cache/TileCache.h"
+
+@class JavaIoFile;
+@class OrgMapsforgeMapLayerQueueJob;
+@class OrgMapsforgeMapUtilPausableThread_ThreadPriority;
+@protocol JavaUtilSet;
+@protocol OrgMapsforgeCoreGraphicsGraphicFactory;
+@protocol OrgMapsforgeCoreGraphicsTileBitmap;
 
 @interface OrgMapsforgeMapLayerCacheFileSystemTileCache : OrgMapsforgeMapUtilPausableThread < OrgMapsforgeMapLayerCacheTileCache >
 
@@ -95,7 +119,7 @@ withOrgMapsforgeCoreGraphicsGraphicFactory:(id<OrgMapsforgeCoreGraphicsGraphicFa
 
 - (void)doWork;
 
-- (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)getThreadPriority;
+- (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)getThreadPriority;
 
 - (jboolean)hasWork;
 
@@ -103,22 +127,41 @@ withOrgMapsforgeCoreGraphicsGraphicFactory:(id<OrgMapsforgeCoreGraphicsGraphicFa
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapLayerCacheFileSystemTileCache)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapLayerCacheFileSystemTileCache_FILE_EXTENSION_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapLayerCacheFileSystemTileCache, FILE_EXTENSION_, NSString *)
+inline NSString *OrgMapsforgeMapLayerCacheFileSystemTileCache_get_FILE_EXTENSION();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapLayerCacheFileSystemTileCache_FILE_EXTENSION;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapLayerCacheFileSystemTileCache, FILE_EXTENSION, NSString *)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_(OrgMapsforgeMapLayerCacheFileSystemTileCache *self, jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache *new_OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_(jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache *create_OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_(jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
+
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_withInt_(OrgMapsforgeMapLayerCacheFileSystemTileCache *self, jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean threaded, jint queueSize);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache *new_OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_withInt_(jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean threaded, jint queueSize) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache *create_OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_withInt_(jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean threaded, jint queueSize);
 
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_withInt_withBoolean_(OrgMapsforgeMapLayerCacheFileSystemTileCache *self, jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean threaded, jint queueSize, jboolean persistent);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache *new_OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_withInt_withBoolean_(jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean threaded, jint queueSize, jboolean persistent) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache *create_OrgMapsforgeMapLayerCacheFileSystemTileCache_initWithInt_withJavaIoFile_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_withInt_withBoolean_(jint capacity, JavaIoFile *cacheDirectory, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean threaded, jint queueSize, jboolean persistent);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheFileSystemTileCache)
+
+#endif
+
+#if !defined (OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache || defined(INCLUDE_OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader))
+#define OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader_
+
+#define RESTRICT_JavaLangRunnable 1
+#define INCLUDE_JavaLangRunnable 1
+#include "java/lang/Runnable.h"
+
+@class OrgMapsforgeMapLayerCacheFileSystemTileCache;
 
 @interface OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader : NSObject < JavaLangRunnable >
 
@@ -138,6 +181,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirecto
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader *new_OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader_initWithOrgMapsforgeMapLayerCacheFileSystemTileCache_(OrgMapsforgeMapLayerCacheFileSystemTileCache *outer$) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader *create_OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader_initWithOrgMapsforgeMapLayerCacheFileSystemTileCache_(OrgMapsforgeMapLayerCacheFileSystemTileCache *outer$);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheFileSystemTileCache_CacheDirectoryReader)
 
-#endif // _OrgMapsforgeMapLayerCacheFileSystemTileCache_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheFileSystemTileCache")

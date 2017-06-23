@@ -3,10 +3,21 @@
 //  source: src/main/java/org/mockito/internal/creation/ios/InvocationHandlerAdapter.java
 //
 
-#ifndef _OrgMockitoInternalCreationIosInvocationHandlerAdapter_H_
-#define _OrgMockitoInternalCreationIosInvocationHandlerAdapter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalCreationIosInvocationHandlerAdapter")
+#ifdef RESTRICT_OrgMockitoInternalCreationIosInvocationHandlerAdapter
+#define INCLUDE_ALL_OrgMockitoInternalCreationIosInvocationHandlerAdapter 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalCreationIosInvocationHandlerAdapter 1
+#endif
+#undef RESTRICT_OrgMockitoInternalCreationIosInvocationHandlerAdapter
+
+#if !defined (OrgMockitoInternalCreationIosInvocationHandlerAdapter_) && (INCLUDE_ALL_OrgMockitoInternalCreationIosInvocationHandlerAdapter || defined(INCLUDE_OrgMockitoInternalCreationIosInvocationHandlerAdapter))
+#define OrgMockitoInternalCreationIosInvocationHandlerAdapter_
+
+#define RESTRICT_JavaLangReflectInvocationHandler 1
+#define INCLUDE_JavaLangReflectInvocationHandler 1
 #include "java/lang/reflect/InvocationHandler.h"
 
 @class IOSObjectArray;
@@ -35,6 +46,10 @@ FOUNDATION_EXPORT void OrgMockitoInternalCreationIosInvocationHandlerAdapter_ini
 
 FOUNDATION_EXPORT OrgMockitoInternalCreationIosInvocationHandlerAdapter *new_OrgMockitoInternalCreationIosInvocationHandlerAdapter_initWithOrgMockitoInvocationMockHandler_(id<OrgMockitoInvocationMockHandler> handler) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMockitoInternalCreationIosInvocationHandlerAdapter *create_OrgMockitoInternalCreationIosInvocationHandlerAdapter_initWithOrgMockitoInvocationMockHandler_(id<OrgMockitoInvocationMockHandler> handler);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationIosInvocationHandlerAdapter)
 
-#endif // _OrgMockitoInternalCreationIosInvocationHandlerAdapter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalCreationIosInvocationHandlerAdapter")

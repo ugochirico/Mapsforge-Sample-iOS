@@ -27,16 +27,16 @@
 
 // Base class for fields, methods, and constructors.
 @interface JavaLangReflectAccessibleObject : NSObject < JavaLangReflectAnnotatedElement > {
-  BOOL accessible_;
+  jboolean accessible_;
 }
 
-- (BOOL)isAccessible;
-- (void)setAccessibleWithBoolean:(BOOL)b;
+- (jboolean)isAccessible;
+- (void)setAccessibleWithBoolean:(jboolean)b;
 + (void)setAccessibleWithJavaLangReflectAccessibleObjectArray:(IOSObjectArray *)objects
-                                                  withBoolean:(BOOL)b;
+                                                  withBoolean:(jboolean)b;
 
 - (id)getAnnotationWithIOSClass:(IOSClass *)annotationClass;
-- (BOOL)isAnnotationPresentWithIOSClass:(IOSClass *)annotationClass;
+- (jboolean)isAnnotationPresentWithIOSClass:(IOSClass *)annotationClass;
 - (IOSObjectArray *)getAnnotations;
 - (IOSObjectArray *)getDeclaredAnnotations;
 - (NSString *)toGenericString;
@@ -46,21 +46,9 @@
 CF_EXTERN_C_BEGIN
 
 void JavaLangReflectAccessibleObject_init(JavaLangReflectAccessibleObject *self);
-JavaLangReflectAccessibleObject *new_JavaLangReflectAccessibleObject_init();
 
 void JavaLangReflectAccessibleObject_setAccessibleWithJavaLangReflectAccessibleObjectArray_withBoolean_(
-    IOSObjectArray *objects, BOOL b);
-
-// Returns true if type can be mapped to a valid Java type.
-BOOL validTypeEncoding(const char *type);
-
-// Decodes an Objective-C type encoding, returning the associated iOS class.
-// For example, the type encoding 's' is decoded as JavaLangShort.
-IOSClass *decodeTypeEncoding(const char *type);
-
-// Return a Java type name for an Objective-C type encoding.  For example,
-// "byte" is returned for 'c', since a Java byte is mapped to a C char.
-NSString *describeTypeEncoding(NSString *type);
+    IOSObjectArray *objects, jboolean b);
 
 CF_EXTERN_C_END
 

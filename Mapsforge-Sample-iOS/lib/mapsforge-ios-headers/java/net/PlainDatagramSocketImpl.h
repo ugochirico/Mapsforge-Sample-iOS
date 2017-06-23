@@ -3,10 +3,21 @@
 //  source: android/libcore/luni/src/main/java/java/net/PlainDatagramSocketImpl.java
 //
 
-#ifndef _JavaNetPlainDatagramSocketImpl_H_
-#define _JavaNetPlainDatagramSocketImpl_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetPlainDatagramSocketImpl")
+#ifdef RESTRICT_JavaNetPlainDatagramSocketImpl
+#define INCLUDE_ALL_JavaNetPlainDatagramSocketImpl 0
+#else
+#define INCLUDE_ALL_JavaNetPlainDatagramSocketImpl 1
+#endif
+#undef RESTRICT_JavaNetPlainDatagramSocketImpl
+
+#if !defined (JavaNetPlainDatagramSocketImpl_) && (INCLUDE_ALL_JavaNetPlainDatagramSocketImpl || defined(INCLUDE_JavaNetPlainDatagramSocketImpl))
+#define JavaNetPlainDatagramSocketImpl_
+
+#define RESTRICT_JavaNetDatagramSocketImpl 1
+#define INCLUDE_JavaNetDatagramSocketImpl 1
 #include "java/net/DatagramSocketImpl.h"
 
 @class JavaIoFileDescriptor;
@@ -15,6 +26,8 @@
 @class JavaNetNetworkInterface;
 @class JavaNetSocketAddress;
 
+/*!
+ */
 @interface JavaNetPlainDatagramSocketImpl : JavaNetDatagramSocketImpl
 
 #pragma mark Public
@@ -67,7 +80,7 @@ withJavaNetInetAddress:(JavaNetInetAddress *)address;
 
 #pragma mark Protected
 
-- (void)dealloc;
+- (void)java_finalize;
 
 - (jint)peekWithJavaNetInetAddress:(JavaNetInetAddress *)sender;
 
@@ -79,10 +92,16 @@ FOUNDATION_EXPORT void JavaNetPlainDatagramSocketImpl_initWithJavaIoFileDescript
 
 FOUNDATION_EXPORT JavaNetPlainDatagramSocketImpl *new_JavaNetPlainDatagramSocketImpl_initWithJavaIoFileDescriptor_withInt_(JavaIoFileDescriptor *fd, jint localPort) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetPlainDatagramSocketImpl *create_JavaNetPlainDatagramSocketImpl_initWithJavaIoFileDescriptor_withInt_(JavaIoFileDescriptor *fd, jint localPort);
+
 FOUNDATION_EXPORT void JavaNetPlainDatagramSocketImpl_init(JavaNetPlainDatagramSocketImpl *self);
 
 FOUNDATION_EXPORT JavaNetPlainDatagramSocketImpl *new_JavaNetPlainDatagramSocketImpl_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetPlainDatagramSocketImpl *create_JavaNetPlainDatagramSocketImpl_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetPlainDatagramSocketImpl)
 
-#endif // _JavaNetPlainDatagramSocketImpl_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetPlainDatagramSocketImpl")

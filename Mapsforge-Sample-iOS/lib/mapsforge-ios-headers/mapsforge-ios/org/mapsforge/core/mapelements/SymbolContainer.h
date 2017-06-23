@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/core/mapelements/SymbolContainer.java
 //
 
-#ifndef _OrgMapsforgeCoreMapelementsSymbolContainer_H_
-#define _OrgMapsforgeCoreMapelementsSymbolContainer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsSymbolContainer")
+#ifdef RESTRICT_OrgMapsforgeCoreMapelementsSymbolContainer
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsSymbolContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsSymbolContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreMapelementsSymbolContainer
+
+#if !defined (OrgMapsforgeCoreMapelementsSymbolContainer_) && (INCLUDE_ALL_OrgMapsforgeCoreMapelementsSymbolContainer || defined(INCLUDE_OrgMapsforgeCoreMapelementsSymbolContainer))
+#define OrgMapsforgeCoreMapelementsSymbolContainer_
+
+#define RESTRICT_OrgMapsforgeCoreMapelementsMapElementContainer 1
+#define INCLUDE_OrgMapsforgeCoreMapelementsMapElementContainer 1
 #include "org/mapsforge/core/mapelements/MapElementContainer.h"
 
-@class OrgMapsforgeCoreGraphicsDisplayEnum;
+@class OrgMapsforgeCoreGraphicsDisplay;
 @class OrgMapsforgeCoreModelPoint;
 @protocol OrgMapsforgeCoreGraphicsBitmap;
 @protocol OrgMapsforgeCoreGraphicsCanvas;
@@ -25,12 +36,12 @@
 #pragma mark Public
 
 - (instancetype)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
-           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+               withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                            withInt:(jint)priority
                 withOrgMapsforgeCoreGraphicsBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)symbol;
 
 - (instancetype)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
-           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+               withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                            withInt:(jint)priority
                 withOrgMapsforgeCoreGraphicsBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)symbol
                                          withFloat:(jfloat)theta
@@ -50,14 +61,20 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreMapelementsSymbolContainer)
 
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsSymbolContainer, symbol_, id<OrgMapsforgeCoreGraphicsBitmap>)
 
-FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withOrgMapsforgeCoreGraphicsBitmap_(OrgMapsforgeCoreMapelementsSymbolContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol);
+FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withOrgMapsforgeCoreGraphicsBitmap_(OrgMapsforgeCoreMapelementsSymbolContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol);
 
-FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsSymbolContainer *new_OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withOrgMapsforgeCoreGraphicsBitmap_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsSymbolContainer *new_OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withOrgMapsforgeCoreGraphicsBitmap_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withOrgMapsforgeCoreGraphicsBitmap_withFloat_withBoolean_(OrgMapsforgeCoreMapelementsSymbolContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol, jfloat theta, jboolean alignCenter);
+FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsSymbolContainer *create_OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withOrgMapsforgeCoreGraphicsBitmap_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol);
 
-FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsSymbolContainer *new_OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withOrgMapsforgeCoreGraphicsBitmap_withFloat_withBoolean_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol, jfloat theta, jboolean alignCenter) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withOrgMapsforgeCoreGraphicsBitmap_withFloat_withBoolean_(OrgMapsforgeCoreMapelementsSymbolContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol, jfloat theta, jboolean alignCenter);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsSymbolContainer *new_OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withOrgMapsforgeCoreGraphicsBitmap_withFloat_withBoolean_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol, jfloat theta, jboolean alignCenter) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsSymbolContainer *create_OrgMapsforgeCoreMapelementsSymbolContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withOrgMapsforgeCoreGraphicsBitmap_withFloat_withBoolean_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, id<OrgMapsforgeCoreGraphicsBitmap> symbol, jfloat theta, jboolean alignCenter);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreMapelementsSymbolContainer)
 
-#endif // _OrgMapsforgeCoreMapelementsSymbolContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsSymbolContainer")

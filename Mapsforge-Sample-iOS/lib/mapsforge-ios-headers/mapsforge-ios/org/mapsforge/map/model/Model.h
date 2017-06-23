@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/model/Model.java
 //
 
-#ifndef _OrgMapsforgeMapModelModel_H_
-#define _OrgMapsforgeMapModelModel_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelModel")
+#ifdef RESTRICT_OrgMapsforgeMapModelModel
+#define INCLUDE_ALL_OrgMapsforgeMapModelModel 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelModel 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelModel
+
+#if !defined (OrgMapsforgeMapModelModel_) && (INCLUDE_ALL_OrgMapsforgeMapModelModel || defined(INCLUDE_OrgMapsforgeMapModelModel))
+#define OrgMapsforgeMapModelModel_
+
+#define RESTRICT_OrgMapsforgeMapModelCommonPersistable 1
+#define INCLUDE_OrgMapsforgeMapModelCommonPersistable 1
 #include "org/mapsforge/map/model/common/Persistable.h"
 
 @class OrgMapsforgeMapModelDisplayModel;
@@ -44,6 +55,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapModelModel_init(OrgMapsforgeMapModelModel 
 
 FOUNDATION_EXPORT OrgMapsforgeMapModelModel *new_OrgMapsforgeMapModelModel_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapModelModel *create_OrgMapsforgeMapModelModel_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelModel)
 
-#endif // _OrgMapsforgeMapModelModel_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelModel")

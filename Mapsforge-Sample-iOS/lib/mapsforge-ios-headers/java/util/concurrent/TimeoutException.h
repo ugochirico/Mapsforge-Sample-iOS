@@ -3,18 +3,49 @@
 //  source: android/libcore/luni/src/main/java/java/util/concurrent/TimeoutException.java
 //
 
-#ifndef _JavaUtilConcurrentTimeoutException_H_
-#define _JavaUtilConcurrentTimeoutException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentTimeoutException")
+#ifdef RESTRICT_JavaUtilConcurrentTimeoutException
+#define INCLUDE_ALL_JavaUtilConcurrentTimeoutException 0
+#else
+#define INCLUDE_ALL_JavaUtilConcurrentTimeoutException 1
+#endif
+#undef RESTRICT_JavaUtilConcurrentTimeoutException
+
+#if !defined (JavaUtilConcurrentTimeoutException_) && (INCLUDE_ALL_JavaUtilConcurrentTimeoutException || defined(INCLUDE_JavaUtilConcurrentTimeoutException))
+#define JavaUtilConcurrentTimeoutException_
+
+#define RESTRICT_JavaLangException 1
+#define INCLUDE_JavaLangException 1
 #include "java/lang/Exception.h"
 
+/*!
+ @brief Exception thrown when a blocking operation times out.Blocking
+  operations for which a timeout is specified need a means to
+  indicate that the timeout has occurred.
+ For many such operations it
+  is possible to return a value that indicates timeout; when that is
+  not possible or desirable then <code>TimeoutException</code> should be
+  declared and thrown.
+ @since 1.5
+ @author Doug Lea
+ */
 @interface JavaUtilConcurrentTimeoutException : JavaLangException
 
 #pragma mark Public
 
+/*!
+ @brief Constructs a <code>TimeoutException</code> with no specified detail
+  message.
+ */
 - (instancetype)init;
 
+/*!
+ @brief Constructs a <code>TimeoutException</code> with the specified detail
+  message.
+ @param message the detail message
+ */
 - (instancetype)initWithNSString:(NSString *)message;
 
 @end
@@ -25,10 +56,16 @@ FOUNDATION_EXPORT void JavaUtilConcurrentTimeoutException_init(JavaUtilConcurren
 
 FOUNDATION_EXPORT JavaUtilConcurrentTimeoutException *new_JavaUtilConcurrentTimeoutException_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilConcurrentTimeoutException *create_JavaUtilConcurrentTimeoutException_init();
+
 FOUNDATION_EXPORT void JavaUtilConcurrentTimeoutException_initWithNSString_(JavaUtilConcurrentTimeoutException *self, NSString *message);
 
 FOUNDATION_EXPORT JavaUtilConcurrentTimeoutException *new_JavaUtilConcurrentTimeoutException_initWithNSString_(NSString *message) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilConcurrentTimeoutException *create_JavaUtilConcurrentTimeoutException_initWithNSString_(NSString *message);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentTimeoutException)
 
-#endif // _JavaUtilConcurrentTimeoutException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaUtilConcurrentTimeoutException")

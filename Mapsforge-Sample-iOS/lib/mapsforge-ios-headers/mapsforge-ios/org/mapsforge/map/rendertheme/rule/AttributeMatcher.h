@@ -3,14 +3,22 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/AttributeMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleAttributeMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleAttributeMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleAttributeMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleAttributeMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleAttributeMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleAttributeMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleAttributeMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleAttributeMatcher))
+#define OrgMapsforgeMapRenderthemeRuleAttributeMatcher_
 
 @protocol JavaUtilList;
 
-@protocol OrgMapsforgeMapRenderthemeRuleAttributeMatcher < NSObject, JavaObject >
+@protocol OrgMapsforgeMapRenderthemeRuleAttributeMatcher < JavaObject >
 
 - (jboolean)isCoveredByWithOrgMapsforgeMapRenderthemeRuleAttributeMatcher:(id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher>)attributeMatcher;
 
@@ -22,4 +30,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleAttributeMatcher)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleAttributeMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleAttributeMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleAttributeMatcher")

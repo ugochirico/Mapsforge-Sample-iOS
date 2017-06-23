@@ -3,23 +3,31 @@
 //  source: ./org/mapsforge/core/graphics/Paint.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsPaint_H_
-#define _OrgMapsforgeCoreGraphicsPaint_H_
-
 #include "J2ObjC_header.h"
 
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsPaint")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsPaint
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsPaint 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsPaint 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsPaint
+
+#if !defined (OrgMapsforgeCoreGraphicsPaint_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsPaint || defined(INCLUDE_OrgMapsforgeCoreGraphicsPaint))
+#define OrgMapsforgeCoreGraphicsPaint_
+
 @class IOSFloatArray;
-@class OrgMapsforgeCoreGraphicsAlignEnum;
-@class OrgMapsforgeCoreGraphicsCapEnum;
-@class OrgMapsforgeCoreGraphicsColorEnum;
-@class OrgMapsforgeCoreGraphicsFontFamilyEnum;
-@class OrgMapsforgeCoreGraphicsFontStyleEnum;
-@class OrgMapsforgeCoreGraphicsJoinEnum;
-@class OrgMapsforgeCoreGraphicsStyleEnum;
+@class OrgMapsforgeCoreGraphicsAlign;
+@class OrgMapsforgeCoreGraphicsCap;
+@class OrgMapsforgeCoreGraphicsColor;
+@class OrgMapsforgeCoreGraphicsFontFamily;
+@class OrgMapsforgeCoreGraphicsFontStyle;
+@class OrgMapsforgeCoreGraphicsJoin;
+@class OrgMapsforgeCoreGraphicsStyle;
 @class OrgMapsforgeCoreModelPoint;
 @protocol OrgMapsforgeCoreGraphicsBitmap;
 
-@protocol OrgMapsforgeCoreGraphicsPaint < NSObject, JavaObject >
+@protocol OrgMapsforgeCoreGraphicsPaint < JavaObject >
 
 - (jint)getTextHeightWithNSString:(NSString *)text;
 
@@ -31,26 +39,26 @@
 
 - (void)setBitmapShaderShiftWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)origin;
 
-- (void)setColorWithOrgMapsforgeCoreGraphicsColorEnum:(OrgMapsforgeCoreGraphicsColorEnum *)color;
+- (void)setColorWithOrgMapsforgeCoreGraphicsColor:(OrgMapsforgeCoreGraphicsColor *)color;
 
 - (void)setColorWithInt:(jint)color;
 
 - (void)setDashPathEffectWithFloatArray:(IOSFloatArray *)strokeDasharray;
 
-- (void)setStrokeCapWithOrgMapsforgeCoreGraphicsCapEnum:(OrgMapsforgeCoreGraphicsCapEnum *)cap;
+- (void)setStrokeCapWithOrgMapsforgeCoreGraphicsCap:(OrgMapsforgeCoreGraphicsCap *)cap;
 
-- (void)setStrokeJoinWithOrgMapsforgeCoreGraphicsJoinEnum:(OrgMapsforgeCoreGraphicsJoinEnum *)join;
+- (void)setStrokeJoinWithOrgMapsforgeCoreGraphicsJoin:(OrgMapsforgeCoreGraphicsJoin *)join;
 
 - (void)setStrokeWidthWithFloat:(jfloat)strokeWidth;
 
-- (void)setStyleWithOrgMapsforgeCoreGraphicsStyleEnum:(OrgMapsforgeCoreGraphicsStyleEnum *)style;
+- (void)setStyleWithOrgMapsforgeCoreGraphicsStyle:(OrgMapsforgeCoreGraphicsStyle *)style;
 
-- (void)setTextAlignWithOrgMapsforgeCoreGraphicsAlignEnum:(OrgMapsforgeCoreGraphicsAlignEnum *)align;
+- (void)setTextAlignWithOrgMapsforgeCoreGraphicsAlign:(OrgMapsforgeCoreGraphicsAlign *)align;
 
 - (void)setTextSizeWithFloat:(jfloat)textSize;
 
-- (void)setTypefaceWithOrgMapsforgeCoreGraphicsFontFamilyEnum:(OrgMapsforgeCoreGraphicsFontFamilyEnum *)fontFamily
-                    withOrgMapsforgeCoreGraphicsFontStyleEnum:(OrgMapsforgeCoreGraphicsFontStyleEnum *)fontStyle;
+- (void)setTypefaceWithOrgMapsforgeCoreGraphicsFontFamily:(OrgMapsforgeCoreGraphicsFontFamily *)fontFamily
+                    withOrgMapsforgeCoreGraphicsFontStyle:(OrgMapsforgeCoreGraphicsFontStyle *)fontStyle;
 
 @end
 
@@ -58,4 +66,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsPaint)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsPaint)
 
-#endif // _OrgMapsforgeCoreGraphicsPaint_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsPaint")

@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/controller/MapViewController.java
 //
 
-#ifndef _OrgMapsforgeMapControllerMapViewController_H_
-#define _OrgMapsforgeMapControllerMapViewController_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapControllerMapViewController")
+#ifdef RESTRICT_OrgMapsforgeMapControllerMapViewController
+#define INCLUDE_ALL_OrgMapsforgeMapControllerMapViewController 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapControllerMapViewController 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapControllerMapViewController
+
+#if !defined (OrgMapsforgeMapControllerMapViewController_) && (INCLUDE_ALL_OrgMapsforgeMapControllerMapViewController || defined(INCLUDE_OrgMapsforgeMapControllerMapViewController))
+#define OrgMapsforgeMapControllerMapViewController_
+
+#define RESTRICT_OrgMapsforgeMapModelCommonObserver 1
+#define INCLUDE_OrgMapsforgeMapModelCommonObserver 1
 #include "org/mapsforge/map/model/common/Observer.h"
 
 @class OrgMapsforgeMapModelModel;
@@ -29,4 +40,6 @@ FOUNDATION_EXPORT OrgMapsforgeMapControllerMapViewController *OrgMapsforgeMapCon
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapControllerMapViewController)
 
-#endif // _OrgMapsforgeMapControllerMapViewController_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapControllerMapViewController")

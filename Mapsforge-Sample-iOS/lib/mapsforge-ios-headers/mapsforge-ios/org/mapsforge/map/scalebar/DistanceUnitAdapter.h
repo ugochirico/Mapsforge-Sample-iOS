@@ -3,14 +3,22 @@
 //  source: ./org/mapsforge/map/scalebar/DistanceUnitAdapter.java
 //
 
-#ifndef _OrgMapsforgeMapScalebarDistanceUnitAdapter_H_
-#define _OrgMapsforgeMapScalebarDistanceUnitAdapter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarDistanceUnitAdapter")
+#ifdef RESTRICT_OrgMapsforgeMapScalebarDistanceUnitAdapter
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarDistanceUnitAdapter 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarDistanceUnitAdapter 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapScalebarDistanceUnitAdapter
+
+#if !defined (OrgMapsforgeMapScalebarDistanceUnitAdapter_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarDistanceUnitAdapter || defined(INCLUDE_OrgMapsforgeMapScalebarDistanceUnitAdapter))
+#define OrgMapsforgeMapScalebarDistanceUnitAdapter_
 
 @class IOSIntArray;
 
-@protocol OrgMapsforgeMapScalebarDistanceUnitAdapter < NSObject, JavaObject >
+@protocol OrgMapsforgeMapScalebarDistanceUnitAdapter < JavaObject >
 
 - (jdouble)getMeterRatio;
 
@@ -24,4 +32,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapScalebarDistanceUnitAdapter)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarDistanceUnitAdapter)
 
-#endif // _OrgMapsforgeMapScalebarDistanceUnitAdapter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarDistanceUnitAdapter")

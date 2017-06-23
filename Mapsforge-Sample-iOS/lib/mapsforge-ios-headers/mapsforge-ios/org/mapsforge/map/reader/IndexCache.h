@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/IndexCache.java
 //
 
-#ifndef _OrgMapsforgeMapReaderIndexCache_H_
-#define _OrgMapsforgeMapReaderIndexCache_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderIndexCache")
+#ifdef RESTRICT_OrgMapsforgeMapReaderIndexCache
+#define INCLUDE_ALL_OrgMapsforgeMapReaderIndexCache 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderIndexCache 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderIndexCache
+
+#if !defined (OrgMapsforgeMapReaderIndexCache_) && (INCLUDE_ALL_OrgMapsforgeMapReaderIndexCache || defined(INCLUDE_OrgMapsforgeMapReaderIndexCache))
+#define OrgMapsforgeMapReaderIndexCache_
 
 @class JavaIoRandomAccessFile;
 @class OrgMapsforgeMapReaderHeaderSubFileParameter;
@@ -31,6 +39,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderIndexCache_initWithJavaIoRandomAcces
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderIndexCache *new_OrgMapsforgeMapReaderIndexCache_initWithJavaIoRandomAccessFile_withInt_(JavaIoRandomAccessFile *randomAccessFile, jint capacity) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderIndexCache *create_OrgMapsforgeMapReaderIndexCache_initWithJavaIoRandomAccessFile_withInt_(JavaIoRandomAccessFile *randomAccessFile, jint capacity);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderIndexCache)
 
-#endif // _OrgMapsforgeMapReaderIndexCache_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderIndexCache")

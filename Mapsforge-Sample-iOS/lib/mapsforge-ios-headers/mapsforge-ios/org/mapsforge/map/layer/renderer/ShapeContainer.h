@@ -3,16 +3,24 @@
 //  source: ./org/mapsforge/map/layer/renderer/ShapeContainer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererShapeContainer_H_
-#define _OrgMapsforgeMapLayerRendererShapeContainer_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeMapLayerRendererShapeTypeEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererShapeContainer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererShapeContainer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererShapeContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererShapeContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererShapeContainer
 
-@protocol OrgMapsforgeMapLayerRendererShapeContainer < NSObject, JavaObject >
+#if !defined (OrgMapsforgeMapLayerRendererShapeContainer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererShapeContainer || defined(INCLUDE_OrgMapsforgeMapLayerRendererShapeContainer))
+#define OrgMapsforgeMapLayerRendererShapeContainer_
 
-- (OrgMapsforgeMapLayerRendererShapeTypeEnum *)getShapeType;
+@class OrgMapsforgeMapLayerRendererShapeType;
+
+@protocol OrgMapsforgeMapLayerRendererShapeContainer < JavaObject >
+
+- (OrgMapsforgeMapLayerRendererShapeType *)getShapeType;
 
 @end
 
@@ -20,4 +28,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerRendererShapeContainer)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererShapeContainer)
 
-#endif // _OrgMapsforgeMapLayerRendererShapeContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererShapeContainer")

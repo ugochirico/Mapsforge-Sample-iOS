@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/IndexCacheEntryKey.java
 //
 
-#ifndef _OrgMapsforgeMapReaderIndexCacheEntryKey_H_
-#define _OrgMapsforgeMapReaderIndexCacheEntryKey_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderIndexCacheEntryKey")
+#ifdef RESTRICT_OrgMapsforgeMapReaderIndexCacheEntryKey
+#define INCLUDE_ALL_OrgMapsforgeMapReaderIndexCacheEntryKey 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderIndexCacheEntryKey 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderIndexCacheEntryKey
+
+#if !defined (OrgMapsforgeMapReaderIndexCacheEntryKey_) && (INCLUDE_ALL_OrgMapsforgeMapReaderIndexCacheEntryKey || defined(INCLUDE_OrgMapsforgeMapReaderIndexCacheEntryKey))
+#define OrgMapsforgeMapReaderIndexCacheEntryKey_
 
 @class OrgMapsforgeMapReaderHeaderSubFileParameter;
 
@@ -31,6 +39,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderIndexCacheEntryKey_initWithOrgMapsfo
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderIndexCacheEntryKey *new_OrgMapsforgeMapReaderIndexCacheEntryKey_initWithOrgMapsforgeMapReaderHeaderSubFileParameter_withLong_(OrgMapsforgeMapReaderHeaderSubFileParameter *subFileParameter, jlong indexBlockNumber) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderIndexCacheEntryKey *create_OrgMapsforgeMapReaderIndexCacheEntryKey_initWithOrgMapsforgeMapReaderHeaderSubFileParameter_withLong_(OrgMapsforgeMapReaderHeaderSubFileParameter *subFileParameter, jlong indexBlockNumber);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderIndexCacheEntryKey)
 
-#endif // _OrgMapsforgeMapReaderIndexCacheEntryKey_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderIndexCacheEntryKey")

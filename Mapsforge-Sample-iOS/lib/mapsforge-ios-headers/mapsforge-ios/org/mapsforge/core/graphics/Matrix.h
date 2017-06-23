@@ -3,12 +3,20 @@
 //  source: ./org/mapsforge/core/graphics/Matrix.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsMatrix_H_
-#define _OrgMapsforgeCoreGraphicsMatrix_H_
-
 #include "J2ObjC_header.h"
 
-@protocol OrgMapsforgeCoreGraphicsMatrix < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsMatrix")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsMatrix
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsMatrix 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsMatrix 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsMatrix
+
+#if !defined (OrgMapsforgeCoreGraphicsMatrix_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsMatrix || defined(INCLUDE_OrgMapsforgeCoreGraphicsMatrix))
+#define OrgMapsforgeCoreGraphicsMatrix_
+
+@protocol OrgMapsforgeCoreGraphicsMatrix < JavaObject >
 
 - (void)reset;
 
@@ -35,4 +43,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsMatrix)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsMatrix)
 
-#endif // _OrgMapsforgeCoreGraphicsMatrix_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsMatrix")

@@ -3,41 +3,72 @@
 //  source: ./org/mapsforge/core/graphics/Style.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsStyle_H_
-#define _OrgMapsforgeCoreGraphicsStyle_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsStyle")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsStyle
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsStyle 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsStyle 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsStyle
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsStyle_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsStyle || defined(INCLUDE_OrgMapsforgeCoreGraphicsStyle))
+#define OrgMapsforgeCoreGraphicsStyle_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsStyle) {
-  OrgMapsforgeCoreGraphicsStyle_FILL = 0,
-  OrgMapsforgeCoreGraphicsStyle_STROKE = 1,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsStyle_Enum) {
+  OrgMapsforgeCoreGraphicsStyle_Enum_FILL = 0,
+  OrgMapsforgeCoreGraphicsStyle_Enum_STROKE = 1,
 };
 
-@interface OrgMapsforgeCoreGraphicsStyleEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsStyle : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (OrgMapsforgeCoreGraphicsStyle *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsStyleEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsStyleEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsStyleEnum *OrgMapsforgeCoreGraphicsStyleEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsStyleEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsStyle)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsStyleEnum *OrgMapsforgeCoreGraphicsStyleEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsStyle *OrgMapsforgeCoreGraphicsStyle_values_[];
 
-#define OrgMapsforgeCoreGraphicsStyleEnum_FILL OrgMapsforgeCoreGraphicsStyleEnum_values_[OrgMapsforgeCoreGraphicsStyle_FILL]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsStyleEnum, FILL)
+inline OrgMapsforgeCoreGraphicsStyle *OrgMapsforgeCoreGraphicsStyle_get_FILL();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsStyle, FILL)
 
-#define OrgMapsforgeCoreGraphicsStyleEnum_STROKE OrgMapsforgeCoreGraphicsStyleEnum_values_[OrgMapsforgeCoreGraphicsStyle_STROKE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsStyleEnum, STROKE)
+inline OrgMapsforgeCoreGraphicsStyle *OrgMapsforgeCoreGraphicsStyle_get_STROKE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsStyle, STROKE)
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsStyleEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsStyle_values();
 
-#endif // _OrgMapsforgeCoreGraphicsStyle_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsStyle *OrgMapsforgeCoreGraphicsStyle_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsStyle *OrgMapsforgeCoreGraphicsStyle_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsStyle)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsStyle")

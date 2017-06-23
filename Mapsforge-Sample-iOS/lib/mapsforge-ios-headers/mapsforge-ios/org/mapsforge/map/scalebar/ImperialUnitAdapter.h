@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/scalebar/ImperialUnitAdapter.java
 //
 
-#ifndef _OrgMapsforgeMapScalebarImperialUnitAdapter_H_
-#define _OrgMapsforgeMapScalebarImperialUnitAdapter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarImperialUnitAdapter")
+#ifdef RESTRICT_OrgMapsforgeMapScalebarImperialUnitAdapter
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarImperialUnitAdapter 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarImperialUnitAdapter 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapScalebarImperialUnitAdapter
+
+#if !defined (OrgMapsforgeMapScalebarImperialUnitAdapter_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarImperialUnitAdapter || defined(INCLUDE_OrgMapsforgeMapScalebarImperialUnitAdapter))
+#define OrgMapsforgeMapScalebarImperialUnitAdapter_
+
+#define RESTRICT_OrgMapsforgeMapScalebarDistanceUnitAdapter 1
+#define INCLUDE_OrgMapsforgeMapScalebarDistanceUnitAdapter 1
 #include "org/mapsforge/map/scalebar/DistanceUnitAdapter.h"
 
 @class IOSIntArray;
@@ -25,9 +36,13 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapScalebarImperialUnitAdapter)
 
-FOUNDATION_EXPORT OrgMapsforgeMapScalebarImperialUnitAdapter *OrgMapsforgeMapScalebarImperialUnitAdapter_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapScalebarImperialUnitAdapter, INSTANCE_, OrgMapsforgeMapScalebarImperialUnitAdapter *)
+inline OrgMapsforgeMapScalebarImperialUnitAdapter *OrgMapsforgeMapScalebarImperialUnitAdapter_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarImperialUnitAdapter *OrgMapsforgeMapScalebarImperialUnitAdapter_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapScalebarImperialUnitAdapter, INSTANCE, OrgMapsforgeMapScalebarImperialUnitAdapter *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarImperialUnitAdapter)
 
-#endif // _OrgMapsforgeMapScalebarImperialUnitAdapter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarImperialUnitAdapter")

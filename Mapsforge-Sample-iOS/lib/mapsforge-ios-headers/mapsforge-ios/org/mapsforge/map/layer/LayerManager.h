@@ -3,15 +3,30 @@
 //  source: ./org/mapsforge/map/layer/LayerManager.java
 //
 
-#ifndef _OrgMapsforgeMapLayerLayerManager_H_
-#define _OrgMapsforgeMapLayerLayerManager_H_
-
 #include "J2ObjC_header.h"
-#include "org/mapsforge/map/layer/Redrawer.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLayerManager")
+#ifdef RESTRICT_OrgMapsforgeMapLayerLayerManager
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLayerManager 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLayerManager 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerLayerManager
+
+#if !defined (OrgMapsforgeMapLayerLayerManager_) && (INCLUDE_ALL_OrgMapsforgeMapLayerLayerManager || defined(INCLUDE_OrgMapsforgeMapLayerLayerManager))
+#define OrgMapsforgeMapLayerLayerManager_
+
+#define RESTRICT_OrgMapsforgeMapUtilPausableThread 1
+#define INCLUDE_OrgMapsforgeMapUtilPausableThread 1
 #include "org/mapsforge/map/util/PausableThread.h"
+
+#define RESTRICT_OrgMapsforgeMapLayerRedrawer 1
+#define INCLUDE_OrgMapsforgeMapLayerRedrawer 1
+#include "org/mapsforge/map/layer/Redrawer.h"
 
 @class OrgMapsforgeMapLayerLayers;
 @class OrgMapsforgeMapModelMapViewPosition;
+@class OrgMapsforgeMapUtilPausableThread_ThreadPriority;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
 @protocol OrgMapsforgeMapViewMapView;
 
@@ -33,7 +48,7 @@
 
 - (void)doWork;
 
-- (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)getThreadPriority;
+- (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)getThreadPriority;
 
 - (jboolean)hasWork;
 
@@ -45,6 +60,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerLayerManager_initWithOrgMapsforgeMapV
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerLayerManager *new_OrgMapsforgeMapLayerLayerManager_initWithOrgMapsforgeMapViewMapView_withOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeCoreGraphicsGraphicFactory_(id<OrgMapsforgeMapViewMapView> mapView, OrgMapsforgeMapModelMapViewPosition *mapViewPosition, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerLayerManager *create_OrgMapsforgeMapLayerLayerManager_initWithOrgMapsforgeMapViewMapView_withOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeCoreGraphicsGraphicFactory_(id<OrgMapsforgeMapViewMapView> mapView, OrgMapsforgeMapModelMapViewPosition *mapViewPosition, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerLayerManager)
 
-#endif // _OrgMapsforgeMapLayerLayerManager_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLayerManager")

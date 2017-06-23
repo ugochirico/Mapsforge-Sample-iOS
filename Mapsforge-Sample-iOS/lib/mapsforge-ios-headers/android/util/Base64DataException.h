@@ -3,12 +3,28 @@
 //  source: android/frameworks/base/core/java/android/util/Base64DataException.java
 //
 
-#ifndef _AndroidUtilBase64DataException_H_
-#define _AndroidUtilBase64DataException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_AndroidUtilBase64DataException")
+#ifdef RESTRICT_AndroidUtilBase64DataException
+#define INCLUDE_ALL_AndroidUtilBase64DataException 0
+#else
+#define INCLUDE_ALL_AndroidUtilBase64DataException 1
+#endif
+#undef RESTRICT_AndroidUtilBase64DataException
+
+#if !defined (AndroidUtilBase64DataException_) && (INCLUDE_ALL_AndroidUtilBase64DataException || defined(INCLUDE_AndroidUtilBase64DataException))
+#define AndroidUtilBase64DataException_
+
+#define RESTRICT_JavaIoIOException 1
+#define INCLUDE_JavaIoIOException 1
 #include "java/io/IOException.h"
 
+/*!
+ @brief This exception is thrown by <code>Base64InputStream</code> or <code>Base64OutputStream</code>
+  when an error is detected in the data being decoded.This allows problems with the base64 data
+  to be disambiguated from errors in the underlying streams (e.g. actual connection errors.)
+ */
 @interface AndroidUtilBase64DataException : JavaIoIOException
 
 #pragma mark Public
@@ -23,6 +39,10 @@ FOUNDATION_EXPORT void AndroidUtilBase64DataException_initWithNSString_(AndroidU
 
 FOUNDATION_EXPORT AndroidUtilBase64DataException *new_AndroidUtilBase64DataException_initWithNSString_(NSString *detailMessage) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT AndroidUtilBase64DataException *create_AndroidUtilBase64DataException_initWithNSString_(NSString *detailMessage);
+
 J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilBase64DataException)
 
-#endif // _AndroidUtilBase64DataException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidUtilBase64DataException")

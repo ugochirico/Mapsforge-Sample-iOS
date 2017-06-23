@@ -3,15 +3,23 @@
 //  source: ./org/mapsforge/map/layer/labels/LabelStore.java
 //
 
-#ifndef _OrgMapsforgeMapLayerLabelsLabelStore_H_
-#define _OrgMapsforgeMapLayerLabelsLabelStore_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLabelsLabelStore")
+#ifdef RESTRICT_OrgMapsforgeMapLayerLabelsLabelStore
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLabelsLabelStore 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLabelsLabelStore 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerLabelsLabelStore
+
+#if !defined (OrgMapsforgeMapLayerLabelsLabelStore_) && (INCLUDE_ALL_OrgMapsforgeMapLayerLabelsLabelStore || defined(INCLUDE_OrgMapsforgeMapLayerLabelsLabelStore))
+#define OrgMapsforgeMapLayerLabelsLabelStore_
 
 @protocol JavaUtilList;
 @protocol JavaUtilSet;
 
-@protocol OrgMapsforgeMapLayerLabelsLabelStore < NSObject, JavaObject >
+@protocol OrgMapsforgeMapLayerLabelsLabelStore < JavaObject >
 
 - (void)clear;
 
@@ -25,4 +33,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerLabelsLabelStore)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerLabelsLabelStore)
 
-#endif // _OrgMapsforgeMapLayerLabelsLabelStore_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLabelsLabelStore")

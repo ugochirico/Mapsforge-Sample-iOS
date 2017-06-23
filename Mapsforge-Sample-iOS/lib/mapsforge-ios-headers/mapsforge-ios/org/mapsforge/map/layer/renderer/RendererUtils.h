@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/renderer/RendererUtils.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererRendererUtils_H_
-#define _OrgMapsforgeMapLayerRendererRendererUtils_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererUtils")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererRendererUtils
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererUtils 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererUtils 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererRendererUtils
+
+#if !defined (OrgMapsforgeMapLayerRendererRendererUtils_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererUtils || defined(INCLUDE_OrgMapsforgeMapLayerRendererRendererUtils))
+#define OrgMapsforgeMapLayerRendererRendererUtils_
 
 @class IOSObjectArray;
 
@@ -25,4 +33,6 @@ FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapLayerRendererRendererUtils_para
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererRendererUtils)
 
-#endif // _OrgMapsforgeMapLayerRendererRendererUtils_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererUtils")

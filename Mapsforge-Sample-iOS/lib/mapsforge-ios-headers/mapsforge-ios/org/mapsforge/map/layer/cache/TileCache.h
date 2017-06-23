@@ -3,16 +3,24 @@
 //  source: ./org/mapsforge/map/layer/cache/TileCache.java
 //
 
-#ifndef _OrgMapsforgeMapLayerCacheTileCache_H_
-#define _OrgMapsforgeMapLayerCacheTileCache_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileCache")
+#ifdef RESTRICT_OrgMapsforgeMapLayerCacheTileCache
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileCache 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileCache 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerCacheTileCache
+
+#if !defined (OrgMapsforgeMapLayerCacheTileCache_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileCache || defined(INCLUDE_OrgMapsforgeMapLayerCacheTileCache))
+#define OrgMapsforgeMapLayerCacheTileCache_
 
 @class OrgMapsforgeMapLayerQueueJob;
 @protocol JavaUtilSet;
 @protocol OrgMapsforgeCoreGraphicsTileBitmap;
 
-@protocol OrgMapsforgeMapLayerCacheTileCache < NSObject, JavaObject >
+@protocol OrgMapsforgeMapLayerCacheTileCache < JavaObject >
 
 - (jboolean)containsKeyWithOrgMapsforgeMapLayerQueueJob:(OrgMapsforgeMapLayerQueueJob *)key;
 
@@ -39,4 +47,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerCacheTileCache)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheTileCache)
 
-#endif // _OrgMapsforgeMapLayerCacheTileCache_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileCache")

@@ -3,22 +3,56 @@
 //  source: android/libcore/luni/src/main/java/java/net/CacheResponse.java
 //
 
-#ifndef _JavaNetCacheResponse_H_
-#define _JavaNetCacheResponse_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetCacheResponse")
+#ifdef RESTRICT_JavaNetCacheResponse
+#define INCLUDE_ALL_JavaNetCacheResponse 0
+#else
+#define INCLUDE_ALL_JavaNetCacheResponse 1
+#endif
+#undef RESTRICT_JavaNetCacheResponse
+
+#if !defined (JavaNetCacheResponse_) && (INCLUDE_ALL_JavaNetCacheResponse || defined(INCLUDE_JavaNetCacheResponse))
+#define JavaNetCacheResponse_
 
 @class JavaIoInputStream;
 @protocol JavaUtilMap;
 
+/*!
+ @brief A response cache entry.A <code>CacheResponse</code> object provides an <code>InputStream</code>
+  to access the response body and a <code>Map</code> for the response headers.
+ - seealso: ResponseCache
+ */
 @interface JavaNetCacheResponse : NSObject
 
 #pragma mark Public
 
 - (instancetype)init;
 
+/*!
+ @brief Returns an <code>InputStream</code> to access the response body.
+ @return an <code>InputStream</code> which can be used to fetch the response
+          body.
+ @throw IOException
+ if an I/O error is encountered while retrieving the response
+              body.
+ */
 - (JavaIoInputStream *)getBody;
 
+/*!
+ @brief Returns an immutable <code>Map</code> which contains the response headers
+  information.Note that <code>URLConnection</code> may need the original headers to be
+  able to fully reconstruct the response.
+ In particular, failure to provide
+  a mapping from null to the original HTTP status line will prevent an 
+ <code>HttpURLConnection</code> from returning the correct response code.
+  See <code>URLConnection.getHeaderFields</code>.
+ @return an immutable <code>Map</code> which contains the response headers.
+ @throw IOException
+ if an I/O error is encountered while retrieving the response
+              headers.
+ */
 - (id<JavaUtilMap>)getHeaders;
 
 @end
@@ -29,4 +63,6 @@ FOUNDATION_EXPORT void JavaNetCacheResponse_init(JavaNetCacheResponse *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetCacheResponse)
 
-#endif // _JavaNetCacheResponse_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetCacheResponse")

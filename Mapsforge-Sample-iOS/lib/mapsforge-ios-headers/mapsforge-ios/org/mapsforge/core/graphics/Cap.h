@@ -3,51 +3,80 @@
 //  source: ./org/mapsforge/core/graphics/Cap.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsCap_H_
-#define _OrgMapsforgeCoreGraphicsCap_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsCap")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsCap
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsCap 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsCap 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsCap
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsCap_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsCap || defined(INCLUDE_OrgMapsforgeCoreGraphicsCap))
+#define OrgMapsforgeCoreGraphicsCap_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsCap) {
-  OrgMapsforgeCoreGraphicsCap_BUTT = 0,
-  OrgMapsforgeCoreGraphicsCap_ROUND = 1,
-  OrgMapsforgeCoreGraphicsCap_SQUARE = 2,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsCap_Enum) {
+  OrgMapsforgeCoreGraphicsCap_Enum_BUTT = 0,
+  OrgMapsforgeCoreGraphicsCap_Enum_ROUND = 1,
+  OrgMapsforgeCoreGraphicsCap_Enum_SQUARE = 2,
 };
 
-@interface OrgMapsforgeCoreGraphicsCapEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsCap : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeCoreGraphicsCapEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeCoreGraphicsCap *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeCoreGraphicsCap *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsCapEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsCapEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCapEnum *OrgMapsforgeCoreGraphicsCapEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsCapEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsCap)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCapEnum *OrgMapsforgeCoreGraphicsCapEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_values_[];
 
-#define OrgMapsforgeCoreGraphicsCapEnum_BUTT OrgMapsforgeCoreGraphicsCapEnum_values_[OrgMapsforgeCoreGraphicsCap_BUTT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsCapEnum, BUTT)
+inline OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_get_BUTT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsCap, BUTT)
 
-#define OrgMapsforgeCoreGraphicsCapEnum_ROUND OrgMapsforgeCoreGraphicsCapEnum_values_[OrgMapsforgeCoreGraphicsCap_ROUND]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsCapEnum, ROUND)
+inline OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_get_ROUND();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsCap, ROUND)
 
-#define OrgMapsforgeCoreGraphicsCapEnum_SQUARE OrgMapsforgeCoreGraphicsCapEnum_values_[OrgMapsforgeCoreGraphicsCap_SQUARE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsCapEnum, SQUARE)
+inline OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_get_SQUARE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsCap, SQUARE)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCapEnum *OrgMapsforgeCoreGraphicsCapEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsCapEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsCap_values();
 
-#endif // _OrgMapsforgeCoreGraphicsCap_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsCap *OrgMapsforgeCoreGraphicsCap_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsCap)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsCap")

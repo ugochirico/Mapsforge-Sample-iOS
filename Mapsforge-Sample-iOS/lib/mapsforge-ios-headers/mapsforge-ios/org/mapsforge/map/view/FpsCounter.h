@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/view/FpsCounter.java
 //
 
-#ifndef _OrgMapsforgeMapViewFpsCounter_H_
-#define _OrgMapsforgeMapViewFpsCounter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapViewFpsCounter")
+#ifdef RESTRICT_OrgMapsforgeMapViewFpsCounter
+#define INCLUDE_ALL_OrgMapsforgeMapViewFpsCounter 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapViewFpsCounter 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapViewFpsCounter
+
+#if !defined (OrgMapsforgeMapViewFpsCounter_) && (INCLUDE_ALL_OrgMapsforgeMapViewFpsCounter || defined(INCLUDE_OrgMapsforgeMapViewFpsCounter))
+#define OrgMapsforgeMapViewFpsCounter_
 
 @class OrgMapsforgeMapModelDisplayModel;
 @protocol OrgMapsforgeCoreGraphicsGraphicContext;
@@ -38,10 +46,16 @@ FOUNDATION_EXPORT void OrgMapsforgeMapViewFpsCounter_initWithOrgMapsforgeCoreGra
 
 FOUNDATION_EXPORT OrgMapsforgeMapViewFpsCounter *new_OrgMapsforgeMapViewFpsCounter_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapViewFpsCounter *create_OrgMapsforgeMapViewFpsCounter_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel);
+
 FOUNDATION_EXPORT void OrgMapsforgeMapViewFpsCounter_initWithOrgMapsforgeMapModelDisplayModel_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_(OrgMapsforgeMapViewFpsCounter *self, OrgMapsforgeMapModelDisplayModel *displayModel, id<OrgMapsforgeCoreGraphicsPaint> paintBack, id<OrgMapsforgeCoreGraphicsPaint> paintFront);
 
 FOUNDATION_EXPORT OrgMapsforgeMapViewFpsCounter *new_OrgMapsforgeMapViewFpsCounter_initWithOrgMapsforgeMapModelDisplayModel_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_(OrgMapsforgeMapModelDisplayModel *displayModel, id<OrgMapsforgeCoreGraphicsPaint> paintBack, id<OrgMapsforgeCoreGraphicsPaint> paintFront) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapViewFpsCounter *create_OrgMapsforgeMapViewFpsCounter_initWithOrgMapsforgeMapModelDisplayModel_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_(OrgMapsforgeMapModelDisplayModel *displayModel, id<OrgMapsforgeCoreGraphicsPaint> paintBack, id<OrgMapsforgeCoreGraphicsPaint> paintFront);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapViewFpsCounter)
 
-#endif // _OrgMapsforgeMapViewFpsCounter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapViewFpsCounter")

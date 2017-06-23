@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/util/LayerUtil.java
 //
 
-#ifndef _OrgMapsforgeMapUtilLayerUtil_H_
-#define _OrgMapsforgeMapUtilLayerUtil_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapUtilLayerUtil")
+#ifdef RESTRICT_OrgMapsforgeMapUtilLayerUtil
+#define INCLUDE_ALL_OrgMapsforgeMapUtilLayerUtil 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapUtilLayerUtil 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapUtilLayerUtil
+
+#if !defined (OrgMapsforgeMapUtilLayerUtil_) && (INCLUDE_ALL_OrgMapsforgeMapUtilLayerUtil || defined(INCLUDE_OrgMapsforgeMapUtilLayerUtil))
+#define OrgMapsforgeMapUtilLayerUtil_
 
 @class OrgMapsforgeCoreModelBoundingBox;
 @class OrgMapsforgeCoreModelPoint;
@@ -40,4 +48,6 @@ FOUNDATION_EXPORT id<JavaUtilList> OrgMapsforgeMapUtilLayerUtil_collisionFreeOrd
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapUtilLayerUtil)
 
-#endif // _OrgMapsforgeMapUtilLayerUtil_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapUtilLayerUtil")

@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/core/mapelements/MapElementContainer.java
 //
 
-#ifndef _OrgMapsforgeCoreMapelementsMapElementContainer_H_
-#define _OrgMapsforgeCoreMapelementsMapElementContainer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsMapElementContainer")
+#ifdef RESTRICT_OrgMapsforgeCoreMapelementsMapElementContainer
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsMapElementContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsMapElementContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreMapelementsMapElementContainer
+
+#if !defined (OrgMapsforgeCoreMapelementsMapElementContainer_) && (INCLUDE_ALL_OrgMapsforgeCoreMapelementsMapElementContainer || defined(INCLUDE_OrgMapsforgeCoreMapelementsMapElementContainer))
+#define OrgMapsforgeCoreMapelementsMapElementContainer_
+
+#define RESTRICT_JavaLangComparable 1
+#define INCLUDE_JavaLangComparable 1
 #include "java/lang/Comparable.h"
 
-@class OrgMapsforgeCoreGraphicsDisplayEnum;
+@class OrgMapsforgeCoreGraphicsDisplay;
 @class OrgMapsforgeCoreModelPoint;
 @class OrgMapsforgeCoreModelRectangle;
 @protocol OrgMapsforgeCoreGraphicsCanvas;
@@ -19,7 +30,7 @@
  @public
   OrgMapsforgeCoreModelRectangle *boundary_;
   OrgMapsforgeCoreModelRectangle *boundaryAbsolute_;
-  OrgMapsforgeCoreGraphicsDisplayEnum *display_;
+  OrgMapsforgeCoreGraphicsDisplay *display_;
   jint priority_;
   OrgMapsforgeCoreModelPoint *xy_;
 }
@@ -49,7 +60,7 @@
 #pragma mark Protected
 
 - (instancetype)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)xy
-           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+               withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                            withInt:(jint)priority;
 
 - (OrgMapsforgeCoreModelRectangle *)getBoundaryAbsolute;
@@ -60,11 +71,13 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreMapelementsMapElementContainer)
 
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsMapElementContainer, boundary_, OrgMapsforgeCoreModelRectangle *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsMapElementContainer, boundaryAbsolute_, OrgMapsforgeCoreModelRectangle *)
-J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsMapElementContainer, display_, OrgMapsforgeCoreGraphicsDisplayEnum *)
+J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsMapElementContainer, display_, OrgMapsforgeCoreGraphicsDisplay *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsMapElementContainer, xy_, OrgMapsforgeCoreModelPoint *)
 
-FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsMapElementContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_(OrgMapsforgeCoreMapelementsMapElementContainer *self, OrgMapsforgeCoreModelPoint *xy, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority);
+FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsMapElementContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_(OrgMapsforgeCoreMapelementsMapElementContainer *self, OrgMapsforgeCoreModelPoint *xy, OrgMapsforgeCoreGraphicsDisplay *display, jint priority);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreMapelementsMapElementContainer)
 
-#endif // _OrgMapsforgeCoreMapelementsMapElementContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsMapElementContainer")

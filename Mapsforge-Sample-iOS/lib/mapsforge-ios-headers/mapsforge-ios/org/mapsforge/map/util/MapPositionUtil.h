@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/util/MapPositionUtil.java
 //
 
-#ifndef _OrgMapsforgeMapUtilMapPositionUtil_H_
-#define _OrgMapsforgeMapUtilMapPositionUtil_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapUtilMapPositionUtil")
+#ifdef RESTRICT_OrgMapsforgeMapUtilMapPositionUtil
+#define INCLUDE_ALL_OrgMapsforgeMapUtilMapPositionUtil 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapUtilMapPositionUtil 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapUtilMapPositionUtil
+
+#if !defined (OrgMapsforgeMapUtilMapPositionUtil_) && (INCLUDE_ALL_OrgMapsforgeMapUtilMapPositionUtil || defined(INCLUDE_OrgMapsforgeMapUtilMapPositionUtil))
+#define OrgMapsforgeMapUtilMapPositionUtil_
 
 @class OrgMapsforgeCoreModelBoundingBox;
 @class OrgMapsforgeCoreModelDimension;
@@ -35,4 +43,6 @@ FOUNDATION_EXPORT OrgMapsforgeCoreModelPoint *OrgMapsforgeMapUtilMapPositionUtil
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapUtilMapPositionUtil)
 
-#endif // _OrgMapsforgeMapUtilMapPositionUtil_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapUtilMapPositionUtil")

@@ -3,10 +3,18 @@
 //  source: src/main/java/org/mockito/internal/configuration/ClassPathLoader.java
 //
 
-#ifndef _OrgMockitoInternalConfigurationClassPathLoader_H_
-#define _OrgMockitoInternalConfigurationClassPathLoader_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalConfigurationClassPathLoader")
+#ifdef RESTRICT_OrgMockitoInternalConfigurationClassPathLoader
+#define INCLUDE_ALL_OrgMockitoInternalConfigurationClassPathLoader 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalConfigurationClassPathLoader 1
+#endif
+#undef RESTRICT_OrgMockitoInternalConfigurationClassPathLoader
+
+#if !defined (OrgMockitoInternalConfigurationClassPathLoader_) && (INCLUDE_ALL_OrgMockitoInternalConfigurationClassPathLoader || defined(INCLUDE_OrgMockitoInternalConfigurationClassPathLoader))
+#define OrgMockitoInternalConfigurationClassPathLoader_
 
 @class IOSClass;
 @class JavaIoReader;
@@ -44,8 +52,16 @@
 
 J2OBJC_STATIC_INIT(OrgMockitoInternalConfigurationClassPathLoader)
 
-FOUNDATION_EXPORT NSString *OrgMockitoInternalConfigurationClassPathLoader_MOCKITO_CONFIGURATION_CLASS_NAME_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMockitoInternalConfigurationClassPathLoader, MOCKITO_CONFIGURATION_CLASS_NAME_, NSString *)
+inline NSString *OrgMockitoInternalConfigurationClassPathLoader_get_MOCKITO_CONFIGURATION_CLASS_NAME();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMockitoInternalConfigurationClassPathLoader_MOCKITO_CONFIGURATION_CLASS_NAME;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMockitoInternalConfigurationClassPathLoader, MOCKITO_CONFIGURATION_CLASS_NAME, NSString *)
+
+FOUNDATION_EXPORT void OrgMockitoInternalConfigurationClassPathLoader_init(OrgMockitoInternalConfigurationClassPathLoader *self);
+
+FOUNDATION_EXPORT OrgMockitoInternalConfigurationClassPathLoader *new_OrgMockitoInternalConfigurationClassPathLoader_init() NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT OrgMockitoInternalConfigurationClassPathLoader *create_OrgMockitoInternalConfigurationClassPathLoader_init();
 
 FOUNDATION_EXPORT id<OrgMockitoPluginsMockMaker> OrgMockitoInternalConfigurationClassPathLoader_getMockMaker();
 
@@ -61,10 +77,8 @@ FOUNDATION_EXPORT id<JavaUtilList> OrgMockitoInternalConfigurationClassPathLoade
 
 FOUNDATION_EXPORT NSString *OrgMockitoInternalConfigurationClassPathLoader_stripCommentAndWhitespaceWithNSString_(NSString *line);
 
-FOUNDATION_EXPORT void OrgMockitoInternalConfigurationClassPathLoader_init(OrgMockitoInternalConfigurationClassPathLoader *self);
-
-FOUNDATION_EXPORT OrgMockitoInternalConfigurationClassPathLoader *new_OrgMockitoInternalConfigurationClassPathLoader_init() NS_RETURNS_RETAINED;
-
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalConfigurationClassPathLoader)
 
-#endif // _OrgMockitoInternalConfigurationClassPathLoader_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalConfigurationClassPathLoader")

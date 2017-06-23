@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/download/TileDownloader.java
 //
 
-#ifndef _OrgMapsforgeMapLayerDownloadTileDownloader_H_
-#define _OrgMapsforgeMapLayerDownloadTileDownloader_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloader")
+#ifdef RESTRICT_OrgMapsforgeMapLayerDownloadTileDownloader
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloader 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloader 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerDownloadTileDownloader
+
+#if !defined (OrgMapsforgeMapLayerDownloadTileDownloader_) && (INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloader || defined(INCLUDE_OrgMapsforgeMapLayerDownloadTileDownloader))
+#define OrgMapsforgeMapLayerDownloadTileDownloader_
 
 @class OrgMapsforgeMapLayerDownloadDownloadJob;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
@@ -29,6 +37,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerDownloadTileDownloader_initWithOrgMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTileDownloader *new_OrgMapsforgeMapLayerDownloadTileDownloader_initWithOrgMapsforgeMapLayerDownloadDownloadJob_withOrgMapsforgeCoreGraphicsGraphicFactory_(OrgMapsforgeMapLayerDownloadDownloadJob *downloadJob, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTileDownloader *create_OrgMapsforgeMapLayerDownloadTileDownloader_initWithOrgMapsforgeMapLayerDownloadDownloadJob_withOrgMapsforgeCoreGraphicsGraphicFactory_(OrgMapsforgeMapLayerDownloadDownloadJob *downloadJob, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerDownloadTileDownloader)
 
-#endif // _OrgMapsforgeMapLayerDownloadTileDownloader_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloader")

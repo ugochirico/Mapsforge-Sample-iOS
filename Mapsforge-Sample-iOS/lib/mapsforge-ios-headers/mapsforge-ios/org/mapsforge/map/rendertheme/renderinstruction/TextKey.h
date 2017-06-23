@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/rendertheme/renderinstruction/TextKey.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRenderinstructionTextKey_H_
-#define _OrgMapsforgeMapRenderthemeRenderinstructionTextKey_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionTextKey")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionTextKey
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionTextKey 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionTextKey 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionTextKey
+
+#if !defined (OrgMapsforgeMapRenderthemeRenderinstructionTextKey_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionTextKey || defined(INCLUDE_OrgMapsforgeMapRenderthemeRenderinstructionTextKey))
+#define OrgMapsforgeMapRenderthemeRenderinstructionTextKey_
 
 @protocol JavaUtilList;
 
@@ -26,4 +34,6 @@ FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionTextKey *OrgMapsfor
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRenderinstructionTextKey)
 
-#endif // _OrgMapsforgeMapRenderthemeRenderinstructionTextKey_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionTextKey")

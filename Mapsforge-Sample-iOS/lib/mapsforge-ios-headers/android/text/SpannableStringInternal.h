@@ -3,15 +3,27 @@
 //  source: android/frameworks/base/core/java/android/text/SpannableStringInternal.java
 //
 
-#ifndef _AndroidTextSpannableStringInternal_H_
-#define _AndroidTextSpannableStringInternal_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_AndroidTextSpannableStringInternal")
+#ifdef RESTRICT_AndroidTextSpannableStringInternal
+#define INCLUDE_ALL_AndroidTextSpannableStringInternal 0
+#else
+#define INCLUDE_ALL_AndroidTextSpannableStringInternal 1
+#endif
+#undef RESTRICT_AndroidTextSpannableStringInternal
+
+#if !defined (AndroidTextSpannableStringInternal_) && (INCLUDE_ALL_AndroidTextSpannableStringInternal || defined(INCLUDE_AndroidTextSpannableStringInternal))
+#define AndroidTextSpannableStringInternal_
+
+#define RESTRICT_JavaLangCharSequence 1
+#define INCLUDE_JavaLangCharSequence 1
 #include "java/lang/CharSequence.h"
 
 @class IOSCharArray;
 @class IOSClass;
 @class IOSObjectArray;
+@protocol JavaUtilStreamIntStream;
 
 @interface AndroidTextSpannableStringInternal : NSObject < JavaLangCharSequence >
 
@@ -38,7 +50,7 @@
 
 - (NSUInteger)hash;
 
-- (jint)length;
+- (jint)java_length;
 
 - (jint)nextSpanTransitionWithInt:(jint)start
                           withInt:(jint)limit
@@ -63,11 +75,15 @@
 
 J2OBJC_STATIC_INIT(AndroidTextSpannableStringInternal)
 
-FOUNDATION_EXPORT IOSObjectArray *AndroidTextSpannableStringInternal_EMPTY_;
-J2OBJC_STATIC_FIELD_GETTER(AndroidTextSpannableStringInternal, EMPTY_, IOSObjectArray *)
+inline IOSObjectArray *AndroidTextSpannableStringInternal_get_EMPTY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT IOSObjectArray *AndroidTextSpannableStringInternal_EMPTY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(AndroidTextSpannableStringInternal, EMPTY, IOSObjectArray *)
 
 FOUNDATION_EXPORT void AndroidTextSpannableStringInternal_initWithJavaLangCharSequence_withInt_withInt_(AndroidTextSpannableStringInternal *self, id<JavaLangCharSequence> source, jint start, jint end);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextSpannableStringInternal)
 
-#endif // _AndroidTextSpannableStringInternal_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidTextSpannableStringInternal")

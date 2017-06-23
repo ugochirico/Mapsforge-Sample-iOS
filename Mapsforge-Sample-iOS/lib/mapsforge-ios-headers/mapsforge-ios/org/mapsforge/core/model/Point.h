@@ -3,12 +3,26 @@
 //  source: ./org/mapsforge/core/model/Point.java
 //
 
-#ifndef _OrgMapsforgeCoreModelPoint_H_
-#define _OrgMapsforgeCoreModelPoint_H_
-
 #include "J2ObjC_header.h"
-#include "java/io/Serializable.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelPoint")
+#ifdef RESTRICT_OrgMapsforgeCoreModelPoint
+#define INCLUDE_ALL_OrgMapsforgeCoreModelPoint 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelPoint 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelPoint
+
+#if !defined (OrgMapsforgeCoreModelPoint_) && (INCLUDE_ALL_OrgMapsforgeCoreModelPoint || defined(INCLUDE_OrgMapsforgeCoreModelPoint))
+#define OrgMapsforgeCoreModelPoint_
+
+#define RESTRICT_JavaLangComparable 1
+#define INCLUDE_JavaLangComparable 1
 #include "java/lang/Comparable.h"
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
+#include "java/io/Serializable.h"
 
 @interface OrgMapsforgeCoreModelPoint : NSObject < JavaLangComparable, JavaIoSerializable > {
  @public
@@ -42,6 +56,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelPoint_initWithDouble_withDouble_(Org
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelPoint *new_OrgMapsforgeCoreModelPoint_initWithDouble_withDouble_(jdouble x, jdouble y) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelPoint *create_OrgMapsforgeCoreModelPoint_initWithDouble_withDouble_(jdouble x, jdouble y);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelPoint)
 
-#endif // _OrgMapsforgeCoreModelPoint_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelPoint")

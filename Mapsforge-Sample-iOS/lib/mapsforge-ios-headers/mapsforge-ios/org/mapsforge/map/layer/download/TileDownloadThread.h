@@ -3,15 +3,27 @@
 //  source: ./org/mapsforge/map/layer/download/TileDownloadThread.java
 //
 
-#ifndef _OrgMapsforgeMapLayerDownloadTileDownloadThread_H_
-#define _OrgMapsforgeMapLayerDownloadTileDownloadThread_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloadThread")
+#ifdef RESTRICT_OrgMapsforgeMapLayerDownloadTileDownloadThread
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloadThread 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloadThread 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerDownloadTileDownloadThread
+
+#if !defined (OrgMapsforgeMapLayerDownloadTileDownloadThread_) && (INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloadThread || defined(INCLUDE_OrgMapsforgeMapLayerDownloadTileDownloadThread))
+#define OrgMapsforgeMapLayerDownloadTileDownloadThread_
+
+#define RESTRICT_OrgMapsforgeMapUtilPausableThread 1
+#define INCLUDE_OrgMapsforgeMapUtilPausableThread 1
 #include "org/mapsforge/map/util/PausableThread.h"
 
 @class OrgMapsforgeMapLayerLayer;
 @class OrgMapsforgeMapLayerQueueJobQueue;
 @class OrgMapsforgeMapModelDisplayModel;
+@class OrgMapsforgeMapUtilPausableThread_ThreadPriority;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
 @protocol OrgMapsforgeMapLayerCacheTileCache;
 
@@ -25,7 +37,7 @@
 
 - (void)doWork;
 
-- (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)getThreadPriority;
+- (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)getThreadPriority;
 
 - (jboolean)hasWork;
 
@@ -45,6 +57,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerDownloadTileDownloadThread_initWithOr
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTileDownloadThread *new_OrgMapsforgeMapLayerDownloadTileDownloadThread_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerQueueJobQueue_withOrgMapsforgeMapLayerLayer_withOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapLayerQueueJobQueue *jobQueue, OrgMapsforgeMapLayerLayer *layer, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTileDownloadThread *create_OrgMapsforgeMapLayerDownloadTileDownloadThread_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerQueueJobQueue_withOrgMapsforgeMapLayerLayer_withOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapLayerQueueJobQueue *jobQueue, OrgMapsforgeMapLayerLayer *layer, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerDownloadTileDownloadThread)
 
-#endif // _OrgMapsforgeMapLayerDownloadTileDownloadThread_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTileDownloadThread")

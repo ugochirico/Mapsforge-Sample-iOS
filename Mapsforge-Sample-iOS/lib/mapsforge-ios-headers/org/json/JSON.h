@@ -3,10 +3,18 @@
 //  source: android/libcore/json/src/main/java/org/json/JSON.java
 //
 
-#ifndef _OrgJsonJSON_H_
-#define _OrgJsonJSON_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgJsonJSON")
+#ifdef RESTRICT_OrgJsonJSON
+#define INCLUDE_ALL_OrgJsonJSON 0
+#else
+#define INCLUDE_ALL_OrgJsonJSON 1
+#endif
+#undef RESTRICT_OrgJsonJSON
+
+#if !defined (OrgJsonJSON_) && (INCLUDE_ALL_OrgJsonJSON || defined(INCLUDE_OrgJsonJSON))
+#define OrgJsonJSON_
 
 @class JavaLangBoolean;
 @class JavaLangDouble;
@@ -29,6 +37,9 @@
 
 - (instancetype)init;
 
+/*!
+ @brief Returns the input if it is a JSON-permissible value; throws otherwise.
+ */
 + (jdouble)checkDoubleWithDouble:(jdouble)d;
 
 + (JavaLangBoolean *)toBooleanWithId:(id)value;
@@ -44,6 +55,12 @@
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(OrgJsonJSON)
+
+FOUNDATION_EXPORT void OrgJsonJSON_init(OrgJsonJSON *self);
+
+FOUNDATION_EXPORT OrgJsonJSON *new_OrgJsonJSON_init() NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT OrgJsonJSON *create_OrgJsonJSON_init();
 
 FOUNDATION_EXPORT jdouble OrgJsonJSON_checkDoubleWithDouble_(jdouble d);
 
@@ -61,10 +78,8 @@ FOUNDATION_EXPORT OrgJsonJSONException *OrgJsonJSON_typeMismatchWithId_withId_wi
 
 FOUNDATION_EXPORT OrgJsonJSONException *OrgJsonJSON_typeMismatchWithId_withNSString_(id actual, NSString *requiredType);
 
-FOUNDATION_EXPORT void OrgJsonJSON_init(OrgJsonJSON *self);
-
-FOUNDATION_EXPORT OrgJsonJSON *new_OrgJsonJSON_init() NS_RETURNS_RETAINED;
-
 J2OBJC_TYPE_LITERAL_HEADER(OrgJsonJSON)
 
-#endif // _OrgJsonJSON_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgJsonJSON")

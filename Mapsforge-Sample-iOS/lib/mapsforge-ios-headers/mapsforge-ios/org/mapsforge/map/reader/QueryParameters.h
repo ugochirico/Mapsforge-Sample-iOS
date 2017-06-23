@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/QueryParameters.java
 //
 
-#ifndef _OrgMapsforgeMapReaderQueryParameters_H_
-#define _OrgMapsforgeMapReaderQueryParameters_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderQueryParameters")
+#ifdef RESTRICT_OrgMapsforgeMapReaderQueryParameters
+#define INCLUDE_ALL_OrgMapsforgeMapReaderQueryParameters 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderQueryParameters 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderQueryParameters
+
+#if !defined (OrgMapsforgeMapReaderQueryParameters_) && (INCLUDE_ALL_OrgMapsforgeMapReaderQueryParameters || defined(INCLUDE_OrgMapsforgeMapReaderQueryParameters))
+#define OrgMapsforgeMapReaderQueryParameters_
 
 @class OrgMapsforgeCoreModelTile;
 @class OrgMapsforgeMapReaderHeaderSubFileParameter;
@@ -45,6 +53,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderQueryParameters_init(OrgMapsforgeMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderQueryParameters *new_OrgMapsforgeMapReaderQueryParameters_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderQueryParameters *create_OrgMapsforgeMapReaderQueryParameters_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderQueryParameters)
 
-#endif // _OrgMapsforgeMapReaderQueryParameters_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderQueryParameters")

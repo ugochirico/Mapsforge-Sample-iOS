@@ -3,16 +3,35 @@
 //  source: android/libcore/luni/src/main/java/java/net/SocketAddress.java
 //
 
-#ifndef _JavaNetSocketAddress_H_
-#define _JavaNetSocketAddress_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetSocketAddress")
+#ifdef RESTRICT_JavaNetSocketAddress
+#define INCLUDE_ALL_JavaNetSocketAddress 0
+#else
+#define INCLUDE_ALL_JavaNetSocketAddress 1
+#endif
+#undef RESTRICT_JavaNetSocketAddress
+
+#if !defined (JavaNetSocketAddress_) && (INCLUDE_ALL_JavaNetSocketAddress || defined(INCLUDE_JavaNetSocketAddress))
+#define JavaNetSocketAddress_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
+/*!
+ @brief This abstract class represents a protocol-independent base for
+  socket-endpoint representing classes.The class has to be implemented
+  according to a specific protocol.
+ */
 @interface JavaNetSocketAddress : NSObject < JavaIoSerializable >
 
 #pragma mark Public
 
+/*!
+ @brief Creates a new <code>SocketAddress</code> instance.
+ */
 - (instancetype)init;
 
 @end
@@ -23,4 +42,6 @@ FOUNDATION_EXPORT void JavaNetSocketAddress_init(JavaNetSocketAddress *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetSocketAddress)
 
-#endif // _JavaNetSocketAddress_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetSocketAddress")

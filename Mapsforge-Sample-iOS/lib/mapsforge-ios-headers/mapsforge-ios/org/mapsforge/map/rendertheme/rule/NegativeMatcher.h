@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/NegativeMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleNegativeMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleNegativeMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleNegativeMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleNegativeMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleNegativeMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleNegativeMatcher))
+#define OrgMapsforgeMapRenderthemeRuleNegativeMatcher_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
 #include "org/mapsforge/map/rendertheme/rule/AttributeMatcher.h"
 
 @protocol JavaUtilList;
@@ -32,6 +43,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleNegativeMatcher_initWithJav
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleNegativeMatcher *new_OrgMapsforgeMapRenderthemeRuleNegativeMatcher_initWithJavaUtilList_withJavaUtilList_(id<JavaUtilList> keyList, id<JavaUtilList> valueList) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleNegativeMatcher *create_OrgMapsforgeMapRenderthemeRuleNegativeMatcher_initWithJavaUtilList_withJavaUtilList_(id<JavaUtilList> keyList, id<JavaUtilList> valueList);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleNegativeMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleNegativeMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeMatcher")

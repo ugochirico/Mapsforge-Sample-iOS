@@ -3,16 +3,27 @@
 //  source: ./org/mapsforge/map/layer/renderer/PolylineContainer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererPolylineContainer_H_
-#define _OrgMapsforgeMapLayerRendererPolylineContainer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererPolylineContainer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererPolylineContainer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererPolylineContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererPolylineContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererPolylineContainer
+
+#if !defined (OrgMapsforgeMapLayerRendererPolylineContainer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererPolylineContainer || defined(INCLUDE_OrgMapsforgeMapLayerRendererPolylineContainer))
+#define OrgMapsforgeMapLayerRendererPolylineContainer_
+
+#define RESTRICT_OrgMapsforgeMapLayerRendererShapeContainer 1
+#define INCLUDE_OrgMapsforgeMapLayerRendererShapeContainer 1
 #include "org/mapsforge/map/layer/renderer/ShapeContainer.h"
 
 @class IOSObjectArray;
 @class OrgMapsforgeCoreModelPoint;
 @class OrgMapsforgeCoreModelTile;
-@class OrgMapsforgeMapLayerRendererShapeTypeEnum;
+@class OrgMapsforgeMapLayerRendererShapeType;
 @class OrgMapsforgeMapReaderWay;
 @protocol JavaUtilList;
 
@@ -28,7 +39,7 @@
 
 - (jbyte)getLayer;
 
-- (OrgMapsforgeMapLayerRendererShapeTypeEnum *)getShapeType;
+- (OrgMapsforgeMapLayerRendererShapeType *)getShapeType;
 
 - (id<JavaUtilList>)getTags;
 
@@ -53,10 +64,16 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererPolylineContainer_initWithOrg
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererPolylineContainer *new_OrgMapsforgeMapLayerRendererPolylineContainer_initWithOrgMapsforgeMapReaderWay_withOrgMapsforgeCoreModelTile_(OrgMapsforgeMapReaderWay *way, OrgMapsforgeCoreModelTile *tile) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererPolylineContainer *create_OrgMapsforgeMapLayerRendererPolylineContainer_initWithOrgMapsforgeMapReaderWay_withOrgMapsforgeCoreModelTile_(OrgMapsforgeMapReaderWay *way, OrgMapsforgeCoreModelTile *tile);
+
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererPolylineContainer_initWithOrgMapsforgeCoreModelPointArray_withOrgMapsforgeCoreModelTile_withJavaUtilList_(OrgMapsforgeMapLayerRendererPolylineContainer *self, IOSObjectArray *coordinates, OrgMapsforgeCoreModelTile *tile, id<JavaUtilList> tags);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererPolylineContainer *new_OrgMapsforgeMapLayerRendererPolylineContainer_initWithOrgMapsforgeCoreModelPointArray_withOrgMapsforgeCoreModelTile_withJavaUtilList_(IOSObjectArray *coordinates, OrgMapsforgeCoreModelTile *tile, id<JavaUtilList> tags) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererPolylineContainer *create_OrgMapsforgeMapLayerRendererPolylineContainer_initWithOrgMapsforgeCoreModelPointArray_withOrgMapsforgeCoreModelTile_withJavaUtilList_(IOSObjectArray *coordinates, OrgMapsforgeCoreModelTile *tile, id<JavaUtilList> tags);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererPolylineContainer)
 
-#endif // _OrgMapsforgeMapLayerRendererPolylineContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererPolylineContainer")

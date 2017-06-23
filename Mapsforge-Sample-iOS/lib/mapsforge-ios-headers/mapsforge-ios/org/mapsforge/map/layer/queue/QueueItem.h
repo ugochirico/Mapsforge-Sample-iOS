@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/queue/QueueItem.java
 //
 
-#ifndef _OrgMapsforgeMapLayerQueueQueueItem_H_
-#define _OrgMapsforgeMapLayerQueueQueueItem_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItem")
+#ifdef RESTRICT_OrgMapsforgeMapLayerQueueQueueItem
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItem 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItem 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerQueueQueueItem
+
+#if !defined (OrgMapsforgeMapLayerQueueQueueItem_) && (INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItem || defined(INCLUDE_OrgMapsforgeMapLayerQueueQueueItem))
+#define OrgMapsforgeMapLayerQueueQueueItem_
 
 @class OrgMapsforgeMapLayerQueueJob;
 
@@ -33,12 +41,16 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerQueueQueueItem)
 
-J2OBJC_FIELD_SETTER(OrgMapsforgeMapLayerQueueQueueItem, object_, id)
+J2OBJC_FIELD_SETTER(OrgMapsforgeMapLayerQueueQueueItem, object_, OrgMapsforgeMapLayerQueueJob *)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerQueueQueueItem_initWithOrgMapsforgeMapLayerQueueJob_(OrgMapsforgeMapLayerQueueQueueItem *self, OrgMapsforgeMapLayerQueueJob *object);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueQueueItem *new_OrgMapsforgeMapLayerQueueQueueItem_initWithOrgMapsforgeMapLayerQueueJob_(OrgMapsforgeMapLayerQueueJob *object) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueQueueItem *create_OrgMapsforgeMapLayerQueueQueueItem_initWithOrgMapsforgeMapLayerQueueJob_(OrgMapsforgeMapLayerQueueJob *object);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerQueueQueueItem)
 
-#endif // _OrgMapsforgeMapLayerQueueQueueItem_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItem")

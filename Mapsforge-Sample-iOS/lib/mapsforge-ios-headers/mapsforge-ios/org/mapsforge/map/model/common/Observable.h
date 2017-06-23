@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/model/common/Observable.java
 //
 
-#ifndef _OrgMapsforgeMapModelCommonObservable_H_
-#define _OrgMapsforgeMapModelCommonObservable_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonObservable")
+#ifdef RESTRICT_OrgMapsforgeMapModelCommonObservable
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonObservable 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonObservable 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelCommonObservable
+
+#if !defined (OrgMapsforgeMapModelCommonObservable_) && (INCLUDE_ALL_OrgMapsforgeMapModelCommonObservable || defined(INCLUDE_OrgMapsforgeMapModelCommonObservable))
+#define OrgMapsforgeMapModelCommonObservable_
 
 @protocol OrgMapsforgeMapModelCommonObserver;
 
@@ -32,6 +40,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapModelCommonObservable_init(OrgMapsforgeMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapModelCommonObservable *new_OrgMapsforgeMapModelCommonObservable_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapModelCommonObservable *create_OrgMapsforgeMapModelCommonObservable_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelCommonObservable)
 
-#endif // _OrgMapsforgeMapModelCommonObservable_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonObservable")

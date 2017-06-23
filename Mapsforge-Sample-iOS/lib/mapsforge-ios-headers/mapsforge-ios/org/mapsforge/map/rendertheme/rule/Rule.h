@@ -3,16 +3,24 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/Rule.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRule_H_
-#define _OrgMapsforgeMapRenderthemeRuleRule_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRule")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRule
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRule 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRule 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRule
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRule_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRule || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRule))
+#define OrgMapsforgeMapRenderthemeRuleRule_
 
 @class OrgMapsforgeCoreModelTile;
 @class OrgMapsforgeMapLayerRendererPolylineContainer;
 @class OrgMapsforgeMapReaderPointOfInterest;
 @class OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction;
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+@class OrgMapsforgeMapRenderthemeRuleClosed;
 @class OrgMapsforgeMapRenderthemeRuleRuleBuilder;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
@@ -44,7 +52,7 @@
 
 - (jboolean)matchesWayWithJavaUtilList:(id<JavaUtilList>)tags
                               withByte:(jbyte)zoomLevel
-withOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+withOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 - (void)matchNodeWithOrgMapsforgeMapRenderthemeRenderCallback:(id<OrgMapsforgeMapRenderthemeRenderCallback>)renderCallback
                      withOrgMapsforgeMapReaderPointOfInterest:(OrgMapsforgeMapReaderPointOfInterest *)pointOfInterest
@@ -54,7 +62,7 @@ withOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClos
 - (void)matchWayWithOrgMapsforgeMapRenderthemeRenderCallback:(id<OrgMapsforgeMapRenderthemeRenderCallback>)renderCallback
            withOrgMapsforgeMapLayerRendererPolylineContainer:(OrgMapsforgeMapLayerRendererPolylineContainer *)way
                                withOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile
-                withOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed
+                    withOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed
                                             withJavaUtilList:(id<JavaUtilList>)matchingList;
 
 - (void)onComplete;
@@ -71,14 +79,20 @@ J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRuleRule, cat_, NSString *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRuleRule, closedMatcher_, id<OrgMapsforgeMapRenderthemeRuleClosedMatcher>)
 J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRuleRule, elementMatcher_, id<OrgMapsforgeMapRenderthemeRuleElementMatcher>)
 
-FOUNDATION_EXPORT id<JavaUtilMap> OrgMapsforgeMapRenderthemeRuleRule_MATCHERS_CACHE_KEY_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRuleRule, MATCHERS_CACHE_KEY_, id<JavaUtilMap>)
+inline id<JavaUtilMap> OrgMapsforgeMapRenderthemeRuleRule_get_MATCHERS_CACHE_KEY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT id<JavaUtilMap> OrgMapsforgeMapRenderthemeRuleRule_MATCHERS_CACHE_KEY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRuleRule, MATCHERS_CACHE_KEY, id<JavaUtilMap>)
 
-FOUNDATION_EXPORT id<JavaUtilMap> OrgMapsforgeMapRenderthemeRuleRule_MATCHERS_CACHE_VALUE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRuleRule, MATCHERS_CACHE_VALUE_, id<JavaUtilMap>)
+inline id<JavaUtilMap> OrgMapsforgeMapRenderthemeRuleRule_get_MATCHERS_CACHE_VALUE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT id<JavaUtilMap> OrgMapsforgeMapRenderthemeRuleRule_MATCHERS_CACHE_VALUE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRuleRule, MATCHERS_CACHE_VALUE, id<JavaUtilMap>)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleRule_initWithOrgMapsforgeMapRenderthemeRuleRuleBuilder_(OrgMapsforgeMapRenderthemeRuleRule *self, OrgMapsforgeMapRenderthemeRuleRuleBuilder *ruleBuilder);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRule)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRule_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRule")

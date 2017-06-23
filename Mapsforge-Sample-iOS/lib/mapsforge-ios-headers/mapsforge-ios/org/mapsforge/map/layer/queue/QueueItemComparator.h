@@ -3,14 +3,32 @@
 //  source: ./org/mapsforge/map/layer/queue/QueueItemComparator.java
 //
 
-#ifndef _OrgMapsforgeMapLayerQueueQueueItemComparator_H_
-#define _OrgMapsforgeMapLayerQueueQueueItemComparator_H_
-
 #include "J2ObjC_header.h"
-#include "java/io/Serializable.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemComparator")
+#ifdef RESTRICT_OrgMapsforgeMapLayerQueueQueueItemComparator
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemComparator 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemComparator 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerQueueQueueItemComparator
+
+#if !defined (OrgMapsforgeMapLayerQueueQueueItemComparator_) && (INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemComparator || defined(INCLUDE_OrgMapsforgeMapLayerQueueQueueItemComparator))
+#define OrgMapsforgeMapLayerQueueQueueItemComparator_
+
+#define RESTRICT_JavaUtilComparator 1
+#define INCLUDE_JavaUtilComparator 1
 #include "java/util/Comparator.h"
 
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
+#include "java/io/Serializable.h"
+
 @class OrgMapsforgeMapLayerQueueQueueItem;
+@protocol JavaUtilFunctionFunction;
+@protocol JavaUtilFunctionToDoubleFunction;
+@protocol JavaUtilFunctionToIntFunction;
+@protocol JavaUtilFunctionToLongFunction;
 
 @interface OrgMapsforgeMapLayerQueueQueueItemComparator : NSObject < JavaUtilComparator, JavaIoSerializable >
 
@@ -23,9 +41,13 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapLayerQueueQueueItemComparator)
 
-FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueQueueItemComparator *OrgMapsforgeMapLayerQueueQueueItemComparator_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapLayerQueueQueueItemComparator, INSTANCE_, OrgMapsforgeMapLayerQueueQueueItemComparator *)
+inline OrgMapsforgeMapLayerQueueQueueItemComparator *OrgMapsforgeMapLayerQueueQueueItemComparator_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueQueueItemComparator *OrgMapsforgeMapLayerQueueQueueItemComparator_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapLayerQueueQueueItemComparator, INSTANCE, OrgMapsforgeMapLayerQueueQueueItemComparator *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerQueueQueueItemComparator)
 
-#endif // _OrgMapsforgeMapLayerQueueQueueItemComparator_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemComparator")

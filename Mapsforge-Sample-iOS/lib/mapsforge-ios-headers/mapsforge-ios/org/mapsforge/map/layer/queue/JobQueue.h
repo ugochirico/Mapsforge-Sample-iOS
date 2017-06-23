@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/queue/JobQueue.java
 //
 
-#ifndef _OrgMapsforgeMapLayerQueueJobQueue_H_
-#define _OrgMapsforgeMapLayerQueueJobQueue_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueJobQueue")
+#ifdef RESTRICT_OrgMapsforgeMapLayerQueueJobQueue
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueJobQueue 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueJobQueue 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerQueueJobQueue
+
+#if !defined (OrgMapsforgeMapLayerQueueJobQueue_) && (INCLUDE_ALL_OrgMapsforgeMapLayerQueueJobQueue || defined(INCLUDE_OrgMapsforgeMapLayerQueueJobQueue))
+#define OrgMapsforgeMapLayerQueueJobQueue_
 
 @class OrgMapsforgeMapLayerQueueJob;
 @class OrgMapsforgeMapModelDisplayModel;
@@ -21,7 +29,7 @@
 
 - (void)addWithOrgMapsforgeMapLayerQueueJob:(OrgMapsforgeMapLayerQueueJob *)job;
 
-- (id)get;
+- (OrgMapsforgeMapLayerQueueJob *)get;
 
 - (void)notifyWorkers;
 
@@ -37,6 +45,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerQueueJobQueue_initWithOrgMapsforgeMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueJobQueue *new_OrgMapsforgeMapLayerQueueJobQueue_initWithOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapModelMapViewPosition *mapViewPosition, OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueJobQueue *create_OrgMapsforgeMapLayerQueueJobQueue_initWithOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapModelMapViewPosition *mapViewPosition, OrgMapsforgeMapModelDisplayModel *displayModel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerQueueJobQueue)
 
-#endif // _OrgMapsforgeMapLayerQueueJobQueue_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueJobQueue")

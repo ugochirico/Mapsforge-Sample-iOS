@@ -3,79 +3,108 @@
 //  source: ./org/mapsforge/core/graphics/Position.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsPosition_H_
-#define _OrgMapsforgeCoreGraphicsPosition_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsPosition")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsPosition
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsPosition 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsPosition 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsPosition
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsPosition_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsPosition || defined(INCLUDE_OrgMapsforgeCoreGraphicsPosition))
+#define OrgMapsforgeCoreGraphicsPosition_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsPosition) {
-  OrgMapsforgeCoreGraphicsPosition_AUTO = 0,
-  OrgMapsforgeCoreGraphicsPosition_CENTER = 1,
-  OrgMapsforgeCoreGraphicsPosition_BELOW = 2,
-  OrgMapsforgeCoreGraphicsPosition_BELOW_LEFT = 3,
-  OrgMapsforgeCoreGraphicsPosition_BELOW_RIGHT = 4,
-  OrgMapsforgeCoreGraphicsPosition_ABOVE = 5,
-  OrgMapsforgeCoreGraphicsPosition_ABOVE_LEFT = 6,
-  OrgMapsforgeCoreGraphicsPosition_ABOVE_RIGHT = 7,
-  OrgMapsforgeCoreGraphicsPosition_LEFT = 8,
-  OrgMapsforgeCoreGraphicsPosition_RIGHT = 9,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsPosition_Enum) {
+  OrgMapsforgeCoreGraphicsPosition_Enum_AUTO = 0,
+  OrgMapsforgeCoreGraphicsPosition_Enum_CENTER = 1,
+  OrgMapsforgeCoreGraphicsPosition_Enum_BELOW = 2,
+  OrgMapsforgeCoreGraphicsPosition_Enum_BELOW_LEFT = 3,
+  OrgMapsforgeCoreGraphicsPosition_Enum_BELOW_RIGHT = 4,
+  OrgMapsforgeCoreGraphicsPosition_Enum_ABOVE = 5,
+  OrgMapsforgeCoreGraphicsPosition_Enum_ABOVE_LEFT = 6,
+  OrgMapsforgeCoreGraphicsPosition_Enum_ABOVE_RIGHT = 7,
+  OrgMapsforgeCoreGraphicsPosition_Enum_LEFT = 8,
+  OrgMapsforgeCoreGraphicsPosition_Enum_RIGHT = 9,
 };
 
-@interface OrgMapsforgeCoreGraphicsPositionEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsPosition : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeCoreGraphicsPositionEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeCoreGraphicsPosition *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeCoreGraphicsPosition *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsPositionEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsPositionEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPositionEnum *OrgMapsforgeCoreGraphicsPositionEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsPositionEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsPosition)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPositionEnum *OrgMapsforgeCoreGraphicsPositionEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_values_[];
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_AUTO OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_AUTO]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, AUTO)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_AUTO();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, AUTO)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_CENTER OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_CENTER]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, CENTER)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_CENTER();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, CENTER)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_BELOW OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_BELOW]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, BELOW)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_BELOW();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, BELOW)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_BELOW_LEFT OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_BELOW_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, BELOW_LEFT)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_BELOW_LEFT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, BELOW_LEFT)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_BELOW_RIGHT OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_BELOW_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, BELOW_RIGHT)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_BELOW_RIGHT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, BELOW_RIGHT)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_ABOVE OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_ABOVE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, ABOVE)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_ABOVE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, ABOVE)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_ABOVE_LEFT OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_ABOVE_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, ABOVE_LEFT)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_ABOVE_LEFT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, ABOVE_LEFT)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_ABOVE_RIGHT OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_ABOVE_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, ABOVE_RIGHT)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_ABOVE_RIGHT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, ABOVE_RIGHT)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_LEFT OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, LEFT)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_LEFT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, LEFT)
 
-#define OrgMapsforgeCoreGraphicsPositionEnum_RIGHT OrgMapsforgeCoreGraphicsPositionEnum_values_[OrgMapsforgeCoreGraphicsPosition_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsPositionEnum, RIGHT)
+inline OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_get_RIGHT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsPosition, RIGHT)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPositionEnum *OrgMapsforgeCoreGraphicsPositionEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsPositionEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsPosition_values();
 
-#endif // _OrgMapsforgeCoreGraphicsPosition_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsPosition *OrgMapsforgeCoreGraphicsPosition_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsPosition)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsPosition")

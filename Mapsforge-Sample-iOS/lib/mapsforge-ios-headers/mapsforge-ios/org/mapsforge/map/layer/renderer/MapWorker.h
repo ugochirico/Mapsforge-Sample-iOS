@@ -3,15 +3,27 @@
 //  source: ./org/mapsforge/map/layer/renderer/MapWorker.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererMapWorker_H_
-#define _OrgMapsforgeMapLayerRendererMapWorker_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererMapWorker")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererMapWorker
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererMapWorker 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererMapWorker 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererMapWorker
+
+#if !defined (OrgMapsforgeMapLayerRendererMapWorker_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererMapWorker || defined(INCLUDE_OrgMapsforgeMapLayerRendererMapWorker))
+#define OrgMapsforgeMapLayerRendererMapWorker_
+
+#define RESTRICT_OrgMapsforgeMapUtilPausableThread 1
+#define INCLUDE_OrgMapsforgeMapUtilPausableThread 1
 #include "org/mapsforge/map/util/PausableThread.h"
 
 @class OrgMapsforgeMapLayerLayer;
 @class OrgMapsforgeMapLayerQueueJobQueue;
 @class OrgMapsforgeMapLayerRendererDatabaseRenderer;
+@class OrgMapsforgeMapUtilPausableThread_ThreadPriority;
 @protocol OrgMapsforgeMapLayerCacheTileCache;
 
 @interface OrgMapsforgeMapLayerRendererMapWorker : OrgMapsforgeMapUtilPausableThread
@@ -27,7 +39,7 @@
 
 - (void)doWork;
 
-- (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)getThreadPriority;
+- (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)getThreadPriority;
 
 - (jboolean)hasWork;
 
@@ -35,14 +47,21 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapLayerRendererMapWorker)
 
-FOUNDATION_EXPORT jboolean OrgMapsforgeMapLayerRendererMapWorker_DEBUG_TIMING_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapLayerRendererMapWorker, DEBUG_TIMING_, jboolean)
-J2OBJC_STATIC_FIELD_REF_GETTER(OrgMapsforgeMapLayerRendererMapWorker, DEBUG_TIMING_, jboolean)
+inline jboolean OrgMapsforgeMapLayerRendererMapWorker_get_DEBUG_TIMING();
+inline jboolean OrgMapsforgeMapLayerRendererMapWorker_set_DEBUG_TIMING(jboolean value);
+inline jboolean *OrgMapsforgeMapLayerRendererMapWorker_getRef_DEBUG_TIMING();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT jboolean OrgMapsforgeMapLayerRendererMapWorker_DEBUG_TIMING;
+J2OBJC_STATIC_FIELD_PRIMITIVE(OrgMapsforgeMapLayerRendererMapWorker, DEBUG_TIMING, jboolean)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererMapWorker_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerQueueJobQueue_withOrgMapsforgeMapLayerRendererDatabaseRenderer_withOrgMapsforgeMapLayerLayer_(OrgMapsforgeMapLayerRendererMapWorker *self, id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapLayerQueueJobQueue *jobQueue, OrgMapsforgeMapLayerRendererDatabaseRenderer *databaseRenderer, OrgMapsforgeMapLayerLayer *layer);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererMapWorker *new_OrgMapsforgeMapLayerRendererMapWorker_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerQueueJobQueue_withOrgMapsforgeMapLayerRendererDatabaseRenderer_withOrgMapsforgeMapLayerLayer_(id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapLayerQueueJobQueue *jobQueue, OrgMapsforgeMapLayerRendererDatabaseRenderer *databaseRenderer, OrgMapsforgeMapLayerLayer *layer) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererMapWorker *create_OrgMapsforgeMapLayerRendererMapWorker_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerQueueJobQueue_withOrgMapsforgeMapLayerRendererDatabaseRenderer_withOrgMapsforgeMapLayerLayer_(id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapLayerQueueJobQueue *jobQueue, OrgMapsforgeMapLayerRendererDatabaseRenderer *databaseRenderer, OrgMapsforgeMapLayerLayer *layer);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererMapWorker)
 
-#endif // _OrgMapsforgeMapLayerRendererMapWorker_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererMapWorker")

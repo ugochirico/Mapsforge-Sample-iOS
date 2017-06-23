@@ -3,15 +3,21 @@
 //  source: ./org/mapsforge/map/layer/queue/QueueItemScheduler.java
 //
 
-#ifndef _OrgMapsforgeMapLayerQueueQueueItemScheduler_H_
-#define _OrgMapsforgeMapLayerQueueQueueItemScheduler_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemScheduler")
+#ifdef RESTRICT_OrgMapsforgeMapLayerQueueQueueItemScheduler
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemScheduler 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemScheduler 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerQueueQueueItemScheduler
+
+#if !defined (OrgMapsforgeMapLayerQueueQueueItemScheduler_) && (INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemScheduler || defined(INCLUDE_OrgMapsforgeMapLayerQueueQueueItemScheduler))
+#define OrgMapsforgeMapLayerQueueQueueItemScheduler_
 
 @class OrgMapsforgeCoreModelMapPosition;
 @protocol JavaUtilCollection;
-
-#define OrgMapsforgeMapLayerQueueQueueItemScheduler_PENALTY_PER_ZOOM_LEVEL 10.0
 
 @interface OrgMapsforgeMapLayerQueueQueueItemScheduler : NSObject
 
@@ -25,10 +31,14 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerQueueQueueItemScheduler)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapLayerQueueQueueItemScheduler, PENALTY_PER_ZOOM_LEVEL, jdouble)
+inline jdouble OrgMapsforgeMapLayerQueueQueueItemScheduler_get_PENALTY_PER_ZOOM_LEVEL();
+#define OrgMapsforgeMapLayerQueueQueueItemScheduler_PENALTY_PER_ZOOM_LEVEL 10.0
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeMapLayerQueueQueueItemScheduler, PENALTY_PER_ZOOM_LEVEL, jdouble)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerQueueQueueItemScheduler_scheduleWithJavaUtilCollection_withOrgMapsforgeCoreModelMapPosition_withInt_(id<JavaUtilCollection> queueItems, OrgMapsforgeCoreModelMapPosition *mapPosition, jint tileSize);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerQueueQueueItemScheduler)
 
-#endif // _OrgMapsforgeMapLayerQueueQueueItemScheduler_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueQueueItemScheduler")

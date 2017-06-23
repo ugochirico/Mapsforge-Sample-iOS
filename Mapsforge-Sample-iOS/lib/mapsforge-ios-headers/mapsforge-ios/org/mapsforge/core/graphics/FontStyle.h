@@ -3,55 +3,84 @@
 //  source: ./org/mapsforge/core/graphics/FontStyle.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsFontStyle_H_
-#define _OrgMapsforgeCoreGraphicsFontStyle_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontStyle")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsFontStyle
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontStyle 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontStyle 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsFontStyle
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsFontStyle_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontStyle || defined(INCLUDE_OrgMapsforgeCoreGraphicsFontStyle))
+#define OrgMapsforgeCoreGraphicsFontStyle_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsFontStyle) {
-  OrgMapsforgeCoreGraphicsFontStyle_BOLD = 0,
-  OrgMapsforgeCoreGraphicsFontStyle_BOLD_ITALIC = 1,
-  OrgMapsforgeCoreGraphicsFontStyle_ITALIC = 2,
-  OrgMapsforgeCoreGraphicsFontStyle_NORMAL = 3,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsFontStyle_Enum) {
+  OrgMapsforgeCoreGraphicsFontStyle_Enum_BOLD = 0,
+  OrgMapsforgeCoreGraphicsFontStyle_Enum_BOLD_ITALIC = 1,
+  OrgMapsforgeCoreGraphicsFontStyle_Enum_ITALIC = 2,
+  OrgMapsforgeCoreGraphicsFontStyle_Enum_NORMAL = 3,
 };
 
-@interface OrgMapsforgeCoreGraphicsFontStyleEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsFontStyle : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeCoreGraphicsFontStyleEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeCoreGraphicsFontStyle *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeCoreGraphicsFontStyle *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsFontStyleEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsFontStyleEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyleEnum *OrgMapsforgeCoreGraphicsFontStyleEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsFontStyleEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsFontStyle)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyleEnum *OrgMapsforgeCoreGraphicsFontStyleEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_values_[];
 
-#define OrgMapsforgeCoreGraphicsFontStyleEnum_BOLD OrgMapsforgeCoreGraphicsFontStyleEnum_values_[OrgMapsforgeCoreGraphicsFontStyle_BOLD]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontStyleEnum, BOLD)
+inline OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_get_BOLD();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontStyle, BOLD)
 
-#define OrgMapsforgeCoreGraphicsFontStyleEnum_BOLD_ITALIC OrgMapsforgeCoreGraphicsFontStyleEnum_values_[OrgMapsforgeCoreGraphicsFontStyle_BOLD_ITALIC]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontStyleEnum, BOLD_ITALIC)
+inline OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_get_BOLD_ITALIC();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontStyle, BOLD_ITALIC)
 
-#define OrgMapsforgeCoreGraphicsFontStyleEnum_ITALIC OrgMapsforgeCoreGraphicsFontStyleEnum_values_[OrgMapsforgeCoreGraphicsFontStyle_ITALIC]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontStyleEnum, ITALIC)
+inline OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_get_ITALIC();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontStyle, ITALIC)
 
-#define OrgMapsforgeCoreGraphicsFontStyleEnum_NORMAL OrgMapsforgeCoreGraphicsFontStyleEnum_values_[OrgMapsforgeCoreGraphicsFontStyle_NORMAL]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontStyleEnum, NORMAL)
+inline OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_get_NORMAL();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontStyle, NORMAL)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyleEnum *OrgMapsforgeCoreGraphicsFontStyleEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsFontStyleEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsFontStyle_values();
 
-#endif // _OrgMapsforgeCoreGraphicsFontStyle_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontStyle *OrgMapsforgeCoreGraphicsFontStyle_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsFontStyle)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontStyle")

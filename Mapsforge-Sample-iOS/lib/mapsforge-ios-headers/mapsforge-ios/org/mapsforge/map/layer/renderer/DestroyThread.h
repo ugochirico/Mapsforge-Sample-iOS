@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/renderer/DestroyThread.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererDestroyThread_H_
-#define _OrgMapsforgeMapLayerRendererDestroyThread_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererDestroyThread")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererDestroyThread
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererDestroyThread 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererDestroyThread 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererDestroyThread
+
+#if !defined (OrgMapsforgeMapLayerRendererDestroyThread_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererDestroyThread || defined(INCLUDE_OrgMapsforgeMapLayerRendererDestroyThread))
+#define OrgMapsforgeMapLayerRendererDestroyThread_
+
+#define RESTRICT_JavaLangThread 1
+#define INCLUDE_JavaLangThread 1
 #include "java/lang/Thread.h"
 
 @class OrgMapsforgeMapLayerRendererDatabaseRenderer;
@@ -32,6 +43,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererDestroyThread_initWithJavaLan
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererDestroyThread *new_OrgMapsforgeMapLayerRendererDestroyThread_initWithJavaLangThread_withOrgMapsforgeMapReaderMapDataStore_withOrgMapsforgeMapLayerRendererDatabaseRenderer_(JavaLangThread *thread, id<OrgMapsforgeMapReaderMapDataStore> dataStore, OrgMapsforgeMapLayerRendererDatabaseRenderer *renderer) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererDestroyThread *create_OrgMapsforgeMapLayerRendererDestroyThread_initWithJavaLangThread_withOrgMapsforgeMapReaderMapDataStore_withOrgMapsforgeMapLayerRendererDatabaseRenderer_(JavaLangThread *thread, id<OrgMapsforgeMapReaderMapDataStore> dataStore, OrgMapsforgeMapLayerRendererDatabaseRenderer *renderer);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererDestroyThread)
 
-#endif // _OrgMapsforgeMapLayerRendererDestroyThread_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererDestroyThread")

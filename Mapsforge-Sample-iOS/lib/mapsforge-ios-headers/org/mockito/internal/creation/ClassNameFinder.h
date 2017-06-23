@@ -3,10 +3,18 @@
 //  source: src/main/java/org/mockito/internal/creation/ClassNameFinder.java
 //
 
-#ifndef _OrgMockitoInternalCreationClassNameFinder_H_
-#define _OrgMockitoInternalCreationClassNameFinder_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalCreationClassNameFinder")
+#ifdef RESTRICT_OrgMockitoInternalCreationClassNameFinder
+#define INCLUDE_ALL_OrgMockitoInternalCreationClassNameFinder 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalCreationClassNameFinder 1
+#endif
+#undef RESTRICT_OrgMockitoInternalCreationClassNameFinder
+
+#if !defined (OrgMockitoInternalCreationClassNameFinder_) && (INCLUDE_ALL_OrgMockitoInternalCreationClassNameFinder || defined(INCLUDE_OrgMockitoInternalCreationClassNameFinder))
+#define OrgMockitoInternalCreationClassNameFinder_
 
 @interface OrgMockitoInternalCreationClassNameFinder : NSObject
 
@@ -20,12 +28,16 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMockitoInternalCreationClassNameFinder)
 
-FOUNDATION_EXPORT NSString *OrgMockitoInternalCreationClassNameFinder_classNameForMockWithId_(id mock);
-
 FOUNDATION_EXPORT void OrgMockitoInternalCreationClassNameFinder_init(OrgMockitoInternalCreationClassNameFinder *self);
 
 FOUNDATION_EXPORT OrgMockitoInternalCreationClassNameFinder *new_OrgMockitoInternalCreationClassNameFinder_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMockitoInternalCreationClassNameFinder *create_OrgMockitoInternalCreationClassNameFinder_init();
+
+FOUNDATION_EXPORT NSString *OrgMockitoInternalCreationClassNameFinder_classNameForMockWithId_(id mock);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationClassNameFinder)
 
-#endif // _OrgMockitoInternalCreationClassNameFinder_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalCreationClassNameFinder")

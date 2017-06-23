@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/Way.java
 //
 
-#ifndef _OrgMapsforgeMapReaderWay_H_
-#define _OrgMapsforgeMapReaderWay_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderWay")
+#ifdef RESTRICT_OrgMapsforgeMapReaderWay
+#define INCLUDE_ALL_OrgMapsforgeMapReaderWay 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderWay 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderWay
+
+#if !defined (OrgMapsforgeMapReaderWay_) && (INCLUDE_ALL_OrgMapsforgeMapReaderWay || defined(INCLUDE_OrgMapsforgeMapReaderWay))
+#define OrgMapsforgeMapReaderWay_
 
 @class IOSObjectArray;
 @class OrgMapsforgeCoreModelLatLong;
@@ -45,6 +53,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderWay_initWithByte_withJavaUtilList_wi
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderWay *new_OrgMapsforgeMapReaderWay_initWithByte_withJavaUtilList_withOrgMapsforgeCoreModelLatLongArray2_withOrgMapsforgeCoreModelLatLong_(jbyte layer, id<JavaUtilList> tags, IOSObjectArray *latLongs, OrgMapsforgeCoreModelLatLong *labelPosition) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderWay *create_OrgMapsforgeMapReaderWay_initWithByte_withJavaUtilList_withOrgMapsforgeCoreModelLatLongArray2_withOrgMapsforgeCoreModelLatLong_(jbyte layer, id<JavaUtilList> tags, IOSObjectArray *latLongs, OrgMapsforgeCoreModelLatLong *labelPosition);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderWay)
 
-#endif // _OrgMapsforgeMapReaderWay_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderWay")

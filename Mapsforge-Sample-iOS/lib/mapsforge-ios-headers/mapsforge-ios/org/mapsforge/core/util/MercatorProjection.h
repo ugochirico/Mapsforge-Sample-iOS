@@ -3,18 +3,22 @@
 //  source: ./org/mapsforge/core/util/MercatorProjection.java
 //
 
-#ifndef _OrgMapsforgeCoreUtilMercatorProjection_H_
-#define _OrgMapsforgeCoreUtilMercatorProjection_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilMercatorProjection")
+#ifdef RESTRICT_OrgMapsforgeCoreUtilMercatorProjection
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilMercatorProjection 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilMercatorProjection 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreUtilMercatorProjection
+
+#if !defined (OrgMapsforgeCoreUtilMercatorProjection_) && (INCLUDE_ALL_OrgMapsforgeCoreUtilMercatorProjection || defined(INCLUDE_OrgMapsforgeCoreUtilMercatorProjection))
+#define OrgMapsforgeCoreUtilMercatorProjection_
 
 @class OrgMapsforgeCoreModelLatLong;
 @class OrgMapsforgeCoreModelPoint;
 @class OrgMapsforgeCoreModelTile;
-
-#define OrgMapsforgeCoreUtilMercatorProjection_EARTH_CIRCUMFERENCE 4.0075016686E7
-#define OrgMapsforgeCoreUtilMercatorProjection_LATITUDE_MAX 85.05112877980659
-#define OrgMapsforgeCoreUtilMercatorProjection_LATITUDE_MIN -85.05112877980659
 
 @interface OrgMapsforgeCoreUtilMercatorProjection : NSObject
 
@@ -156,11 +160,17 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreUtilMercatorProjection)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilMercatorProjection, EARTH_CIRCUMFERENCE, jdouble)
+inline jdouble OrgMapsforgeCoreUtilMercatorProjection_get_EARTH_CIRCUMFERENCE();
+#define OrgMapsforgeCoreUtilMercatorProjection_EARTH_CIRCUMFERENCE 4.0075016686E7
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilMercatorProjection, EARTH_CIRCUMFERENCE, jdouble)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilMercatorProjection, LATITUDE_MAX, jdouble)
+inline jdouble OrgMapsforgeCoreUtilMercatorProjection_get_LATITUDE_MAX();
+#define OrgMapsforgeCoreUtilMercatorProjection_LATITUDE_MAX 85.05112877980659
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilMercatorProjection, LATITUDE_MAX, jdouble)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilMercatorProjection, LATITUDE_MIN, jdouble)
+inline jdouble OrgMapsforgeCoreUtilMercatorProjection_get_LATITUDE_MIN();
+#define OrgMapsforgeCoreUtilMercatorProjection_LATITUDE_MIN -85.05112877980659
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilMercatorProjection, LATITUDE_MIN, jdouble)
 
 FOUNDATION_EXPORT jdouble OrgMapsforgeCoreUtilMercatorProjection_calculateGroundResolutionWithScaleFactorWithDouble_withDouble_withInt_(jdouble latitude, jdouble scaleFactor, jint tileSize);
 
@@ -240,4 +250,6 @@ FOUNDATION_EXPORT jdouble OrgMapsforgeCoreUtilMercatorProjection_zoomLevelToScal
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreUtilMercatorProjection)
 
-#endif // _OrgMapsforgeCoreUtilMercatorProjection_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilMercatorProjection")

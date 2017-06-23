@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/model/BoundingBox.java
 //
 
-#ifndef _OrgMapsforgeCoreModelBoundingBox_H_
-#define _OrgMapsforgeCoreModelBoundingBox_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelBoundingBox")
+#ifdef RESTRICT_OrgMapsforgeCoreModelBoundingBox
+#define INCLUDE_ALL_OrgMapsforgeCoreModelBoundingBox 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelBoundingBox 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelBoundingBox
+
+#if !defined (OrgMapsforgeCoreModelBoundingBox_) && (INCLUDE_ALL_OrgMapsforgeCoreModelBoundingBox || defined(INCLUDE_OrgMapsforgeCoreModelBoundingBox))
+#define OrgMapsforgeCoreModelBoundingBox_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @class IOSObjectArray;
@@ -65,6 +76,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelBoundingBox_initWithDouble_withDoubl
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelBoundingBox *new_OrgMapsforgeCoreModelBoundingBox_initWithDouble_withDouble_withDouble_withDouble_(jdouble minLatitude, jdouble minLongitude, jdouble maxLatitude, jdouble maxLongitude) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelBoundingBox *create_OrgMapsforgeCoreModelBoundingBox_initWithDouble_withDouble_withDouble_withDouble_(jdouble minLatitude, jdouble minLongitude, jdouble maxLatitude, jdouble maxLongitude);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelBoundingBox)
 
-#endif // _OrgMapsforgeCoreModelBoundingBox_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelBoundingBox")

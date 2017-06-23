@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/RuleBuilder.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRuleBuilder_H_
-#define _OrgMapsforgeMapRenderthemeRuleRuleBuilder_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleBuilder")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRuleBuilder
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleBuilder 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleBuilder 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRuleBuilder
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRuleBuilder_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleBuilder || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRuleBuilder))
+#define OrgMapsforgeMapRenderthemeRuleRuleBuilder_
 
 @class JavaUtilStack;
 @class OrgMapsforgeMapRenderthemeRuleRule;
@@ -43,6 +51,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleRuleBuilder_initWithNSStrin
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRuleBuilder *new_OrgMapsforgeMapRenderthemeRuleRuleBuilder_initWithNSString_withOrgXmlpullV1XmlPullParser_withJavaUtilStack_(NSString *elementName, id<OrgXmlpullV1XmlPullParser> pullParser, JavaUtilStack *ruleStack) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRuleBuilder *create_OrgMapsforgeMapRenderthemeRuleRuleBuilder_initWithNSString_withOrgXmlpullV1XmlPullParser_withJavaUtilStack_(NSString *elementName, id<OrgXmlpullV1XmlPullParser> pullParser, JavaUtilStack *ruleStack);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRuleBuilder)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRuleBuilder_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleBuilder")

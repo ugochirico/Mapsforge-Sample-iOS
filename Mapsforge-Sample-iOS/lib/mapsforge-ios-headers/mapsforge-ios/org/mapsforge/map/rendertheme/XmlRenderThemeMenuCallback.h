@@ -3,15 +3,23 @@
 //  source: ./org/mapsforge/map/rendertheme/XmlRenderThemeMenuCallback.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback_H_
-#define _OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback
+
+#if !defined (OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback || defined(INCLUDE_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback))
+#define OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback_
 
 @class OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu;
 @protocol JavaUtilSet;
 
-@protocol OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback < NSObject, JavaObject >
+@protocol OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback < JavaObject >
 
 - (id<JavaUtilSet>)getCategoriesWithOrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu:(OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu *)style;
 
@@ -21,4 +29,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback)
 
-#endif // _OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback")

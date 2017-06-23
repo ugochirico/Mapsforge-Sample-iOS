@@ -3,19 +3,41 @@
 //  source: android/libcore/luni/src/main/java/java/net/URLEncoder.java
 //
 
-#ifndef _JavaNetURLEncoder_H_
-#define _JavaNetURLEncoder_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetURLEncoder")
+#ifdef RESTRICT_JavaNetURLEncoder
+#define INCLUDE_ALL_JavaNetURLEncoder 0
+#else
+#define INCLUDE_ALL_JavaNetURLEncoder 1
+#endif
+#undef RESTRICT_JavaNetURLEncoder
+
+#if !defined (JavaNetURLEncoder_) && (INCLUDE_ALL_JavaNetURLEncoder || defined(INCLUDE_JavaNetURLEncoder))
+#define JavaNetURLEncoder_
 
 @class LibcoreNetUriCodec;
 
+/*!
+ @brief This class is used to encode a string using the format required by 
+ <code>application/x-www-form-urlencoded</code> MIME content type.
+ <p>All characters except letters ('a'..'z', 'A'..'Z') and numbers ('0'..'9')
+  and characters '.', '-', '*', '_' are converted into their hexadecimal value
+  prepended by '%'. For example: '#' -> %23. In addition, spaces are
+  substituted by '+'.
+ */
 @interface JavaNetURLEncoder : NSObject
 
 #pragma mark Public
 
+/*!
+ @brief Equivalent to <code>encode(s, "UTF-8")</code>.
+ */
 + (NSString *)encodeWithNSString:(NSString *)s;
 
+/*!
+ @brief Encodes <code>s</code> using the <code>Charset</code> named by <code>charsetName</code>.
+ */
 + (NSString *)encodeWithNSString:(NSString *)s
                     withNSString:(NSString *)charsetName;
 
@@ -23,9 +45,11 @@
 
 J2OBJC_STATIC_INIT(JavaNetURLEncoder)
 
-FOUNDATION_EXPORT LibcoreNetUriCodec *JavaNetURLEncoder_ENCODER_;
-J2OBJC_STATIC_FIELD_GETTER(JavaNetURLEncoder, ENCODER_, LibcoreNetUriCodec *)
-J2OBJC_STATIC_FIELD_SETTER(JavaNetURLEncoder, ENCODER_, LibcoreNetUriCodec *)
+inline LibcoreNetUriCodec *JavaNetURLEncoder_get_ENCODER();
+inline LibcoreNetUriCodec *JavaNetURLEncoder_set_ENCODER(LibcoreNetUriCodec *value);
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT LibcoreNetUriCodec *JavaNetURLEncoder_ENCODER;
+J2OBJC_STATIC_FIELD_OBJ(JavaNetURLEncoder, ENCODER, LibcoreNetUriCodec *)
 
 FOUNDATION_EXPORT NSString *JavaNetURLEncoder_encodeWithNSString_(NSString *s);
 
@@ -33,4 +57,6 @@ FOUNDATION_EXPORT NSString *JavaNetURLEncoder_encodeWithNSString_withNSString_(N
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetURLEncoder)
 
-#endif // _JavaNetURLEncoder_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetURLEncoder")

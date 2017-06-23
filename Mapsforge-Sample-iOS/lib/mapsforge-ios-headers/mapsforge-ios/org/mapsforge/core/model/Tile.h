@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/model/Tile.java
 //
 
-#ifndef _OrgMapsforgeCoreModelTile_H_
-#define _OrgMapsforgeCoreModelTile_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelTile")
+#ifdef RESTRICT_OrgMapsforgeCoreModelTile
+#define INCLUDE_ALL_OrgMapsforgeCoreModelTile 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelTile 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelTile
+
+#if !defined (OrgMapsforgeCoreModelTile_) && (INCLUDE_ALL_OrgMapsforgeCoreModelTile || defined(INCLUDE_OrgMapsforgeCoreModelTile))
+#define OrgMapsforgeCoreModelTile_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @class OrgMapsforgeCoreModelBoundingBox;
@@ -80,6 +91,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelTile_initWithInt_withInt_withByte_wi
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelTile *new_OrgMapsforgeCoreModelTile_initWithInt_withInt_withByte_withInt_(jint tileX, jint tileY, jbyte zoomLevel, jint tileSize) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelTile *create_OrgMapsforgeCoreModelTile_initWithInt_withInt_withByte_withInt_(jint tileX, jint tileY, jbyte zoomLevel, jint tileSize);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelTile)
 
-#endif // _OrgMapsforgeCoreModelTile_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelTile")

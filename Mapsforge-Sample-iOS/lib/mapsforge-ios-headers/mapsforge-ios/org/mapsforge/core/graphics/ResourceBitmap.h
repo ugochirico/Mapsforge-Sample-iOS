@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/core/graphics/ResourceBitmap.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsResourceBitmap_H_
-#define _OrgMapsforgeCoreGraphicsResourceBitmap_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsResourceBitmap")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsResourceBitmap
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsResourceBitmap 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsResourceBitmap 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsResourceBitmap
+
+#if !defined (OrgMapsforgeCoreGraphicsResourceBitmap_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsResourceBitmap || defined(INCLUDE_OrgMapsforgeCoreGraphicsResourceBitmap))
+#define OrgMapsforgeCoreGraphicsResourceBitmap_
+
+#define RESTRICT_OrgMapsforgeCoreGraphicsBitmap 1
+#define INCLUDE_OrgMapsforgeCoreGraphicsBitmap 1
 #include "org/mapsforge/core/graphics/Bitmap.h"
 
-@protocol OrgMapsforgeCoreGraphicsResourceBitmap < OrgMapsforgeCoreGraphicsBitmap, NSObject, JavaObject >
+@protocol OrgMapsforgeCoreGraphicsResourceBitmap < OrgMapsforgeCoreGraphicsBitmap, JavaObject >
 
 @end
 
@@ -17,4 +28,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsResourceBitmap)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsResourceBitmap)
 
-#endif // _OrgMapsforgeCoreGraphicsResourceBitmap_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsResourceBitmap")

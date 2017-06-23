@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/header/RequiredFields.java
 //
 
-#ifndef _OrgMapsforgeMapReaderHeaderRequiredFields_H_
-#define _OrgMapsforgeMapReaderHeaderRequiredFields_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderRequiredFields")
+#ifdef RESTRICT_OrgMapsforgeMapReaderHeaderRequiredFields
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderRequiredFields 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderRequiredFields 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderHeaderRequiredFields
+
+#if !defined (OrgMapsforgeMapReaderHeaderRequiredFields_) && (INCLUDE_ALL_OrgMapsforgeMapReaderHeaderRequiredFields || defined(INCLUDE_OrgMapsforgeMapReaderHeaderRequiredFields))
+#define OrgMapsforgeMapReaderHeaderRequiredFields_
 
 @class OrgMapsforgeMapReaderHeaderMapFileInfoBuilder;
 @class OrgMapsforgeMapReaderReadBuffer;
@@ -70,4 +78,6 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderHeaderRequiredFields_readWayTagsWith
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderHeaderRequiredFields)
 
-#endif // _OrgMapsforgeMapReaderHeaderRequiredFields_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderRequiredFields")

@@ -3,13 +3,26 @@
 //  source: ./org/mapsforge/map/model/MapViewPosition.java
 //
 
-#ifndef _OrgMapsforgeMapModelMapViewPosition_H_
-#define _OrgMapsforgeMapModelMapViewPosition_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelMapViewPosition")
+#ifdef RESTRICT_OrgMapsforgeMapModelMapViewPosition
+#define INCLUDE_ALL_OrgMapsforgeMapModelMapViewPosition 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelMapViewPosition 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelMapViewPosition
+
+#if !defined (OrgMapsforgeMapModelMapViewPosition_) && (INCLUDE_ALL_OrgMapsforgeMapModelMapViewPosition || defined(INCLUDE_OrgMapsforgeMapModelMapViewPosition))
+#define OrgMapsforgeMapModelMapViewPosition_
+
+#define RESTRICT_OrgMapsforgeMapModelCommonObservable 1
+#define INCLUDE_OrgMapsforgeMapModelCommonObservable 1
 #include "org/mapsforge/map/model/common/Observable.h"
+
+#define RESTRICT_OrgMapsforgeMapModelCommonPersistable 1
+#define INCLUDE_OrgMapsforgeMapModelCommonPersistable 1
 #include "org/mapsforge/map/model/common/Persistable.h"
-#include "org/mapsforge/map/util/PausableThread.h"
 
 @class OrgMapsforgeCoreModelBoundingBox;
 @class OrgMapsforgeCoreModelLatLong;
@@ -91,7 +104,21 @@ FOUNDATION_EXPORT void OrgMapsforgeMapModelMapViewPosition_initWithOrgMapsforgeM
 
 FOUNDATION_EXPORT OrgMapsforgeMapModelMapViewPosition *new_OrgMapsforgeMapModelMapViewPosition_initWithOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapModelMapViewPosition *create_OrgMapsforgeMapModelMapViewPosition_initWithOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapModelDisplayModel *displayModel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelMapViewPosition)
+
+#endif
+
+#if !defined (OrgMapsforgeMapModelMapViewPosition_ZoomAnimator_) && (INCLUDE_ALL_OrgMapsforgeMapModelMapViewPosition || defined(INCLUDE_OrgMapsforgeMapModelMapViewPosition_ZoomAnimator))
+#define OrgMapsforgeMapModelMapViewPosition_ZoomAnimator_
+
+#define RESTRICT_OrgMapsforgeMapUtilPausableThread 1
+#define INCLUDE_OrgMapsforgeMapUtilPausableThread 1
+#include "org/mapsforge/map/util/PausableThread.h"
+
+@class OrgMapsforgeMapModelMapViewPosition;
+@class OrgMapsforgeMapUtilPausableThread_ThreadPriority;
 
 @interface OrgMapsforgeMapModelMapViewPosition_ZoomAnimator : OrgMapsforgeMapUtilPausableThread {
  @public
@@ -103,7 +130,7 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelMapViewPosition)
 
 - (void)doWork;
 
-- (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)getThreadPriority;
+- (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)getThreadPriority;
 
 - (jboolean)hasWork;
 
@@ -122,6 +149,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapModelMapViewPosition_ZoomAnimator_initWith
 
 FOUNDATION_EXPORT OrgMapsforgeMapModelMapViewPosition_ZoomAnimator *new_OrgMapsforgeMapModelMapViewPosition_ZoomAnimator_initWithOrgMapsforgeMapModelMapViewPosition_(OrgMapsforgeMapModelMapViewPosition *outer$) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapModelMapViewPosition_ZoomAnimator *create_OrgMapsforgeMapModelMapViewPosition_ZoomAnimator_initWithOrgMapsforgeMapModelMapViewPosition_(OrgMapsforgeMapModelMapViewPosition *outer$);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelMapViewPosition_ZoomAnimator)
 
-#endif // _OrgMapsforgeMapModelMapViewPosition_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelMapViewPosition")

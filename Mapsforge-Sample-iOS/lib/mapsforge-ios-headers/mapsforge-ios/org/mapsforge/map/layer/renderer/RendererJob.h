@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/renderer/RendererJob.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererRendererJob_H_
-#define _OrgMapsforgeMapLayerRendererRendererJob_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererJob")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererRendererJob
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererJob 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererJob 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererRendererJob
+
+#if !defined (OrgMapsforgeMapLayerRendererRendererJob_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererJob || defined(INCLUDE_OrgMapsforgeMapLayerRendererRendererJob))
+#define OrgMapsforgeMapLayerRendererRendererJob_
+
+#define RESTRICT_OrgMapsforgeMapLayerQueueJob 1
+#define INCLUDE_OrgMapsforgeMapLayerQueueJob 1
 #include "org/mapsforge/map/layer/queue/Job.h"
 
 @class OrgMapsforgeCoreModelTile;
@@ -53,6 +64,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererRendererJob_initWithOrgMapsfo
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererRendererJob *new_OrgMapsforgeMapLayerRendererRendererJob_initWithOrgMapsforgeCoreModelTile_withOrgMapsforgeMapReaderMapDataStore_withOrgMapsforgeMapRenderthemeRuleRenderThemeFuture_withOrgMapsforgeMapModelDisplayModel_withFloat_withBoolean_withBoolean_(OrgMapsforgeCoreModelTile *tile, id<OrgMapsforgeMapReaderMapDataStore> mapFile, OrgMapsforgeMapRenderthemeRuleRenderThemeFuture *renderThemeFuture, OrgMapsforgeMapModelDisplayModel *displayModel, jfloat textScale, jboolean isTransparent, jboolean labelsOnly) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererRendererJob *create_OrgMapsforgeMapLayerRendererRendererJob_initWithOrgMapsforgeCoreModelTile_withOrgMapsforgeMapReaderMapDataStore_withOrgMapsforgeMapRenderthemeRuleRenderThemeFuture_withOrgMapsforgeMapModelDisplayModel_withFloat_withBoolean_withBoolean_(OrgMapsforgeCoreModelTile *tile, id<OrgMapsforgeMapReaderMapDataStore> mapFile, OrgMapsforgeMapRenderthemeRuleRenderThemeFuture *renderThemeFuture, OrgMapsforgeMapModelDisplayModel *displayModel, jfloat textScale, jboolean isTransparent, jboolean labelsOnly);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererRendererJob)
 
-#endif // _OrgMapsforgeMapLayerRendererRendererJob_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererRendererJob")

@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/NegativeRule.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleNegativeRule_H_
-#define _OrgMapsforgeMapRenderthemeRuleNegativeRule_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeRule")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleNegativeRule
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeRule 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeRule 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleNegativeRule
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleNegativeRule_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeRule || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleNegativeRule))
+#define OrgMapsforgeMapRenderthemeRuleNegativeRule_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleRule 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleRule 1
 #include "org/mapsforge/map/rendertheme/rule/Rule.h"
 
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+@class OrgMapsforgeMapRenderthemeRuleClosed;
 @class OrgMapsforgeMapRenderthemeRuleRuleBuilder;
 @protocol JavaUtilList;
 @protocol OrgMapsforgeMapRenderthemeRuleAttributeMatcher;
@@ -26,7 +37,7 @@
 
 - (jboolean)matchesWayWithJavaUtilList:(id<JavaUtilList>)tags
                               withByte:(jbyte)zoomLevel
-withOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+withOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 @end
 
@@ -36,6 +47,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleNegativeRule_initWithOrgMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleNegativeRule *new_OrgMapsforgeMapRenderthemeRuleNegativeRule_initWithOrgMapsforgeMapRenderthemeRuleRuleBuilder_withOrgMapsforgeMapRenderthemeRuleAttributeMatcher_(OrgMapsforgeMapRenderthemeRuleRuleBuilder *ruleBuilder, id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher> attributeMatcher) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleNegativeRule *create_OrgMapsforgeMapRenderthemeRuleNegativeRule_initWithOrgMapsforgeMapRenderthemeRuleRuleBuilder_withOrgMapsforgeMapRenderthemeRuleAttributeMatcher_(OrgMapsforgeMapRenderthemeRuleRuleBuilder *ruleBuilder, id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher> attributeMatcher);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleNegativeRule)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleNegativeRule_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleNegativeRule")

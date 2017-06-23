@@ -3,14 +3,20 @@
 //  source: ./org/mapsforge/map/reader/header/SubFileParameter.java
 //
 
-#ifndef _OrgMapsforgeMapReaderHeaderSubFileParameter_H_
-#define _OrgMapsforgeMapReaderHeaderSubFileParameter_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeMapReaderHeaderSubFileParameterBuilder;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameter")
+#ifdef RESTRICT_OrgMapsforgeMapReaderHeaderSubFileParameter
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameter 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameter 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderHeaderSubFileParameter
 
-#define OrgMapsforgeMapReaderHeaderSubFileParameter_BYTES_PER_INDEX_ENTRY 5
+#if !defined (OrgMapsforgeMapReaderHeaderSubFileParameter_) && (INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameter || defined(INCLUDE_OrgMapsforgeMapReaderHeaderSubFileParameter))
+#define OrgMapsforgeMapReaderHeaderSubFileParameter_
+
+@class OrgMapsforgeMapReaderHeaderSubFileParameterBuilder;
 
 @interface OrgMapsforgeMapReaderHeaderSubFileParameter : NSObject {
  @public
@@ -44,12 +50,18 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapReaderHeaderSubFileParameter)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapReaderHeaderSubFileParameter, BYTES_PER_INDEX_ENTRY, jbyte)
+inline jbyte OrgMapsforgeMapReaderHeaderSubFileParameter_get_BYTES_PER_INDEX_ENTRY();
+#define OrgMapsforgeMapReaderHeaderSubFileParameter_BYTES_PER_INDEX_ENTRY 5
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeMapReaderHeaderSubFileParameter, BYTES_PER_INDEX_ENTRY, jbyte)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapReaderHeaderSubFileParameter_initWithOrgMapsforgeMapReaderHeaderSubFileParameterBuilder_(OrgMapsforgeMapReaderHeaderSubFileParameter *self, OrgMapsforgeMapReaderHeaderSubFileParameterBuilder *subFileParameterBuilder);
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderSubFileParameter *new_OrgMapsforgeMapReaderHeaderSubFileParameter_initWithOrgMapsforgeMapReaderHeaderSubFileParameterBuilder_(OrgMapsforgeMapReaderHeaderSubFileParameterBuilder *subFileParameterBuilder) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderSubFileParameter *create_OrgMapsforgeMapReaderHeaderSubFileParameter_initWithOrgMapsforgeMapReaderHeaderSubFileParameterBuilder_(OrgMapsforgeMapReaderHeaderSubFileParameterBuilder *subFileParameterBuilder);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderHeaderSubFileParameter)
 
-#endif // _OrgMapsforgeMapReaderHeaderSubFileParameter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameter")

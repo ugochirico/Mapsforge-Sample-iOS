@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/model/Tag.java
 //
 
-#ifndef _OrgMapsforgeCoreModelTag_H_
-#define _OrgMapsforgeCoreModelTag_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelTag")
+#ifdef RESTRICT_OrgMapsforgeCoreModelTag
+#define INCLUDE_ALL_OrgMapsforgeCoreModelTag 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelTag 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelTag
+
+#if !defined (OrgMapsforgeCoreModelTag_) && (INCLUDE_ALL_OrgMapsforgeCoreModelTag || defined(INCLUDE_OrgMapsforgeCoreModelTag))
+#define OrgMapsforgeCoreModelTag_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @interface OrgMapsforgeCoreModelTag : NSObject < JavaIoSerializable > {
@@ -39,10 +50,16 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelTag_initWithNSString_(OrgMapsforgeCo
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelTag *new_OrgMapsforgeCoreModelTag_initWithNSString_(NSString *tag) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelTag *create_OrgMapsforgeCoreModelTag_initWithNSString_(NSString *tag);
+
 FOUNDATION_EXPORT void OrgMapsforgeCoreModelTag_initWithNSString_withNSString_(OrgMapsforgeCoreModelTag *self, NSString *key, NSString *value);
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelTag *new_OrgMapsforgeCoreModelTag_initWithNSString_withNSString_(NSString *key, NSString *value) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelTag *create_OrgMapsforgeCoreModelTag_initWithNSString_withNSString_(NSString *key, NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelTag)
 
-#endif // _OrgMapsforgeCoreModelTag_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelTag")

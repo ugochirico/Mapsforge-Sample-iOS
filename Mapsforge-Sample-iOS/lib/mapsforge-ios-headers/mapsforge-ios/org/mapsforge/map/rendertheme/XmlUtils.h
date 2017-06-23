@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/rendertheme/XmlUtils.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeXmlUtils_H_
-#define _OrgMapsforgeMapRenderthemeXmlUtils_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlUtils")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeXmlUtils
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlUtils 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlUtils 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeXmlUtils
+
+#if !defined (OrgMapsforgeMapRenderthemeXmlUtils_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlUtils || defined(INCLUDE_OrgMapsforgeMapRenderthemeXmlUtils))
+#define OrgMapsforgeMapRenderthemeXmlUtils_
 
 @class OrgMapsforgeMapModelDisplayModel;
 @class OrgXmlpullV1XmlPullParserException;
@@ -50,9 +58,12 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeXmlUtils)
 
-FOUNDATION_EXPORT jboolean OrgMapsforgeMapRenderthemeXmlUtils_supportOlderRenderThemes_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeXmlUtils, supportOlderRenderThemes_, jboolean)
-J2OBJC_STATIC_FIELD_REF_GETTER(OrgMapsforgeMapRenderthemeXmlUtils, supportOlderRenderThemes_, jboolean)
+inline jboolean OrgMapsforgeMapRenderthemeXmlUtils_get_supportOlderRenderThemes();
+inline jboolean OrgMapsforgeMapRenderthemeXmlUtils_set_supportOlderRenderThemes(jboolean value);
+inline jboolean *OrgMapsforgeMapRenderthemeXmlUtils_getRef_supportOlderRenderThemes();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT jboolean OrgMapsforgeMapRenderthemeXmlUtils_supportOlderRenderThemes;
+J2OBJC_STATIC_FIELD_PRIMITIVE(OrgMapsforgeMapRenderthemeXmlUtils, supportOlderRenderThemes, jboolean)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeXmlUtils_checkMandatoryAttributeWithNSString_withNSString_withId_(NSString *elementName, NSString *attributeName, id attributeValue);
 
@@ -70,4 +81,6 @@ FOUNDATION_EXPORT jint OrgMapsforgeMapRenderthemeXmlUtils_parseNonNegativeIntege
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeXmlUtils)
 
-#endif // _OrgMapsforgeMapRenderthemeXmlUtils_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlUtils")

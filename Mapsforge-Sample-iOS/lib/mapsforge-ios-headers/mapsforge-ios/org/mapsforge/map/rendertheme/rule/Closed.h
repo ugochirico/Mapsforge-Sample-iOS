@@ -3,51 +3,80 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/Closed.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleClosed_H_
-#define _OrgMapsforgeMapRenderthemeRuleClosed_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosed")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleClosed
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosed 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosed 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleClosed
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleClosed_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosed || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleClosed))
+#define OrgMapsforgeMapRenderthemeRuleClosed_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeRuleClosed) {
-  OrgMapsforgeMapRenderthemeRuleClosed_ANY = 0,
-  OrgMapsforgeMapRenderthemeRuleClosed_NO = 1,
-  OrgMapsforgeMapRenderthemeRuleClosed_YES = 2,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeRuleClosed_Enum) {
+  OrgMapsforgeMapRenderthemeRuleClosed_Enum_ANY = 0,
+  OrgMapsforgeMapRenderthemeRuleClosed_Enum_NO = 1,
+  OrgMapsforgeMapRenderthemeRuleClosed_Enum_YES = 2,
 };
 
-@interface OrgMapsforgeMapRenderthemeRuleClosedEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeMapRenderthemeRuleClosed : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeMapRenderthemeRuleClosedEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeMapRenderthemeRuleClosed *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeMapRenderthemeRuleClosed *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeRuleClosedEnum_values();
 
-+ (OrgMapsforgeMapRenderthemeRuleClosedEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosedEnum *OrgMapsforgeMapRenderthemeRuleClosedEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleClosedEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleClosed)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosedEnum *OrgMapsforgeMapRenderthemeRuleClosedEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_values_[];
 
-#define OrgMapsforgeMapRenderthemeRuleClosedEnum_ANY OrgMapsforgeMapRenderthemeRuleClosedEnum_values_[OrgMapsforgeMapRenderthemeRuleClosed_ANY]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRuleClosedEnum, ANY)
+inline OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_get_ANY();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRuleClosed, ANY)
 
-#define OrgMapsforgeMapRenderthemeRuleClosedEnum_NO OrgMapsforgeMapRenderthemeRuleClosedEnum_values_[OrgMapsforgeMapRenderthemeRuleClosed_NO]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRuleClosedEnum, NO)
+inline OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_get_NO();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRuleClosed, NO)
 
-#define OrgMapsforgeMapRenderthemeRuleClosedEnum_YES OrgMapsforgeMapRenderthemeRuleClosedEnum_values_[OrgMapsforgeMapRenderthemeRuleClosed_YES]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRuleClosedEnum, YES)
+inline OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_get_YES();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRuleClosed, YES)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosedEnum *OrgMapsforgeMapRenderthemeRuleClosedEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleClosedEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeRuleClosed_values();
 
-#endif // _OrgMapsforgeMapRenderthemeRuleClosed_H_
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosed *OrgMapsforgeMapRenderthemeRuleClosed_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleClosed)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosed")

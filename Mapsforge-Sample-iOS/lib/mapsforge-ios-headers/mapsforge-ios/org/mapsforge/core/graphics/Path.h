@@ -3,14 +3,22 @@
 //  source: ./org/mapsforge/core/graphics/Path.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsPath_H_
-#define _OrgMapsforgeCoreGraphicsPath_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeCoreGraphicsFillRuleEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsPath")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsPath
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsPath 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsPath 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsPath
 
-@protocol OrgMapsforgeCoreGraphicsPath < NSObject, JavaObject >
+#if !defined (OrgMapsforgeCoreGraphicsPath_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsPath || defined(INCLUDE_OrgMapsforgeCoreGraphicsPath))
+#define OrgMapsforgeCoreGraphicsPath_
+
+@class OrgMapsforgeCoreGraphicsFillRule;
+
+@protocol OrgMapsforgeCoreGraphicsPath < JavaObject >
 
 - (void)clear;
 
@@ -20,7 +28,7 @@
 - (void)moveToWithFloat:(jfloat)x
               withFloat:(jfloat)y;
 
-- (void)setFillRuleWithOrgMapsforgeCoreGraphicsFillRuleEnum:(OrgMapsforgeCoreGraphicsFillRuleEnum *)fillRule;
+- (void)setFillRuleWithOrgMapsforgeCoreGraphicsFillRule:(OrgMapsforgeCoreGraphicsFillRule *)fillRule;
 
 @end
 
@@ -28,4 +36,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsPath)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsPath)
 
-#endif // _OrgMapsforgeCoreGraphicsPath_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsPath")

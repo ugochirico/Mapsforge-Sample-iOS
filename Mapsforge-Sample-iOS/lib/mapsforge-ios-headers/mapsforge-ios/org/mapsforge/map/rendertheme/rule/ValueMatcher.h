@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/ValueMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleValueMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleValueMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleValueMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleValueMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleValueMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleValueMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleValueMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleValueMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleValueMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleValueMatcher))
+#define OrgMapsforgeMapRenderthemeRuleValueMatcher_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
 #include "org/mapsforge/map/rendertheme/rule/AttributeMatcher.h"
 
 @protocol JavaUtilList;
@@ -31,6 +42,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleValueMatcher_initWithJavaUt
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleValueMatcher *new_OrgMapsforgeMapRenderthemeRuleValueMatcher_initWithJavaUtilList_(id<JavaUtilList> values) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleValueMatcher *create_OrgMapsforgeMapRenderthemeRuleValueMatcher_initWithJavaUtilList_(id<JavaUtilList> values);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleValueMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleValueMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleValueMatcher")

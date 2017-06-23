@@ -3,18 +3,85 @@
 //  source: android/libcore/luni/src/main/java/java/nio/channels/ScatteringByteChannel.java
 //
 
-#ifndef _JavaNioChannelsScatteringByteChannel_H_
-#define _JavaNioChannelsScatteringByteChannel_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNioChannelsScatteringByteChannel")
+#ifdef RESTRICT_JavaNioChannelsScatteringByteChannel
+#define INCLUDE_ALL_JavaNioChannelsScatteringByteChannel 0
+#else
+#define INCLUDE_ALL_JavaNioChannelsScatteringByteChannel 1
+#endif
+#undef RESTRICT_JavaNioChannelsScatteringByteChannel
+
+#if !defined (JavaNioChannelsScatteringByteChannel_) && (INCLUDE_ALL_JavaNioChannelsScatteringByteChannel || defined(INCLUDE_JavaNioChannelsScatteringByteChannel))
+#define JavaNioChannelsScatteringByteChannel_
+
+#define RESTRICT_JavaNioChannelsReadableByteChannel 1
+#define INCLUDE_JavaNioChannelsReadableByteChannel 1
 #include "java/nio/channels/ReadableByteChannel.h"
 
 @class IOSObjectArray;
 
-@protocol JavaNioChannelsScatteringByteChannel < JavaNioChannelsReadableByteChannel, NSObject, JavaObject >
+/*!
+ @brief The interface for channels that can read data into a set of buffers in a
+  single operation.The corresponding interface for writes is 
+ <code>GatheringByteChannel</code>.
+ */
+@protocol JavaNioChannelsScatteringByteChannel < JavaNioChannelsReadableByteChannel, JavaObject >
 
+/*!
+ @brief Reads bytes from this channel into the specified array of buffers.
+ <p>
+  This method is equivalent to <code>read(buffers, 0, buffers.length);</code>
+ @param buffers the array of byte buffers to store the bytes being read.
+ @return the number of bytes actually read.
+ @throw AsynchronousCloseException
+ if the channel is closed by another thread during this read
+              operation.
+ @throw ClosedByInterruptException
+ if another thread interrupts the calling thread while the
+              operation is in progress. The interrupt state of the calling
+              thread is set and the channel is closed.
+ @throw ClosedChannelException
+ if the channel is closed.
+ @throw IOException
+ if another I/O error occurs; details are in the message.
+ @throw NonWritableChannelException
+ if the channel has not been opened in a mode that permits
+              reading.
+ */
 - (jlong)readWithJavaNioByteBufferArray:(IOSObjectArray *)buffers;
 
+/*!
+ @brief Attempts to read all <code>remaining()</code> bytes from <code>length</code> byte
+  buffers, in order, starting at <code>buffers[offset]</code>.The number of
+  bytes actually read is returned.
+ <p>
+  If a read operation is in progress, subsequent threads will block until
+  the read is completed and will then contend for the ability to read.
+ @param buffers the array of byte buffers into which the bytes will be copied.
+ @param offset the index of the first buffer to store bytes in.
+ @param length the maximum number of buffers to store bytes in.
+ @return the number of bytes actually read.
+ @throw AsynchronousCloseException
+ if the channel is closed by another thread during this read
+              operation.
+ @throw ClosedByInterruptException
+ if another thread interrupts the calling thread while the
+              operation is in progress. The interrupt state of the calling
+              thread is set and the channel is closed.
+ @throw ClosedChannelException
+ if the channel is closed.
+ @throw IndexOutOfBoundsException
+ if <code>offset < 0</code> or <code>length < 0</code>, or if
+              <code>offset + length</code> is greater than the size of
+              <code>buffers</code>.
+ @throw IOException
+ if another I/O error occurs; details are in the message.
+ @throw NonWritableChannelException
+ if the channel has not been opened in a mode that permits
+              reading.
+ */
 - (jlong)readWithJavaNioByteBufferArray:(IOSObjectArray *)buffers
                                 withInt:(jint)offset
                                 withInt:(jint)length;
@@ -25,4 +92,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsScatteringByteChannel)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsScatteringByteChannel)
 
-#endif // _JavaNioChannelsScatteringByteChannel_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNioChannelsScatteringByteChannel")

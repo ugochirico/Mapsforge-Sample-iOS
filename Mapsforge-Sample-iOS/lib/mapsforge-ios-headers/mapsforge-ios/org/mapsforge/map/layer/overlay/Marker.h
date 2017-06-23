@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/overlay/Marker.java
 //
 
-#ifndef _OrgMapsforgeMapLayerOverlayMarker_H_
-#define _OrgMapsforgeMapLayerOverlayMarker_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerOverlayMarker")
+#ifdef RESTRICT_OrgMapsforgeMapLayerOverlayMarker
+#define INCLUDE_ALL_OrgMapsforgeMapLayerOverlayMarker 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerOverlayMarker 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerOverlayMarker
+
+#if !defined (OrgMapsforgeMapLayerOverlayMarker_) && (INCLUDE_ALL_OrgMapsforgeMapLayerOverlayMarker || defined(INCLUDE_OrgMapsforgeMapLayerOverlayMarker))
+#define OrgMapsforgeMapLayerOverlayMarker_
+
+#define RESTRICT_OrgMapsforgeMapLayerLayer 1
+#define INCLUDE_OrgMapsforgeMapLayerLayer 1
 #include "org/mapsforge/map/layer/Layer.h"
 
 @class OrgMapsforgeCoreModelBoundingBox;
@@ -60,6 +71,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerOverlayMarker_initWithOrgMapsforgeCor
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayMarker *new_OrgMapsforgeMapLayerOverlayMarker_initWithOrgMapsforgeCoreModelLatLong_withOrgMapsforgeCoreGraphicsBitmap_withInt_withInt_(OrgMapsforgeCoreModelLatLong *latLong, id<OrgMapsforgeCoreGraphicsBitmap> bitmap, jint horizontalOffset, jint verticalOffset) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayMarker *create_OrgMapsforgeMapLayerOverlayMarker_initWithOrgMapsforgeCoreModelLatLong_withOrgMapsforgeCoreGraphicsBitmap_withInt_withInt_(OrgMapsforgeCoreModelLatLong *latLong, id<OrgMapsforgeCoreGraphicsBitmap> bitmap, jint horizontalOffset, jint verticalOffset);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerOverlayMarker)
 
-#endif // _OrgMapsforgeMapLayerOverlayMarker_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerOverlayMarker")

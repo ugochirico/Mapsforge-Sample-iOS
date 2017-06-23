@@ -3,15 +3,23 @@
 //  source: ./org/mapsforge/map/rendertheme/XmlRenderTheme.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeXmlRenderTheme_H_
-#define _OrgMapsforgeMapRenderthemeXmlRenderTheme_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderTheme")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderTheme
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderTheme 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderTheme 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderTheme
+
+#if !defined (OrgMapsforgeMapRenderthemeXmlRenderTheme_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderTheme || defined(INCLUDE_OrgMapsforgeMapRenderthemeXmlRenderTheme))
+#define OrgMapsforgeMapRenderthemeXmlRenderTheme_
 
 @class JavaIoInputStream;
 @protocol OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback;
 
-@protocol OrgMapsforgeMapRenderthemeXmlRenderTheme < NSObject, JavaObject >
+@protocol OrgMapsforgeMapRenderthemeXmlRenderTheme < JavaObject >
 
 - (id<OrgMapsforgeMapRenderthemeXmlRenderThemeMenuCallback>)getMenuCallback;
 
@@ -25,4 +33,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeXmlRenderTheme)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeXmlRenderTheme)
 
-#endif // _OrgMapsforgeMapRenderthemeXmlRenderTheme_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderTheme")

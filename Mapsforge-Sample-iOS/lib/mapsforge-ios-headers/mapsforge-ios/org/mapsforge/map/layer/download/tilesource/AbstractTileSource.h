@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/download/tilesource/AbstractTileSource.java
 //
 
-#ifndef _OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource_H_
-#define _OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource")
+#ifdef RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource
+
+#if !defined (OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource_) && (INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource || defined(INCLUDE_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource))
+#define OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource_
+
+#define RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceTileSource 1
+#define INCLUDE_OrgMapsforgeMapLayerDownloadTilesourceTileSource 1
 #include "org/mapsforge/map/layer/download/tilesource/TileSource.h"
 
 @class IOSObjectArray;
@@ -46,4 +57,6 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource_
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource)
 
-#endif // _OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource")

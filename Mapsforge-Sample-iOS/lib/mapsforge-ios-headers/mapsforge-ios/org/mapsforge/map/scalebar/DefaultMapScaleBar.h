@@ -3,17 +3,32 @@
 //  source: ./org/mapsforge/map/scalebar/DefaultMapScaleBar.java
 //
 
-#ifndef _OrgMapsforgeMapScalebarDefaultMapScaleBar_H_
-#define _OrgMapsforgeMapScalebarDefaultMapScaleBar_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarDefaultMapScaleBar")
+#ifdef RESTRICT_OrgMapsforgeMapScalebarDefaultMapScaleBar
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarDefaultMapScaleBar 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarDefaultMapScaleBar 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapScalebarDefaultMapScaleBar
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapScalebarDefaultMapScaleBar_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarDefaultMapScaleBar || defined(INCLUDE_OrgMapsforgeMapScalebarDefaultMapScaleBar))
+#define OrgMapsforgeMapScalebarDefaultMapScaleBar_
+
+#define RESTRICT_OrgMapsforgeMapScalebarMapScaleBar 1
+#define INCLUDE_OrgMapsforgeMapScalebarMapScaleBar 1
 #include "org/mapsforge/map/scalebar/MapScaleBar.h"
 
 @class OrgMapsforgeMapModelDisplayModel;
 @class OrgMapsforgeMapModelMapViewDimension;
 @class OrgMapsforgeMapModelMapViewPosition;
-@class OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum;
+@class OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode;
 @protocol OrgMapsforgeCoreGraphicsCanvas;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
 @protocol OrgMapsforgeMapScalebarDistanceUnitAdapter;
@@ -27,11 +42,11 @@
                  withOrgMapsforgeCoreGraphicsGraphicFactory:(id<OrgMapsforgeCoreGraphicsGraphicFactory>)graphicFactory
                        withOrgMapsforgeMapModelDisplayModel:(OrgMapsforgeMapModelDisplayModel *)displayModel;
 
-- (OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum *)getScaleBarMode;
+- (OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *)getScaleBarMode;
 
 - (id<OrgMapsforgeMapScalebarDistanceUnitAdapter>)getSecondaryDistanceUnitAdapter;
 
-- (void)setScaleBarModeWithOrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum:(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum *)scaleBarMode;
+- (void)setScaleBarModeWithOrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode:(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *)scaleBarMode;
 
 - (void)setSecondaryDistanceUnitAdapterWithOrgMapsforgeMapScalebarDistanceUnitAdapter:(id<OrgMapsforgeMapScalebarDistanceUnitAdapter>)distanceUnitAdapter;
 
@@ -47,37 +62,63 @@ FOUNDATION_EXPORT void OrgMapsforgeMapScalebarDefaultMapScaleBar_initWithOrgMaps
 
 FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar *new_OrgMapsforgeMapScalebarDefaultMapScaleBar_initWithOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeMapModelMapViewDimension_withOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapModelMapViewPosition *mapViewPosition, OrgMapsforgeMapModelMapViewDimension *mapViewDimension, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar *create_OrgMapsforgeMapScalebarDefaultMapScaleBar_initWithOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeMapModelMapViewDimension_withOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapModelMapViewPosition *mapViewPosition, OrgMapsforgeMapModelMapViewDimension *mapViewDimension, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarDefaultMapScaleBar)
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode) {
-  OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_BOTH = 0,
-  OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_SINGLE = 1,
+#endif
+
+#if !defined (OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarDefaultMapScaleBar || defined(INCLUDE_OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode))
+#define OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_Enum) {
+  OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_Enum_BOTH = 0,
+  OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_Enum_SINGLE = 1,
 };
 
-@interface OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_values();
 
-+ (OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode)
 
-FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_values_[];
 
-#define OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_BOTH OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_values_[OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_BOTH]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum, BOTH)
+inline OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_get_BOTH();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode, BOTH)
 
-#define OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_SINGLE OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum_values_[OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_SINGLE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum, SINGLE)
+inline OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_get_SINGLE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode, SINGLE)
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarModeEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_values();
 
-#endif // _OrgMapsforgeMapScalebarDefaultMapScaleBar_H_
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode *OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarDefaultMapScaleBar_ScaleBarMode)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarDefaultMapScaleBar")

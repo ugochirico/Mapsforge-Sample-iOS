@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/model/MapPosition.java
 //
 
-#ifndef _OrgMapsforgeCoreModelMapPosition_H_
-#define _OrgMapsforgeCoreModelMapPosition_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelMapPosition")
+#ifdef RESTRICT_OrgMapsforgeCoreModelMapPosition
+#define INCLUDE_ALL_OrgMapsforgeCoreModelMapPosition 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelMapPosition 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelMapPosition
+
+#if !defined (OrgMapsforgeCoreModelMapPosition_) && (INCLUDE_ALL_OrgMapsforgeCoreModelMapPosition || defined(INCLUDE_OrgMapsforgeCoreModelMapPosition))
+#define OrgMapsforgeCoreModelMapPosition_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @class OrgMapsforgeCoreModelLatLong;
@@ -38,6 +49,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelMapPosition_initWithOrgMapsforgeCore
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelMapPosition *new_OrgMapsforgeCoreModelMapPosition_initWithOrgMapsforgeCoreModelLatLong_withByte_(OrgMapsforgeCoreModelLatLong *latLong, jbyte zoomLevel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelMapPosition *create_OrgMapsforgeCoreModelMapPosition_initWithOrgMapsforgeCoreModelLatLong_withByte_(OrgMapsforgeCoreModelLatLong *latLong, jbyte zoomLevel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelMapPosition)
 
-#endif // _OrgMapsforgeCoreModelMapPosition_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelMapPosition")

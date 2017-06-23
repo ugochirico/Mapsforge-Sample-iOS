@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/ElementNodeMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher))
+#define OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleElementMatcher 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleElementMatcher 1
 #include "org/mapsforge/map/rendertheme/rule/ElementMatcher.h"
 
-@class OrgMapsforgeMapRenderthemeRuleElementEnum;
+@class OrgMapsforgeMapRenderthemeRuleElement;
 
 @interface OrgMapsforgeMapRenderthemeRuleElementNodeMatcher : NSObject < OrgMapsforgeMapRenderthemeRuleElementMatcher >
 
@@ -17,15 +28,19 @@
 
 - (jboolean)isCoveredByWithOrgMapsforgeMapRenderthemeRuleElementMatcher:(id<OrgMapsforgeMapRenderthemeRuleElementMatcher>)elementMatcher;
 
-- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleElementEnum:(OrgMapsforgeMapRenderthemeRuleElementEnum *)element;
+- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleElement:(OrgMapsforgeMapRenderthemeRuleElement *)element;
 
 @end
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleElementNodeMatcher)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElementNodeMatcher *OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRuleElementNodeMatcher, INSTANCE_, OrgMapsforgeMapRenderthemeRuleElementNodeMatcher *)
+inline OrgMapsforgeMapRenderthemeRuleElementNodeMatcher *OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElementNodeMatcher *OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRuleElementNodeMatcher, INSTANCE, OrgMapsforgeMapRenderthemeRuleElementNodeMatcher *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleElementNodeMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleElementNodeMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElementNodeMatcher")

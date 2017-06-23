@@ -3,22 +3,51 @@
 //  source: android/libcore/luni/src/main/java/java/net/PasswordAuthentication.java
 //
 
-#ifndef _JavaNetPasswordAuthentication_H_
-#define _JavaNetPasswordAuthentication_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetPasswordAuthentication")
+#ifdef RESTRICT_JavaNetPasswordAuthentication
+#define INCLUDE_ALL_JavaNetPasswordAuthentication 0
+#else
+#define INCLUDE_ALL_JavaNetPasswordAuthentication 1
+#endif
+#undef RESTRICT_JavaNetPasswordAuthentication
+
+#if !defined (JavaNetPasswordAuthentication_) && (INCLUDE_ALL_JavaNetPasswordAuthentication || defined(INCLUDE_JavaNetPasswordAuthentication))
+#define JavaNetPasswordAuthentication_
 
 @class IOSCharArray;
 
+/*!
+ @brief This immutable class is a data structure that encapsulates username and
+  password which is used by the <code>Authenticator</code> class.
+ - seealso: Authenticator
+ */
 @interface JavaNetPasswordAuthentication : NSObject
 
 #pragma mark Public
 
+/*!
+ @brief Creates an instance of a password authentication with a specified
+  username and password.
+ @param userName the username to store.
+ @param password the associated password to store.
+ */
 - (instancetype)initWithNSString:(NSString *)userName
                    withCharArray:(IOSCharArray *)password;
 
+/*!
+ @brief Gets a clone of the password stored by this instance.The user is
+  responsible to finalize the returned array if the password clone is no
+  longer needed.
+ @return the copied password.
+ */
 - (IOSCharArray *)getPassword;
 
+/*!
+ @brief Gets the username stored by this instance.
+ @return the stored username.
+ */
 - (NSString *)getUserName;
 
 @end
@@ -29,6 +58,10 @@ FOUNDATION_EXPORT void JavaNetPasswordAuthentication_initWithNSString_withCharAr
 
 FOUNDATION_EXPORT JavaNetPasswordAuthentication *new_JavaNetPasswordAuthentication_initWithNSString_withCharArray_(NSString *userName, IOSCharArray *password) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetPasswordAuthentication *create_JavaNetPasswordAuthentication_initWithNSString_withCharArray_(NSString *userName, IOSCharArray *password);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetPasswordAuthentication)
 
-#endif // _JavaNetPasswordAuthentication_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetPasswordAuthentication")

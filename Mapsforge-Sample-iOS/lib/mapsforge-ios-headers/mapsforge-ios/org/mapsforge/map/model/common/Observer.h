@@ -3,12 +3,20 @@
 //  source: ./org/mapsforge/map/model/common/Observer.java
 //
 
-#ifndef _OrgMapsforgeMapModelCommonObserver_H_
-#define _OrgMapsforgeMapModelCommonObserver_H_
-
 #include "J2ObjC_header.h"
 
-@protocol OrgMapsforgeMapModelCommonObserver < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonObserver")
+#ifdef RESTRICT_OrgMapsforgeMapModelCommonObserver
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonObserver 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonObserver 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelCommonObserver
+
+#if !defined (OrgMapsforgeMapModelCommonObserver_) && (INCLUDE_ALL_OrgMapsforgeMapModelCommonObserver || defined(INCLUDE_OrgMapsforgeMapModelCommonObserver))
+#define OrgMapsforgeMapModelCommonObserver_
+
+@protocol OrgMapsforgeMapModelCommonObserver < JavaObject >
 
 - (void)onChange;
 
@@ -18,4 +26,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapModelCommonObserver)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelCommonObserver)
 
-#endif // _OrgMapsforgeMapModelCommonObserver_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonObserver")

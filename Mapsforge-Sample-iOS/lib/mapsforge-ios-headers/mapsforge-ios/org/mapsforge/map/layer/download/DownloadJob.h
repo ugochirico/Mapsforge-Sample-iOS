@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/download/DownloadJob.java
 //
 
-#ifndef _OrgMapsforgeMapLayerDownloadDownloadJob_H_
-#define _OrgMapsforgeMapLayerDownloadDownloadJob_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadDownloadJob")
+#ifdef RESTRICT_OrgMapsforgeMapLayerDownloadDownloadJob
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadDownloadJob 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadDownloadJob 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerDownloadDownloadJob
+
+#if !defined (OrgMapsforgeMapLayerDownloadDownloadJob_) && (INCLUDE_ALL_OrgMapsforgeMapLayerDownloadDownloadJob || defined(INCLUDE_OrgMapsforgeMapLayerDownloadDownloadJob))
+#define OrgMapsforgeMapLayerDownloadDownloadJob_
+
+#define RESTRICT_OrgMapsforgeMapLayerQueueJob 1
+#define INCLUDE_OrgMapsforgeMapLayerQueueJob 1
 #include "org/mapsforge/map/layer/queue/Job.h"
 
 @class OrgMapsforgeCoreModelTile;
@@ -36,6 +47,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerDownloadDownloadJob_initWithOrgMapsfo
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadDownloadJob *new_OrgMapsforgeMapLayerDownloadDownloadJob_initWithOrgMapsforgeCoreModelTile_withOrgMapsforgeMapLayerDownloadTilesourceTileSource_(OrgMapsforgeCoreModelTile *tile, id<OrgMapsforgeMapLayerDownloadTilesourceTileSource> tileSource) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadDownloadJob *create_OrgMapsforgeMapLayerDownloadDownloadJob_initWithOrgMapsforgeCoreModelTile_withOrgMapsforgeMapLayerDownloadTilesourceTileSource_(OrgMapsforgeCoreModelTile *tile, id<OrgMapsforgeMapLayerDownloadTilesourceTileSource> tileSource);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerDownloadDownloadJob)
 
-#endif // _OrgMapsforgeMapLayerDownloadDownloadJob_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadDownloadJob")

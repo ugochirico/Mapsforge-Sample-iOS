@@ -3,18 +3,26 @@
 //  source: ./org/mapsforge/core/graphics/GraphicContext.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsGraphicContext_H_
-#define _OrgMapsforgeCoreGraphicsGraphicContext_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeCoreGraphicsColorEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicContext")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsGraphicContext
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicContext 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicContext 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsGraphicContext
+
+#if !defined (OrgMapsforgeCoreGraphicsGraphicContext_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicContext || defined(INCLUDE_OrgMapsforgeCoreGraphicsGraphicContext))
+#define OrgMapsforgeCoreGraphicsGraphicContext_
+
+@class OrgMapsforgeCoreGraphicsColor;
 @protocol OrgMapsforgeCoreGraphicsBitmap;
 @protocol OrgMapsforgeCoreGraphicsMatrix;
 @protocol OrgMapsforgeCoreGraphicsPaint;
 @protocol OrgMapsforgeCoreGraphicsPath;
 
-@protocol OrgMapsforgeCoreGraphicsGraphicContext < NSObject, JavaObject >
+@protocol OrgMapsforgeCoreGraphicsGraphicContext < JavaObject >
 
 - (void)drawBitmapWithOrgMapsforgeCoreGraphicsBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)bitmap
                                              withInt:(jint)left
@@ -49,7 +57,7 @@ withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paint;
                             withInt:(jint)y2
   withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paint;
 
-- (void)fillColorWithOrgMapsforgeCoreGraphicsColorEnum:(OrgMapsforgeCoreGraphicsColorEnum *)color;
+- (void)fillColorWithOrgMapsforgeCoreGraphicsColor:(OrgMapsforgeCoreGraphicsColor *)color;
 
 - (void)fillColorWithInt:(jint)color;
 
@@ -71,4 +79,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsGraphicContext)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsGraphicContext)
 
-#endif // _OrgMapsforgeCoreGraphicsGraphicContext_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicContext")

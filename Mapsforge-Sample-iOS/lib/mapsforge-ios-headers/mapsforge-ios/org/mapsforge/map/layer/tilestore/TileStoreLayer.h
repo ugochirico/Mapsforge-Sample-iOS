@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/tilestore/TileStoreLayer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerTilestoreTileStoreLayer_H_
-#define _OrgMapsforgeMapLayerTilestoreTileStoreLayer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerTilestoreTileStoreLayer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerTilestoreTileStoreLayer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerTilestoreTileStoreLayer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerTilestoreTileStoreLayer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerTilestoreTileStoreLayer
+
+#if !defined (OrgMapsforgeMapLayerTilestoreTileStoreLayer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerTilestoreTileStoreLayer || defined(INCLUDE_OrgMapsforgeMapLayerTilestoreTileStoreLayer))
+#define OrgMapsforgeMapLayerTilestoreTileStoreLayer_
+
+#define RESTRICT_OrgMapsforgeMapLayerTileLayer 1
+#define INCLUDE_OrgMapsforgeMapLayerTileLayer 1
 #include "org/mapsforge/map/layer/TileLayer.h"
 
 @class OrgMapsforgeCoreModelTile;
@@ -40,6 +51,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerTilestoreTileStoreLayer_initWithOrgMa
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerTilestoreTileStoreLayer *new_OrgMapsforgeMapLayerTilestoreTileStoreLayer_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_(id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapModelMapViewPosition *mapViewPosition, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean isTransparent) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerTilestoreTileStoreLayer *create_OrgMapsforgeMapLayerTilestoreTileStoreLayer_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapModelMapViewPosition_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_(id<OrgMapsforgeMapLayerCacheTileCache> tileCache, OrgMapsforgeMapModelMapViewPosition *mapViewPosition, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean isTransparent);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerTilestoreTileStoreLayer)
 
-#endif // _OrgMapsforgeMapLayerTilestoreTileStoreLayer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerTilestoreTileStoreLayer")

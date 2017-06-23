@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/QueryCalculations.java
 //
 
-#ifndef _OrgMapsforgeMapReaderQueryCalculations_H_
-#define _OrgMapsforgeMapReaderQueryCalculations_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderQueryCalculations")
+#ifdef RESTRICT_OrgMapsforgeMapReaderQueryCalculations
+#define INCLUDE_ALL_OrgMapsforgeMapReaderQueryCalculations 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderQueryCalculations 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderQueryCalculations
+
+#if !defined (OrgMapsforgeMapReaderQueryCalculations_) && (INCLUDE_ALL_OrgMapsforgeMapReaderQueryCalculations || defined(INCLUDE_OrgMapsforgeMapReaderQueryCalculations))
+#define OrgMapsforgeMapReaderQueryCalculations_
 
 @class OrgMapsforgeCoreModelTile;
 
@@ -25,4 +33,6 @@ FOUNDATION_EXPORT jint OrgMapsforgeMapReaderQueryCalculations_calculateTileBitma
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderQueryCalculations)
 
-#endif // _OrgMapsforgeMapReaderQueryCalculations_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderQueryCalculations")

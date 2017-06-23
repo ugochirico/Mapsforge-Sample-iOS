@@ -3,24 +3,51 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/SSLException.java
 //
 
-#ifndef _JavaxNetSslSSLException_H_
-#define _JavaxNetSslSSLException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslSSLException")
+#ifdef RESTRICT_JavaxNetSslSSLException
+#define INCLUDE_ALL_JavaxNetSslSSLException 0
+#else
+#define INCLUDE_ALL_JavaxNetSslSSLException 1
+#endif
+#undef RESTRICT_JavaxNetSslSSLException
+
+#if !defined (JavaxNetSslSSLException_) && (INCLUDE_ALL_JavaxNetSslSSLException || defined(INCLUDE_JavaxNetSslSSLException))
+#define JavaxNetSslSSLException_
+
+#define RESTRICT_JavaIoIOException 1
+#define INCLUDE_JavaIoIOException 1
 #include "java/io/IOException.h"
 
-@class JavaLangThrowable;
-
+/*!
+ @brief The base class for all SSL related exceptions.
+ */
 @interface JavaxNetSslSSLException : JavaIoIOException
 
 #pragma mark Public
 
+/*!
+ @brief Creates a new <code>SSLException</code> with the specified reason.
+ @param reason the reason for the exception.
+ */
 - (instancetype)initWithNSString:(NSString *)reason;
 
+/*!
+ @brief Creates a new <code>SSLException</code> with the specified message and cause.
+ @param message the detail message for the exception.
+ @param cause the cause.
+ */
 - (instancetype)initWithNSString:(NSString *)message
-           withJavaLangThrowable:(JavaLangThrowable *)cause;
+                 withNSException:(NSException *)cause;
+#define withJavaLangThrowable withNSException
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+/*!
+ @brief Creates a new <code>SSLException</code> with the specified cause.
+ @param cause the cause
+ */
+- (instancetype)initWithNSException:(NSException *)cause;
+#define initWithJavaLangThrowable initWithNSException
 
 @end
 
@@ -30,14 +57,22 @@ FOUNDATION_EXPORT void JavaxNetSslSSLException_initWithNSString_(JavaxNetSslSSLE
 
 FOUNDATION_EXPORT JavaxNetSslSSLException *new_JavaxNetSslSSLException_initWithNSString_(NSString *reason) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT void JavaxNetSslSSLException_initWithNSString_withJavaLangThrowable_(JavaxNetSslSSLException *self, NSString *message, JavaLangThrowable *cause);
+FOUNDATION_EXPORT JavaxNetSslSSLException *create_JavaxNetSslSSLException_initWithNSString_(NSString *reason);
 
-FOUNDATION_EXPORT JavaxNetSslSSLException *new_JavaxNetSslSSLException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT void JavaxNetSslSSLException_initWithNSString_withNSException_(JavaxNetSslSSLException *self, NSString *message, NSException *cause);
 
-FOUNDATION_EXPORT void JavaxNetSslSSLException_initWithJavaLangThrowable_(JavaxNetSslSSLException *self, JavaLangThrowable *cause);
+FOUNDATION_EXPORT JavaxNetSslSSLException *new_JavaxNetSslSSLException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaxNetSslSSLException *new_JavaxNetSslSSLException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaxNetSslSSLException *create_JavaxNetSslSSLException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+
+FOUNDATION_EXPORT void JavaxNetSslSSLException_initWithNSException_(JavaxNetSslSSLException *self, NSException *cause);
+
+FOUNDATION_EXPORT JavaxNetSslSSLException *new_JavaxNetSslSSLException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT JavaxNetSslSSLException *create_JavaxNetSslSSLException_initWithNSException_(NSException *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLException)
 
-#endif // _JavaxNetSslSSLException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslSSLException")

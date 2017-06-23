@@ -3,15 +3,23 @@
 //  source: ./org/mapsforge/core/graphics/GraphicFactory.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsGraphicFactory_H_
-#define _OrgMapsforgeCoreGraphicsGraphicFactory_H_
-
 #include "J2ObjC_header.h"
 
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicFactory")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsGraphicFactory
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicFactory 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicFactory 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsGraphicFactory
+
+#if !defined (OrgMapsforgeCoreGraphicsGraphicFactory_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicFactory || defined(INCLUDE_OrgMapsforgeCoreGraphicsGraphicFactory))
+#define OrgMapsforgeCoreGraphicsGraphicFactory_
+
 @class JavaIoInputStream;
-@class OrgMapsforgeCoreGraphicsColorEnum;
-@class OrgMapsforgeCoreGraphicsDisplayEnum;
-@class OrgMapsforgeCoreGraphicsPositionEnum;
+@class OrgMapsforgeCoreGraphicsColor;
+@class OrgMapsforgeCoreGraphicsDisplay;
+@class OrgMapsforgeCoreGraphicsPosition;
 @class OrgMapsforgeCoreMapelementsPointTextContainer;
 @class OrgMapsforgeCoreMapelementsSymbolContainer;
 @class OrgMapsforgeCoreModelPoint;
@@ -23,7 +31,7 @@
 @protocol OrgMapsforgeCoreGraphicsResourceBitmap;
 @protocol OrgMapsforgeCoreGraphicsTileBitmap;
 
-@protocol OrgMapsforgeCoreGraphicsGraphicFactory < NSObject, JavaObject >
+@protocol OrgMapsforgeCoreGraphicsGraphicFactory < JavaObject >
 
 - (id<OrgMapsforgeCoreGraphicsBitmap>)createBitmapWithInt:(jint)width
                                                   withInt:(jint)height;
@@ -34,7 +42,7 @@
 
 - (id<OrgMapsforgeCoreGraphicsCanvas>)createCanvas;
 
-- (jint)createColorWithOrgMapsforgeCoreGraphicsColorEnum:(OrgMapsforgeCoreGraphicsColorEnum *)color;
+- (jint)createColorWithOrgMapsforgeCoreGraphicsColor:(OrgMapsforgeCoreGraphicsColor *)color;
 
 - (jint)createColorWithInt:(jint)alpha
                    withInt:(jint)red
@@ -48,13 +56,13 @@
 - (id<OrgMapsforgeCoreGraphicsPath>)createPath;
 
 - (OrgMapsforgeCoreMapelementsPointTextContainer *)createPointTextContainerWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)xy
-                                                                  withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                                                      withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                                                   withInt:(jint)priority
                                                                                              withNSString:(NSString *)text
                                                                         withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
                                                                         withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
                                                            withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
-                                                                 withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                                                     withOrgMapsforgeCoreGraphicsPosition:(OrgMapsforgeCoreGraphicsPosition *)position
                                                                                                   withInt:(jint)maxTextWidth;
 
 - (id<OrgMapsforgeCoreGraphicsResourceBitmap>)createResourceBitmapWithJavaIoInputStream:(JavaIoInputStream *)inputStream
@@ -83,4 +91,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsGraphicFactory)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsGraphicFactory)
 
-#endif // _OrgMapsforgeCoreGraphicsGraphicFactory_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicFactory")

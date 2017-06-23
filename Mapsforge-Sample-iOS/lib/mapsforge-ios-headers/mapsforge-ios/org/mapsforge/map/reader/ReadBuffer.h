@@ -3,14 +3,20 @@
 //  source: ./org/mapsforge/map/reader/ReadBuffer.java
 //
 
-#ifndef _OrgMapsforgeMapReaderReadBuffer_H_
-#define _OrgMapsforgeMapReaderReadBuffer_H_
-
 #include "J2ObjC_header.h"
 
-@class JavaIoRandomAccessFile;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderReadBuffer")
+#ifdef RESTRICT_OrgMapsforgeMapReaderReadBuffer
+#define INCLUDE_ALL_OrgMapsforgeMapReaderReadBuffer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderReadBuffer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderReadBuffer
 
-#define OrgMapsforgeMapReaderReadBuffer_MAXIMUM_BUFFER_SIZE 2500000
+#if !defined (OrgMapsforgeMapReaderReadBuffer_) && (INCLUDE_ALL_OrgMapsforgeMapReaderReadBuffer || defined(INCLUDE_OrgMapsforgeMapReaderReadBuffer))
+#define OrgMapsforgeMapReaderReadBuffer_
+
+@class JavaIoRandomAccessFile;
 
 @interface OrgMapsforgeMapReaderReadBuffer : NSObject
 
@@ -50,12 +56,18 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapReaderReadBuffer)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapReaderReadBuffer, MAXIMUM_BUFFER_SIZE, jint)
+inline jint OrgMapsforgeMapReaderReadBuffer_get_MAXIMUM_BUFFER_SIZE();
+#define OrgMapsforgeMapReaderReadBuffer_MAXIMUM_BUFFER_SIZE 2500000
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeMapReaderReadBuffer, MAXIMUM_BUFFER_SIZE, jint)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapReaderReadBuffer_initWithJavaIoRandomAccessFile_(OrgMapsforgeMapReaderReadBuffer *self, JavaIoRandomAccessFile *inputFile);
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderReadBuffer *new_OrgMapsforgeMapReaderReadBuffer_initWithJavaIoRandomAccessFile_(JavaIoRandomAccessFile *inputFile) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderReadBuffer *create_OrgMapsforgeMapReaderReadBuffer_initWithJavaIoRandomAccessFile_(JavaIoRandomAccessFile *inputFile);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderReadBuffer)
 
-#endif // _OrgMapsforgeMapReaderReadBuffer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderReadBuffer")

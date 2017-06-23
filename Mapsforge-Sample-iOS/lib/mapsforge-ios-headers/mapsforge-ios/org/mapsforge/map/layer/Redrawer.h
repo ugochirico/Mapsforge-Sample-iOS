@@ -3,12 +3,20 @@
 //  source: ./org/mapsforge/map/layer/Redrawer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRedrawer_H_
-#define _OrgMapsforgeMapLayerRedrawer_H_
-
 #include "J2ObjC_header.h"
 
-@protocol OrgMapsforgeMapLayerRedrawer < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRedrawer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRedrawer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRedrawer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRedrawer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRedrawer
+
+#if !defined (OrgMapsforgeMapLayerRedrawer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRedrawer || defined(INCLUDE_OrgMapsforgeMapLayerRedrawer))
+#define OrgMapsforgeMapLayerRedrawer_
+
+@protocol OrgMapsforgeMapLayerRedrawer < JavaObject >
 
 - (void)redrawLayers;
 
@@ -18,4 +26,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerRedrawer)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRedrawer)
 
-#endif // _OrgMapsforgeMapLayerRedrawer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRedrawer")

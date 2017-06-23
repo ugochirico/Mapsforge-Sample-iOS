@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/MapReadResult.java
 //
 
-#ifndef _OrgMapsforgeMapReaderMapReadResult_H_
-#define _OrgMapsforgeMapReaderMapReadResult_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderMapReadResult")
+#ifdef RESTRICT_OrgMapsforgeMapReaderMapReadResult
+#define INCLUDE_ALL_OrgMapsforgeMapReaderMapReadResult 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderMapReadResult 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderMapReadResult
+
+#if !defined (OrgMapsforgeMapReaderMapReadResult_) && (INCLUDE_ALL_OrgMapsforgeMapReaderMapReadResult || defined(INCLUDE_OrgMapsforgeMapReaderMapReadResult))
+#define OrgMapsforgeMapReaderMapReadResult_
 
 @class OrgMapsforgeMapReaderMapReadResultBuilder;
 @protocol JavaUtilList;
@@ -33,6 +41,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderMapReadResult_initWithOrgMapsforgeMa
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderMapReadResult *new_OrgMapsforgeMapReaderMapReadResult_initWithOrgMapsforgeMapReaderMapReadResultBuilder_(OrgMapsforgeMapReaderMapReadResultBuilder *mapReadResultBuilder) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderMapReadResult *create_OrgMapsforgeMapReaderMapReadResult_initWithOrgMapsforgeMapReaderMapReadResultBuilder_(OrgMapsforgeMapReaderMapReadResultBuilder *mapReadResultBuilder);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderMapReadResult)
 
-#endif // _OrgMapsforgeMapReaderMapReadResult_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderMapReadResult")

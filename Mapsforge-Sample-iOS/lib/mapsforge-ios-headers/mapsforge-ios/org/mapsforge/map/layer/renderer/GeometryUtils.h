@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/renderer/GeometryUtils.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererGeometryUtils_H_
-#define _OrgMapsforgeMapLayerRendererGeometryUtils_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererGeometryUtils")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererGeometryUtils
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererGeometryUtils 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererGeometryUtils 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererGeometryUtils
+
+#if !defined (OrgMapsforgeMapLayerRendererGeometryUtils_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererGeometryUtils || defined(INCLUDE_OrgMapsforgeMapLayerRendererGeometryUtils))
+#define OrgMapsforgeMapLayerRendererGeometryUtils_
 
 @class IOSObjectArray;
 @class OrgMapsforgeCoreModelLatLong;
@@ -30,4 +38,6 @@ FOUNDATION_EXPORT OrgMapsforgeCoreModelLatLong *OrgMapsforgeMapLayerRendererGeom
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererGeometryUtils)
 
-#endif // _OrgMapsforgeMapLayerRendererGeometryUtils_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererGeometryUtils")

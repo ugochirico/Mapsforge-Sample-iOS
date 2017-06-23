@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/RuleOptimizer.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRuleOptimizer_H_
-#define _OrgMapsforgeMapRenderthemeRuleRuleOptimizer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleOptimizer")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRuleOptimizer
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleOptimizer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleOptimizer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRuleOptimizer
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRuleOptimizer_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleOptimizer || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRuleOptimizer))
+#define OrgMapsforgeMapRenderthemeRuleRuleOptimizer_
 
 @class JavaUtilStack;
 @protocol OrgMapsforgeMapRenderthemeRuleAttributeMatcher;
@@ -38,4 +46,6 @@ FOUNDATION_EXPORT id<OrgMapsforgeMapRenderthemeRuleElementMatcher> OrgMapsforgeM
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRuleOptimizer)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRuleOptimizer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRuleOptimizer")

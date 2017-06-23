@@ -3,12 +3,26 @@
 //  source: src/main/java/org/mockito/internal/stubbing/answers/ThrowsExceptionClass.java
 //
 
-#ifndef _OrgMockitoInternalStubbingAnswersThrowsExceptionClass_H_
-#define _OrgMockitoInternalStubbingAnswersThrowsExceptionClass_H_
-
 #include "J2ObjC_header.h"
-#include "java/io/Serializable.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalStubbingAnswersThrowsExceptionClass")
+#ifdef RESTRICT_OrgMockitoInternalStubbingAnswersThrowsExceptionClass
+#define INCLUDE_ALL_OrgMockitoInternalStubbingAnswersThrowsExceptionClass 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalStubbingAnswersThrowsExceptionClass 1
+#endif
+#undef RESTRICT_OrgMockitoInternalStubbingAnswersThrowsExceptionClass
+
+#if !defined (OrgMockitoInternalStubbingAnswersThrowsExceptionClass_) && (INCLUDE_ALL_OrgMockitoInternalStubbingAnswersThrowsExceptionClass || defined(INCLUDE_OrgMockitoInternalStubbingAnswersThrowsExceptionClass))
+#define OrgMockitoInternalStubbingAnswersThrowsExceptionClass_
+
+#define RESTRICT_OrgMockitoStubbingAnswer 1
+#define INCLUDE_OrgMockitoStubbingAnswer 1
 #include "org/mockito/stubbing/Answer.h"
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
+#include "java/io/Serializable.h"
 
 @class IOSClass;
 @protocol OrgMockitoInvocationInvocationOnMock;
@@ -31,6 +45,10 @@ FOUNDATION_EXPORT void OrgMockitoInternalStubbingAnswersThrowsExceptionClass_ini
 
 FOUNDATION_EXPORT OrgMockitoInternalStubbingAnswersThrowsExceptionClass *new_OrgMockitoInternalStubbingAnswersThrowsExceptionClass_initWithIOSClass_(IOSClass *throwableClass) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMockitoInternalStubbingAnswersThrowsExceptionClass *create_OrgMockitoInternalStubbingAnswersThrowsExceptionClass_initWithIOSClass_(IOSClass *throwableClass);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalStubbingAnswersThrowsExceptionClass)
 
-#endif // _OrgMockitoInternalStubbingAnswersThrowsExceptionClass_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalStubbingAnswersThrowsExceptionClass")

@@ -3,12 +3,26 @@
 //  source: ./org/mapsforge/core/model/LatLong.java
 //
 
-#ifndef _OrgMapsforgeCoreModelLatLong_H_
-#define _OrgMapsforgeCoreModelLatLong_H_
-
 #include "J2ObjC_header.h"
-#include "java/io/Serializable.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelLatLong")
+#ifdef RESTRICT_OrgMapsforgeCoreModelLatLong
+#define INCLUDE_ALL_OrgMapsforgeCoreModelLatLong 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelLatLong 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelLatLong
+
+#if !defined (OrgMapsforgeCoreModelLatLong_) && (INCLUDE_ALL_OrgMapsforgeCoreModelLatLong || defined(INCLUDE_OrgMapsforgeCoreModelLatLong))
+#define OrgMapsforgeCoreModelLatLong_
+
+#define RESTRICT_JavaLangComparable 1
+#define INCLUDE_JavaLangComparable 1
 #include "java/lang/Comparable.h"
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
+#include "java/io/Serializable.h"
 
 @interface OrgMapsforgeCoreModelLatLong : NSObject < JavaLangComparable, JavaIoSerializable > {
  @public
@@ -43,10 +57,16 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelLatLong_initWithDouble_withDouble_wi
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelLatLong *new_OrgMapsforgeCoreModelLatLong_initWithDouble_withDouble_withBoolean_(jdouble latitude, jdouble longitude, jboolean validate) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelLatLong *create_OrgMapsforgeCoreModelLatLong_initWithDouble_withDouble_withBoolean_(jdouble latitude, jdouble longitude, jboolean validate);
+
 FOUNDATION_EXPORT void OrgMapsforgeCoreModelLatLong_initWithDouble_withDouble_(OrgMapsforgeCoreModelLatLong *self, jdouble latitude, jdouble longitude);
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelLatLong *new_OrgMapsforgeCoreModelLatLong_initWithDouble_withDouble_(jdouble latitude, jdouble longitude) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelLatLong *create_OrgMapsforgeCoreModelLatLong_initWithDouble_withDouble_(jdouble latitude, jdouble longitude);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelLatLong)
 
-#endif // _OrgMapsforgeCoreModelLatLong_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelLatLong")

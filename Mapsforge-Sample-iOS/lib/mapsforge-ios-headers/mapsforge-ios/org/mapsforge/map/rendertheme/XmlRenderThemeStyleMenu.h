@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/rendertheme/XmlRenderThemeStyleMenu.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_H_
-#define _OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu
+
+#if !defined (OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu || defined(INCLUDE_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu))
+#define OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @class OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer;
@@ -42,6 +53,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_initWit
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu *new_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_initWithNSString_withNSString_withNSString_(NSString *id_, NSString *defaultLanguage, NSString *defaultValue) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu *create_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_initWithNSString_withNSString_withNSString_(NSString *id_, NSString *defaultLanguage, NSString *defaultValue);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu)
 
-#endif // _OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleMenu")

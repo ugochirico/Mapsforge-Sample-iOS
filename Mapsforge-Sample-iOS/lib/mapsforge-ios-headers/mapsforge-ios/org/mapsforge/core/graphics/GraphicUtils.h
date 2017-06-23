@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/core/graphics/GraphicUtils.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsGraphicUtils_H_
-#define _OrgMapsforgeCoreGraphicsGraphicUtils_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicUtils")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsGraphicUtils
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicUtils 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicUtils 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsGraphicUtils
+
+#if !defined (OrgMapsforgeCoreGraphicsGraphicUtils_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicUtils || defined(INCLUDE_OrgMapsforgeCoreGraphicsGraphicUtils))
+#define OrgMapsforgeCoreGraphicsGraphicUtils_
 
 @interface OrgMapsforgeCoreGraphicsGraphicUtils : NSObject
 
@@ -22,4 +30,6 @@ FOUNDATION_EXPORT jint OrgMapsforgeCoreGraphicsGraphicUtils_getAlphaWithInt_(jin
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsGraphicUtils)
 
-#endif // _OrgMapsforgeCoreGraphicsGraphicUtils_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsGraphicUtils")

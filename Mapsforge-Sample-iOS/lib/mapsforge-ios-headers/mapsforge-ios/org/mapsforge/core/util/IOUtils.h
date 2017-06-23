@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/core/util/IOUtils.java
 //
 
-#ifndef _OrgMapsforgeCoreUtilIOUtils_H_
-#define _OrgMapsforgeCoreUtilIOUtils_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilIOUtils")
+#ifdef RESTRICT_OrgMapsforgeCoreUtilIOUtils
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilIOUtils 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilIOUtils 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreUtilIOUtils
+
+#if !defined (OrgMapsforgeCoreUtilIOUtils_) && (INCLUDE_ALL_OrgMapsforgeCoreUtilIOUtils || defined(INCLUDE_OrgMapsforgeCoreUtilIOUtils))
+#define OrgMapsforgeCoreUtilIOUtils_
 
 @protocol JavaIoCloseable;
 
@@ -24,4 +32,6 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreUtilIOUtils_closeQuietlyWithJavaIoCloseab
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreUtilIOUtils)
 
-#endif // _OrgMapsforgeCoreUtilIOUtils_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilIOUtils")

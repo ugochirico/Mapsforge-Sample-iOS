@@ -3,14 +3,25 @@
 //  source: ./org/mapsforge/map/layer/renderer/CircleContainer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererCircleContainer_H_
-#define _OrgMapsforgeMapLayerRendererCircleContainer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererCircleContainer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererCircleContainer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererCircleContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererCircleContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererCircleContainer
+
+#if !defined (OrgMapsforgeMapLayerRendererCircleContainer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererCircleContainer || defined(INCLUDE_OrgMapsforgeMapLayerRendererCircleContainer))
+#define OrgMapsforgeMapLayerRendererCircleContainer_
+
+#define RESTRICT_OrgMapsforgeMapLayerRendererShapeContainer 1
+#define INCLUDE_OrgMapsforgeMapLayerRendererShapeContainer 1
 #include "org/mapsforge/map/layer/renderer/ShapeContainer.h"
 
 @class OrgMapsforgeCoreModelPoint;
-@class OrgMapsforgeMapLayerRendererShapeTypeEnum;
+@class OrgMapsforgeMapLayerRendererShapeType;
 
 @interface OrgMapsforgeMapLayerRendererCircleContainer : NSObject < OrgMapsforgeMapLayerRendererShapeContainer > {
  @public
@@ -20,7 +31,7 @@
 
 #pragma mark Public
 
-- (OrgMapsforgeMapLayerRendererShapeTypeEnum *)getShapeType;
+- (OrgMapsforgeMapLayerRendererShapeType *)getShapeType;
 
 #pragma mark Package-Private
 
@@ -37,6 +48,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererCircleContainer_initWithOrgMa
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererCircleContainer *new_OrgMapsforgeMapLayerRendererCircleContainer_initWithOrgMapsforgeCoreModelPoint_withFloat_(OrgMapsforgeCoreModelPoint *point, jfloat radius) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererCircleContainer *create_OrgMapsforgeMapLayerRendererCircleContainer_initWithOrgMapsforgeCoreModelPoint_withFloat_(OrgMapsforgeCoreModelPoint *point, jfloat radius);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererCircleContainer)
 
-#endif // _OrgMapsforgeMapLayerRendererCircleContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererCircleContainer")

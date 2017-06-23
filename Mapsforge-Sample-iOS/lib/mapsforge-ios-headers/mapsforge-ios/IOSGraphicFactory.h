@@ -23,7 +23,7 @@
                     G:(jint)green
                     B:(jint)blue;
 
-+ (jint)getIntColorFromEnum:(OrgMapsforgeCoreGraphicsColorEnum *)color;
++ (jint)getIntColorFromEnum:(OrgMapsforgeCoreGraphicsColor*) color;
 
 +(IOSGraphicFactory*)instance;
 

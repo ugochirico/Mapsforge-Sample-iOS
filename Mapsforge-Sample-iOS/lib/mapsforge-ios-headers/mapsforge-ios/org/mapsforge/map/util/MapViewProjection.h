@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/util/MapViewProjection.java
 //
 
-#ifndef _OrgMapsforgeMapUtilMapViewProjection_H_
-#define _OrgMapsforgeMapUtilMapViewProjection_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapUtilMapViewProjection")
+#ifdef RESTRICT_OrgMapsforgeMapUtilMapViewProjection
+#define INCLUDE_ALL_OrgMapsforgeMapUtilMapViewProjection 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapUtilMapViewProjection 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapUtilMapViewProjection
+
+#if !defined (OrgMapsforgeMapUtilMapViewProjection_) && (INCLUDE_ALL_OrgMapsforgeMapUtilMapViewProjection || defined(INCLUDE_OrgMapsforgeMapUtilMapViewProjection))
+#define OrgMapsforgeMapUtilMapViewProjection_
 
 @class OrgMapsforgeCoreModelLatLong;
 @class OrgMapsforgeCoreModelPoint;
@@ -35,6 +43,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapUtilMapViewProjection_initWithOrgMapsforge
 
 FOUNDATION_EXPORT OrgMapsforgeMapUtilMapViewProjection *new_OrgMapsforgeMapUtilMapViewProjection_initWithOrgMapsforgeMapViewMapView_(id<OrgMapsforgeMapViewMapView> mapView) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapUtilMapViewProjection *create_OrgMapsforgeMapUtilMapViewProjection_initWithOrgMapsforgeMapViewMapView_(id<OrgMapsforgeMapViewMapView> mapView);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapUtilMapViewProjection)
 
-#endif // _OrgMapsforgeMapUtilMapViewProjection_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapUtilMapViewProjection")

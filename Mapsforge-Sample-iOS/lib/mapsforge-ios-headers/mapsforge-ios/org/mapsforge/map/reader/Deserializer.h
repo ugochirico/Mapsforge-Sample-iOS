@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/Deserializer.java
 //
 
-#ifndef _OrgMapsforgeMapReaderDeserializer_H_
-#define _OrgMapsforgeMapReaderDeserializer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderDeserializer")
+#ifdef RESTRICT_OrgMapsforgeMapReaderDeserializer
+#define INCLUDE_ALL_OrgMapsforgeMapReaderDeserializer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderDeserializer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderDeserializer
+
+#if !defined (OrgMapsforgeMapReaderDeserializer_) && (INCLUDE_ALL_OrgMapsforgeMapReaderDeserializer || defined(INCLUDE_OrgMapsforgeMapReaderDeserializer))
+#define OrgMapsforgeMapReaderDeserializer_
 
 @class IOSByteArray;
 
@@ -40,4 +48,6 @@ FOUNDATION_EXPORT jint OrgMapsforgeMapReaderDeserializer_getShortWithByteArray_w
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderDeserializer)
 
-#endif // _OrgMapsforgeMapReaderDeserializer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderDeserializer")

@@ -3,10 +3,18 @@
 //  source: src/main/java/org/mockito/internal/creation/jmock/ClassImposterizer.java
 //
 
-#ifndef _OrgMockitoInternalCreationJmockClassImposterizer_H_
-#define _OrgMockitoInternalCreationJmockClassImposterizer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalCreationJmockClassImposterizer")
+#ifdef RESTRICT_OrgMockitoInternalCreationJmockClassImposterizer
+#define INCLUDE_ALL_OrgMockitoInternalCreationJmockClassImposterizer 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalCreationJmockClassImposterizer 1
+#endif
+#undef RESTRICT_OrgMockitoInternalCreationJmockClassImposterizer
+
+#if !defined (OrgMockitoInternalCreationJmockClassImposterizer_) && (INCLUDE_ALL_OrgMockitoInternalCreationJmockClassImposterizer || defined(INCLUDE_OrgMockitoInternalCreationJmockClassImposterizer))
+#define OrgMockitoInternalCreationJmockClassImposterizer_
 
 @class IOSClass;
 
@@ -20,9 +28,13 @@
 
 J2OBJC_STATIC_INIT(OrgMockitoInternalCreationJmockClassImposterizer)
 
-FOUNDATION_EXPORT OrgMockitoInternalCreationJmockClassImposterizer *OrgMockitoInternalCreationJmockClassImposterizer_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMockitoInternalCreationJmockClassImposterizer, INSTANCE_, OrgMockitoInternalCreationJmockClassImposterizer *)
+inline OrgMockitoInternalCreationJmockClassImposterizer *OrgMockitoInternalCreationJmockClassImposterizer_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMockitoInternalCreationJmockClassImposterizer *OrgMockitoInternalCreationJmockClassImposterizer_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMockitoInternalCreationJmockClassImposterizer, INSTANCE, OrgMockitoInternalCreationJmockClassImposterizer *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationJmockClassImposterizer)
 
-#endif // _OrgMockitoInternalCreationJmockClassImposterizer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalCreationJmockClassImposterizer")

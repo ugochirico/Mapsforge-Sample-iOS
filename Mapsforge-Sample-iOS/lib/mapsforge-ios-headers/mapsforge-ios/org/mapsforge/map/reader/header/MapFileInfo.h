@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/header/MapFileInfo.java
 //
 
-#ifndef _OrgMapsforgeMapReaderHeaderMapFileInfo_H_
-#define _OrgMapsforgeMapReaderHeaderMapFileInfo_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileInfo")
+#ifdef RESTRICT_OrgMapsforgeMapReaderHeaderMapFileInfo
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileInfo 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileInfo 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderHeaderMapFileInfo
+
+#if !defined (OrgMapsforgeMapReaderHeaderMapFileInfo_) && (INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileInfo || defined(INCLUDE_OrgMapsforgeMapReaderHeaderMapFileInfo))
+#define OrgMapsforgeMapReaderHeaderMapFileInfo_
 
 @class IOSObjectArray;
 @class JavaLangByte;
@@ -61,6 +69,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderHeaderMapFileInfo_initWithOrgMapsfor
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderMapFileInfo *new_OrgMapsforgeMapReaderHeaderMapFileInfo_initWithOrgMapsforgeMapReaderHeaderMapFileInfoBuilder_(OrgMapsforgeMapReaderHeaderMapFileInfoBuilder *mapFileInfoBuilder) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderMapFileInfo *create_OrgMapsforgeMapReaderHeaderMapFileInfo_initWithOrgMapsforgeMapReaderHeaderMapFileInfoBuilder_(OrgMapsforgeMapReaderHeaderMapFileInfoBuilder *mapFileInfoBuilder);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderHeaderMapFileInfo)
 
-#endif // _OrgMapsforgeMapReaderHeaderMapFileInfo_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderMapFileInfo")

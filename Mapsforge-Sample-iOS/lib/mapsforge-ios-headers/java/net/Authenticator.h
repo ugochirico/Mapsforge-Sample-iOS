@@ -3,29 +3,75 @@
 //  source: android/libcore/luni/src/main/java/java/net/Authenticator.java
 //
 
-#ifndef _JavaNetAuthenticator_H_
-#define _JavaNetAuthenticator_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
 
-@class JavaNetAuthenticator_RequestorTypeEnum;
+#pragma push_macro("INCLUDE_ALL_JavaNetAuthenticator")
+#ifdef RESTRICT_JavaNetAuthenticator
+#define INCLUDE_ALL_JavaNetAuthenticator 0
+#else
+#define INCLUDE_ALL_JavaNetAuthenticator 1
+#endif
+#undef RESTRICT_JavaNetAuthenticator
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (JavaNetAuthenticator_) && (INCLUDE_ALL_JavaNetAuthenticator || defined(INCLUDE_JavaNetAuthenticator))
+#define JavaNetAuthenticator_
+
+@class JavaNetAuthenticator_RequestorType;
 @class JavaNetInetAddress;
 @class JavaNetPasswordAuthentication;
 @class JavaNetURL;
 
+/*!
+ @brief An implementation of this class is able to obtain authentication information
+  for a connection in several ways.For this purpose it has to set the default
+  authenticator which extends <code>Authenticator</code> by <code>setDefault(Authenticator a)</code>
+ .
+ Then it should override <code>getPasswordAuthentication()</code>
+  which dictates how the authentication info is
+  obtained. Usually, it prompts the user for the required input.
+ - seealso: #setDefault
+ - seealso: #getPasswordAuthentication
+ */
 @interface JavaNetAuthenticator : NSObject
 
 #pragma mark Public
 
 - (instancetype)init;
 
+/*!
+ @brief Invokes the methods of the registered
+  authenticator to get the authentication info.
+ @return password authentication info or <code>null</code> if no authenticator
+          exists.
+ @param rAddr address of the connection that requests authentication.
+ @param rPort port of the connection that requests authentication.
+ @param rProtocol protocol of the connection that requests authentication.
+ @param rPrompt realm of the connection that requests authentication.
+ @param rScheme scheme of the connection that requests authentication.
+ */
 + (JavaNetPasswordAuthentication *)requestPasswordAuthenticationWithJavaNetInetAddress:(JavaNetInetAddress *)rAddr
                                                                                withInt:(jint)rPort
                                                                           withNSString:(NSString *)rProtocol
                                                                           withNSString:(NSString *)rPrompt
                                                                           withNSString:(NSString *)rScheme;
 
+/*!
+ @brief Invokes the methods of the registered
+  authenticator to get the authentication info.
+ @return password authentication info or <code>null</code> if no authenticator
+          exists.
+ @param rHost host name of the connection that requests authentication.
+ @param rAddr address of the connection that requests authentication.
+ @param rPort port of the connection that requests authentication.
+ @param rProtocol protocol of the connection that requests authentication.
+ @param rPrompt realm of the connection that requests authentication.
+ @param rScheme scheme of the connection that requests authentication.
+ */
 + (JavaNetPasswordAuthentication *)requestPasswordAuthenticationWithNSString:(NSString *)rHost
                                                       withJavaNetInetAddress:(JavaNetInetAddress *)rAddr
                                                                      withInt:(jint)rPort
@@ -33,6 +79,20 @@
                                                                 withNSString:(NSString *)rPrompt
                                                                 withNSString:(NSString *)rScheme;
 
+/*!
+ @brief Invokes the methods of the registered
+  authenticator to get the authentication info.
+ @return password authentication info or <code>null</code> if no authenticator
+          exists.
+ @param rHost host name of the connection that requests authentication.
+ @param rAddr address of the connection that requests authentication.
+ @param rPort port of the connection that requests authentication.
+ @param rProtocol protocol of the connection that requests authentication.
+ @param rPrompt realm of the connection that requests authentication.
+ @param rScheme scheme of the connection that requests authentication.
+ @param rURL url of the connection that requests authentication.
+ @param reqType requestor type of the connection that requests authentication.
+ */
 + (JavaNetPasswordAuthentication *)requestPasswordAuthenticationWithNSString:(NSString *)rHost
                                                       withJavaNetInetAddress:(JavaNetInetAddress *)rAddr
                                                                      withInt:(jint)rPort
@@ -40,33 +100,84 @@
                                                                 withNSString:(NSString *)rPrompt
                                                                 withNSString:(NSString *)rScheme
                                                               withJavaNetURL:(JavaNetURL *)rURL
-                                  withJavaNetAuthenticator_RequestorTypeEnum:(JavaNetAuthenticator_RequestorTypeEnum *)reqType;
+                                      withJavaNetAuthenticator_RequestorType:(JavaNetAuthenticator_RequestorType *)reqType;
 
+/*!
+ @brief Sets <code>a</code> as the default authenticator.It will be called whenever
+  the realm that the URL is pointing to requires authorization.
+ @param a authenticator which has to be set as default.
+ */
 + (void)setDefaultWithJavaNetAuthenticator:(JavaNetAuthenticator *)a;
 
 #pragma mark Protected
 
+/*!
+ @brief Returns the collected username and password for authorization.The
+  subclass has to override this method to return a value different to the
+  default which is <code>null</code>.
+ <p>
+  Returns <code>null</code> by default.
+ @return collected password authentication data.
+ */
 - (JavaNetPasswordAuthentication *)getPasswordAuthentication;
 
+/*!
+ @brief Returns the host name of the connection that requests authentication or 
+ <code>null</code> if unknown.
+ @return name of the requesting host or <code>null</code>.
+ */
 - (NSString *)getRequestingHost;
 
+/*!
+ @brief Returns the port of the connection that requests authorization.
+ @return port of the connection.
+ */
 - (jint)getRequestingPort;
 
+/*!
+ @brief Returns the realm (prompt string) of the connection that requests
+  authorization.
+ @return prompt string of the connection.
+ */
 - (NSString *)getRequestingPrompt;
 
+/*!
+ @brief Returns the protocol of the connection that requests authorization.
+ @return protocol of the connection.
+ */
 - (NSString *)getRequestingProtocol;
 
+/*!
+ @brief Returns the scheme of the connection that requests authorization, for
+  example HTTP Basic Authentication.
+ @return scheme of the connection.
+ */
 - (NSString *)getRequestingScheme;
 
+/*!
+ @brief Returns the address of the connection that requests authorization or 
+ <code>null</code> if unknown.
+ @return address of the connection.
+ */
 - (JavaNetInetAddress *)getRequestingSite;
 
+/*!
+ @brief Returns the URL of the authentication request.
+ @return authentication request url.
+ */
 - (JavaNetURL *)getRequestingURL;
 
-- (JavaNetAuthenticator_RequestorTypeEnum *)getRequestorType;
+/*!
+ @brief Returns the type of this request, it can be <code>PROXY</code> or <code>SERVER</code>.
+ @return RequestorType of the authentication request.
+ */
+- (JavaNetAuthenticator_RequestorType *)getRequestorType;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNetAuthenticator)
+
+FOUNDATION_EXPORT void JavaNetAuthenticator_init(JavaNetAuthenticator *self);
 
 FOUNDATION_EXPORT JavaNetPasswordAuthentication *JavaNetAuthenticator_requestPasswordAuthenticationWithJavaNetInetAddress_withInt_withNSString_withNSString_withNSString_(JavaNetInetAddress *rAddr, jint rPort, NSString *rProtocol, NSString *rPrompt, NSString *rScheme);
 
@@ -74,41 +185,72 @@ FOUNDATION_EXPORT void JavaNetAuthenticator_setDefaultWithJavaNetAuthenticator_(
 
 FOUNDATION_EXPORT JavaNetPasswordAuthentication *JavaNetAuthenticator_requestPasswordAuthenticationWithNSString_withJavaNetInetAddress_withInt_withNSString_withNSString_withNSString_(NSString *rHost, JavaNetInetAddress *rAddr, jint rPort, NSString *rProtocol, NSString *rPrompt, NSString *rScheme);
 
-FOUNDATION_EXPORT JavaNetPasswordAuthentication *JavaNetAuthenticator_requestPasswordAuthenticationWithNSString_withJavaNetInetAddress_withInt_withNSString_withNSString_withNSString_withJavaNetURL_withJavaNetAuthenticator_RequestorTypeEnum_(NSString *rHost, JavaNetInetAddress *rAddr, jint rPort, NSString *rProtocol, NSString *rPrompt, NSString *rScheme, JavaNetURL *rURL, JavaNetAuthenticator_RequestorTypeEnum *reqType);
-
-FOUNDATION_EXPORT void JavaNetAuthenticator_init(JavaNetAuthenticator *self);
+FOUNDATION_EXPORT JavaNetPasswordAuthentication *JavaNetAuthenticator_requestPasswordAuthenticationWithNSString_withJavaNetInetAddress_withInt_withNSString_withNSString_withNSString_withJavaNetURL_withJavaNetAuthenticator_RequestorType_(NSString *rHost, JavaNetInetAddress *rAddr, jint rPort, NSString *rProtocol, NSString *rPrompt, NSString *rScheme, JavaNetURL *rURL, JavaNetAuthenticator_RequestorType *reqType);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetAuthenticator)
 
-typedef NS_ENUM(NSUInteger, JavaNetAuthenticator_RequestorType) {
-  JavaNetAuthenticator_RequestorType_PROXY = 0,
-  JavaNetAuthenticator_RequestorType_SERVER = 1,
+#endif
+
+#if !defined (JavaNetAuthenticator_RequestorType_) && (INCLUDE_ALL_JavaNetAuthenticator || defined(INCLUDE_JavaNetAuthenticator_RequestorType))
+#define JavaNetAuthenticator_RequestorType_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, JavaNetAuthenticator_RequestorType_Enum) {
+  JavaNetAuthenticator_RequestorType_Enum_PROXY = 0,
+  JavaNetAuthenticator_RequestorType_Enum_SERVER = 1,
 };
 
-@interface JavaNetAuthenticator_RequestorTypeEnum : JavaLangEnum < NSCopying >
+/*!
+ @brief Enumeration class for the origin of the authentication request.
+ */
+@interface JavaNetAuthenticator_RequestorType : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (JavaNetAuthenticator_RequestorType *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *JavaNetAuthenticator_RequestorTypeEnum_values();
 
-+ (JavaNetAuthenticator_RequestorTypeEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT JavaNetAuthenticator_RequestorTypeEnum *JavaNetAuthenticator_RequestorTypeEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(JavaNetAuthenticator_RequestorTypeEnum)
+J2OBJC_STATIC_INIT(JavaNetAuthenticator_RequestorType)
 
-FOUNDATION_EXPORT JavaNetAuthenticator_RequestorTypeEnum *JavaNetAuthenticator_RequestorTypeEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT JavaNetAuthenticator_RequestorType *JavaNetAuthenticator_RequestorType_values_[];
 
-#define JavaNetAuthenticator_RequestorTypeEnum_PROXY JavaNetAuthenticator_RequestorTypeEnum_values_[JavaNetAuthenticator_RequestorType_PROXY]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaNetAuthenticator_RequestorTypeEnum, PROXY)
+/*!
+ @brief Type of proxy server
+ */
+inline JavaNetAuthenticator_RequestorType *JavaNetAuthenticator_RequestorType_get_PROXY();
+J2OBJC_ENUM_CONSTANT(JavaNetAuthenticator_RequestorType, PROXY)
 
-#define JavaNetAuthenticator_RequestorTypeEnum_SERVER JavaNetAuthenticator_RequestorTypeEnum_values_[JavaNetAuthenticator_RequestorType_SERVER]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaNetAuthenticator_RequestorTypeEnum, SERVER)
+/*!
+ @brief Type of origin server
+ */
+inline JavaNetAuthenticator_RequestorType *JavaNetAuthenticator_RequestorType_get_SERVER();
+J2OBJC_ENUM_CONSTANT(JavaNetAuthenticator_RequestorType, SERVER)
 
-J2OBJC_TYPE_LITERAL_HEADER(JavaNetAuthenticator_RequestorTypeEnum)
+FOUNDATION_EXPORT IOSObjectArray *JavaNetAuthenticator_RequestorType_values();
 
-#endif // _JavaNetAuthenticator_H_
+FOUNDATION_EXPORT JavaNetAuthenticator_RequestorType *JavaNetAuthenticator_RequestorType_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT JavaNetAuthenticator_RequestorType *JavaNetAuthenticator_RequestorType_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(JavaNetAuthenticator_RequestorType)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_JavaNetAuthenticator")

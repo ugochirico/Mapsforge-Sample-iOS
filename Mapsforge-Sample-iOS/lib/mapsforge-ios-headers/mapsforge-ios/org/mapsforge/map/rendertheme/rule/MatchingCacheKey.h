@@ -3,12 +3,20 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/MatchingCacheKey.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_H_
-#define _OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey))
+#define OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_
+
+@class OrgMapsforgeMapRenderthemeRuleClosed;
 @protocol JavaUtilList;
 
 @interface OrgMapsforgeMapRenderthemeRuleMatchingCacheKey : NSObject
@@ -23,16 +31,20 @@
 
 - (instancetype)initWithJavaUtilList:(id<JavaUtilList>)tags
                             withByte:(jbyte)zoomLevel
-withOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+withOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleMatchingCacheKey)
 
-FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_initWithJavaUtilList_withByte_withOrgMapsforgeMapRenderthemeRuleClosedEnum_(OrgMapsforgeMapRenderthemeRuleMatchingCacheKey *self, id<JavaUtilList> tags, jbyte zoomLevel, OrgMapsforgeMapRenderthemeRuleClosedEnum *closed);
+FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_initWithJavaUtilList_withByte_withOrgMapsforgeMapRenderthemeRuleClosed_(OrgMapsforgeMapRenderthemeRuleMatchingCacheKey *self, id<JavaUtilList> tags, jbyte zoomLevel, OrgMapsforgeMapRenderthemeRuleClosed *closed);
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleMatchingCacheKey *new_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_initWithJavaUtilList_withByte_withOrgMapsforgeMapRenderthemeRuleClosedEnum_(id<JavaUtilList> tags, jbyte zoomLevel, OrgMapsforgeMapRenderthemeRuleClosedEnum *closed) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleMatchingCacheKey *new_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_initWithJavaUtilList_withByte_withOrgMapsforgeMapRenderthemeRuleClosed_(id<JavaUtilList> tags, jbyte zoomLevel, OrgMapsforgeMapRenderthemeRuleClosed *closed) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleMatchingCacheKey *create_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_initWithJavaUtilList_withByte_withOrgMapsforgeMapRenderthemeRuleClosed_(id<JavaUtilList> tags, jbyte zoomLevel, OrgMapsforgeMapRenderthemeRuleClosed *closed);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleMatchingCacheKey)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleMatchingCacheKey_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleMatchingCacheKey")

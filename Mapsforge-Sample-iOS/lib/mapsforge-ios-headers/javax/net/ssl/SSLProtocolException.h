@@ -3,16 +3,35 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/SSLProtocolException.java
 //
 
-#ifndef _JavaxNetSslSSLProtocolException_H_
-#define _JavaxNetSslSSLProtocolException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslSSLProtocolException")
+#ifdef RESTRICT_JavaxNetSslSSLProtocolException
+#define INCLUDE_ALL_JavaxNetSslSSLProtocolException 0
+#else
+#define INCLUDE_ALL_JavaxNetSslSSLProtocolException 1
+#endif
+#undef RESTRICT_JavaxNetSslSSLProtocolException
+
+#if !defined (JavaxNetSslSSLProtocolException_) && (INCLUDE_ALL_JavaxNetSslSSLProtocolException || defined(INCLUDE_JavaxNetSslSSLProtocolException))
+#define JavaxNetSslSSLProtocolException_
+
+#define RESTRICT_JavaxNetSslSSLException 1
+#define INCLUDE_JavaxNetSslSSLException 1
 #include "javax/net/ssl/SSLException.h"
 
+/*!
+ @brief The exception that is thrown when an error in the operation of the SSL
+  protocol is encountered.
+ */
 @interface JavaxNetSslSSLProtocolException : JavaxNetSslSSLException
 
 #pragma mark Public
 
+/*!
+ @brief Creates a new <code>SSLProtocolException</code> with the specified message.
+ @param reason the detail message for the exception.
+ */
 - (instancetype)initWithNSString:(NSString *)reason;
 
 @end
@@ -23,6 +42,10 @@ FOUNDATION_EXPORT void JavaxNetSslSSLProtocolException_initWithNSString_(JavaxNe
 
 FOUNDATION_EXPORT JavaxNetSslSSLProtocolException *new_JavaxNetSslSSLProtocolException_initWithNSString_(NSString *reason) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaxNetSslSSLProtocolException *create_JavaxNetSslSSLProtocolException_initWithNSString_(NSString *reason);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLProtocolException)
 
-#endif // _JavaxNetSslSSLProtocolException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslSSLProtocolException")

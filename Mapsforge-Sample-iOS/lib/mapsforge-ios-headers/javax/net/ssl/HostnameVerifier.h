@@ -3,15 +3,38 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/HostnameVerifier.java
 //
 
-#ifndef _JavaxNetSslHostnameVerifier_H_
-#define _JavaxNetSslHostnameVerifier_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslHostnameVerifier")
+#ifdef RESTRICT_JavaxNetSslHostnameVerifier
+#define INCLUDE_ALL_JavaxNetSslHostnameVerifier 0
+#else
+#define INCLUDE_ALL_JavaxNetSslHostnameVerifier 1
+#endif
+#undef RESTRICT_JavaxNetSslHostnameVerifier
+
+#if !defined (JavaxNetSslHostnameVerifier_) && (INCLUDE_ALL_JavaxNetSslHostnameVerifier || defined(INCLUDE_JavaxNetSslHostnameVerifier))
+#define JavaxNetSslHostnameVerifier_
 
 @protocol JavaxNetSslSSLSession;
 
-@protocol JavaxNetSslHostnameVerifier < NSObject, JavaObject >
+/*!
+ @brief The interface to be used to provide hostname verification functionality.
+ <p>
+  This is an extended verification option that implementers can provide. It is to be used
+  during a handshake if the URL's hostname does not match the peer's
+  identification hostname.
+ */
+@protocol JavaxNetSslHostnameVerifier < JavaObject >
 
+/*!
+ @brief Verifies that the specified hostname is allowed within the specified SSL
+  session.
+ @param hostname the hostname.
+ @param session the SSL session of the connection.
+ @return <code>true</code> if the specified hostname is allowed, otherwise
+          <code>false</code>.
+ */
 - (jboolean)verifyWithNSString:(NSString *)hostname
      withJavaxNetSslSSLSession:(id<JavaxNetSslSSLSession>)session;
 
@@ -21,4 +44,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaxNetSslHostnameVerifier)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslHostnameVerifier)
 
-#endif // _JavaxNetSslHostnameVerifier_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslHostnameVerifier")

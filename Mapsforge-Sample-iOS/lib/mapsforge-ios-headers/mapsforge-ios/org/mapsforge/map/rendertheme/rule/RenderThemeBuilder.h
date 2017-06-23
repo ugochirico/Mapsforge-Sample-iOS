@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/RenderThemeBuilder.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_H_
-#define _OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder))
+#define OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_
 
 @class OrgMapsforgeMapRenderthemeRuleRenderTheme;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
@@ -37,6 +45,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_initWith
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder *new_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withNSString_withOrgXmlpullV1XmlPullParser_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, NSString *elementName, id<OrgXmlpullV1XmlPullParser> pullParser) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder *create_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withNSString_withOrgXmlpullV1XmlPullParser_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, NSString *elementName, id<OrgXmlpullV1XmlPullParser> pullParser);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder")

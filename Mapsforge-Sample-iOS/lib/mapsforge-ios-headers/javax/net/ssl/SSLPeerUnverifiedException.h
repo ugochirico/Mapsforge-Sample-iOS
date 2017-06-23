@@ -3,16 +3,36 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/SSLPeerUnverifiedException.java
 //
 
-#ifndef _JavaxNetSslSSLPeerUnverifiedException_H_
-#define _JavaxNetSslSSLPeerUnverifiedException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslSSLPeerUnverifiedException")
+#ifdef RESTRICT_JavaxNetSslSSLPeerUnverifiedException
+#define INCLUDE_ALL_JavaxNetSslSSLPeerUnverifiedException 0
+#else
+#define INCLUDE_ALL_JavaxNetSslSSLPeerUnverifiedException 1
+#endif
+#undef RESTRICT_JavaxNetSslSSLPeerUnverifiedException
+
+#if !defined (JavaxNetSslSSLPeerUnverifiedException_) && (INCLUDE_ALL_JavaxNetSslSSLPeerUnverifiedException || defined(INCLUDE_JavaxNetSslSSLPeerUnverifiedException))
+#define JavaxNetSslSSLPeerUnverifiedException_
+
+#define RESTRICT_JavaxNetSslSSLException 1
+#define INCLUDE_JavaxNetSslSSLException 1
 #include "javax/net/ssl/SSLException.h"
 
+/*!
+ @brief The exception that is thrown when the identity of a peer has not been
+  verified.
+ */
 @interface JavaxNetSslSSLPeerUnverifiedException : JavaxNetSslSSLException
 
 #pragma mark Public
 
+/*!
+ @brief Creates a new <code>SSLPeerUnverifiedException</code> with the specified
+  message.
+ @param reason the detail message for the exception.
+ */
 - (instancetype)initWithNSString:(NSString *)reason;
 
 @end
@@ -23,6 +43,10 @@ FOUNDATION_EXPORT void JavaxNetSslSSLPeerUnverifiedException_initWithNSString_(J
 
 FOUNDATION_EXPORT JavaxNetSslSSLPeerUnverifiedException *new_JavaxNetSslSSLPeerUnverifiedException_initWithNSString_(NSString *reason) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaxNetSslSSLPeerUnverifiedException *create_JavaxNetSslSSLPeerUnverifiedException_initWithNSString_(NSString *reason);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLPeerUnverifiedException)
 
-#endif // _JavaxNetSslSSLPeerUnverifiedException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslSSLPeerUnverifiedException")

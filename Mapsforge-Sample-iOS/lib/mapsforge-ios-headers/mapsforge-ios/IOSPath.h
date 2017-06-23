@@ -22,7 +22,7 @@
 @interface IOSPath : NSObject <OrgMapsforgeCoreGraphicsPath> {
 @public
     CGMutablePathRef path_;
-    OrgMapsforgeCoreGraphicsFillRule fillRule_;
+    OrgMapsforgeCoreGraphicsFillRule_Enum fillRule_;
 }
 
 @end

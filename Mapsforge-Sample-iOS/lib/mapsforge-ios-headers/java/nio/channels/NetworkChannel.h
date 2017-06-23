@@ -3,29 +3,105 @@
 //  source: android/libcore/luni/src/main/java/java/nio/channels/NetworkChannel.java
 //
 
-#ifndef _JavaNioChannelsNetworkChannel_H_
-#define _JavaNioChannelsNetworkChannel_H_
-
 #include "J2ObjC_header.h"
-#include "java/io/Closeable.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNioChannelsNetworkChannel")
+#ifdef RESTRICT_JavaNioChannelsNetworkChannel
+#define INCLUDE_ALL_JavaNioChannelsNetworkChannel 0
+#else
+#define INCLUDE_ALL_JavaNioChannelsNetworkChannel 1
+#endif
+#undef RESTRICT_JavaNioChannelsNetworkChannel
+
+#if !defined (JavaNioChannelsNetworkChannel_) && (INCLUDE_ALL_JavaNioChannelsNetworkChannel || defined(INCLUDE_JavaNioChannelsNetworkChannel))
+#define JavaNioChannelsNetworkChannel_
+
+#define RESTRICT_JavaLangAutoCloseable 1
+#define INCLUDE_JavaLangAutoCloseable 1
 #include "java/lang/AutoCloseable.h"
+
+#define RESTRICT_JavaNioChannelsChannel 1
+#define INCLUDE_JavaNioChannelsChannel 1
 #include "java/nio/channels/Channel.h"
+
+#define RESTRICT_JavaIoCloseable 1
+#define INCLUDE_JavaIoCloseable 1
+#include "java/io/Closeable.h"
 
 @class JavaNetSocketAddress;
 @protocol JavaNetSocketOption;
 @protocol JavaUtilSet;
 
-@protocol JavaNioChannelsNetworkChannel < JavaLangAutoCloseable, JavaNioChannelsChannel, JavaIoCloseable, NSObject, JavaObject >
+/*!
+ @brief A common interface for channels that are backed by network sockets.
+ @since 1.7
+ */
+@protocol JavaNioChannelsNetworkChannel < JavaLangAutoCloseable, JavaNioChannelsChannel, JavaIoCloseable, JavaObject >
 
+/*!
+ @brief Binds this channel to the given local socket address.If the <code>localAddr</code> is set
+  to <code>null</code> the socket will be bound to an available local address on any free port of
+  the system.
+ @param local the local machine address and port to bind on.
+ @return this channel.
+ @throw UnsupportedAddressTypeException
+ if the <code>SocketAddress</code> is not supported.
+ @throw ClosedChannelException
+ if the channel is closed.
+ @throw AlreadyBoundException
+ if the channel is already bound.
+ @throw IOException
+ if another I/O error occurs.
+ */
 - (id<JavaNioChannelsNetworkChannel>)bindWithJavaNetSocketAddress:(JavaNetSocketAddress *)local;
 
+/*!
+ @brief Returns the local socket address the channel is bound to.The socket may be bound explicitly
+  via <code>bind(java.net.SocketAddress)</code> or similar methods, or as a side-effect when other
+  methods are called, depending on the implementation.
+ If the channel is not bound <code>null</code>
+  is returned. 
+ <p>If IP is being used, the returned object will be a subclass of 
+ <code>java.net.InetSocketAddress</code>
+ @return the local socket address, or <code>null</code> if the socket is not bound
+ @throw ClosedChannelException
+ if the channel is closed.
+ @throw IOException
+ if another I/O error occurs.
+ */
 - (JavaNetSocketAddress *)getLocalAddress;
 
+/*!
+ @brief Returns the value for the socket option.
+ @throw UnsupportedOperationException
+ if the option is not supported by the socket.
+ @throw java.nio.channels.ClosedChannelException
+ if the socket is closed
+ @throw IOException
+ if the value cannot be read.
+ - seealso: java.net.StandardSocketOptions
+ */
 - (id)getOptionWithJavaNetSocketOption:(id<JavaNetSocketOption>)option;
 
+/*!
+ @brief Sets the value for the socket option.
+ @return this NetworkChannel
+ @throw UnsupportedOperationException
+ if the option is not supported by the socket.
+ @throw IllegalArgumentException
+ if the value is not valid for the option.
+ @throw java.nio.channels.ClosedChannelException
+ if the socket is closed
+ @throw IOException
+ if the value cannot be written.
+ - seealso: java.net.StandardSocketOptions
+ */
 - (id<JavaNioChannelsNetworkChannel>)setOptionWithJavaNetSocketOption:(id<JavaNetSocketOption>)option
                                                                withId:(id)value;
 
+/*!
+ @brief Returns the set of socket options supported by this channel.
+ */
 - (id<JavaUtilSet>)supportedOptions;
 
 @end
@@ -34,4 +110,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsNetworkChannel)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsNetworkChannel)
 
-#endif // _JavaNioChannelsNetworkChannel_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNioChannelsNetworkChannel")

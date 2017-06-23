@@ -3,14 +3,22 @@
 //  source: ./org/mapsforge/map/model/common/Persistable.java
 //
 
-#ifndef _OrgMapsforgeMapModelCommonPersistable_H_
-#define _OrgMapsforgeMapModelCommonPersistable_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonPersistable")
+#ifdef RESTRICT_OrgMapsforgeMapModelCommonPersistable
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonPersistable 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonPersistable 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelCommonPersistable
+
+#if !defined (OrgMapsforgeMapModelCommonPersistable_) && (INCLUDE_ALL_OrgMapsforgeMapModelCommonPersistable || defined(INCLUDE_OrgMapsforgeMapModelCommonPersistable))
+#define OrgMapsforgeMapModelCommonPersistable_
 
 @protocol OrgMapsforgeMapModelCommonPreferencesFacade;
 
-@protocol OrgMapsforgeMapModelCommonPersistable < NSObject, JavaObject >
+@protocol OrgMapsforgeMapModelCommonPersistable < JavaObject >
 
 - (void)init__WithOrgMapsforgeMapModelCommonPreferencesFacade:(id<OrgMapsforgeMapModelCommonPreferencesFacade>)preferencesFacade OBJC_METHOD_FAMILY_NONE;
 
@@ -22,4 +30,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapModelCommonPersistable)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelCommonPersistable)
 
-#endif // _OrgMapsforgeMapModelCommonPersistable_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonPersistable")

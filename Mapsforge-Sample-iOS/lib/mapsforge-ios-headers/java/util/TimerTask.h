@@ -3,12 +3,29 @@
 //  source: android/libcore/luni/src/main/java/java/util/TimerTask.java
 //
 
-#ifndef _JavaUtilTimerTask_H_
-#define _JavaUtilTimerTask_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaUtilTimerTask")
+#ifdef RESTRICT_JavaUtilTimerTask
+#define INCLUDE_ALL_JavaUtilTimerTask 0
+#else
+#define INCLUDE_ALL_JavaUtilTimerTask 1
+#endif
+#undef RESTRICT_JavaUtilTimerTask
+
+#if !defined (JavaUtilTimerTask_) && (INCLUDE_ALL_JavaUtilTimerTask || defined(INCLUDE_JavaUtilTimerTask))
+#define JavaUtilTimerTask_
+
+#define RESTRICT_JavaLangRunnable 1
+#define INCLUDE_JavaLangRunnable 1
 #include "java/lang/Runnable.h"
 
+/*!
+ @brief The <code>TimerTask</code> class represents a task to run at a specified time.The task
+  may be run once or repeatedly.
+ - seealso: Timer
+ - seealso: java.lang.Object
+ */
 @interface JavaUtilTimerTask : NSObject < JavaLangRunnable > {
  @public
   id lock_;
@@ -20,14 +37,36 @@
 
 #pragma mark Public
 
+/*!
+ @brief Cancels the <code>TimerTask</code> and removes it from the <code>Timer</code>'s queue.Generally, it
+  returns <code>false</code> if the call did not prevent a <code>TimerTask</code> from running at
+  least once.
+ Subsequent calls have no effect.
+ @return <code>true</code> if the call prevented a scheduled execution
+          from taking place, <code>false</code> otherwise.
+ */
 - (jboolean)cancel;
 
+/*!
+ @brief The task to run should be specified in the implementation of the <code>run()</code>
+  method.
+ */
 - (void)run;
 
+/*!
+ @brief Returns the scheduled execution time.If the task execution is in
+  progress it returns the execution time of the ongoing task.
+ Tasks which
+  have not yet run return an undefined value.
+ @return the most recent execution time.
+ */
 - (jlong)scheduledExecutionTime;
 
 #pragma mark Protected
 
+/*!
+ @brief Creates a new <code>TimerTask</code>.
+ */
 - (instancetype)init;
 
 #pragma mark Package-Private
@@ -48,4 +87,6 @@ FOUNDATION_EXPORT void JavaUtilTimerTask_init(JavaUtilTimerTask *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTimerTask)
 
-#endif // _JavaUtilTimerTask_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaUtilTimerTask")

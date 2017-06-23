@@ -3,12 +3,20 @@
 //  source: ./org/mapsforge/map/layer/renderer/CanvasRasterer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererCanvasRasterer_H_
-#define _OrgMapsforgeMapLayerRendererCanvasRasterer_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeCoreGraphicsColorEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererCanvasRasterer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererCanvasRasterer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererCanvasRasterer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererCanvasRasterer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererCanvasRasterer
+
+#if !defined (OrgMapsforgeMapLayerRendererCanvasRasterer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererCanvasRasterer || defined(INCLUDE_OrgMapsforgeMapLayerRendererCanvasRasterer))
+#define OrgMapsforgeMapLayerRendererCanvasRasterer_
+
+@class OrgMapsforgeCoreGraphicsColor;
 @class OrgMapsforgeCoreModelRectangle;
 @class OrgMapsforgeCoreModelTile;
 @protocol JavaUtilList;
@@ -32,8 +40,8 @@
 
 - (void)fillWithInt:(jint)color;
 
-- (void)fillOutsideAreasWithOrgMapsforgeCoreGraphicsColorEnum:(OrgMapsforgeCoreGraphicsColorEnum *)color
-                           withOrgMapsforgeCoreModelRectangle:(OrgMapsforgeCoreModelRectangle *)insideArea;
+- (void)fillOutsideAreasWithOrgMapsforgeCoreGraphicsColor:(OrgMapsforgeCoreGraphicsColor *)color
+                       withOrgMapsforgeCoreModelRectangle:(OrgMapsforgeCoreModelRectangle *)insideArea;
 
 - (void)fillOutsideAreasWithInt:(jint)color
 withOrgMapsforgeCoreModelRectangle:(OrgMapsforgeCoreModelRectangle *)insideArea;
@@ -48,6 +56,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererCanvasRasterer_initWithOrgMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererCanvasRasterer *new_OrgMapsforgeMapLayerRendererCanvasRasterer_initWithOrgMapsforgeCoreGraphicsGraphicFactory_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererCanvasRasterer *create_OrgMapsforgeMapLayerRendererCanvasRasterer_initWithOrgMapsforgeCoreGraphicsGraphicFactory_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererCanvasRasterer)
 
-#endif // _OrgMapsforgeMapLayerRendererCanvasRasterer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererCanvasRasterer")

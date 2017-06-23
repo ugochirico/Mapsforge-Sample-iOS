@@ -3,14 +3,22 @@
 //  source: ./org/mapsforge/core/graphics/Bitmap.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsBitmap_H_
-#define _OrgMapsforgeCoreGraphicsBitmap_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsBitmap")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsBitmap
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsBitmap 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsBitmap 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsBitmap
+
+#if !defined (OrgMapsforgeCoreGraphicsBitmap_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsBitmap || defined(INCLUDE_OrgMapsforgeCoreGraphicsBitmap))
+#define OrgMapsforgeCoreGraphicsBitmap_
 
 @class JavaIoOutputStream;
 
-@protocol OrgMapsforgeCoreGraphicsBitmap < NSObject, JavaObject >
+@protocol OrgMapsforgeCoreGraphicsBitmap < JavaObject >
 
 - (void)compressWithJavaIoOutputStream:(JavaIoOutputStream *)outputStream;
 
@@ -33,4 +41,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsBitmap)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsBitmap)
 
-#endif // _OrgMapsforgeCoreGraphicsBitmap_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsBitmap")

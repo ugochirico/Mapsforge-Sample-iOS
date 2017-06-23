@@ -3,14 +3,25 @@
 //  source: ./org/mapsforge/core/mapelements/PointTextContainer.java
 //
 
-#ifndef _OrgMapsforgeCoreMapelementsPointTextContainer_H_
-#define _OrgMapsforgeCoreMapelementsPointTextContainer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsPointTextContainer")
+#ifdef RESTRICT_OrgMapsforgeCoreMapelementsPointTextContainer
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsPointTextContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsPointTextContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreMapelementsPointTextContainer
+
+#if !defined (OrgMapsforgeCoreMapelementsPointTextContainer_) && (INCLUDE_ALL_OrgMapsforgeCoreMapelementsPointTextContainer || defined(INCLUDE_OrgMapsforgeCoreMapelementsPointTextContainer))
+#define OrgMapsforgeCoreMapelementsPointTextContainer_
+
+#define RESTRICT_OrgMapsforgeCoreMapelementsMapElementContainer 1
+#define INCLUDE_OrgMapsforgeCoreMapelementsMapElementContainer 1
 #include "org/mapsforge/core/mapelements/MapElementContainer.h"
 
-@class OrgMapsforgeCoreGraphicsDisplayEnum;
-@class OrgMapsforgeCoreGraphicsPositionEnum;
+@class OrgMapsforgeCoreGraphicsDisplay;
+@class OrgMapsforgeCoreGraphicsPosition;
 @class OrgMapsforgeCoreMapelementsSymbolContainer;
 @class OrgMapsforgeCoreModelPoint;
 @protocol OrgMapsforgeCoreGraphicsPaint;
@@ -21,7 +32,7 @@
   jint maxTextWidth_;
   id<OrgMapsforgeCoreGraphicsPaint> paintBack_;
   id<OrgMapsforgeCoreGraphicsPaint> paintFront_;
-  OrgMapsforgeCoreGraphicsPositionEnum *position_;
+  OrgMapsforgeCoreGraphicsPosition *position_;
   OrgMapsforgeCoreMapelementsSymbolContainer *symbolContainer_;
   NSString *text_;
   jint textHeight_;
@@ -41,13 +52,13 @@
 #pragma mark Protected
 
 - (instancetype)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
-           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+               withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                            withInt:(jint)priority
                                       withNSString:(NSString *)text
                  withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
                  withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
     withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
-          withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+              withOrgMapsforgeCoreGraphicsPosition:(OrgMapsforgeCoreGraphicsPosition *)position
                                            withInt:(jint)maxTextWidth;
 
 @end
@@ -56,12 +67,14 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreMapelementsPointTextContainer)
 
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsPointTextContainer, paintBack_, id<OrgMapsforgeCoreGraphicsPaint>)
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsPointTextContainer, paintFront_, id<OrgMapsforgeCoreGraphicsPaint>)
-J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsPointTextContainer, position_, OrgMapsforgeCoreGraphicsPositionEnum *)
+J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsPointTextContainer, position_, OrgMapsforgeCoreGraphicsPosition *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsPointTextContainer, symbolContainer_, OrgMapsforgeCoreMapelementsSymbolContainer *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeCoreMapelementsPointTextContainer, text_, NSString *)
 
-FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsPointTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreMapelementsSymbolContainer_withOrgMapsforgeCoreGraphicsPositionEnum_withInt_(OrgMapsforgeCoreMapelementsPointTextContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, OrgMapsforgeCoreMapelementsSymbolContainer *symbolContainer, OrgMapsforgeCoreGraphicsPositionEnum *position, jint maxTextWidth);
+FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsPointTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreMapelementsSymbolContainer_withOrgMapsforgeCoreGraphicsPosition_withInt_(OrgMapsforgeCoreMapelementsPointTextContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, OrgMapsforgeCoreMapelementsSymbolContainer *symbolContainer, OrgMapsforgeCoreGraphicsPosition *position, jint maxTextWidth);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreMapelementsPointTextContainer)
 
-#endif // _OrgMapsforgeCoreMapelementsPointTextContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsPointTextContainer")

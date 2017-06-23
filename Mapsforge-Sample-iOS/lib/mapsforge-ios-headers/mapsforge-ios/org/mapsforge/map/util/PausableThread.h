@@ -3,14 +3,29 @@
 //  source: ./org/mapsforge/map/util/PausableThread.java
 //
 
-#ifndef _OrgMapsforgeMapUtilPausableThread_H_
-#define _OrgMapsforgeMapUtilPausableThread_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapUtilPausableThread")
+#ifdef RESTRICT_OrgMapsforgeMapUtilPausableThread
+#define INCLUDE_ALL_OrgMapsforgeMapUtilPausableThread 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapUtilPausableThread 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapUtilPausableThread
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapUtilPausableThread_) && (INCLUDE_ALL_OrgMapsforgeMapUtilPausableThread || defined(INCLUDE_OrgMapsforgeMapUtilPausableThread))
+#define OrgMapsforgeMapUtilPausableThread_
+
+#define RESTRICT_JavaLangThread 1
+#define INCLUDE_JavaLangThread 1
 #include "java/lang/Thread.h"
 
-@class OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum;
+@class OrgMapsforgeMapUtilPausableThread_ThreadPriority;
 
 @interface OrgMapsforgeMapUtilPausableThread : JavaLangThread
 
@@ -36,7 +51,7 @@
 
 - (void)doWork;
 
-- (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)getThreadPriority;
+- (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)getThreadPriority;
 
 - (jboolean)hasWork;
 
@@ -48,50 +63,74 @@ FOUNDATION_EXPORT void OrgMapsforgeMapUtilPausableThread_init(OrgMapsforgeMapUti
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapUtilPausableThread)
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeMapUtilPausableThread_ThreadPriority) {
-  OrgMapsforgeMapUtilPausableThread_ThreadPriority_ABOVE_NORMAL = 0,
-  OrgMapsforgeMapUtilPausableThread_ThreadPriority_BELOW_NORMAL = 1,
-  OrgMapsforgeMapUtilPausableThread_ThreadPriority_HIGHEST = 2,
-  OrgMapsforgeMapUtilPausableThread_ThreadPriority_LOWEST = 3,
-  OrgMapsforgeMapUtilPausableThread_ThreadPriority_NORMAL = 4,
+#endif
+
+#if !defined (OrgMapsforgeMapUtilPausableThread_ThreadPriority_) && (INCLUDE_ALL_OrgMapsforgeMapUtilPausableThread || defined(INCLUDE_OrgMapsforgeMapUtilPausableThread_ThreadPriority))
+#define OrgMapsforgeMapUtilPausableThread_ThreadPriority_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeMapUtilPausableThread_ThreadPriority_Enum) {
+  OrgMapsforgeMapUtilPausableThread_ThreadPriority_Enum_ABOVE_NORMAL = 0,
+  OrgMapsforgeMapUtilPausableThread_ThreadPriority_Enum_BELOW_NORMAL = 1,
+  OrgMapsforgeMapUtilPausableThread_ThreadPriority_Enum_HIGHEST = 2,
+  OrgMapsforgeMapUtilPausableThread_ThreadPriority_Enum_LOWEST = 3,
+  OrgMapsforgeMapUtilPausableThread_ThreadPriority_Enum_NORMAL = 4,
 };
 
-@interface OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum : JavaLangEnum < NSCopying > {
+@interface OrgMapsforgeMapUtilPausableThread_ThreadPriority : JavaLangEnum < NSCopying > {
  @public
   jint priority_;
 }
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (OrgMapsforgeMapUtilPausableThread_ThreadPriority *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values();
 
-+ (OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeMapUtilPausableThread_ThreadPriority)
 
-FOUNDATION_EXPORT OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum *OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_values_[];
 
-#define OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_ABOVE_NORMAL OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values_[OrgMapsforgeMapUtilPausableThread_ThreadPriority_ABOVE_NORMAL]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum, ABOVE_NORMAL)
+inline OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_get_ABOVE_NORMAL();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapUtilPausableThread_ThreadPriority, ABOVE_NORMAL)
 
-#define OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_BELOW_NORMAL OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values_[OrgMapsforgeMapUtilPausableThread_ThreadPriority_BELOW_NORMAL]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum, BELOW_NORMAL)
+inline OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_get_BELOW_NORMAL();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapUtilPausableThread_ThreadPriority, BELOW_NORMAL)
 
-#define OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_HIGHEST OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values_[OrgMapsforgeMapUtilPausableThread_ThreadPriority_HIGHEST]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum, HIGHEST)
+inline OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_get_HIGHEST();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapUtilPausableThread_ThreadPriority, HIGHEST)
 
-#define OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_LOWEST OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values_[OrgMapsforgeMapUtilPausableThread_ThreadPriority_LOWEST]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum, LOWEST)
+inline OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_get_LOWEST();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapUtilPausableThread_ThreadPriority, LOWEST)
 
-#define OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_NORMAL OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum_values_[OrgMapsforgeMapUtilPausableThread_ThreadPriority_NORMAL]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum, NORMAL)
+inline OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_get_NORMAL();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapUtilPausableThread_ThreadPriority, NORMAL)
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapUtilPausableThread_ThreadPriorityEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapUtilPausableThread_ThreadPriority_values();
 
-#endif // _OrgMapsforgeMapUtilPausableThread_H_
+FOUNDATION_EXPORT OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeMapUtilPausableThread_ThreadPriority *OrgMapsforgeMapUtilPausableThread_ThreadPriority_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapUtilPausableThread_ThreadPriority)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapUtilPausableThread")

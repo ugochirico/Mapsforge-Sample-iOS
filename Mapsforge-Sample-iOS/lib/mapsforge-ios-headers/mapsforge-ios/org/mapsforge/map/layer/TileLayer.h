@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/TileLayer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerTileLayer_H_
-#define _OrgMapsforgeMapLayerTileLayer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerTileLayer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerTileLayer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerTileLayer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerTileLayer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerTileLayer
+
+#if !defined (OrgMapsforgeMapLayerTileLayer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerTileLayer || defined(INCLUDE_OrgMapsforgeMapLayerTileLayer))
+#define OrgMapsforgeMapLayerTileLayer_
+
+#define RESTRICT_OrgMapsforgeMapLayerLayer 1
+#define INCLUDE_OrgMapsforgeMapLayerLayer 1
 #include "org/mapsforge/map/layer/Layer.h"
 
 @class OrgMapsforgeCoreModelBoundingBox;
@@ -51,7 +62,7 @@
 
 #pragma mark Protected
 
-- (id)createJobWithOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile;
+- (OrgMapsforgeMapLayerQueueJob *)createJobWithOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile;
 
 - (jboolean)isTileStaleWithOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile
               withOrgMapsforgeCoreGraphicsTileBitmap:(id<OrgMapsforgeCoreGraphicsTileBitmap>)bitmap;
@@ -71,4 +82,6 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerTileLayer_initWithOrgMapsforgeMapLaye
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerTileLayer)
 
-#endif // _OrgMapsforgeMapLayerTileLayer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerTileLayer")

@@ -3,20 +3,28 @@
 //  source: ./org/mapsforge/map/rendertheme/RenderCallback.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRenderCallback_H_
-#define _OrgMapsforgeMapRenderthemeRenderCallback_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeCoreGraphicsDisplayEnum;
-@class OrgMapsforgeCoreGraphicsPositionEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderCallback")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRenderCallback
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderCallback 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderCallback 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRenderCallback
+
+#if !defined (OrgMapsforgeMapRenderthemeRenderCallback_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderCallback || defined(INCLUDE_OrgMapsforgeMapRenderthemeRenderCallback))
+#define OrgMapsforgeMapRenderthemeRenderCallback_
+
+@class OrgMapsforgeCoreGraphicsDisplay;
+@class OrgMapsforgeCoreGraphicsPosition;
 @class OrgMapsforgeCoreModelTile;
 @class OrgMapsforgeMapLayerRendererPolylineContainer;
 @class OrgMapsforgeMapReaderPointOfInterest;
 @protocol OrgMapsforgeCoreGraphicsBitmap;
 @protocol OrgMapsforgeCoreGraphicsPaint;
 
-@protocol OrgMapsforgeMapRenderthemeRenderCallback < NSObject, JavaObject >
+@protocol OrgMapsforgeMapRenderthemeRenderCallback < JavaObject >
 
 - (void)renderAreaWithOrgMapsforgeMapLayerRendererPolylineContainer:(OrgMapsforgeMapLayerRendererPolylineContainer *)way
                                   withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)fill
@@ -24,30 +32,30 @@
                                                             withInt:(jint)level;
 
 - (void)renderAreaCaptionWithOrgMapsforgeMapLayerRendererPolylineContainer:(OrgMapsforgeMapLayerRendererPolylineContainer *)way
-                                   withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                       withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                    withInt:(jint)priority
                                                               withNSString:(NSString *)caption
                                                                  withFloat:(jfloat)horizontalOffset
                                                                  withFloat:(jfloat)verticalOffset
                                          withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)fill
                                          withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)stroke
-                                  withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                      withOrgMapsforgeCoreGraphicsPosition:(OrgMapsforgeCoreGraphicsPosition *)position
                                                                    withInt:(jint)maxTextWidth;
 
 - (void)renderAreaSymbolWithOrgMapsforgeMapLayerRendererPolylineContainer:(OrgMapsforgeMapLayerRendererPolylineContainer *)way
-                                  withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                      withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                   withInt:(jint)priority
                                        withOrgMapsforgeCoreGraphicsBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)symbol;
 
 - (void)renderPointOfInterestCaptionWithOrgMapsforgeMapReaderPointOfInterest:(OrgMapsforgeMapReaderPointOfInterest *)poi
-                                     withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                         withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                      withInt:(jint)priority
                                                                 withNSString:(NSString *)caption
                                                                    withFloat:(jfloat)horizontalOffset
                                                                    withFloat:(jfloat)verticalOffset
                                            withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)fill
                                            withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)stroke
-                                    withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                        withOrgMapsforgeCoreGraphicsPosition:(OrgMapsforgeCoreGraphicsPosition *)position
                                                                      withInt:(jint)maxTextWidth
                                                withOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile;
 
@@ -59,7 +67,7 @@
                                               withOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile;
 
 - (void)renderPointOfInterestSymbolWithOrgMapsforgeMapReaderPointOfInterest:(OrgMapsforgeMapReaderPointOfInterest *)poi
-                                    withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                        withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                     withInt:(jint)priority
                                          withOrgMapsforgeCoreGraphicsBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)symbol
                                               withOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile;
@@ -70,7 +78,7 @@
                                                            withInt:(jint)level;
 
 - (void)renderWaySymbolWithOrgMapsforgeMapLayerRendererPolylineContainer:(OrgMapsforgeMapLayerRendererPolylineContainer *)way
-                                 withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                     withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                  withInt:(jint)priority
                                       withOrgMapsforgeCoreGraphicsBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)symbol
                                                                withFloat:(jfloat)dy
@@ -81,7 +89,7 @@
                                                              withBoolean:(jboolean)rotate;
 
 - (void)renderWayTextWithOrgMapsforgeMapLayerRendererPolylineContainer:(OrgMapsforgeMapLayerRendererPolylineContainer *)way
-                               withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                   withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                                                withInt:(jint)priority
                                                           withNSString:(NSString *)text
                                                              withFloat:(jfloat)dy
@@ -94,4 +102,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeRenderCallback)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRenderCallback)
 
-#endif // _OrgMapsforgeMapRenderthemeRenderCallback_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderCallback")

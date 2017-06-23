@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/scalebar/NauticalUnitAdapter.java
 //
 
-#ifndef _OrgMapsforgeMapScalebarNauticalUnitAdapter_H_
-#define _OrgMapsforgeMapScalebarNauticalUnitAdapter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarNauticalUnitAdapter")
+#ifdef RESTRICT_OrgMapsforgeMapScalebarNauticalUnitAdapter
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarNauticalUnitAdapter 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarNauticalUnitAdapter 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapScalebarNauticalUnitAdapter
+
+#if !defined (OrgMapsforgeMapScalebarNauticalUnitAdapter_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarNauticalUnitAdapter || defined(INCLUDE_OrgMapsforgeMapScalebarNauticalUnitAdapter))
+#define OrgMapsforgeMapScalebarNauticalUnitAdapter_
+
+#define RESTRICT_OrgMapsforgeMapScalebarDistanceUnitAdapter 1
+#define INCLUDE_OrgMapsforgeMapScalebarDistanceUnitAdapter 1
 #include "org/mapsforge/map/scalebar/DistanceUnitAdapter.h"
 
 @class IOSIntArray;
@@ -25,9 +36,13 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapScalebarNauticalUnitAdapter)
 
-FOUNDATION_EXPORT OrgMapsforgeMapScalebarNauticalUnitAdapter *OrgMapsforgeMapScalebarNauticalUnitAdapter_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapScalebarNauticalUnitAdapter, INSTANCE_, OrgMapsforgeMapScalebarNauticalUnitAdapter *)
+inline OrgMapsforgeMapScalebarNauticalUnitAdapter *OrgMapsforgeMapScalebarNauticalUnitAdapter_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarNauticalUnitAdapter *OrgMapsforgeMapScalebarNauticalUnitAdapter_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapScalebarNauticalUnitAdapter, INSTANCE, OrgMapsforgeMapScalebarNauticalUnitAdapter *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarNauticalUnitAdapter)
 
-#endif // _OrgMapsforgeMapScalebarNauticalUnitAdapter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarNauticalUnitAdapter")

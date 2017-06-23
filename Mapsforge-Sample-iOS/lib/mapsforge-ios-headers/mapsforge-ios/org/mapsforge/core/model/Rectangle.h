@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/model/Rectangle.java
 //
 
-#ifndef _OrgMapsforgeCoreModelRectangle_H_
-#define _OrgMapsforgeCoreModelRectangle_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelRectangle")
+#ifdef RESTRICT_OrgMapsforgeCoreModelRectangle
+#define INCLUDE_ALL_OrgMapsforgeCoreModelRectangle 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelRectangle 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelRectangle
+
+#if !defined (OrgMapsforgeCoreModelRectangle_) && (INCLUDE_ALL_OrgMapsforgeCoreModelRectangle || defined(INCLUDE_OrgMapsforgeCoreModelRectangle))
+#define OrgMapsforgeCoreModelRectangle_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @class OrgMapsforgeCoreModelPoint;
@@ -62,6 +73,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelRectangle_initWithDouble_withDouble_
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelRectangle *new_OrgMapsforgeCoreModelRectangle_initWithDouble_withDouble_withDouble_withDouble_(jdouble left, jdouble top, jdouble right, jdouble bottom) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelRectangle *create_OrgMapsforgeCoreModelRectangle_initWithDouble_withDouble_withDouble_withDouble_(jdouble left, jdouble top, jdouble right, jdouble bottom);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelRectangle)
 
-#endif // _OrgMapsforgeCoreModelRectangle_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelRectangle")

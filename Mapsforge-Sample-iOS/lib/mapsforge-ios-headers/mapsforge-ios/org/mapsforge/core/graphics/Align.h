@@ -3,49 +3,54 @@
 //  source: ./org/mapsforge/core/graphics/Align.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsAlign_H_
-#define _OrgMapsforgeCoreGraphicsAlign_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsAlign) {
-  OrgMapsforgeCoreGraphicsAlign_CENTER = 0,
-  OrgMapsforgeCoreGraphicsAlign_LEFT = 1,
-  OrgMapsforgeCoreGraphicsAlign_RIGHT = 2,
-};
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsAlign")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsAlign
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsAlign 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsAlign 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsAlign
 
-@interface OrgMapsforgeCoreGraphicsAlignEnum : JavaLangEnum < NSCopying >
+#if !defined (OrgMapsforgeCoreGraphicsAlign_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsAlign || defined(INCLUDE_OrgMapsforgeCoreGraphicsAlign))
+#define OrgMapsforgeCoreGraphicsAlign_
+
+@interface OrgMapsforgeCoreGraphicsAlign : NSObject
 
 #pragma mark Public
 
-- (OrgMapsforgeCoreGraphicsAlignEnum *)fromStringWithNSString:(NSString *)value;
+- (instancetype)init;
 
-#pragma mark Package-Private
-
-+ (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsAlignEnum_values();
-
-+ (OrgMapsforgeCoreGraphicsAlignEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlignEnum *OrgMapsforgeCoreGraphicsAlignEnum_valueOfWithNSString_(NSString *name);
-
-- (id)copyWithZone:(NSZone *)zone;
+- (OrgMapsforgeCoreGraphicsAlign *)fromStringWithNSString:(NSString *)value;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsAlignEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsAlign)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlignEnum *OrgMapsforgeCoreGraphicsAlignEnum_values_[];
+inline OrgMapsforgeCoreGraphicsAlign *OrgMapsforgeCoreGraphicsAlign_get_CENTER();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlign *OrgMapsforgeCoreGraphicsAlign_CENTER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeCoreGraphicsAlign, CENTER, OrgMapsforgeCoreGraphicsAlign *)
 
-#define OrgMapsforgeCoreGraphicsAlignEnum_CENTER OrgMapsforgeCoreGraphicsAlignEnum_values_[OrgMapsforgeCoreGraphicsAlign_CENTER]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsAlignEnum, CENTER)
+inline OrgMapsforgeCoreGraphicsAlign *OrgMapsforgeCoreGraphicsAlign_get_LEFT();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlign *OrgMapsforgeCoreGraphicsAlign_LEFT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeCoreGraphicsAlign, LEFT, OrgMapsforgeCoreGraphicsAlign *)
 
-#define OrgMapsforgeCoreGraphicsAlignEnum_LEFT OrgMapsforgeCoreGraphicsAlignEnum_values_[OrgMapsforgeCoreGraphicsAlign_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsAlignEnum, LEFT)
+inline OrgMapsforgeCoreGraphicsAlign *OrgMapsforgeCoreGraphicsAlign_get_RIGHT();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlign *OrgMapsforgeCoreGraphicsAlign_RIGHT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeCoreGraphicsAlign, RIGHT, OrgMapsforgeCoreGraphicsAlign *)
 
-#define OrgMapsforgeCoreGraphicsAlignEnum_RIGHT OrgMapsforgeCoreGraphicsAlignEnum_values_[OrgMapsforgeCoreGraphicsAlign_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsAlignEnum, RIGHT)
+FOUNDATION_EXPORT void OrgMapsforgeCoreGraphicsAlign_init(OrgMapsforgeCoreGraphicsAlign *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsAlignEnum)
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlign *new_OrgMapsforgeCoreGraphicsAlign_init() NS_RETURNS_RETAINED;
 
-#endif // _OrgMapsforgeCoreGraphicsAlign_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsAlign *create_OrgMapsforgeCoreGraphicsAlign_init();
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsAlign)
+
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsAlign")

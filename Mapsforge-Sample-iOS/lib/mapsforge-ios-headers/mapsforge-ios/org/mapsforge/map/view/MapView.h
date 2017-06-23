@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/view/MapView.java
 //
 
-#ifndef _OrgMapsforgeMapViewMapView_H_
-#define _OrgMapsforgeMapViewMapView_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapViewMapView")
+#ifdef RESTRICT_OrgMapsforgeMapViewMapView
+#define INCLUDE_ALL_OrgMapsforgeMapViewMapView 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapViewMapView 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapViewMapView
+
+#if !defined (OrgMapsforgeMapViewMapView_) && (INCLUDE_ALL_OrgMapsforgeMapViewMapView || defined(INCLUDE_OrgMapsforgeMapViewMapView))
+#define OrgMapsforgeMapViewMapView_
 
 @class OrgMapsforgeCoreModelDimension;
 @class OrgMapsforgeMapLayerLayerManager;
@@ -15,7 +23,7 @@
 @class OrgMapsforgeMapViewFpsCounter;
 @class OrgMapsforgeMapViewFrameBuffer;
 
-@protocol OrgMapsforgeMapViewMapView < NSObject, JavaObject >
+@protocol OrgMapsforgeMapViewMapView < JavaObject >
 
 - (void)destroy;
 
@@ -45,4 +53,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapViewMapView)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapViewMapView)
 
-#endif // _OrgMapsforgeMapViewMapView_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapViewMapView")

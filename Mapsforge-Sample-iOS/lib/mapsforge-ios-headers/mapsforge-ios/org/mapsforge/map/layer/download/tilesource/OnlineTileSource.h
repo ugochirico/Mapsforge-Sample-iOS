@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/download/tilesource/OnlineTileSource.java
 //
 
-#ifndef _OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_H_
-#define _OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource")
+#ifdef RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource
+
+#if !defined (OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_) && (INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource || defined(INCLUDE_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource))
+#define OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_
+
+#define RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource 1
+#define INCLUDE_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource 1
 #include "org/mapsforge/map/layer/download/tilesource/AbstractTileSource.h"
 
 @class IOSObjectArray;
@@ -66,6 +77,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_in
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource *new_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_initWithNSStringArray_withInt_(IOSObjectArray *hostNames, jint port) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource *create_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_initWithNSStringArray_withInt_(IOSObjectArray *hostNames, jint port);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource)
 
-#endif // _OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOnlineTileSource")

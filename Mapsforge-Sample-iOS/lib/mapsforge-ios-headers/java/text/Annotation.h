@@ -3,19 +3,58 @@
 //  source: android/libcore/luni/src/main/java/java/text/Annotation.java
 //
 
-#ifndef _JavaTextAnnotation_H_
-#define _JavaTextAnnotation_H_
-
 #include "J2ObjC_header.h"
 
+#pragma push_macro("INCLUDE_ALL_JavaTextAnnotation")
+#ifdef RESTRICT_JavaTextAnnotation
+#define INCLUDE_ALL_JavaTextAnnotation 0
+#else
+#define INCLUDE_ALL_JavaTextAnnotation 1
+#endif
+#undef RESTRICT_JavaTextAnnotation
+
+#if !defined (JavaTextAnnotation_) && (INCLUDE_ALL_JavaTextAnnotation || defined(INCLUDE_JavaTextAnnotation))
+#define JavaTextAnnotation_
+
+/*!
+ @brief Wrapper for a text attribute value which represents an annotation.An
+  annotation has two special aspects: 
+ <ol>
+  <li>it is connected to a range of main text; if this range or the main text
+  is changed then the annotation becomes invalid,</li>
+  <li>it can not be joined with adjacent annotations even if the text attribute
+  value is the same.
+ </li>
+  </ol>
+  <p>
+  By wrapping text attribute values into an <code>Annotation</code>, these aspects
+  will be taken into account when handling annotation text and the
+  corresponding main text. 
+ <p>
+  Note: There is no semantic connection between this annotation class and the 
+ <code>java.lang.annotation</code> package.
+ */
 @interface JavaTextAnnotation : NSObject
 
 #pragma mark Public
 
+/*!
+ @brief Constructs a new <code>Annotation</code>.
+ @param attribute the attribute attached to this annotation. This may be         
+ <code>null</code> .
+ */
 - (instancetype)initWithId:(id)attribute;
 
+/*!
+ @brief Returns the value of this annotation.The value may be <code>null</code>.
+ @return the value of this annotation or <code>null</code>.
+ */
 - (id)getValue;
 
+/*!
+ @brief Returns this annotation in string representation.
+ @return the string representation of this annotation.
+ */
 - (NSString *)description;
 
 @end
@@ -26,6 +65,10 @@ FOUNDATION_EXPORT void JavaTextAnnotation_initWithId_(JavaTextAnnotation *self, 
 
 FOUNDATION_EXPORT JavaTextAnnotation *new_JavaTextAnnotation_initWithId_(id attribute) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaTextAnnotation *create_JavaTextAnnotation_initWithId_(id attribute);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaTextAnnotation)
 
-#endif // _JavaTextAnnotation_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaTextAnnotation")

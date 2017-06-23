@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/KeyMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleKeyMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleKeyMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleKeyMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleKeyMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleKeyMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleKeyMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleKeyMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleKeyMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleKeyMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleKeyMatcher))
+#define OrgMapsforgeMapRenderthemeRuleKeyMatcher_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleAttributeMatcher 1
 #include "org/mapsforge/map/rendertheme/rule/AttributeMatcher.h"
 
 @protocol JavaUtilList;
@@ -31,6 +42,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleKeyMatcher_initWithJavaUtil
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleKeyMatcher *new_OrgMapsforgeMapRenderthemeRuleKeyMatcher_initWithJavaUtilList_(id<JavaUtilList> keys) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleKeyMatcher *create_OrgMapsforgeMapRenderthemeRuleKeyMatcher_initWithJavaUtilList_(id<JavaUtilList> keys);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleKeyMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleKeyMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleKeyMatcher")

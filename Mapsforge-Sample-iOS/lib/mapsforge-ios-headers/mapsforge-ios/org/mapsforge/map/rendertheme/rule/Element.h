@@ -3,49 +3,80 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/Element.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleElement_H_
-#define _OrgMapsforgeMapRenderthemeRuleElement_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElement")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleElement
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElement 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElement 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleElement
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleElement_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElement || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleElement))
+#define OrgMapsforgeMapRenderthemeRuleElement_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeRuleElement) {
-  OrgMapsforgeMapRenderthemeRuleElement_ANY = 0,
-  OrgMapsforgeMapRenderthemeRuleElement_NODE = 1,
-  OrgMapsforgeMapRenderthemeRuleElement_WAY = 2,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeRuleElement_Enum) {
+  OrgMapsforgeMapRenderthemeRuleElement_Enum_ANY = 0,
+  OrgMapsforgeMapRenderthemeRuleElement_Enum_NODE = 1,
+  OrgMapsforgeMapRenderthemeRuleElement_Enum_WAY = 2,
 };
 
-@interface OrgMapsforgeMapRenderthemeRuleElementEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeMapRenderthemeRuleElement : JavaLangEnum < NSCopying >
+
+#pragma mark Public
+
++ (OrgMapsforgeMapRenderthemeRuleElement *)valueOfWithNSString:(NSString *)name;
+
++ (IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-+ (OrgMapsforgeMapRenderthemeRuleElementEnum *)fromStringWithNSString:(NSString *)value;
-
-+ (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeRuleElementEnum_values();
-
-+ (OrgMapsforgeMapRenderthemeRuleElementEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElementEnum *OrgMapsforgeMapRenderthemeRuleElementEnum_valueOfWithNSString_(NSString *name);
++ (OrgMapsforgeMapRenderthemeRuleElement *)fromStringWithNSString:(NSString *)value;
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleElementEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleElement)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElementEnum *OrgMapsforgeMapRenderthemeRuleElementEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_values_[];
 
-#define OrgMapsforgeMapRenderthemeRuleElementEnum_ANY OrgMapsforgeMapRenderthemeRuleElementEnum_values_[OrgMapsforgeMapRenderthemeRuleElement_ANY]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRuleElementEnum, ANY)
+inline OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_get_ANY();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRuleElement, ANY)
 
-#define OrgMapsforgeMapRenderthemeRuleElementEnum_NODE OrgMapsforgeMapRenderthemeRuleElementEnum_values_[OrgMapsforgeMapRenderthemeRuleElement_NODE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRuleElementEnum, NODE)
+inline OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_get_NODE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRuleElement, NODE)
 
-#define OrgMapsforgeMapRenderthemeRuleElementEnum_WAY OrgMapsforgeMapRenderthemeRuleElementEnum_values_[OrgMapsforgeMapRenderthemeRuleElement_WAY]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRuleElementEnum, WAY)
+inline OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_get_WAY();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRuleElement, WAY)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElementEnum *OrgMapsforgeMapRenderthemeRuleElementEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleElementEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeRuleElement_values();
 
-#endif // _OrgMapsforgeMapRenderthemeRuleElement_H_
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleElement *OrgMapsforgeMapRenderthemeRuleElement_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleElement)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleElement")

@@ -3,12 +3,20 @@
 //  source: ./org/mapsforge/map/model/common/PreferencesFacade.java
 //
 
-#ifndef _OrgMapsforgeMapModelCommonPreferencesFacade_H_
-#define _OrgMapsforgeMapModelCommonPreferencesFacade_H_
-
 #include "J2ObjC_header.h"
 
-@protocol OrgMapsforgeMapModelCommonPreferencesFacade < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonPreferencesFacade")
+#ifdef RESTRICT_OrgMapsforgeMapModelCommonPreferencesFacade
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonPreferencesFacade 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelCommonPreferencesFacade 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelCommonPreferencesFacade
+
+#if !defined (OrgMapsforgeMapModelCommonPreferencesFacade_) && (INCLUDE_ALL_OrgMapsforgeMapModelCommonPreferencesFacade || defined(INCLUDE_OrgMapsforgeMapModelCommonPreferencesFacade))
+#define OrgMapsforgeMapModelCommonPreferencesFacade_
+
+@protocol OrgMapsforgeMapModelCommonPreferencesFacade < JavaObject >
 
 - (void)clear;
 
@@ -62,4 +70,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapModelCommonPreferencesFacade)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelCommonPreferencesFacade)
 
-#endif // _OrgMapsforgeMapModelCommonPreferencesFacade_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelCommonPreferencesFacade")

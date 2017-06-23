@@ -3,24 +3,48 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/SSLHandshakeException.java
 //
 
-#ifndef _JavaxNetSslSSLHandshakeException_H_
-#define _JavaxNetSslSSLHandshakeException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslSSLHandshakeException")
+#ifdef RESTRICT_JavaxNetSslSSLHandshakeException
+#define INCLUDE_ALL_JavaxNetSslSSLHandshakeException 0
+#else
+#define INCLUDE_ALL_JavaxNetSslSSLHandshakeException 1
+#endif
+#undef RESTRICT_JavaxNetSslSSLHandshakeException
+
+#if !defined (JavaxNetSslSSLHandshakeException_) && (INCLUDE_ALL_JavaxNetSslSSLHandshakeException || defined(INCLUDE_JavaxNetSslSSLHandshakeException))
+#define JavaxNetSslSSLHandshakeException_
+
+#define RESTRICT_JavaxNetSslSSLException 1
+#define INCLUDE_JavaxNetSslSSLException 1
 #include "javax/net/ssl/SSLException.h"
 
-@class JavaLangThrowable;
-
+/*!
+ @brief The exception that is thrown when a handshake could not be completed
+  successfully.
+ */
 @interface JavaxNetSslSSLHandshakeException : JavaxNetSslSSLException
 
 #pragma mark Public
 
+/*!
+ @brief Constructs a new instance with the given detail message.
+ */
 - (instancetype)initWithNSString:(NSString *)reason;
 
+/*!
+ @brief Constructs a new instance with given detail message and cause.
+ */
 - (instancetype)initWithNSString:(NSString *)reason
-           withJavaLangThrowable:(JavaLangThrowable *)cause;
+                 withNSException:(NSException *)cause;
+#define withJavaLangThrowable withNSException
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+/*!
+ @brief Constructs a new instance with given cause.
+ */
+- (instancetype)initWithNSException:(NSException *)cause;
+#define initWithJavaLangThrowable initWithNSException
 
 @end
 
@@ -30,14 +54,22 @@ FOUNDATION_EXPORT void JavaxNetSslSSLHandshakeException_initWithNSString_(JavaxN
 
 FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *new_JavaxNetSslSSLHandshakeException_initWithNSString_(NSString *reason) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT void JavaxNetSslSSLHandshakeException_initWithJavaLangThrowable_(JavaxNetSslSSLHandshakeException *self, JavaLangThrowable *cause);
+FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *create_JavaxNetSslSSLHandshakeException_initWithNSString_(NSString *reason);
 
-FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *new_JavaxNetSslSSLHandshakeException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT void JavaxNetSslSSLHandshakeException_initWithNSException_(JavaxNetSslSSLHandshakeException *self, NSException *cause);
 
-FOUNDATION_EXPORT void JavaxNetSslSSLHandshakeException_initWithNSString_withJavaLangThrowable_(JavaxNetSslSSLHandshakeException *self, NSString *reason, JavaLangThrowable *cause);
+FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *new_JavaxNetSslSSLHandshakeException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *new_JavaxNetSslSSLHandshakeException_initWithNSString_withJavaLangThrowable_(NSString *reason, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *create_JavaxNetSslSSLHandshakeException_initWithNSException_(NSException *cause);
+
+FOUNDATION_EXPORT void JavaxNetSslSSLHandshakeException_initWithNSString_withNSException_(JavaxNetSslSSLHandshakeException *self, NSString *reason, NSException *cause);
+
+FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *new_JavaxNetSslSSLHandshakeException_initWithNSString_withNSException_(NSString *reason, NSException *cause) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT JavaxNetSslSSLHandshakeException *create_JavaxNetSslSSLHandshakeException_initWithNSString_withNSException_(NSString *reason, NSException *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLHandshakeException)
 
-#endif // _JavaxNetSslSSLHandshakeException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslSSLHandshakeException")

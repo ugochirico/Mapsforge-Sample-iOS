@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/util/WorkingSetCache.java
 //
 
-#ifndef _OrgMapsforgeCoreUtilWorkingSetCache_H_
-#define _OrgMapsforgeCoreUtilWorkingSetCache_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilWorkingSetCache")
+#ifdef RESTRICT_OrgMapsforgeCoreUtilWorkingSetCache
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilWorkingSetCache 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilWorkingSetCache 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreUtilWorkingSetCache
+
+#if !defined (OrgMapsforgeCoreUtilWorkingSetCache_) && (INCLUDE_ALL_OrgMapsforgeCoreUtilWorkingSetCache || defined(INCLUDE_OrgMapsforgeCoreUtilWorkingSetCache))
+#define OrgMapsforgeCoreUtilWorkingSetCache_
+
+#define RESTRICT_OrgMapsforgeCoreUtilLRUCache 1
+#define INCLUDE_OrgMapsforgeCoreUtilLRUCache 1
 #include "org/mapsforge/core/util/LRUCache.h"
 
 @protocol JavaUtilSet;
@@ -27,6 +38,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreUtilWorkingSetCache_initWithInt_(OrgMapsf
 
 FOUNDATION_EXPORT OrgMapsforgeCoreUtilWorkingSetCache *new_OrgMapsforgeCoreUtilWorkingSetCache_initWithInt_(jint capacity) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreUtilWorkingSetCache *create_OrgMapsforgeCoreUtilWorkingSetCache_initWithInt_(jint capacity);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreUtilWorkingSetCache)
 
-#endif // _OrgMapsforgeCoreUtilWorkingSetCache_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilWorkingSetCache")

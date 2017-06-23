@@ -3,14 +3,36 @@
 //  source: android/libcore/luni/src/main/java/java/nio/channels/ByteChannel.java
 //
 
-#ifndef _JavaNioChannelsByteChannel_H_
-#define _JavaNioChannelsByteChannel_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNioChannelsByteChannel")
+#ifdef RESTRICT_JavaNioChannelsByteChannel
+#define INCLUDE_ALL_JavaNioChannelsByteChannel 0
+#else
+#define INCLUDE_ALL_JavaNioChannelsByteChannel 1
+#endif
+#undef RESTRICT_JavaNioChannelsByteChannel
+
+#if !defined (JavaNioChannelsByteChannel_) && (INCLUDE_ALL_JavaNioChannelsByteChannel || defined(INCLUDE_JavaNioChannelsByteChannel))
+#define JavaNioChannelsByteChannel_
+
+#define RESTRICT_JavaNioChannelsReadableByteChannel 1
+#define INCLUDE_JavaNioChannelsReadableByteChannel 1
 #include "java/nio/channels/ReadableByteChannel.h"
+
+#define RESTRICT_JavaNioChannelsWritableByteChannel 1
+#define INCLUDE_JavaNioChannelsWritableByteChannel 1
 #include "java/nio/channels/WritableByteChannel.h"
 
-@protocol JavaNioChannelsByteChannel < JavaNioChannelsReadableByteChannel, JavaNioChannelsWritableByteChannel, NSObject, JavaObject >
+/*!
+ @brief A ByteChannel is both readable and writable.
+ <p>
+  The methods for the byte channel are precisely those defined by readable and
+  writable byte channels.
+ - seealso: ReadableByteChannel
+ - seealso: WritableByteChannel
+ */
+@protocol JavaNioChannelsByteChannel < JavaNioChannelsReadableByteChannel, JavaNioChannelsWritableByteChannel, JavaObject >
 
 @end
 
@@ -18,4 +40,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsByteChannel)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsByteChannel)
 
-#endif // _JavaNioChannelsByteChannel_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNioChannelsByteChannel")

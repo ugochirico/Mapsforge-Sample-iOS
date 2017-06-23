@@ -1,5 +1,3 @@
-// Copyright 2011 Google Inc. All Rights Reserved.
-//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -24,7 +22,7 @@
 
 #import "IOSObjectArray.h"
 #import "IOSPrimitiveArray.h"
-#import "J2ObjC_common.h"
+#import "J2ObjC_header.h"
 #import "java/io/Serializable.h"
 #import "java/lang/CharSequence.h"
 #import "java/lang/Comparable.h"
@@ -33,303 +31,315 @@
 @class JavaLangStringBuilder;
 @class JavaNioCharsetCharset;
 @class JavaUtilLocale;
+@protocol JavaLangIterable;
 @protocol JavaUtilComparator;
 
 // A category that adds java.lang.String-like methods to NSString.  The method
 // list is not exhaustive, since methods that can be directly substituted are
-// inlined.  For example, "foo".length() is directly translated to
-// [@"foo" length].
+// inlined.
 @interface NSString (JavaString) <JavaIoSerializable, JavaLangComparable, JavaLangCharSequence>
 
 // String.valueOf(Object)
-+ (NSString *)valueOf:(id<NSObject>)obj;
++ (NSString *)java_valueOf:(id<NSObject>)obj;
 
 // String.valueOf(boolean)
-+ (NSString *)valueOfBool:(BOOL)value;
++ (NSString *)java_valueOfBool:(jboolean)value;
 
 // String.valueOf(char)
-+ (NSString *)valueOfChar:(unichar)value;
++ (NSString *)java_valueOfChar:(jchar)value;
 
 // String.valueOf(char[])
-+ (NSString *)valueOfChars:(IOSCharArray *)data;
++ (NSString *)java_valueOfChars:(IOSCharArray *)data;
 
 // String.valueOf(char[], offset, count)
-+ (NSString *)valueOfChars:(IOSCharArray *)data
-                    offset:(int)offset
-                     count:(int)count;
++ (NSString *)java_valueOfChars:(IOSCharArray *)data
+                         offset:(jint)offset
+                          count:(jint)count;
 
 // String.valueOf(double)
-+ (NSString *)valueOfDouble:(double)value;
++ (NSString *)java_valueOfDouble:(jdouble)value;
 
 // String.valueOf(float)
-+ (NSString *)valueOfFloat:(float)value;
++ (NSString *)java_valueOfFloat:(jfloat)value;
 
 // String.valueOf(int)
-+ (NSString *)valueOfInt:(int)value;
++ (NSString *)java_valueOfInt:(jint)value;
 
 // String.valueOf(long)
-+ (NSString *)valueOfLong:(long long int)value;
++ (NSString *)java_valueOfLong:(jlong)value;
 
 // String.getChars(int, int, char[], int)
-- (void)getChars:(int)sourceBegin
-       sourceEnd:(int)sourceEnd
-     destination:(IOSCharArray *)dest
-destinationBegin:(int)dstBegin;
+- (void)java_getChars:(jint)sourceBegin
+            sourceEnd:(jint)sourceEnd
+          destination:(IOSCharArray *)dest
+     destinationBegin:(jint)dstBegin;
 
 // String(byte[])
-+ (NSString *)stringWithBytes:(IOSByteArray *)value;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value;
 
 // String(byte[], int)
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                       hibyte:(int)hibyte;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                            hibyte:(jint)hibyte;
 
 // String(byte[], int, int)
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                       offset:(int)offset
-                       length:(int)count;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                            offset:(jint)offset
+                            length:(jint)count;
 
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                       hibyte:(NSUInteger)hibyte
-                       offset:(NSUInteger)offset
-                       length:(NSUInteger)length;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                            hibyte:(NSUInteger)hibyte
+                            offset:(NSUInteger)offset
+                            length:(NSUInteger)length;
 
 // String(byte[], String)
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                  charsetName:(NSString *)charsetName;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                       charsetName:(NSString *)charsetName;
 
 // String(byte[], Charset)
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                  charset:(JavaNioCharsetCharset *)charset;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                           charset:(JavaNioCharsetCharset *)charset;
 
 // String(byte[], int, int, String)
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                       offset:(int)offset
-                       length:(int)count
-              charsetName:(NSString *)charsetName;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                            offset:(jint)offset
+                            length:(jint)count
+                       charsetName:(NSString *)charsetName;
 
 // String(byte[], int, int, Charset)
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                       offset:(int)offset
-                       length:(int)count
-                  charset:(JavaNioCharsetCharset *)charset;
-
-+ (NSString *)stringWithBytes:(IOSByteArray *)value
-                       offset:(int)offset
-                       length:(int)count
-                 encoding:(NSStringEncoding)encoding;
++ (NSString *)java_stringWithBytes:(IOSByteArray *)value
+                            offset:(jint)offset
+                            length:(jint)count
+                          charset:(JavaNioCharsetCharset *)charset;
 
 // String(char[])
-+ (NSString *)stringWithCharacters:(IOSCharArray *)value;
++ (NSString *)java_stringWithCharacters:(IOSCharArray *)value;
 
 // String(char[], int, int)
-+ (NSString *)stringWithCharacters:(IOSCharArray *)value
-                            offset:(int)offset
-                            length:(int)count;
-
-// String(int, int, char[])
-+ (NSString *)stringWithOffset:(int)offset
-                        length:(int)length
-                    characters:(IOSCharArray *)value;
++ (NSString *)java_stringWithCharacters:(IOSCharArray *)value
+                                 offset:(jint)offset
+                                 length:(jint)count;
 
 // String(int[], int, int)
-+ (NSString *)stringWithInts:(IOSIntArray *)codePoints
-                      offset:(int)offset
-                      length:(int)length;
++ (NSString *)java_stringWithInts:(IOSIntArray *)codePoints
+                           offset:(jint)offset
+                           length:(jint)count;
 
 // String(StringBuffer)
-+ (NSString *)stringWithJavaLangStringBuffer:(JavaLangStringBuffer *)sb;
++ (NSString *)java_stringWithJavaLangStringBuffer:(JavaLangStringBuffer *)sb;
 
 // String(StringBuilder)
-+ (NSString *)stringWithJavaLangStringBuilder:(JavaLangStringBuilder *)sb;
++ (NSString *)java_stringWithJavaLangStringBuilder:(JavaLangStringBuilder *)sb;
 
 // String.substring(int)
-- (NSString *)substring:(int)beginIndex;
+- (NSString *)java_substring:(jint)beginIndex;
 
 // String.substring(int, int)
-- (NSString *)substring:(int)beginIndex
-               endIndex:(int)endIndex;
+- (NSString *)java_substring:(jint)beginIndex
+                    endIndex:(jint)endIndex;
 
 // String.indexOf(int)
-- (int)indexOf:(int)ch;
+- (jint)java_indexOf:(jint)ch;
 
 // String.indexOf(int, int)
-- (int)indexOf:(int)ch fromIndex:(int)index;
+- (jint)java_indexOf:(jint)ch fromIndex:(jint)index;
 
 // String.indexOf(String)
-- (int)indexOfString:(NSString *)s;
+- (jint)java_indexOfString:(NSString *)s;
 
 // String.indexOf(String, int)
-- (int)indexOfString:(NSString *)s fromIndex:(int)index;
+- (jint)java_indexOfString:(NSString *)s fromIndex:(jint)index;
 
 // String.isEmpty()
-- (BOOL)isEmpty;
+- (jboolean)java_isEmpty;
 
 // String.lastIndexOf(int)
-- (int)lastIndexOf:(int)ch;
+- (jint)java_lastIndexOf:(jint)ch;
 
 // String.lastIndexOf(int, int)
-- (int)lastIndexOf:(int)ch fromIndex:(int)index;
+- (jint)java_lastIndexOf:(jint)ch fromIndex:(jint)index;
 
 // String.lastIndexOf(String)
-- (int)lastIndexOfString:(NSString *)s;
+- (jint)java_lastIndexOfString:(NSString *)s;
 
 // String.lastIndexOf(String, int)
-- (int)lastIndexOfString:(NSString *)s fromIndex:(int)index;
+- (jint)java_lastIndexOfString:(NSString *)s fromIndex:(jint)index;
+
+// String.length()
+- (jint)java_length;
 
 // String.toCharArray()
-- (IOSCharArray *)toCharArray;
+- (IOSCharArray *)java_toCharArray;
 
 // java.lang.Comparable implementation methods
 - (jint)compareToWithId:(id)another;
 
 // CharSequence.charAt(int)
-- (unichar)charAtWithInt:(int)index;
+- (jchar)charAtWithInt:(jint)index;
 
 // CharSequence.subSequence(int, int)
-- (id<JavaLangCharSequence>)subSequenceFrom:(int)start
-                                         to:(int)end;
+- (id<JavaLangCharSequence>)subSequenceFrom:(jint)start
+                                         to:(jint)end;
 
 // String.compareToIgnoreCase(String)
-- (jint)compareToIgnoreCase:(NSString *)another;
+- (jint)java_compareToIgnoreCase:(NSString *)another;
 
 // String.replace(char, char)
-- (NSString *)replace:(unichar)oldchar withChar:(unichar)newchar;
+- (NSString *)java_replace:(jchar)oldchar withChar:(jchar)newchar;
 
 // String.replace(CharSequence, CharSequence)
-- (NSString *)replace:(id<JavaLangCharSequence>)oldSequence
-         withSequence:(id<JavaLangCharSequence>)newSequence;
+- (NSString *)java_replace:(id<JavaLangCharSequence>)oldSequence
+              withSequence:(id<JavaLangCharSequence>)newSequence;
 
 // String.replaceAll(String, String)
-- (NSString *)replaceAll:(NSString *)regex
-         withReplacement:(NSString *)replacement;
+- (NSString *)java_replaceAll:(NSString *)regex
+              withReplacement:(NSString *)replacement;
 
 // String.replaceFirst(String, String)
-- (NSString *)replaceFirst:(NSString *)regex
-           withReplacement:(NSString *)replacement;
+- (NSString *)java_replaceFirst:(NSString *)regex
+                withReplacement:(NSString *)replacement;
 
 // String.getBytes()
-- (IOSByteArray *)getBytes;
+- (IOSByteArray *)java_getBytes;
 
 // String.getBytes(String)
-- (IOSByteArray *)getBytesWithCharsetName:(NSString *)charsetName;
+- (IOSByteArray *)java_getBytesWithCharsetName:(NSString *)charsetName;
 
 // String.getBytes(Charset)
-- (IOSByteArray *)getBytesWithCharset:(JavaNioCharsetCharset *)charset;
-
-- (IOSByteArray *)getBytesWithEncoding:(NSStringEncoding)encoding;
+- (IOSByteArray *)java_getBytesWithCharset:(JavaNioCharsetCharset *)charset;
 
 // String.getBytes(int, int, byte[], int)
-- (void)getBytesWithSrcBegin:(int)srcBegin
-                  withSrcEnd:(int)srcEnd
-                     withDst:(IOSByteArray *)dst
-                withDstBegin:(int)dstBegin;
+- (void)java_getBytesWithSrcBegin:(jint)srcBegin
+                       withSrcEnd:(jint)srcEnd
+                          withDst:(IOSByteArray *)dst
+                     withDstBegin:(jint)dstBegin;
 
 // String.format(String, ...), String.format(Locale, String, ...)
-+ (NSString *)formatWithNSString:(NSString *)format withNSObjectArray:(IOSObjectArray *)args;
-+ (NSString *)formatWithJavaUtilLocale:(JavaUtilLocale *)locale
-                          withNSString:(NSString *)format
-                     withNSObjectArray:(IOSObjectArray *)args;
++ (NSString *)java_formatWithNSString:(NSString *)format withNSObjectArray:(IOSObjectArray *)args;
++ (NSString *)java_formatWithJavaUtilLocale:(JavaUtilLocale *)locale
+                               withNSString:(NSString *)format
+                          withNSObjectArray:(IOSObjectArray *)args;
 
-// String.startsWith(String, int)
-- (BOOL)hasPrefix:(NSString *)aString offset:(int)offset;
+// String.startsWith(String), String.startsWith(String, int), String.endsWith(String)
+- (jboolean)java_hasPrefix:(NSString *)prefix;
+- (jboolean)java_hasPrefix:(NSString *)prefix offset:(jint)offset;
+- (jboolean)java_hasSuffix:(NSString *)suffix;
 
 // String.trim()
-- (NSString *)trim;
+- (NSString *)java_trim;
 
 // String.split(String)
-- (IOSObjectArray *)split:(NSString *)str;
+- (IOSObjectArray *)java_split:(NSString *)str;
 
 // String equalsIgnoreCase(String)
-- (BOOL)equalsIgnoreCase:(NSString *)aString;
+- (jboolean)java_equalsIgnoreCase:(NSString *)aString;
 
 // String.toLowerCase(Locale), toUpperCase(Locale)
-- (NSString *)lowercaseStringWithJRELocale:(JavaUtilLocale *)locale;
-- (NSString *)uppercaseStringWithJRELocale:(JavaUtilLocale *)locale;
+- (NSString *)java_lowercaseStringWithJRELocale:(JavaUtilLocale *)locale;
+- (NSString *)java_uppercaseStringWithJRELocale:(JavaUtilLocale *)locale;
 
 // String.regionMatches(...)
-- (BOOL)regionMatches:(int)thisOffset
-              aString:(NSString *)aString
-          otherOffset:(int)otherOffset
-                count:(int)count;
+- (jboolean)java_regionMatches:(jint)thisOffset
+                       aString:(NSString *)aString
+                   otherOffset:(jint)otherOffset
+                         count:(jint)count;
 
-- (BOOL)regionMatches:(BOOL)caseInsensitive
-           thisOffset:(int)thisOffset
-              aString:(NSString *)aString
-          otherOffset:(int)otherOffset
-                count:(int)count;
+- (jboolean)java_regionMatches:(jboolean)caseInsensitive
+                    thisOffset:(jint)thisOffset
+                       aString:(NSString *)aString
+                   otherOffset:(jint)otherOffset
+                         count:(jint)count;
 
 // String.intern()
-- (NSString *)intern;
+- (NSString *)java_intern;
 
 // String.concat(String)
-- (NSString *)concat:string;
+- (NSString *)java_concat:string;
 
 // String.contains(CharSequence)
-- (BOOL)contains:(id<JavaLangCharSequence>)sequence;
+- (jboolean)java_contains:(id<JavaLangCharSequence>)sequence;
 
 // String.codePointAt(int), codePointBefore(int), codePointCount(int, int)
-- (int)codePointAt:(int)index;
-- (int)codePointBefore:(int)index;
-- (int)codePointCount:(int)beginIndex endIndex:(int)endIndex;
+- (jint)java_codePointAt:(jint)index;
+- (jint)java_codePointBefore:(jint)index;
+- (jint)java_codePointCount:(jint)beginIndex endIndex:(jint)endIndex;
 
 // String.matches(), split(String, int)
-- (BOOL)matches:(NSString *)regex;
-- (IOSObjectArray *)split:(NSString *)regex limit:(int)limit;
+- (jboolean)java_matches:(NSString *)regex;
+- (IOSObjectArray *)java_split:(NSString *)regex limit:(jint)limit;
 
 // String.contentEquals(CharSequence), contentEquals(StringBuffer)
-- (BOOL)contentEqualsCharSequence:(id<JavaLangCharSequence>)seq;
-- (BOOL)contentEqualsStringBuffer:(JavaLangStringBuffer *)sb;
+- (jboolean)java_contentEqualsCharSequence:(id<JavaLangCharSequence>)seq;
+- (jboolean)java_contentEqualsStringBuffer:(JavaLangStringBuffer *)sb;
 
 // String.offsetByCodePoints(int, int)
-- (int)offsetByCodePoints:(int)index codePointOffset:(int)offset;
+- (jint)java_offsetByCodePoints:(jint)index codePointOffset:(jint)offset;
+
+// String.join(CharSequence, CharSequence...)
++ (NSString *)java_joinWithJavaLangCharSequence:(id<JavaLangCharSequence>)delimiter
+                  withJavaLangCharSequenceArray:(IOSObjectArray *)elements;
+
+// String.join(CharSequence, Iterable<? extends CharSequence>)
++ (NSString *)java_joinWithJavaLangCharSequence:(id<JavaLangCharSequence>)delimiter
+                           withJavaLangIterable:(id<JavaLangIterable>)elements;
 
 @end
 
 // String.format(Locale, String, Object...)
-FOUNDATION_EXPORT NSString *NSString_formatWithJavaUtilLocale_withNSString_withNSObjectArray_(
+FOUNDATION_EXPORT NSString *NSString_java_formatWithJavaUtilLocale_withNSString_withNSObjectArray_(
     JavaUtilLocale *l, NSString *s, IOSObjectArray *objs);
 // String.format(String, Object...)
-FOUNDATION_EXPORT NSString *NSString_formatWithNSString_withNSObjectArray_(
+FOUNDATION_EXPORT NSString *NSString_java_formatWithNSString_withNSObjectArray_(
     NSString *s, IOSObjectArray *objs);
 // String.valueOf(boolean)
-FOUNDATION_EXPORT NSString *NSString_valueOfBool_(jboolean b);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfBool_(jboolean b);
 // String.valueOf(char)
-FOUNDATION_EXPORT NSString *NSString_valueOfChar_(jchar c);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfChar_(jchar c);
 // String.valueOf(char[])
 // String.copyValueOf(char[])
-FOUNDATION_EXPORT NSString *NSString_valueOfChars_(IOSCharArray *chars);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfChars_(IOSCharArray *chars);
 // String.valueOf(char[], int, int)
 // String.copyValueOf(char[], int, int)
-FOUNDATION_EXPORT NSString *NSString_valueOfChars_offset_count_(
+FOUNDATION_EXPORT NSString *NSString_java_valueOfChars_offset_count_(
     IOSCharArray *chars, jint i, jint j);
 // String.valueOf(double)
-FOUNDATION_EXPORT NSString *NSString_valueOfDouble_(jdouble d);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfDouble_(jdouble d);
 // String.valueOf(float)
-FOUNDATION_EXPORT NSString *NSString_valueOfFloat_(jfloat f);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfFloat_(jfloat f);
 // String.valueOf(int)
-FOUNDATION_EXPORT NSString *NSString_valueOfInt_(jint i);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfInt_(jint i);
 // String.valueOf(long)
-FOUNDATION_EXPORT NSString *NSString_valueOfLong_(jlong l);
+FOUNDATION_EXPORT NSString *NSString_java_valueOfLong_(jlong l);
 // String.valueOf(Object)
-FOUNDATION_EXPORT NSString *NSString_valueOf_(id o);
+FOUNDATION_EXPORT NSString *NSString_java_valueOf_(id o);
+// String.join(CharSequence, CharSequence...)
+FOUNDATION_EXPORT NSString *
+NSString_java_joinWithJavaLangCharSequence_withJavaLangCharSequenceArray_(
+    id<JavaLangCharSequence> delimiter, IOSObjectArray *elements);
+// String.join(CharSequence, Iterable<? extends CharSequence>)
+FOUNDATION_EXPORT NSString *NSString_java_joinWithJavaLangCharSequence_withJavaLangIterable_(
+    id<JavaLangCharSequence> delimiter, id<JavaLangIterable> elements);
 
 // Empty class to force category to be loaded.
 @interface JreStringCategoryDummy : NSObject
 @end
 
 // Use the category dummy to initialize static variables for the String class.
-FOUNDATION_EXPORT _Atomic(BOOL) NSString_initialized;
+FOUNDATION_EXPORT _Atomic(jboolean) NSString__initialized;
 __attribute__((always_inline)) inline void NSString_initialize() {
-  if (!__builtin_expect(NSString_initialized, YES)) {
+  if (!__builtin_expect(NSString__initialized, true)) {
     [JreStringCategoryDummy class];
   }
 }
 
-FOUNDATION_EXPORT id<JavaUtilComparator> NSString_CASE_INSENSITIVE_ORDER_;
-J2OBJC_STATIC_FIELD_GETTER(NSString, CASE_INSENSITIVE_ORDER_, id<JavaUtilComparator>)
+inline id<JavaUtilComparator> NSString_get_CASE_INSENSITIVE_ORDER();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT id<JavaUtilComparator> NSString_CASE_INSENSITIVE_ORDER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(NSString, CASE_INSENSITIVE_ORDER, id<JavaUtilComparator>)
 
-FOUNDATION_EXPORT IOSObjectArray *NSString_serialPersistentFields_;
-J2OBJC_STATIC_FIELD_GETTER(NSString, serialPersistentFields_, IOSObjectArray *)
+inline IOSObjectArray *NSString_get_serialPersistentFields();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT IOSObjectArray *NSString_serialPersistentFields;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(NSString, serialPersistentFields, IOSObjectArray *)
 
 J2OBJC_TYPE_LITERAL_HEADER(NSString)
 

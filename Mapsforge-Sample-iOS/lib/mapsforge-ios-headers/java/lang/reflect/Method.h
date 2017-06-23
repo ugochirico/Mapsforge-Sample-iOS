@@ -22,27 +22,22 @@
 #ifndef _JavaLangReflectMethod_H_
 #define _JavaLangReflectMethod_H_
 
+#import "IOSMetadata.h"
 #import "J2ObjC_common.h"
-#import "java/lang/reflect/ExecutableMember.h"
+#import "java/lang/reflect/Executable.h"
 #import "java/lang/reflect/GenericDeclaration.h"
 #import "java/lang/reflect/Member.h"
 
 @class IOSClass;
 @class IOSObjectArray;
-@class JavaMethodMetadata;
 
 // A native implementation of java.lang.reflect.Method.  Its methods are
 // limited to those that can be derived from an Objective-C Method instance,
 // so instances can be created and released as needed.
-@interface JavaLangReflectMethod : ExecutableMember {
-  BOOL isStatic_;
-}
+@interface JavaLangReflectMethod : JavaLangReflectExecutable
 
-+ (instancetype)methodWithMethodSignature:(NSMethodSignature *)methodSignature
-                                 selector:(SEL)selector
-                                    class:(IOSClass *)aClass
-                                 isStatic:(BOOL)isStatic
-                                 metadata:(JavaMethodMetadata *)metadata;
++ (instancetype)methodWithDeclaringClass:(IOSClass *)aClass
+                                metadata:(const J2ObjcMethodInfo *)metadata;
 
 // iOS version of Method.getReturnType();
 - (IOSClass *)getReturnType;
@@ -57,10 +52,26 @@
 // @return the result of this invocation; if a primitive type is returned,
 //     it is wrapped in a Foundation wrapper class instance.
 - (NSObject *)invokeWithId:(id)object
-               withNSObjectArray:(IOSObjectArray *)arguments;
+         withNSObjectArray:(IOSObjectArray *)arguments;
+
+// Faster version of Method.invoke() for JNI code. This does not require
+// boxing arguments or unboxing the result. Methods that return void must pass
+// NULL as the result pointer.
+- (void)jniInvokeWithId:(id)object
+                   args:(const J2ObjcRawValue *)args
+                 result:(J2ObjcRawValue *)result;
 
 // Returns default value.
 - (id)getDefaultValue;
+
+// Returns whether this is a default method.
+- (jboolean)isDefault;
+
+// Returns false, since the J2ObjC translator doesn't generate bridge methods.
+- (jboolean)isBridge;
+
+// Internal methods.
+- (NSMethodSignature *)getSignature;
 
 @end
 

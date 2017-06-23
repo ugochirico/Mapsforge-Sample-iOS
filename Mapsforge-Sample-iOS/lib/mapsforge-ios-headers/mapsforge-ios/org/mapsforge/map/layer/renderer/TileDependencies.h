@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/renderer/TileDependencies.java
 //
 
-#ifndef _OrgMapsforgeMapLayerRendererTileDependencies_H_
-#define _OrgMapsforgeMapLayerRendererTileDependencies_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererTileDependencies")
+#ifdef RESTRICT_OrgMapsforgeMapLayerRendererTileDependencies
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererTileDependencies 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerRendererTileDependencies 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerRendererTileDependencies
+
+#if !defined (OrgMapsforgeMapLayerRendererTileDependencies_) && (INCLUDE_ALL_OrgMapsforgeMapLayerRendererTileDependencies || defined(INCLUDE_OrgMapsforgeMapLayerRendererTileDependencies))
+#define OrgMapsforgeMapLayerRendererTileDependencies_
 
 @class OrgMapsforgeCoreMapelementsMapElementContainer;
 @class OrgMapsforgeCoreModelTile;
@@ -44,6 +52,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerRendererTileDependencies_init(OrgMaps
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererTileDependencies *new_OrgMapsforgeMapLayerRendererTileDependencies_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerRendererTileDependencies *create_OrgMapsforgeMapLayerRendererTileDependencies_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerRendererTileDependencies)
 
-#endif // _OrgMapsforgeMapLayerRendererTileDependencies_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerRendererTileDependencies")

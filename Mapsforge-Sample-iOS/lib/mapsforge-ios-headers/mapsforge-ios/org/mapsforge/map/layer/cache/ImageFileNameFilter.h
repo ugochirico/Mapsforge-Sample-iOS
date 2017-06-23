@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/cache/ImageFileNameFilter.java
 //
 
-#ifndef _OrgMapsforgeMapLayerCacheImageFileNameFilter_H_
-#define _OrgMapsforgeMapLayerCacheImageFileNameFilter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheImageFileNameFilter")
+#ifdef RESTRICT_OrgMapsforgeMapLayerCacheImageFileNameFilter
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheImageFileNameFilter 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheImageFileNameFilter 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerCacheImageFileNameFilter
+
+#if !defined (OrgMapsforgeMapLayerCacheImageFileNameFilter_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheImageFileNameFilter || defined(INCLUDE_OrgMapsforgeMapLayerCacheImageFileNameFilter))
+#define OrgMapsforgeMapLayerCacheImageFileNameFilter_
+
+#define RESTRICT_JavaIoFilenameFilter 1
+#define INCLUDE_JavaIoFilenameFilter 1
 #include "java/io/FilenameFilter.h"
 
 @class JavaIoFile;
@@ -22,9 +33,13 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapLayerCacheImageFileNameFilter)
 
-FOUNDATION_EXPORT id<JavaIoFilenameFilter> OrgMapsforgeMapLayerCacheImageFileNameFilter_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapLayerCacheImageFileNameFilter, INSTANCE_, id<JavaIoFilenameFilter>)
+inline id<JavaIoFilenameFilter> OrgMapsforgeMapLayerCacheImageFileNameFilter_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT id<JavaIoFilenameFilter> OrgMapsforgeMapLayerCacheImageFileNameFilter_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapLayerCacheImageFileNameFilter, INSTANCE, id<JavaIoFilenameFilter>)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheImageFileNameFilter)
 
-#endif // _OrgMapsforgeMapLayerCacheImageFileNameFilter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheImageFileNameFilter")

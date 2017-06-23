@@ -3,17 +3,33 @@
 //  source: ./org/mapsforge/map/layer/Layers.java
 //
 
-#ifndef _OrgMapsforgeMapLayerLayers_H_
-#define _OrgMapsforgeMapLayerLayers_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLayers")
+#ifdef RESTRICT_OrgMapsforgeMapLayerLayers
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLayers 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLayers 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerLayers
+
+#if !defined (OrgMapsforgeMapLayerLayers_) && (INCLUDE_ALL_OrgMapsforgeMapLayerLayers || defined(INCLUDE_OrgMapsforgeMapLayerLayers))
+#define OrgMapsforgeMapLayerLayers_
+
+#define RESTRICT_JavaLangIterable 1
+#define INCLUDE_JavaLangIterable 1
 #include "java/lang/Iterable.h"
+
+#define RESTRICT_JavaUtilRandomAccess 1
+#define INCLUDE_JavaUtilRandomAccess 1
 #include "java/util/RandomAccess.h"
 
 @class OrgMapsforgeMapLayerLayer;
 @class OrgMapsforgeMapModelDisplayModel;
 @protocol JavaUtilCollection;
+@protocol JavaUtilFunctionConsumer;
 @protocol JavaUtilIterator;
+@protocol JavaUtilSpliterator;
 @protocol OrgMapsforgeMapLayerRedrawer;
 
 @interface OrgMapsforgeMapLayerLayers : NSObject < JavaLangIterable, JavaUtilRandomAccess >
@@ -53,7 +69,6 @@ withJavaUtilCollection:(id<JavaUtilCollection>)layers;
 - (instancetype)initWithOrgMapsforgeMapLayerRedrawer:(id<OrgMapsforgeMapLayerRedrawer>)redrawer
                 withOrgMapsforgeMapModelDisplayModel:(OrgMapsforgeMapModelDisplayModel *)displayModel;
 
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapLayerLayers)
@@ -62,6 +77,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerLayers_initWithOrgMapsforgeMapLayerRe
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerLayers *new_OrgMapsforgeMapLayerLayers_initWithOrgMapsforgeMapLayerRedrawer_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeMapLayerRedrawer> redrawer, OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerLayers *create_OrgMapsforgeMapLayerLayers_initWithOrgMapsforgeMapLayerRedrawer_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeMapLayerRedrawer> redrawer, OrgMapsforgeMapModelDisplayModel *displayModel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerLayers)
 
-#endif // _OrgMapsforgeMapLayerLayers_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLayers")

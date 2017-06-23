@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/MapDataStore.java
 //
 
-#ifndef _OrgMapsforgeMapReaderMapDataStore_H_
-#define _OrgMapsforgeMapReaderMapDataStore_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderMapDataStore")
+#ifdef RESTRICT_OrgMapsforgeMapReaderMapDataStore
+#define INCLUDE_ALL_OrgMapsforgeMapReaderMapDataStore 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderMapDataStore 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderMapDataStore
+
+#if !defined (OrgMapsforgeMapReaderMapDataStore_) && (INCLUDE_ALL_OrgMapsforgeMapReaderMapDataStore || defined(INCLUDE_OrgMapsforgeMapReaderMapDataStore))
+#define OrgMapsforgeMapReaderMapDataStore_
 
 @class JavaLangByte;
 @class OrgMapsforgeCoreModelBoundingBox;
@@ -14,7 +22,7 @@
 @class OrgMapsforgeCoreModelTile;
 @class OrgMapsforgeMapReaderMapReadResult;
 
-@protocol OrgMapsforgeMapReaderMapDataStore < NSObject, JavaObject >
+@protocol OrgMapsforgeMapReaderMapDataStore < JavaObject >
 
 - (OrgMapsforgeCoreModelBoundingBox *)boundingBox;
 
@@ -36,4 +44,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapReaderMapDataStore)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderMapDataStore)
 
-#endif // _OrgMapsforgeMapReaderMapDataStore_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderMapDataStore")

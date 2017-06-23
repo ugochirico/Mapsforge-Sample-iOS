@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/queue/Job.java
 //
 
-#ifndef _OrgMapsforgeMapLayerQueueJob_H_
-#define _OrgMapsforgeMapLayerQueueJob_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueJob")
+#ifdef RESTRICT_OrgMapsforgeMapLayerQueueJob
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueJob 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerQueueJob 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerQueueJob
+
+#if !defined (OrgMapsforgeMapLayerQueueJob_) && (INCLUDE_ALL_OrgMapsforgeMapLayerQueueJob || defined(INCLUDE_OrgMapsforgeMapLayerQueueJob))
+#define OrgMapsforgeMapLayerQueueJob_
 
 @class OrgMapsforgeCoreModelTile;
 
@@ -51,6 +59,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerQueueJob_initWithOrgMapsforgeCoreMode
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueJob *new_OrgMapsforgeMapLayerQueueJob_initWithOrgMapsforgeCoreModelTile_withBoolean_(OrgMapsforgeCoreModelTile *tile, jboolean hasAlpha) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerQueueJob *create_OrgMapsforgeMapLayerQueueJob_initWithOrgMapsforgeCoreModelTile_withBoolean_(OrgMapsforgeCoreModelTile *tile, jboolean hasAlpha);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerQueueJob)
 
-#endif // _OrgMapsforgeMapLayerQueueJob_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerQueueJob")

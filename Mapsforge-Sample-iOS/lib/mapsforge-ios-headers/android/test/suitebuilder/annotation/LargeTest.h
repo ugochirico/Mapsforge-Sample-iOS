@@ -3,12 +3,28 @@
 //  source: android/frameworks/base/core/java/android/test/suitebuilder/annotation/LargeTest.java
 //
 
-#ifndef _AndroidTestSuitebuilderAnnotationLargeTest_H_
-#define _AndroidTestSuitebuilderAnnotationLargeTest_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_AndroidTestSuitebuilderAnnotationLargeTest")
+#ifdef RESTRICT_AndroidTestSuitebuilderAnnotationLargeTest
+#define INCLUDE_ALL_AndroidTestSuitebuilderAnnotationLargeTest 0
+#else
+#define INCLUDE_ALL_AndroidTestSuitebuilderAnnotationLargeTest 1
+#endif
+#undef RESTRICT_AndroidTestSuitebuilderAnnotationLargeTest
+
+#if !defined (AndroidTestSuitebuilderAnnotationLargeTest_) && (INCLUDE_ALL_AndroidTestSuitebuilderAnnotationLargeTest || defined(INCLUDE_AndroidTestSuitebuilderAnnotationLargeTest))
+#define AndroidTestSuitebuilderAnnotationLargeTest_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
+@class IOSClass;
+
+/*!
+ @brief Marks a test that should run as part of the large tests.
+ */
 @protocol AndroidTestSuitebuilderAnnotationLargeTest < JavaLangAnnotationAnnotation >
 
 @end
@@ -19,6 +35,10 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationLargeTest)
 
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationLargeTest> create_AndroidTestSuitebuilderAnnotationLargeTest();
+
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationLargeTest)
 
-#endif // _AndroidTestSuitebuilderAnnotationLargeTest_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidTestSuitebuilderAnnotationLargeTest")

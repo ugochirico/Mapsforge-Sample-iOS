@@ -3,10 +3,23 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/RenderThemeHandler.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRenderThemeHandler_H_
-#define _OrgMapsforgeMapRenderthemeRuleRenderThemeHandler_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRenderThemeHandler_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler))
+#define OrgMapsforgeMapRenderthemeRuleRenderThemeHandler_
 
 @class OrgMapsforgeMapModelDisplayModel;
 @class OrgMapsforgeMapRenderthemeRuleRenderTheme;
@@ -31,4 +44,10 @@ FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderTheme *OrgMapsforgeMapRend
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRenderThemeHandler)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRenderThemeHandler_H_
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeHandler")

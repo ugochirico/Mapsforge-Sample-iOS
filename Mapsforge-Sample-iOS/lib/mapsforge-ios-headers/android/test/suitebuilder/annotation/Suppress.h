@@ -3,12 +3,31 @@
 //  source: android/frameworks/base/core/java/android/test/suitebuilder/annotation/Suppress.java
 //
 
-#ifndef _AndroidTestSuitebuilderAnnotationSuppress_H_
-#define _AndroidTestSuitebuilderAnnotationSuppress_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_AndroidTestSuitebuilderAnnotationSuppress")
+#ifdef RESTRICT_AndroidTestSuitebuilderAnnotationSuppress
+#define INCLUDE_ALL_AndroidTestSuitebuilderAnnotationSuppress 0
+#else
+#define INCLUDE_ALL_AndroidTestSuitebuilderAnnotationSuppress 1
+#endif
+#undef RESTRICT_AndroidTestSuitebuilderAnnotationSuppress
+
+#if !defined (AndroidTestSuitebuilderAnnotationSuppress_) && (INCLUDE_ALL_AndroidTestSuitebuilderAnnotationSuppress || defined(INCLUDE_AndroidTestSuitebuilderAnnotationSuppress))
+#define AndroidTestSuitebuilderAnnotationSuppress_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
+@class IOSClass;
+
+/*!
+ @brief Use this annotation on test classes or test methods that should not be included in a test
+  suite.If the annotation appears on the class then no tests in that class will be included.
+ If
+  the annotation appears only on a test method then only that method will be excluded.
+ */
 @protocol AndroidTestSuitebuilderAnnotationSuppress < JavaLangAnnotationAnnotation >
 
 @end
@@ -19,6 +38,10 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationSuppress)
 
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSuppress> create_AndroidTestSuitebuilderAnnotationSuppress();
+
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationSuppress)
 
-#endif // _AndroidTestSuitebuilderAnnotationSuppress_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidTestSuitebuilderAnnotationSuppress")

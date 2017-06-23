@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/PoiWayBundle.java
 //
 
-#ifndef _OrgMapsforgeMapReaderPoiWayBundle_H_
-#define _OrgMapsforgeMapReaderPoiWayBundle_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderPoiWayBundle")
+#ifdef RESTRICT_OrgMapsforgeMapReaderPoiWayBundle
+#define INCLUDE_ALL_OrgMapsforgeMapReaderPoiWayBundle 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderPoiWayBundle 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderPoiWayBundle
+
+#if !defined (OrgMapsforgeMapReaderPoiWayBundle_) && (INCLUDE_ALL_OrgMapsforgeMapReaderPoiWayBundle || defined(INCLUDE_OrgMapsforgeMapReaderPoiWayBundle))
+#define OrgMapsforgeMapReaderPoiWayBundle_
 
 @protocol JavaUtilList;
 
@@ -32,6 +40,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderPoiWayBundle_initWithJavaUtilList_wi
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderPoiWayBundle *new_OrgMapsforgeMapReaderPoiWayBundle_initWithJavaUtilList_withJavaUtilList_(id<JavaUtilList> pois, id<JavaUtilList> ways) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderPoiWayBundle *create_OrgMapsforgeMapReaderPoiWayBundle_initWithJavaUtilList_withJavaUtilList_(id<JavaUtilList> pois, id<JavaUtilList> ways);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderPoiWayBundle)
 
-#endif // _OrgMapsforgeMapReaderPoiWayBundle_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderPoiWayBundle")

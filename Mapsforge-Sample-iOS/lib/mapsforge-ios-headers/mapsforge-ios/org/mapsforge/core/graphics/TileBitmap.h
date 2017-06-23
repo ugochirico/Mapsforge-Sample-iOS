@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/core/graphics/TileBitmap.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsTileBitmap_H_
-#define _OrgMapsforgeCoreGraphicsTileBitmap_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsTileBitmap")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsTileBitmap
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsTileBitmap 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsTileBitmap 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsTileBitmap
+
+#if !defined (OrgMapsforgeCoreGraphicsTileBitmap_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsTileBitmap || defined(INCLUDE_OrgMapsforgeCoreGraphicsTileBitmap))
+#define OrgMapsforgeCoreGraphicsTileBitmap_
+
+#define RESTRICT_OrgMapsforgeCoreGraphicsBitmap 1
+#define INCLUDE_OrgMapsforgeCoreGraphicsBitmap 1
 #include "org/mapsforge/core/graphics/Bitmap.h"
 
-@protocol OrgMapsforgeCoreGraphicsTileBitmap < OrgMapsforgeCoreGraphicsBitmap, NSObject, JavaObject >
+@protocol OrgMapsforgeCoreGraphicsTileBitmap < OrgMapsforgeCoreGraphicsBitmap, JavaObject >
 
 - (jlong)getTimestamp;
 
@@ -25,4 +36,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreGraphicsTileBitmap)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsTileBitmap)
 
-#endif // _OrgMapsforgeCoreGraphicsTileBitmap_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsTileBitmap")

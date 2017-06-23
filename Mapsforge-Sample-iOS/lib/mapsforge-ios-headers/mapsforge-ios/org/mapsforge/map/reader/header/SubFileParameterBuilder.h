@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/header/SubFileParameterBuilder.java
 //
 
-#ifndef _OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_H_
-#define _OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder")
+#ifdef RESTRICT_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder
+
+#if !defined (OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_) && (INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder || defined(INCLUDE_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder))
+#define OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_
 
 @class OrgMapsforgeCoreModelBoundingBox;
 @class OrgMapsforgeMapReaderHeaderSubFileParameter;
@@ -38,6 +46,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_init(O
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderSubFileParameterBuilder *new_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderHeaderSubFileParameterBuilder *create_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderHeaderSubFileParameterBuilder)
 
-#endif // _OrgMapsforgeMapReaderHeaderSubFileParameterBuilder_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderSubFileParameterBuilder")

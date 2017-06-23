@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/core/mapelements/WayTextContainer.java
 //
 
-#ifndef _OrgMapsforgeCoreMapelementsWayTextContainer_H_
-#define _OrgMapsforgeCoreMapelementsWayTextContainer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsWayTextContainer")
+#ifdef RESTRICT_OrgMapsforgeCoreMapelementsWayTextContainer
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsWayTextContainer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreMapelementsWayTextContainer 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreMapelementsWayTextContainer
+
+#if !defined (OrgMapsforgeCoreMapelementsWayTextContainer_) && (INCLUDE_ALL_OrgMapsforgeCoreMapelementsWayTextContainer || defined(INCLUDE_OrgMapsforgeCoreMapelementsWayTextContainer))
+#define OrgMapsforgeCoreMapelementsWayTextContainer_
+
+#define RESTRICT_OrgMapsforgeCoreMapelementsMapElementContainer 1
+#define INCLUDE_OrgMapsforgeCoreMapelementsMapElementContainer 1
 #include "org/mapsforge/core/mapelements/MapElementContainer.h"
 
-@class OrgMapsforgeCoreGraphicsDisplayEnum;
+@class OrgMapsforgeCoreGraphicsDisplay;
 @class OrgMapsforgeCoreModelPoint;
 @protocol OrgMapsforgeCoreGraphicsCanvas;
 @protocol OrgMapsforgeCoreGraphicsMatrix;
@@ -21,7 +32,7 @@
 
 - (instancetype)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
                     withOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)end
-           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+               withOrgMapsforgeCoreGraphicsDisplay:(OrgMapsforgeCoreGraphicsDisplay *)display
                                            withInt:(jint)priority
                                       withNSString:(NSString *)text
                  withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
@@ -38,10 +49,14 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreMapelementsWayTextContainer)
 
-FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsWayTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withDouble_(OrgMapsforgeCoreMapelementsWayTextContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreModelPoint *end, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, jdouble textHeight);
+FOUNDATION_EXPORT void OrgMapsforgeCoreMapelementsWayTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withDouble_(OrgMapsforgeCoreMapelementsWayTextContainer *self, OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreModelPoint *end, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, jdouble textHeight);
 
-FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsWayTextContainer *new_OrgMapsforgeCoreMapelementsWayTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplayEnum_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withDouble_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreModelPoint *end, OrgMapsforgeCoreGraphicsDisplayEnum *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, jdouble textHeight) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsWayTextContainer *new_OrgMapsforgeCoreMapelementsWayTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withDouble_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreModelPoint *end, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, jdouble textHeight) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT OrgMapsforgeCoreMapelementsWayTextContainer *create_OrgMapsforgeCoreMapelementsWayTextContainer_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreGraphicsDisplay_withInt_withNSString_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withDouble_(OrgMapsforgeCoreModelPoint *point, OrgMapsforgeCoreModelPoint *end, OrgMapsforgeCoreGraphicsDisplay *display, jint priority, NSString *text, id<OrgMapsforgeCoreGraphicsPaint> paintFront, id<OrgMapsforgeCoreGraphicsPaint> paintBack, jdouble textHeight);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreMapelementsWayTextContainer)
 
-#endif // _OrgMapsforgeCoreMapelementsWayTextContainer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreMapelementsWayTextContainer")

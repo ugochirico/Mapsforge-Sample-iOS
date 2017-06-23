@@ -3,13 +3,29 @@
 //  source: android/frameworks/base/core/java/android/util/Printer.java
 //
 
-#ifndef _AndroidUtilPrinter_H_
-#define _AndroidUtilPrinter_H_
-
 #include "J2ObjC_header.h"
 
-@protocol AndroidUtilPrinter < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_AndroidUtilPrinter")
+#ifdef RESTRICT_AndroidUtilPrinter
+#define INCLUDE_ALL_AndroidUtilPrinter 0
+#else
+#define INCLUDE_ALL_AndroidUtilPrinter 1
+#endif
+#undef RESTRICT_AndroidUtilPrinter
 
+#if !defined (AndroidUtilPrinter_) && (INCLUDE_ALL_AndroidUtilPrinter || defined(INCLUDE_AndroidUtilPrinter))
+#define AndroidUtilPrinter_
+
+/*!
+ @brief Simple interface for printing text, allowing redirection to various
+  targets.
+ */
+@protocol AndroidUtilPrinter < JavaObject >
+
+/*!
+ @brief Write a line of text to the output.There is no need to terminate
+  the given string with a newline.
+ */
 - (void)printlnWithNSString:(NSString *)x;
 
 @end
@@ -18,4 +34,6 @@ J2OBJC_EMPTY_STATIC_INIT(AndroidUtilPrinter)
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilPrinter)
 
-#endif // _AndroidUtilPrinter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidUtilPrinter")

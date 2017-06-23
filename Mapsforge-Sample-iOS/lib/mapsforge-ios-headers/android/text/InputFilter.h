@@ -3,16 +3,51 @@
 //  source: android/frameworks/base/core/java/android/text/InputFilter.java
 //
 
-#ifndef _AndroidTextInputFilter_H_
-#define _AndroidTextInputFilter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_AndroidTextInputFilter")
+#ifdef RESTRICT_AndroidTextInputFilter
+#define INCLUDE_ALL_AndroidTextInputFilter 0
+#else
+#define INCLUDE_ALL_AndroidTextInputFilter 1
+#endif
+#undef RESTRICT_AndroidTextInputFilter
+#ifdef INCLUDE_AndroidTextInputFilter_LengthFilter
+#define INCLUDE_AndroidTextInputFilter 1
+#endif
+#ifdef INCLUDE_AndroidTextInputFilter_AllCaps
+#define INCLUDE_AndroidTextInputFilter 1
+#endif
+
+#if !defined (AndroidTextInputFilter_) && (INCLUDE_ALL_AndroidTextInputFilter || defined(INCLUDE_AndroidTextInputFilter))
+#define AndroidTextInputFilter_
 
 @protocol AndroidTextSpanned;
 @protocol JavaLangCharSequence;
 
-@protocol AndroidTextInputFilter < NSObject, JavaObject >
+/*!
+ @brief InputFilters can be attached to <code>Editable</code>s to constrain the
+  changes that can be made to them.
+ */
+@protocol AndroidTextInputFilter < JavaObject >
 
+/*!
+ @brief This method is called when the buffer is going to replace the
+  range <code>dstart &hellip; dend</code> of <code>dest</code>
+  with the new text from the range <code>start &hellip; end</code>
+  of <code>source</code>.Return the CharSequence that you would
+  like to have placed there instead, including an empty string
+  if appropriate, or <code>null</code> to accept the original
+  replacement.
+ Be careful to not to reject 0-length replacements,
+  as this is what happens when you delete text.  Also beware that
+  you should not attempt to make any changes to <code>dest</code>
+  from this method; you may only examine it for context. 
+  Note: If <var>source</var> is an instance of <code>Spanned</code> or 
+ <code>Spannable</code>, the span objects in the <var>source</var> should be 
+  copied into the filtered result (i.e. the non-null return value).  
+ <code>TextUtils.copySpansFrom</code> can be used for convenience.
+ */
 - (id<JavaLangCharSequence>)filterWithJavaLangCharSequence:(id<JavaLangCharSequence>)source
                                                    withInt:(jint)start
                                                    withInt:(jint)end
@@ -26,6 +61,18 @@ J2OBJC_EMPTY_STATIC_INIT(AndroidTextInputFilter)
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter)
 
+#endif
+
+#if !defined (AndroidTextInputFilter_AllCaps_) && (INCLUDE_ALL_AndroidTextInputFilter || defined(INCLUDE_AndroidTextInputFilter_AllCaps))
+#define AndroidTextInputFilter_AllCaps_
+
+@protocol AndroidTextSpanned;
+@protocol JavaLangCharSequence;
+
+/*!
+ @brief This filter will capitalize all the lower case letters that are added
+  through edits.
+ */
 @interface AndroidTextInputFilter_AllCaps : NSObject < AndroidTextInputFilter >
 
 #pragma mark Public
@@ -47,8 +94,22 @@ FOUNDATION_EXPORT void AndroidTextInputFilter_AllCaps_init(AndroidTextInputFilte
 
 FOUNDATION_EXPORT AndroidTextInputFilter_AllCaps *new_AndroidTextInputFilter_AllCaps_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT AndroidTextInputFilter_AllCaps *create_AndroidTextInputFilter_AllCaps_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter_AllCaps)
 
+#endif
+
+#if !defined (AndroidTextInputFilter_LengthFilter_) && (INCLUDE_ALL_AndroidTextInputFilter || defined(INCLUDE_AndroidTextInputFilter_LengthFilter))
+#define AndroidTextInputFilter_LengthFilter_
+
+@protocol AndroidTextSpanned;
+@protocol JavaLangCharSequence;
+
+/*!
+ @brief This filter will constrain edits not to make the length of the text
+  greater than the specified length.
+ */
 @interface AndroidTextInputFilter_LengthFilter : NSObject < AndroidTextInputFilter >
 
 #pragma mark Public
@@ -70,6 +131,10 @@ FOUNDATION_EXPORT void AndroidTextInputFilter_LengthFilter_initWithInt_(AndroidT
 
 FOUNDATION_EXPORT AndroidTextInputFilter_LengthFilter *new_AndroidTextInputFilter_LengthFilter_initWithInt_(jint max) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT AndroidTextInputFilter_LengthFilter *create_AndroidTextInputFilter_LengthFilter_initWithInt_(jint max);
+
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter_LengthFilter)
 
-#endif // _AndroidTextInputFilter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidTextInputFilter")

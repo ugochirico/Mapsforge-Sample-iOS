@@ -3,26 +3,144 @@
 //  source: android/libcore/luni/src/main/java/java/nio/channels/SeekableByteChannel.java
 //
 
-#ifndef _JavaNioChannelsSeekableByteChannel_H_
-#define _JavaNioChannelsSeekableByteChannel_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNioChannelsSeekableByteChannel")
+#ifdef RESTRICT_JavaNioChannelsSeekableByteChannel
+#define INCLUDE_ALL_JavaNioChannelsSeekableByteChannel 0
+#else
+#define INCLUDE_ALL_JavaNioChannelsSeekableByteChannel 1
+#endif
+#undef RESTRICT_JavaNioChannelsSeekableByteChannel
+
+#if !defined (JavaNioChannelsSeekableByteChannel_) && (INCLUDE_ALL_JavaNioChannelsSeekableByteChannel || defined(INCLUDE_JavaNioChannelsSeekableByteChannel))
+#define JavaNioChannelsSeekableByteChannel_
+
+#define RESTRICT_JavaNioChannelsByteChannel 1
+#define INCLUDE_JavaNioChannelsByteChannel 1
 #include "java/nio/channels/ByteChannel.h"
 
 @class JavaNioByteBuffer;
 
-@protocol JavaNioChannelsSeekableByteChannel < JavaNioChannelsByteChannel, NSObject, JavaObject >
+/*!
+ @brief An interface for channels that keep a pointer to a current position within an underlying
+  byte-based data source such as a file.
+ <p>SeekableByteChannels have a pointer into the underlying data source which is referred to as a 
+ <em>position</em>. The position can be manipulated by moving it within the data source, and the
+  current position can be queried. 
+ <p>SeekableByteChannels also have an associated <em>size</em>. The size of the channel is the
+  number of bytes that the data source currently contains. The size of the data source can be
+  manipulated by adding more bytes to the end or by removing bytes from the end. See 
+ <code>truncate</code>, <code>position</code> and <code>write</code> for details. The current size can also
+  be queried.
+ @since 1.7
+ */
+@protocol JavaNioChannelsSeekableByteChannel < JavaNioChannelsByteChannel, JavaObject >
 
+/*!
+ @brief Returns the current position as a positive number of bytes from the start of the underlying
+  data source.
+ @throw ClosedChannelException
+ if this channel is closed.
+ @throw IOException
+ if another I/O error occurs.
+ */
 - (jlong)position;
 
+/*!
+ @brief Sets the channel's position to <code>newPosition</code>.
+ <p>The argument is the number of bytes counted from the start of the data source. The position
+  cannot be set to a value that is negative. The new position can be set beyond the current
+  size. If set beyond the current size, attempts to read will return end-of-file. Write
+  operations will succeed but they will fill the bytes between the current end of the data
+  source
+  and the new position with the required number of (unspecified) byte values.
+ @return the channel.
+ @throw IllegalArgumentException
+ if the new position is negative.
+ @throw ClosedChannelException
+ if this channel is closed.
+ @throw IOException
+ if another I/O error occurs.
+ */
 - (id<JavaNioChannelsSeekableByteChannel>)positionWithLong:(jlong)newPosition;
 
+/*!
+ @brief Returns the size of the data source underlying this channel in bytes.
+ @throw ClosedChannelException
+ if this channel is closed.
+ @throw IOException
+ if an I/O error occurs.
+ */
 - (jlong)size;
 
+/*!
+ @brief Truncates the data source underlying this channel to a given size.Any bytes beyond the given
+  size are removed.
+ If there are no bytes beyond the given size then the contents are
+  unmodified. 
+ <p>If the position is currently greater than the given size, then it is set to the new size.
+ @return this channel.
+ @throw IllegalArgumentException
+ if the requested size is negative.
+ @throw ClosedChannelException
+ if this channel is closed.
+ @throw NonWritableChannelException
+ if the channel cannot be written to.
+ @throw IOException
+ if another I/O error occurs.
+ */
 - (id<JavaNioChannelsSeekableByteChannel>)truncateWithLong:(jlong)size;
 
+/*!
+ @brief Writes bytes from the given byte buffer to this channel.
+ <p>The bytes are written starting at the channel's current position, and after some number of
+  bytes are written (up to the <code>remaining</code> number of bytes in
+  the buffer) the channel's position is increased by the number of bytes actually written. 
+ <p>If the channel's position is beyond the current end of the underlying data source, then the
+  data source is first extended up to the given position by the required number of unspecified
+  byte values.
+ @param buffer the byte buffer containing the bytes to be written.
+ @return the number of bytes actually written.
+ @throw NonWritableChannelException
+ if the channel was not opened for writing.
+ @throw ClosedChannelException
+ if the channel was already closed.
+ @throw AsynchronousCloseException
+ if another thread closes the channel during the write.
+ @throw ClosedByInterruptException
+ if another thread interrupts the calling thread while this operation is in progress. The
+      interrupt state of the calling thread is set and the channel is closed.
+ @throw IOException
+ if another I/O error occurs, details are in the message.
+ */
 - (jint)writeWithJavaNioByteBuffer:(JavaNioByteBuffer *)buffer;
 
+/*!
+ @brief Reads bytes from this channel into the given buffer.
+ <p>If the channels position is beyond the current end of the underlying data source then
+  end-of-file (-1) is returned. 
+ <p>The bytes are read starting at the channel's current position, and after some number of
+  bytes are read (up to the <code>remaining</code> number of bytes in the
+  buffer) the channel's position is increased by the number of bytes actually read. The bytes
+  will be read into the buffer starting at the buffer's current 
+ <code>position</code>. The buffer's <code>limit</code>
+  is not changed. 
+ <p>The call may block if other threads are also attempting to read from the same channel.
+ @param buffer the byte buffer to receive the bytes.
+ @return the number of bytes actually read, or -1 if the end of the data has been reached
+ @throw AsynchronousCloseException
+ if another thread closes the channel during the read.
+ @throw ClosedByInterruptException
+ if another thread interrupts the calling thread while the operation is in progress. The
+      interrupt state of the calling thread is set and the channel is closed.
+ @throw ClosedChannelException
+ if the channel is closed.
+ @throw IOException
+ another I/O error occurs, details are in the message.
+ @throw NonReadableChannelException
+ if the channel was not opened for reading.
+ */
 - (jint)readWithJavaNioByteBuffer:(JavaNioByteBuffer *)buffer;
 
 @end
@@ -31,4 +149,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsSeekableByteChannel)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsSeekableByteChannel)
 
-#endif // _JavaNioChannelsSeekableByteChannel_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNioChannelsSeekableByteChannel")

@@ -3,12 +3,29 @@
 //  source: src/main/java/org/mockito/internal/creation/MockSettingsImpl.java
 //
 
-#ifndef _OrgMockitoInternalCreationMockSettingsImpl_H_
-#define _OrgMockitoInternalCreationMockSettingsImpl_H_
-
 #include "J2ObjC_header.h"
-#include "org/mockito/MockSettings.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMockitoInternalCreationMockSettingsImpl")
+#ifdef RESTRICT_OrgMockitoInternalCreationMockSettingsImpl
+#define INCLUDE_ALL_OrgMockitoInternalCreationMockSettingsImpl 0
+#else
+#define INCLUDE_ALL_OrgMockitoInternalCreationMockSettingsImpl 1
+#endif
+#undef RESTRICT_OrgMockitoInternalCreationMockSettingsImpl
+
+#if !defined (OrgMockitoInternalCreationMockSettingsImpl_) && (INCLUDE_ALL_OrgMockitoInternalCreationMockSettingsImpl || defined(INCLUDE_OrgMockitoInternalCreationMockSettingsImpl))
+#define OrgMockitoInternalCreationMockSettingsImpl_
+
+#define RESTRICT_OrgMockitoInternalCreationSettingsCreationSettings 1
+#define INCLUDE_OrgMockitoInternalCreationSettingsCreationSettings 1
 #include "org/mockito/internal/creation/settings/CreationSettings.h"
+
+#define RESTRICT_OrgMockitoMockSettings 1
+#define INCLUDE_OrgMockitoMockSettings 1
+#include "org/mockito/MockSettings.h"
+
+#define RESTRICT_OrgMockitoMockMockCreationSettings 1
+#define INCLUDE_OrgMockitoMockMockCreationSettings 1
 #include "org/mockito/mock/MockCreationSettings.h"
 
 @class IOSClass;
@@ -64,6 +81,10 @@ FOUNDATION_EXPORT void OrgMockitoInternalCreationMockSettingsImpl_init(OrgMockit
 
 FOUNDATION_EXPORT OrgMockitoInternalCreationMockSettingsImpl *new_OrgMockitoInternalCreationMockSettingsImpl_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMockitoInternalCreationMockSettingsImpl *create_OrgMockitoInternalCreationMockSettingsImpl_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMockitoInternalCreationMockSettingsImpl)
 
-#endif // _OrgMockitoInternalCreationMockSettingsImpl_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMockitoInternalCreationMockSettingsImpl")

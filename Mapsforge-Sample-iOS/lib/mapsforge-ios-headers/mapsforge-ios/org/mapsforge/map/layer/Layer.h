@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/Layer.java
 //
 
-#ifndef _OrgMapsforgeMapLayerLayer_H_
-#define _OrgMapsforgeMapLayerLayer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLayer")
+#ifdef RESTRICT_OrgMapsforgeMapLayerLayer
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLayer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLayer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerLayer
+
+#if !defined (OrgMapsforgeMapLayerLayer_) && (INCLUDE_ALL_OrgMapsforgeMapLayerLayer || defined(INCLUDE_OrgMapsforgeMapLayerLayer))
+#define OrgMapsforgeMapLayerLayer_
 
 @class OrgMapsforgeCoreModelBoundingBox;
 @class OrgMapsforgeCoreModelLatLong;
@@ -71,4 +79,6 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerLayer_init(OrgMapsforgeMapLayerLayer 
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerLayer)
 
-#endif // _OrgMapsforgeMapLayerLayer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLayer")

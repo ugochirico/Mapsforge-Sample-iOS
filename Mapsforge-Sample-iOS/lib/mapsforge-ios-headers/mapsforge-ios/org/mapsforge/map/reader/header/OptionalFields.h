@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/reader/header/OptionalFields.java
 //
 
-#ifndef _OrgMapsforgeMapReaderHeaderOptionalFields_H_
-#define _OrgMapsforgeMapReaderHeaderOptionalFields_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderOptionalFields")
+#ifdef RESTRICT_OrgMapsforgeMapReaderHeaderOptionalFields
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderOptionalFields 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderHeaderOptionalFields 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderHeaderOptionalFields
+
+#if !defined (OrgMapsforgeMapReaderHeaderOptionalFields_) && (INCLUDE_ALL_OrgMapsforgeMapReaderHeaderOptionalFields || defined(INCLUDE_OrgMapsforgeMapReaderHeaderOptionalFields))
+#define OrgMapsforgeMapReaderHeaderOptionalFields_
 
 @class JavaLangByte;
 @class OrgMapsforgeCoreModelLatLong;
@@ -47,4 +55,6 @@ FOUNDATION_EXPORT void OrgMapsforgeMapReaderHeaderOptionalFields_readOptionalFie
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderHeaderOptionalFields)
 
-#endif // _OrgMapsforgeMapReaderHeaderOptionalFields_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderHeaderOptionalFields")

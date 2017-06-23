@@ -3,13 +3,26 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/RenderThemeFuture.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_H_
-#define _OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture))
+#define OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_
+
+#define RESTRICT_JavaUtilConcurrentFutureTask 1
+#define INCLUDE_JavaUtilConcurrentFutureTask 1
 #include "java/util/concurrent/FutureTask.h"
 
+@class JavaUtilConcurrentTimeUnit;
 @class OrgMapsforgeMapModelDisplayModel;
+@class OrgMapsforgeMapRenderthemeRuleRenderTheme;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
 @protocol OrgMapsforgeMapRenderthemeXmlRenderTheme;
 
@@ -21,6 +34,11 @@
                   withOrgMapsforgeMapRenderthemeXmlRenderTheme:(id<OrgMapsforgeMapRenderthemeXmlRenderTheme>)xmlRenderTheme
                           withOrgMapsforgeMapModelDisplayModel:(OrgMapsforgeMapModelDisplayModel *)displayModel;
 
+- (OrgMapsforgeMapRenderthemeRuleRenderTheme *)get;
+
+- (OrgMapsforgeMapRenderthemeRuleRenderTheme *)getWithLong:(jlong)arg0
+                            withJavaUtilConcurrentTimeUnit:(JavaUtilConcurrentTimeUnit *)arg1;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleRenderThemeFuture)
@@ -29,6 +47,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_initWithO
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderThemeFuture *new_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapRenderthemeXmlRenderTheme_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, id<OrgMapsforgeMapRenderthemeXmlRenderTheme> xmlRenderTheme, OrgMapsforgeMapModelDisplayModel *displayModel) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderThemeFuture *create_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapRenderthemeXmlRenderTheme_withOrgMapsforgeMapModelDisplayModel_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, id<OrgMapsforgeMapRenderthemeXmlRenderTheme> xmlRenderTheme, OrgMapsforgeMapModelDisplayModel *displayModel);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRenderThemeFuture)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRenderThemeFuture_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderThemeFuture")

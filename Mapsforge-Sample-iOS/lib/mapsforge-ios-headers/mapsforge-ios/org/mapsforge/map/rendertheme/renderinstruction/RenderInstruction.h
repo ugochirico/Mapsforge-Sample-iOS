@@ -3,17 +3,29 @@
 //  source: ./org/mapsforge/map/rendertheme/renderinstruction/RenderInstruction.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_H_
-#define _OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction || defined(INCLUDE_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction))
+#define OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_
 
 @class OrgMapsforgeCoreModelTile;
 @class OrgMapsforgeMapLayerRendererPolylineContainer;
 @class OrgMapsforgeMapModelDisplayModel;
 @class OrgMapsforgeMapReaderPointOfInterest;
-@class OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum;
+@class OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling;
 @protocol OrgMapsforgeCoreGraphicsBitmap;
 @protocol OrgMapsforgeCoreGraphicsGraphicFactory;
 @protocol OrgMapsforgeMapRenderthemeRenderCallback;
@@ -26,7 +38,7 @@
   jfloat height_;
   jint percent_;
   jfloat width_;
-  OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum *scaling_;
+  OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *scaling_;
 }
 
 #pragma mark Public
@@ -54,7 +66,7 @@
 - (id<OrgMapsforgeCoreGraphicsBitmap>)createBitmapWithNSString:(NSString *)relativePathPrefix
                                                   withNSString:(NSString *)src;
 
-- (OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum *)fromValueWithNSString:(NSString *)value;
+- (OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *)fromValueWithNSString:(NSString *)value;
 
 @end
 
@@ -63,134 +75,220 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstru
 J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, category_, NSString *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, displayModel_, OrgMapsforgeMapModelDisplayModel *)
 J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, graphicFactory_, id<OrgMapsforgeCoreGraphicsGraphicFactory>)
-J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, scaling_, OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum *)
+J2OBJC_FIELD_SETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, scaling_, OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ALIGN_CENTER_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, ALIGN_CENTER_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_ALIGN_CENTER();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ALIGN_CENTER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, ALIGN_CENTER, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_CAT_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, CAT_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_CAT();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_CAT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, CAT, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_DISPLAY_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, DISPLAY_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_DISPLAY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_DISPLAY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, DISPLAY, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_DY_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, DY_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_DY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_DY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, DY, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FILL_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FILL_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_FILL();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FILL;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FILL, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FONT_FAMILY_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FONT_FAMILY_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_FONT_FAMILY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FONT_FAMILY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FONT_FAMILY, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FONT_SIZE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FONT_SIZE_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_FONT_SIZE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FONT_SIZE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FONT_SIZE, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FONT_STYLE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FONT_STYLE_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_FONT_STYLE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_FONT_STYLE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, FONT_STYLE, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ID_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, ID_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_ID();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ID;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, ID, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_K_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, K_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_K();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_K;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, K, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_POSITION_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, POSITION_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_POSITION();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_POSITION;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, POSITION, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_PRIORITY_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, PRIORITY_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_PRIORITY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_PRIORITY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, PRIORITY, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_R_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, R_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_R();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_R;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, R, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_RADIUS_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, RADIUS_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_RADIUS();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_RADIUS;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, RADIUS, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_REPEAT_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, REPEAT_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_REPEAT();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_REPEAT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, REPEAT, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_REPEAT_GAP_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, REPEAT_GAP_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_REPEAT_GAP();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_REPEAT_GAP;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, REPEAT_GAP, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_REPEAT_START_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, REPEAT_START_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_REPEAT_START();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_REPEAT_START;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, REPEAT_START, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ROTATE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, ROTATE_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_ROTATE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ROTATE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, ROTATE, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SCALE_RADIUS_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SCALE_RADIUS_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SCALE_RADIUS();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SCALE_RADIUS;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SCALE_RADIUS, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SIZE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SIZE_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SIZE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SIZE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SIZE, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SRC_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SRC_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SRC();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SRC;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SRC, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_STROKE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_DASHARRAY_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_DASHARRAY_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_STROKE_DASHARRAY();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_DASHARRAY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_DASHARRAY, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_LINECAP_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_LINECAP_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_STROKE_LINECAP();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_LINECAP;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_LINECAP, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_LINEJOIN_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_LINEJOIN_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_STROKE_LINEJOIN();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_LINEJOIN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_LINEJOIN, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_WIDTH_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_WIDTH_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_STROKE_WIDTH();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_STROKE_WIDTH;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, STROKE_WIDTH, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_HEIGHT_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_HEIGHT_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SYMBOL_HEIGHT();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_HEIGHT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_HEIGHT, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_ID_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_ID_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SYMBOL_ID();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_ID;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_ID, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_PERCENT_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_PERCENT_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SYMBOL_PERCENT();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_PERCENT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_PERCENT, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_SCALING_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_SCALING_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SYMBOL_SCALING();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_SCALING;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_SCALING, NSString *)
 
-FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_WIDTH_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_WIDTH_, NSString *)
+inline NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_get_SYMBOL_WIDTH();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_SYMBOL_WIDTH;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction, SYMBOL_WIDTH, NSString *)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction *self, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel);
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction)
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling) {
-  OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_DEFAULT = 0,
-  OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_SIZE = 1,
+#endif
+
+#if !defined (OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction || defined(INCLUDE_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling))
+#define OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_Enum) {
+  OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_Enum_DEFAULT = 0,
+  OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_Enum_SIZE = 1,
 };
 
-@interface OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_values();
 
-+ (OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_values_[];
 
-#define OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_DEFAULT OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_values_[OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_DEFAULT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum, DEFAULT)
+inline OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_get_DEFAULT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling, DEFAULT)
 
-#define OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_SIZE OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum_values_[OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_SIZE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum, SIZE)
+inline OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_get_SIZE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling, SIZE)
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScalingEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_values();
 
-#endif // _OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_H_
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling *OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction_ResourceScaling)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction")

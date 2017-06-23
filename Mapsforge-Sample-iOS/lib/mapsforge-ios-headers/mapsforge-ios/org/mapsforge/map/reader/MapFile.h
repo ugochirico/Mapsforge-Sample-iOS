@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/reader/MapFile.java
 //
 
-#ifndef _OrgMapsforgeMapReaderMapFile_H_
-#define _OrgMapsforgeMapReaderMapFile_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapReaderMapFile")
+#ifdef RESTRICT_OrgMapsforgeMapReaderMapFile
+#define INCLUDE_ALL_OrgMapsforgeMapReaderMapFile 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapReaderMapFile 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapReaderMapFile
+
+#if !defined (OrgMapsforgeMapReaderMapFile_) && (INCLUDE_ALL_OrgMapsforgeMapReaderMapFile || defined(INCLUDE_OrgMapsforgeMapReaderMapFile))
+#define OrgMapsforgeMapReaderMapFile_
+
+#define RESTRICT_OrgMapsforgeMapReaderMapDataStore 1
+#define INCLUDE_OrgMapsforgeMapReaderMapDataStore 1
 #include "org/mapsforge/map/reader/MapDataStore.h"
 
 @class JavaIoFile;
@@ -48,25 +59,39 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapReaderMapFile)
 
-FOUNDATION_EXPORT OrgMapsforgeMapReaderMapFile *OrgMapsforgeMapReaderMapFile_TEST_MAP_FILE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapReaderMapFile, TEST_MAP_FILE_, OrgMapsforgeMapReaderMapFile *)
+inline OrgMapsforgeMapReaderMapFile *OrgMapsforgeMapReaderMapFile_get_TEST_MAP_FILE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapReaderMapFile *OrgMapsforgeMapReaderMapFile_TEST_MAP_FILE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapReaderMapFile, TEST_MAP_FILE, OrgMapsforgeMapReaderMapFile *)
 
-FOUNDATION_EXPORT jboolean OrgMapsforgeMapReaderMapFile_wayFilterEnabled_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapReaderMapFile, wayFilterEnabled_, jboolean)
-J2OBJC_STATIC_FIELD_REF_GETTER(OrgMapsforgeMapReaderMapFile, wayFilterEnabled_, jboolean)
+inline jboolean OrgMapsforgeMapReaderMapFile_get_wayFilterEnabled();
+inline jboolean OrgMapsforgeMapReaderMapFile_set_wayFilterEnabled(jboolean value);
+inline jboolean *OrgMapsforgeMapReaderMapFile_getRef_wayFilterEnabled();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT jboolean OrgMapsforgeMapReaderMapFile_wayFilterEnabled;
+J2OBJC_STATIC_FIELD_PRIMITIVE(OrgMapsforgeMapReaderMapFile, wayFilterEnabled, jboolean)
 
-FOUNDATION_EXPORT jint OrgMapsforgeMapReaderMapFile_wayFilterDistance_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapReaderMapFile, wayFilterDistance_, jint)
-J2OBJC_STATIC_FIELD_REF_GETTER(OrgMapsforgeMapReaderMapFile, wayFilterDistance_, jint)
+inline jint OrgMapsforgeMapReaderMapFile_get_wayFilterDistance();
+inline jint OrgMapsforgeMapReaderMapFile_set_wayFilterDistance(jint value);
+inline jint *OrgMapsforgeMapReaderMapFile_getRef_wayFilterDistance();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT jint OrgMapsforgeMapReaderMapFile_wayFilterDistance;
+J2OBJC_STATIC_FIELD_PRIMITIVE(OrgMapsforgeMapReaderMapFile, wayFilterDistance, jint)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapReaderMapFile_initWithJavaIoFile_(OrgMapsforgeMapReaderMapFile *self, JavaIoFile *mapFile);
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderMapFile *new_OrgMapsforgeMapReaderMapFile_initWithJavaIoFile_(JavaIoFile *mapFile) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderMapFile *create_OrgMapsforgeMapReaderMapFile_initWithJavaIoFile_(JavaIoFile *mapFile);
+
 FOUNDATION_EXPORT void OrgMapsforgeMapReaderMapFile_initWithNSString_(OrgMapsforgeMapReaderMapFile *self, NSString *mapFileName);
 
 FOUNDATION_EXPORT OrgMapsforgeMapReaderMapFile *new_OrgMapsforgeMapReaderMapFile_initWithNSString_(NSString *mapFileName) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapReaderMapFile *create_OrgMapsforgeMapReaderMapFile_initWithNSString_(NSString *mapFileName);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapReaderMapFile)
 
-#endif // _OrgMapsforgeMapReaderMapFile_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapReaderMapFile")

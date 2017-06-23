@@ -3,51 +3,80 @@
 //  source: ./org/mapsforge/core/graphics/Display.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsDisplay_H_
-#define _OrgMapsforgeCoreGraphicsDisplay_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsDisplay")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsDisplay
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsDisplay 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsDisplay 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsDisplay
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsDisplay_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsDisplay || defined(INCLUDE_OrgMapsforgeCoreGraphicsDisplay))
+#define OrgMapsforgeCoreGraphicsDisplay_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsDisplay) {
-  OrgMapsforgeCoreGraphicsDisplay_NEVER = 0,
-  OrgMapsforgeCoreGraphicsDisplay_ALWAYS = 1,
-  OrgMapsforgeCoreGraphicsDisplay_IFSPACE = 2,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsDisplay_Enum) {
+  OrgMapsforgeCoreGraphicsDisplay_Enum_NEVER = 0,
+  OrgMapsforgeCoreGraphicsDisplay_Enum_ALWAYS = 1,
+  OrgMapsforgeCoreGraphicsDisplay_Enum_IFSPACE = 2,
 };
 
-@interface OrgMapsforgeCoreGraphicsDisplayEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsDisplay : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeCoreGraphicsDisplayEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeCoreGraphicsDisplay *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeCoreGraphicsDisplay *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsDisplayEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsDisplayEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplayEnum *OrgMapsforgeCoreGraphicsDisplayEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsDisplayEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsDisplay)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplayEnum *OrgMapsforgeCoreGraphicsDisplayEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_values_[];
 
-#define OrgMapsforgeCoreGraphicsDisplayEnum_NEVER OrgMapsforgeCoreGraphicsDisplayEnum_values_[OrgMapsforgeCoreGraphicsDisplay_NEVER]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsDisplayEnum, NEVER)
+inline OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_get_NEVER();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsDisplay, NEVER)
 
-#define OrgMapsforgeCoreGraphicsDisplayEnum_ALWAYS OrgMapsforgeCoreGraphicsDisplayEnum_values_[OrgMapsforgeCoreGraphicsDisplay_ALWAYS]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsDisplayEnum, ALWAYS)
+inline OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_get_ALWAYS();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsDisplay, ALWAYS)
 
-#define OrgMapsforgeCoreGraphicsDisplayEnum_IFSPACE OrgMapsforgeCoreGraphicsDisplayEnum_values_[OrgMapsforgeCoreGraphicsDisplay_IFSPACE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsDisplayEnum, IFSPACE)
+inline OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_get_IFSPACE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsDisplay, IFSPACE)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplayEnum *OrgMapsforgeCoreGraphicsDisplayEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsDisplayEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsDisplay_values();
 
-#endif // _OrgMapsforgeCoreGraphicsDisplay_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsDisplay *OrgMapsforgeCoreGraphicsDisplay_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsDisplay)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsDisplay")

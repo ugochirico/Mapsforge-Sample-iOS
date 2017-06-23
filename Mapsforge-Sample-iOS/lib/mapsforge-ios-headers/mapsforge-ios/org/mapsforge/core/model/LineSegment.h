@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/core/model/LineSegment.java
 //
 
-#ifndef _OrgMapsforgeCoreModelLineSegment_H_
-#define _OrgMapsforgeCoreModelLineSegment_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelLineSegment")
+#ifdef RESTRICT_OrgMapsforgeCoreModelLineSegment
+#define INCLUDE_ALL_OrgMapsforgeCoreModelLineSegment 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelLineSegment 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelLineSegment
+
+#if !defined (OrgMapsforgeCoreModelLineSegment_) && (INCLUDE_ALL_OrgMapsforgeCoreModelLineSegment || defined(INCLUDE_OrgMapsforgeCoreModelLineSegment))
+#define OrgMapsforgeCoreModelLineSegment_
 
 @class OrgMapsforgeCoreModelPoint;
 @class OrgMapsforgeCoreModelRectangle;
@@ -57,10 +65,16 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelLineSegment_initWithOrgMapsforgeCore
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelLineSegment *new_OrgMapsforgeCoreModelLineSegment_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_(OrgMapsforgeCoreModelPoint *start, OrgMapsforgeCoreModelPoint *end) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelLineSegment *create_OrgMapsforgeCoreModelLineSegment_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_(OrgMapsforgeCoreModelPoint *start, OrgMapsforgeCoreModelPoint *end);
+
 FOUNDATION_EXPORT void OrgMapsforgeCoreModelLineSegment_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withDouble_(OrgMapsforgeCoreModelLineSegment *self, OrgMapsforgeCoreModelPoint *start, OrgMapsforgeCoreModelPoint *direction, jdouble distance);
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelLineSegment *new_OrgMapsforgeCoreModelLineSegment_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withDouble_(OrgMapsforgeCoreModelPoint *start, OrgMapsforgeCoreModelPoint *direction, jdouble distance) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelLineSegment *create_OrgMapsforgeCoreModelLineSegment_initWithOrgMapsforgeCoreModelPoint_withOrgMapsforgeCoreModelPoint_withDouble_(OrgMapsforgeCoreModelPoint *start, OrgMapsforgeCoreModelPoint *direction, jdouble distance);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelLineSegment)
 
-#endif // _OrgMapsforgeCoreModelLineSegment_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelLineSegment")

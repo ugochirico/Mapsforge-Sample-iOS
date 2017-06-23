@@ -3,21 +3,23 @@
 //  source: ./org/mapsforge/core/util/LatLongUtils.java
 //
 
-#ifndef _OrgMapsforgeCoreUtilLatLongUtils_H_
-#define _OrgMapsforgeCoreUtilLatLongUtils_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilLatLongUtils")
+#ifdef RESTRICT_OrgMapsforgeCoreUtilLatLongUtils
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilLatLongUtils 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilLatLongUtils 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreUtilLatLongUtils
+
+#if !defined (OrgMapsforgeCoreUtilLatLongUtils_) && (INCLUDE_ALL_OrgMapsforgeCoreUtilLatLongUtils || defined(INCLUDE_OrgMapsforgeCoreUtilLatLongUtils))
+#define OrgMapsforgeCoreUtilLatLongUtils_
 
 @class IOSDoubleArray;
 @class OrgMapsforgeCoreModelBoundingBox;
 @class OrgMapsforgeCoreModelDimension;
 @class OrgMapsforgeCoreModelLatLong;
-
-#define OrgMapsforgeCoreUtilLatLongUtils_EQUATORIAL_RADIUS 6378137.0
-#define OrgMapsforgeCoreUtilLatLongUtils_LATITUDE_MAX 90.0
-#define OrgMapsforgeCoreUtilLatLongUtils_LATITUDE_MIN -90.0
-#define OrgMapsforgeCoreUtilLatLongUtils_LONGITUDE_MAX 180.0
-#define OrgMapsforgeCoreUtilLatLongUtils_LONGITUDE_MIN -180.0
 
 @interface OrgMapsforgeCoreUtilLatLongUtils : NSObject
 
@@ -49,15 +51,25 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeCoreUtilLatLongUtils)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilLatLongUtils, EQUATORIAL_RADIUS, jdouble)
+inline jdouble OrgMapsforgeCoreUtilLatLongUtils_get_EQUATORIAL_RADIUS();
+#define OrgMapsforgeCoreUtilLatLongUtils_EQUATORIAL_RADIUS 6378137.0
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilLatLongUtils, EQUATORIAL_RADIUS, jdouble)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilLatLongUtils, LATITUDE_MAX, jdouble)
+inline jdouble OrgMapsforgeCoreUtilLatLongUtils_get_LATITUDE_MAX();
+#define OrgMapsforgeCoreUtilLatLongUtils_LATITUDE_MAX 90.0
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilLatLongUtils, LATITUDE_MAX, jdouble)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilLatLongUtils, LATITUDE_MIN, jdouble)
+inline jdouble OrgMapsforgeCoreUtilLatLongUtils_get_LATITUDE_MIN();
+#define OrgMapsforgeCoreUtilLatLongUtils_LATITUDE_MIN -90.0
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilLatLongUtils, LATITUDE_MIN, jdouble)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilLatLongUtils, LONGITUDE_MAX, jdouble)
+inline jdouble OrgMapsforgeCoreUtilLatLongUtils_get_LONGITUDE_MAX();
+#define OrgMapsforgeCoreUtilLatLongUtils_LONGITUDE_MAX 180.0
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilLatLongUtils, LONGITUDE_MAX, jdouble)
 
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeCoreUtilLatLongUtils, LONGITUDE_MIN, jdouble)
+inline jdouble OrgMapsforgeCoreUtilLatLongUtils_get_LONGITUDE_MIN();
+#define OrgMapsforgeCoreUtilLatLongUtils_LONGITUDE_MIN -180.0
+J2OBJC_STATIC_FIELD_CONSTANT(OrgMapsforgeCoreUtilLatLongUtils, LONGITUDE_MIN, jdouble)
 
 FOUNDATION_EXPORT jint OrgMapsforgeCoreUtilLatLongUtils_degreesToMicrodegreesWithDouble_(jdouble coordinate);
 
@@ -79,4 +91,6 @@ FOUNDATION_EXPORT jbyte OrgMapsforgeCoreUtilLatLongUtils_zoomForBoundsWithOrgMap
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreUtilLatLongUtils)
 
-#endif // _OrgMapsforgeCoreUtilLatLongUtils_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilLatLongUtils")

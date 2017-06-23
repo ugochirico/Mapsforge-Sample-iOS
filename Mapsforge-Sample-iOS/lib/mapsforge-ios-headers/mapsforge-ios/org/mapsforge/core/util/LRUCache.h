@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/util/LRUCache.java
 //
 
-#ifndef _OrgMapsforgeCoreUtilLRUCache_H_
-#define _OrgMapsforgeCoreUtilLRUCache_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilLRUCache")
+#ifdef RESTRICT_OrgMapsforgeCoreUtilLRUCache
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilLRUCache 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreUtilLRUCache 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreUtilLRUCache
+
+#if !defined (OrgMapsforgeCoreUtilLRUCache_) && (INCLUDE_ALL_OrgMapsforgeCoreUtilLRUCache || defined(INCLUDE_OrgMapsforgeCoreUtilLRUCache))
+#define OrgMapsforgeCoreUtilLRUCache_
+
+#define RESTRICT_JavaUtilLinkedHashMap 1
+#define INCLUDE_JavaUtilLinkedHashMap 1
 #include "java/util/LinkedHashMap.h"
 
 @protocol JavaUtilMap_Entry;
@@ -32,6 +43,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreUtilLRUCache_initWithInt_(OrgMapsforgeCor
 
 FOUNDATION_EXPORT OrgMapsforgeCoreUtilLRUCache *new_OrgMapsforgeCoreUtilLRUCache_initWithInt_(jint capacity) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreUtilLRUCache *create_OrgMapsforgeCoreUtilLRUCache_initWithInt_(jint capacity);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreUtilLRUCache)
 
-#endif // _OrgMapsforgeCoreUtilLRUCache_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreUtilLRUCache")

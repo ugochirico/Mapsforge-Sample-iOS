@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/layer/TilePosition.java
 //
 
-#ifndef _OrgMapsforgeMapLayerTilePosition_H_
-#define _OrgMapsforgeMapLayerTilePosition_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerTilePosition")
+#ifdef RESTRICT_OrgMapsforgeMapLayerTilePosition
+#define INCLUDE_ALL_OrgMapsforgeMapLayerTilePosition 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerTilePosition 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerTilePosition
+
+#if !defined (OrgMapsforgeMapLayerTilePosition_) && (INCLUDE_ALL_OrgMapsforgeMapLayerTilePosition || defined(INCLUDE_OrgMapsforgeMapLayerTilePosition))
+#define OrgMapsforgeMapLayerTilePosition_
 
 @class OrgMapsforgeCoreModelPoint;
 @class OrgMapsforgeCoreModelTile;
@@ -33,6 +41,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerTilePosition_initWithOrgMapsforgeCore
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerTilePosition *new_OrgMapsforgeMapLayerTilePosition_initWithOrgMapsforgeCoreModelTile_withOrgMapsforgeCoreModelPoint_(OrgMapsforgeCoreModelTile *tile, OrgMapsforgeCoreModelPoint *point) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerTilePosition *create_OrgMapsforgeMapLayerTilePosition_initWithOrgMapsforgeCoreModelTile_withOrgMapsforgeCoreModelPoint_(OrgMapsforgeCoreModelTile *tile, OrgMapsforgeCoreModelPoint *point);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerTilePosition)
 
-#endif // _OrgMapsforgeMapLayerTilePosition_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerTilePosition")

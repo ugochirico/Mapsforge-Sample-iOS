@@ -3,16 +3,37 @@
 //  source: android/frameworks/base/core/java/android/text/GetChars.java
 //
 
-#ifndef _AndroidTextGetChars_H_
-#define _AndroidTextGetChars_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_AndroidTextGetChars")
+#ifdef RESTRICT_AndroidTextGetChars
+#define INCLUDE_ALL_AndroidTextGetChars 0
+#else
+#define INCLUDE_ALL_AndroidTextGetChars 1
+#endif
+#undef RESTRICT_AndroidTextGetChars
+
+#if !defined (AndroidTextGetChars_) && (INCLUDE_ALL_AndroidTextGetChars || defined(INCLUDE_AndroidTextGetChars))
+#define AndroidTextGetChars_
+
+#define RESTRICT_JavaLangCharSequence 1
+#define INCLUDE_JavaLangCharSequence 1
 #include "java/lang/CharSequence.h"
 
 @class IOSCharArray;
 
-@protocol AndroidTextGetChars < JavaLangCharSequence, NSObject, JavaObject >
+/*!
+ @brief Please implement this interface if your CharSequence has a
+  getChars() method like the one in String that is faster than
+  calling charAt() multiple times.
+ */
+@protocol AndroidTextGetChars < JavaLangCharSequence, JavaObject >
 
+/*!
+ @brief Exactly like String.getChars(): copy chars <code>start</code>
+  through <code>end - 1</code> from this CharSequence into <code>dest</code>
+  beginning at offset <code>destoff</code>.
+ */
 - (void)getCharsWithInt:(jint)start
                 withInt:(jint)end
           withCharArray:(IOSCharArray *)dest
@@ -24,4 +45,6 @@ J2OBJC_EMPTY_STATIC_INIT(AndroidTextGetChars)
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextGetChars)
 
-#endif // _AndroidTextGetChars_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_AndroidTextGetChars")

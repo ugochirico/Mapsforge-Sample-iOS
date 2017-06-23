@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/ClosedWayMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher))
+#define OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleClosedMatcher 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleClosedMatcher 1
 #include "org/mapsforge/map/rendertheme/rule/ClosedMatcher.h"
 
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+@class OrgMapsforgeMapRenderthemeRuleClosed;
 
 @interface OrgMapsforgeMapRenderthemeRuleClosedWayMatcher : NSObject < OrgMapsforgeMapRenderthemeRuleClosedMatcher >
 
@@ -17,15 +28,19 @@
 
 - (jboolean)isCoveredByWithOrgMapsforgeMapRenderthemeRuleClosedMatcher:(id<OrgMapsforgeMapRenderthemeRuleClosedMatcher>)closedMatcher;
 
-- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 @end
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleClosedWayMatcher)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosedWayMatcher *OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRuleClosedWayMatcher, INSTANCE_, OrgMapsforgeMapRenderthemeRuleClosedWayMatcher *)
+inline OrgMapsforgeMapRenderthemeRuleClosedWayMatcher *OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleClosedWayMatcher *OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRuleClosedWayMatcher, INSTANCE, OrgMapsforgeMapRenderthemeRuleClosedWayMatcher *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleClosedWayMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleClosedWayMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedWayMatcher")

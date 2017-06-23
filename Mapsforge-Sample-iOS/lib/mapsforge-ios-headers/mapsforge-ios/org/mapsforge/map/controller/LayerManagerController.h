@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/controller/LayerManagerController.java
 //
 
-#ifndef _OrgMapsforgeMapControllerLayerManagerController_H_
-#define _OrgMapsforgeMapControllerLayerManagerController_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapControllerLayerManagerController")
+#ifdef RESTRICT_OrgMapsforgeMapControllerLayerManagerController
+#define INCLUDE_ALL_OrgMapsforgeMapControllerLayerManagerController 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapControllerLayerManagerController 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapControllerLayerManagerController
+
+#if !defined (OrgMapsforgeMapControllerLayerManagerController_) && (INCLUDE_ALL_OrgMapsforgeMapControllerLayerManagerController || defined(INCLUDE_OrgMapsforgeMapControllerLayerManagerController))
+#define OrgMapsforgeMapControllerLayerManagerController_
+
+#define RESTRICT_OrgMapsforgeMapModelCommonObserver 1
+#define INCLUDE_OrgMapsforgeMapModelCommonObserver 1
 #include "org/mapsforge/map/model/common/Observer.h"
 
 @class OrgMapsforgeMapLayerLayerManager;
@@ -29,4 +40,6 @@ FOUNDATION_EXPORT OrgMapsforgeMapControllerLayerManagerController *OrgMapsforgeM
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapControllerLayerManagerController)
 
-#endif // _OrgMapsforgeMapControllerLayerManagerController_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapControllerLayerManagerController")

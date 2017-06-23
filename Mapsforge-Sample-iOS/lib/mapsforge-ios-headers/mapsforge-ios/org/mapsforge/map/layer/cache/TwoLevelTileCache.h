@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/cache/TwoLevelTileCache.java
 //
 
-#ifndef _OrgMapsforgeMapLayerCacheTwoLevelTileCache_H_
-#define _OrgMapsforgeMapLayerCacheTwoLevelTileCache_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheTwoLevelTileCache")
+#ifdef RESTRICT_OrgMapsforgeMapLayerCacheTwoLevelTileCache
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheTwoLevelTileCache 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheTwoLevelTileCache 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerCacheTwoLevelTileCache
+
+#if !defined (OrgMapsforgeMapLayerCacheTwoLevelTileCache_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheTwoLevelTileCache || defined(INCLUDE_OrgMapsforgeMapLayerCacheTwoLevelTileCache))
+#define OrgMapsforgeMapLayerCacheTwoLevelTileCache_
+
+#define RESTRICT_OrgMapsforgeMapLayerCacheTileCache 1
+#define INCLUDE_OrgMapsforgeMapLayerCacheTileCache 1
 #include "org/mapsforge/map/layer/cache/TileCache.h"
 
 @class OrgMapsforgeMapLayerQueueJob;
@@ -47,6 +58,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheTwoLevelTileCache_initWithOrgMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheTwoLevelTileCache *new_OrgMapsforgeMapLayerCacheTwoLevelTileCache_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerCacheTileCache_(id<OrgMapsforgeMapLayerCacheTileCache> firstLevelTileCache, id<OrgMapsforgeMapLayerCacheTileCache> secondLevelTileCache) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheTwoLevelTileCache *create_OrgMapsforgeMapLayerCacheTwoLevelTileCache_initWithOrgMapsforgeMapLayerCacheTileCache_withOrgMapsforgeMapLayerCacheTileCache_(id<OrgMapsforgeMapLayerCacheTileCache> firstLevelTileCache, id<OrgMapsforgeMapLayerCacheTileCache> secondLevelTileCache);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheTwoLevelTileCache)
 
-#endif // _OrgMapsforgeMapLayerCacheTwoLevelTileCache_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheTwoLevelTileCache")

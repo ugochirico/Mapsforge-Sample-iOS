@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/overlay/Polyline.java
 //
 
-#ifndef _OrgMapsforgeMapLayerOverlayPolyline_H_
-#define _OrgMapsforgeMapLayerOverlayPolyline_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerOverlayPolyline")
+#ifdef RESTRICT_OrgMapsforgeMapLayerOverlayPolyline
+#define INCLUDE_ALL_OrgMapsforgeMapLayerOverlayPolyline 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerOverlayPolyline 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerOverlayPolyline
+
+#if !defined (OrgMapsforgeMapLayerOverlayPolyline_) && (INCLUDE_ALL_OrgMapsforgeMapLayerOverlayPolyline || defined(INCLUDE_OrgMapsforgeMapLayerOverlayPolyline))
+#define OrgMapsforgeMapLayerOverlayPolyline_
+
+#define RESTRICT_OrgMapsforgeMapLayerLayer 1
+#define INCLUDE_OrgMapsforgeMapLayerLayer 1
 #include "org/mapsforge/map/layer/Layer.h"
 
 @class OrgMapsforgeCoreModelBoundingBox;
@@ -46,10 +57,16 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerOverlayPolyline_initWithOrgMapsforgeC
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayPolyline *new_OrgMapsforgeMapLayerOverlayPolyline_initWithOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsGraphicFactory_(id<OrgMapsforgeCoreGraphicsPaint> paintStroke, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayPolyline *create_OrgMapsforgeMapLayerOverlayPolyline_initWithOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsGraphicFactory_(id<OrgMapsforgeCoreGraphicsPaint> paintStroke, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
+
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerOverlayPolyline_initWithOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_(OrgMapsforgeMapLayerOverlayPolyline *self, id<OrgMapsforgeCoreGraphicsPaint> paintStroke, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean keepAligned);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayPolyline *new_OrgMapsforgeMapLayerOverlayPolyline_initWithOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_(id<OrgMapsforgeCoreGraphicsPaint> paintStroke, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean keepAligned) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayPolyline *create_OrgMapsforgeMapLayerOverlayPolyline_initWithOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsGraphicFactory_withBoolean_(id<OrgMapsforgeCoreGraphicsPaint> paintStroke, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, jboolean keepAligned);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerOverlayPolyline)
 
-#endif // _OrgMapsforgeMapLayerOverlayPolyline_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerOverlayPolyline")

@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/model/FrameBufferModel.java
 //
 
-#ifndef _OrgMapsforgeMapModelFrameBufferModel_H_
-#define _OrgMapsforgeMapModelFrameBufferModel_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapModelFrameBufferModel")
+#ifdef RESTRICT_OrgMapsforgeMapModelFrameBufferModel
+#define INCLUDE_ALL_OrgMapsforgeMapModelFrameBufferModel 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapModelFrameBufferModel 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapModelFrameBufferModel
+
+#if !defined (OrgMapsforgeMapModelFrameBufferModel_) && (INCLUDE_ALL_OrgMapsforgeMapModelFrameBufferModel || defined(INCLUDE_OrgMapsforgeMapModelFrameBufferModel))
+#define OrgMapsforgeMapModelFrameBufferModel_
+
+#define RESTRICT_OrgMapsforgeMapModelCommonObservable 1
+#define INCLUDE_OrgMapsforgeMapModelCommonObservable 1
 #include "org/mapsforge/map/model/common/Observable.h"
 
 @class OrgMapsforgeCoreModelDimension;
@@ -38,6 +49,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapModelFrameBufferModel_init(OrgMapsforgeMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapModelFrameBufferModel *new_OrgMapsforgeMapModelFrameBufferModel_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapModelFrameBufferModel *create_OrgMapsforgeMapModelFrameBufferModel_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapModelFrameBufferModel)
 
-#endif // _OrgMapsforgeMapModelFrameBufferModel_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapModelFrameBufferModel")

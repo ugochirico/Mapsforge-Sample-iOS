@@ -3,16 +3,33 @@
 //  source: Classes/java/text/IOSCollator.java
 //
 
-#ifndef _JavaTextIOSCollator_H_
-#define _JavaTextIOSCollator_H_
-
 #include "J2ObjC_header.h"
-#include "java/text/CollationKey.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaTextIOSCollator")
+#ifdef RESTRICT_JavaTextIOSCollator
+#define INCLUDE_ALL_JavaTextIOSCollator 0
+#else
+#define INCLUDE_ALL_JavaTextIOSCollator 1
+#endif
+#undef RESTRICT_JavaTextIOSCollator
+
+#if !defined (JavaTextIOSCollator_) && (INCLUDE_ALL_JavaTextIOSCollator || defined(INCLUDE_JavaTextIOSCollator))
+#define JavaTextIOSCollator_
+
+#define RESTRICT_JavaTextCollator 1
+#define INCLUDE_JavaTextCollator 1
 #include "java/text/Collator.h"
 
-@class IOSByteArray;
+@class JavaTextCollationKey;
 @class JavaUtilLocale;
 
+/*!
+ @brief A concrete implementation class for <code>Collation</code> for iOS.Although
+  iOS uses ICU, its collation data is not available from any public APIs.
+ This class implements collation by invoking the NSString localized
+  comparison methods.
+ @author Tom Ball
+ */
 @interface JavaTextIOSCollator : JavaTextCollator
 
 #pragma mark Public
@@ -30,8 +47,14 @@
 
 - (NSUInteger)hash;
 
+/*!
+ @brief Sets decomposition field, but is otherwise unused.
+ */
 - (void)setDecompositionWithInt:(jint)value;
 
+/*!
+ @brief Sets strength field, but is otherwise unused.
+ */
 - (void)setStrengthWithInt:(jint)value;
 
 #pragma mark Package-Private
@@ -46,7 +69,20 @@ FOUNDATION_EXPORT void JavaTextIOSCollator_initWithJavaUtilLocale_(JavaTextIOSCo
 
 FOUNDATION_EXPORT JavaTextIOSCollator *new_JavaTextIOSCollator_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaTextIOSCollator *create_JavaTextIOSCollator_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaTextIOSCollator)
+
+#endif
+
+#if !defined (JavaTextIOSCollator_IOSCollationKey_) && (INCLUDE_ALL_JavaTextIOSCollator || defined(INCLUDE_JavaTextIOSCollator_IOSCollationKey))
+#define JavaTextIOSCollator_IOSCollationKey_
+
+#define RESTRICT_JavaTextCollationKey 1
+#define INCLUDE_JavaTextCollationKey 1
+#include "java/text/CollationKey.h"
+
+@class IOSByteArray;
 
 @interface JavaTextIOSCollator_IOSCollationKey : JavaTextCollationKey
 
@@ -68,6 +104,10 @@ FOUNDATION_EXPORT void JavaTextIOSCollator_IOSCollationKey_initWithNSString_(Jav
 
 FOUNDATION_EXPORT JavaTextIOSCollator_IOSCollationKey *new_JavaTextIOSCollator_IOSCollationKey_initWithNSString_(NSString *source) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaTextIOSCollator_IOSCollationKey *create_JavaTextIOSCollator_IOSCollationKey_initWithNSString_(NSString *source);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaTextIOSCollator_IOSCollationKey)
 
-#endif // _JavaTextIOSCollator_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaTextIOSCollator")

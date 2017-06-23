@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/cache/TileStore.java
 //
 
-#ifndef _OrgMapsforgeMapLayerCacheTileStore_H_
-#define _OrgMapsforgeMapLayerCacheTileStore_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileStore")
+#ifdef RESTRICT_OrgMapsforgeMapLayerCacheTileStore
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileStore 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileStore 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerCacheTileStore
+
+#if !defined (OrgMapsforgeMapLayerCacheTileStore_) && (INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileStore || defined(INCLUDE_OrgMapsforgeMapLayerCacheTileStore))
+#define OrgMapsforgeMapLayerCacheTileStore_
+
+#define RESTRICT_OrgMapsforgeMapLayerCacheTileCache 1
+#define INCLUDE_OrgMapsforgeMapLayerCacheTileCache 1
 #include "org/mapsforge/map/layer/cache/TileCache.h"
 
 @class JavaIoFile;
@@ -54,6 +65,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerCacheTileStore_initWithJavaIoFile_wit
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheTileStore *new_OrgMapsforgeMapLayerCacheTileStore_initWithJavaIoFile_withNSString_withOrgMapsforgeCoreGraphicsGraphicFactory_(JavaIoFile *rootDirectory, NSString *suffix, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerCacheTileStore *create_OrgMapsforgeMapLayerCacheTileStore_initWithJavaIoFile_withNSString_withOrgMapsforgeCoreGraphicsGraphicFactory_(JavaIoFile *rootDirectory, NSString *suffix, id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerCacheTileStore)
 
-#endif // _OrgMapsforgeMapLayerCacheTileStore_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerCacheTileStore")

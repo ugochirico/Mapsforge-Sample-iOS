@@ -3,13 +3,30 @@
 //  source: android/libcore/luni/src/main/java/java/net/SocketPermission.java
 //
 
-#ifndef _JavaNetSocketPermission_H_
-#define _JavaNetSocketPermission_H_
-
 #include "J2ObjC_header.h"
-#include "java/io/Serializable.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetSocketPermission")
+#ifdef RESTRICT_JavaNetSocketPermission
+#define INCLUDE_ALL_JavaNetSocketPermission 0
+#else
+#define INCLUDE_ALL_JavaNetSocketPermission 1
+#endif
+#undef RESTRICT_JavaNetSocketPermission
+
+#if !defined (JavaNetSocketPermission_) && (INCLUDE_ALL_JavaNetSocketPermission || defined(INCLUDE_JavaNetSocketPermission))
+#define JavaNetSocketPermission_
+
+#define RESTRICT_JavaSecurityPermission 1
+#define INCLUDE_JavaSecurityPermission 1
 #include "java/security/Permission.h"
 
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
+#include "java/io/Serializable.h"
+
+/*!
+ @brief Legacy security code; do not use.
+ */
 @interface JavaNetSocketPermission : JavaSecurityPermission < JavaIoSerializable >
 
 #pragma mark Public
@@ -29,6 +46,10 @@ FOUNDATION_EXPORT void JavaNetSocketPermission_initWithNSString_withNSString_(Ja
 
 FOUNDATION_EXPORT JavaNetSocketPermission *new_JavaNetSocketPermission_initWithNSString_withNSString_(NSString *host, NSString *action) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetSocketPermission *create_JavaNetSocketPermission_initWithNSString_withNSString_(NSString *host, NSString *action);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetSocketPermission)
 
-#endif // _JavaNetSocketPermission_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetSocketPermission")

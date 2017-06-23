@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/LinearWayMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher))
+#define OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleClosedMatcher 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleClosedMatcher 1
 #include "org/mapsforge/map/rendertheme/rule/ClosedMatcher.h"
 
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+@class OrgMapsforgeMapRenderthemeRuleClosed;
 
 @interface OrgMapsforgeMapRenderthemeRuleLinearWayMatcher : NSObject < OrgMapsforgeMapRenderthemeRuleClosedMatcher >
 
@@ -17,15 +28,19 @@
 
 - (jboolean)isCoveredByWithOrgMapsforgeMapRenderthemeRuleClosedMatcher:(id<OrgMapsforgeMapRenderthemeRuleClosedMatcher>)closedMatcher;
 
-- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 @end
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleLinearWayMatcher)
 
-FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleLinearWayMatcher *OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapRenderthemeRuleLinearWayMatcher, INSTANCE_, OrgMapsforgeMapRenderthemeRuleLinearWayMatcher *)
+inline OrgMapsforgeMapRenderthemeRuleLinearWayMatcher *OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleLinearWayMatcher *OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapRenderthemeRuleLinearWayMatcher, INSTANCE, OrgMapsforgeMapRenderthemeRuleLinearWayMatcher *)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleLinearWayMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleLinearWayMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleLinearWayMatcher")

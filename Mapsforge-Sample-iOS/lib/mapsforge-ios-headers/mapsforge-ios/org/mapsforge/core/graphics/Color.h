@@ -3,57 +3,88 @@
 //  source: ./org/mapsforge/core/graphics/Color.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsColor_H_
-#define _OrgMapsforgeCoreGraphicsColor_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsColor")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsColor
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsColor 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsColor 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsColor
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsColor_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsColor || defined(INCLUDE_OrgMapsforgeCoreGraphicsColor))
+#define OrgMapsforgeCoreGraphicsColor_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsColor) {
-  OrgMapsforgeCoreGraphicsColor_BLACK = 0,
-  OrgMapsforgeCoreGraphicsColor_BLUE = 1,
-  OrgMapsforgeCoreGraphicsColor_GREEN = 2,
-  OrgMapsforgeCoreGraphicsColor_RED = 3,
-  OrgMapsforgeCoreGraphicsColor_TRANSPARENT = 4,
-  OrgMapsforgeCoreGraphicsColor_WHITE = 5,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsColor_Enum) {
+  OrgMapsforgeCoreGraphicsColor_Enum_BLACK = 0,
+  OrgMapsforgeCoreGraphicsColor_Enum_BLUE = 1,
+  OrgMapsforgeCoreGraphicsColor_Enum_GREEN = 2,
+  OrgMapsforgeCoreGraphicsColor_Enum_RED = 3,
+  OrgMapsforgeCoreGraphicsColor_Enum_TRANSPARENT = 4,
+  OrgMapsforgeCoreGraphicsColor_Enum_WHITE = 5,
 };
 
-@interface OrgMapsforgeCoreGraphicsColorEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsColor : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (OrgMapsforgeCoreGraphicsColor *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsColorEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsColorEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsColorEnum *OrgMapsforgeCoreGraphicsColorEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsColorEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsColor)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsColorEnum *OrgMapsforgeCoreGraphicsColorEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_values_[];
 
-#define OrgMapsforgeCoreGraphicsColorEnum_BLACK OrgMapsforgeCoreGraphicsColorEnum_values_[OrgMapsforgeCoreGraphicsColor_BLACK]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsColorEnum, BLACK)
+inline OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_get_BLACK();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsColor, BLACK)
 
-#define OrgMapsforgeCoreGraphicsColorEnum_BLUE OrgMapsforgeCoreGraphicsColorEnum_values_[OrgMapsforgeCoreGraphicsColor_BLUE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsColorEnum, BLUE)
+inline OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_get_BLUE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsColor, BLUE)
 
-#define OrgMapsforgeCoreGraphicsColorEnum_GREEN OrgMapsforgeCoreGraphicsColorEnum_values_[OrgMapsforgeCoreGraphicsColor_GREEN]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsColorEnum, GREEN)
+inline OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_get_GREEN();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsColor, GREEN)
 
-#define OrgMapsforgeCoreGraphicsColorEnum_RED OrgMapsforgeCoreGraphicsColorEnum_values_[OrgMapsforgeCoreGraphicsColor_RED]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsColorEnum, RED)
+inline OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_get_RED();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsColor, RED)
 
-#define OrgMapsforgeCoreGraphicsColorEnum_TRANSPARENT OrgMapsforgeCoreGraphicsColorEnum_values_[OrgMapsforgeCoreGraphicsColor_TRANSPARENT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsColorEnum, TRANSPARENT)
+inline OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_get_TRANSPARENT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsColor, TRANSPARENT)
 
-#define OrgMapsforgeCoreGraphicsColorEnum_WHITE OrgMapsforgeCoreGraphicsColorEnum_values_[OrgMapsforgeCoreGraphicsColor_WHITE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsColorEnum, WHITE)
+inline OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_get_WHITE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsColor, WHITE)
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsColorEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsColor_values();
 
-#endif // _OrgMapsforgeCoreGraphicsColor_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsColor *OrgMapsforgeCoreGraphicsColor_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsColor)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsColor")

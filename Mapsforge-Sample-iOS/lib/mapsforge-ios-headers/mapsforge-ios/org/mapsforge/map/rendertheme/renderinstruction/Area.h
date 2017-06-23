@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/rendertheme/renderinstruction/Area.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRenderinstructionArea_H_
-#define _OrgMapsforgeMapRenderthemeRenderinstructionArea_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionArea")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionArea
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionArea 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionArea 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionArea
+
+#if !defined (OrgMapsforgeMapRenderthemeRenderinstructionArea_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionArea || defined(INCLUDE_OrgMapsforgeMapRenderthemeRenderinstructionArea))
+#define OrgMapsforgeMapRenderthemeRenderinstructionArea_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRenderinstructionRenderInstruction 1
 #include "org/mapsforge/map/rendertheme/renderinstruction/RenderInstruction.h"
 
 @class OrgMapsforgeCoreModelTile;
@@ -49,6 +60,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRenderinstructionArea_initWithO
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionArea *new_OrgMapsforgeMapRenderthemeRenderinstructionArea_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_withNSString_withOrgXmlpullV1XmlPullParser_withInt_withNSString_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel, NSString *elementName, id<OrgXmlpullV1XmlPullParser> pullParser, jint level, NSString *relativePathPrefix) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRenderinstructionArea *create_OrgMapsforgeMapRenderthemeRenderinstructionArea_initWithOrgMapsforgeCoreGraphicsGraphicFactory_withOrgMapsforgeMapModelDisplayModel_withNSString_withOrgXmlpullV1XmlPullParser_withInt_withNSString_(id<OrgMapsforgeCoreGraphicsGraphicFactory> graphicFactory, OrgMapsforgeMapModelDisplayModel *displayModel, NSString *elementName, id<OrgXmlpullV1XmlPullParser> pullParser, jint level, NSString *relativePathPrefix);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRenderinstructionArea)
 
-#endif // _OrgMapsforgeMapRenderthemeRenderinstructionArea_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRenderinstructionArea")

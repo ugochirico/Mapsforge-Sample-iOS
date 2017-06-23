@@ -27,15 +27,15 @@
 @interface IOSPaint : NSObject <OrgMapsforgeCoreGraphicsPaint> {
 @public
     jint color_;
-    OrgMapsforgeCoreGraphicsCap capStyle_;
-    OrgMapsforgeCoreGraphicsJoin joinStyle_;
-    OrgMapsforgeCoreGraphicsStyle style_;
-    OrgMapsforgeCoreGraphicsAlign alignStyle_;
+    OrgMapsforgeCoreGraphicsCap_Enum capStyle_;
+    OrgMapsforgeCoreGraphicsJoin_Enum joinStyle_;
+    OrgMapsforgeCoreGraphicsStyle_Enum style_;
+    OrgMapsforgeCoreGraphicsAlign *alignStyle_;
     NSMutableArray *strokeLengths_;
     CGFloat strokeWidth_;
     CGFloat textSize_;
-    OrgMapsforgeCoreGraphicsFontFamily fontFamily_;
-    OrgMapsforgeCoreGraphicsFontStyle fontStyle_;
+    OrgMapsforgeCoreGraphicsFontFamily_Enum fontFamily_;
+    OrgMapsforgeCoreGraphicsFontStyle_Enum fontStyle_;
     
     CGImageRef shaderImg_;
     CGAffineTransform shaderShift_;

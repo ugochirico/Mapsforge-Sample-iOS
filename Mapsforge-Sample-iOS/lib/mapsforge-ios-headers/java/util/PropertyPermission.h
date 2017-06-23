@@ -3,14 +3,28 @@
 //  source: android/libcore/luni/src/main/java/java/util/PropertyPermission.java
 //
 
-#ifndef _JavaUtilPropertyPermission_H_
-#define _JavaUtilPropertyPermission_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaUtilPropertyPermission")
+#ifdef RESTRICT_JavaUtilPropertyPermission
+#define INCLUDE_ALL_JavaUtilPropertyPermission 0
+#else
+#define INCLUDE_ALL_JavaUtilPropertyPermission 1
+#endif
+#undef RESTRICT_JavaUtilPropertyPermission
+
+#if !defined (JavaUtilPropertyPermission_) && (INCLUDE_ALL_JavaUtilPropertyPermission || defined(INCLUDE_JavaUtilPropertyPermission))
+#define JavaUtilPropertyPermission_
+
+#define RESTRICT_JavaSecurityBasicPermission 1
+#define INCLUDE_JavaSecurityBasicPermission 1
 #include "java/security/BasicPermission.h"
 
 @class JavaSecurityPermission;
 
+/*!
+ @brief Legacy security code; do not use.
+ */
 @interface JavaUtilPropertyPermission : JavaSecurityBasicPermission
 
 #pragma mark Public
@@ -30,6 +44,10 @@ FOUNDATION_EXPORT void JavaUtilPropertyPermission_initWithNSString_withNSString_
 
 FOUNDATION_EXPORT JavaUtilPropertyPermission *new_JavaUtilPropertyPermission_initWithNSString_withNSString_(NSString *name, NSString *actions) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilPropertyPermission *create_JavaUtilPropertyPermission_initWithNSString_withNSString_(NSString *name, NSString *actions);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilPropertyPermission)
 
-#endif // _JavaUtilPropertyPermission_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaUtilPropertyPermission")

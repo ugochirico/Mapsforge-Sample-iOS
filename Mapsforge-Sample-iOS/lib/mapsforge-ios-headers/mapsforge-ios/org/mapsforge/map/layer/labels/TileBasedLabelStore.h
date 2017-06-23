@@ -3,14 +3,30 @@
 //  source: ./org/mapsforge/map/layer/labels/TileBasedLabelStore.java
 //
 
-#ifndef _OrgMapsforgeMapLayerLabelsTileBasedLabelStore_H_
-#define _OrgMapsforgeMapLayerLabelsTileBasedLabelStore_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLabelsTileBasedLabelStore")
+#ifdef RESTRICT_OrgMapsforgeMapLayerLabelsTileBasedLabelStore
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLabelsTileBasedLabelStore 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerLabelsTileBasedLabelStore 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerLabelsTileBasedLabelStore
+
+#if !defined (OrgMapsforgeMapLayerLabelsTileBasedLabelStore_) && (INCLUDE_ALL_OrgMapsforgeMapLayerLabelsTileBasedLabelStore || defined(INCLUDE_OrgMapsforgeMapLayerLabelsTileBasedLabelStore))
+#define OrgMapsforgeMapLayerLabelsTileBasedLabelStore_
+
+#define RESTRICT_OrgMapsforgeCoreUtilWorkingSetCache 1
+#define INCLUDE_OrgMapsforgeCoreUtilWorkingSetCache 1
 #include "org/mapsforge/core/util/WorkingSetCache.h"
+
+#define RESTRICT_OrgMapsforgeMapLayerLabelsLabelStore 1
+#define INCLUDE_OrgMapsforgeMapLayerLabelsLabelStore 1
 #include "org/mapsforge/map/layer/labels/LabelStore.h"
 
 @class OrgMapsforgeCoreModelTile;
+@protocol JavaUtilFunctionBiFunction;
+@protocol JavaUtilFunctionFunction;
 @protocol JavaUtilList;
 @protocol JavaUtilMap_Entry;
 @protocol JavaUtilSet;
@@ -21,11 +37,40 @@
 
 - (instancetype)initWithInt:(jint)capacity;
 
+- (id<JavaUtilList>)computeIfAbsentWithId:(OrgMapsforgeCoreModelTile *)arg0
+             withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
+
+- (id<JavaUtilList>)computeIfPresentWithId:(OrgMapsforgeCoreModelTile *)arg0
+            withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
+
+- (id<JavaUtilList>)computeWithId:(OrgMapsforgeCoreModelTile *)arg0
+   withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
+
 - (void)destroy;
+
+- (id<JavaUtilList>)getOrDefaultWithId:(id)arg0
+                                withId:(id<JavaUtilList>)arg1;
 
 - (jint)getVersion;
 
 - (id<JavaUtilList>)getVisibleItemsWithJavaUtilSet:(id<JavaUtilSet>)tiles;
+
+- (id<JavaUtilList>)getWithId:(id)arg0;
+
+- (id<JavaUtilList>)mergeWithId:(OrgMapsforgeCoreModelTile *)arg0
+                         withId:(id<JavaUtilList>)arg1
+ withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
+
+- (id<JavaUtilList>)putIfAbsentWithId:(OrgMapsforgeCoreModelTile *)arg0
+                               withId:(id<JavaUtilList>)arg1;
+
+- (id<JavaUtilList>)putWithId:(OrgMapsforgeCoreModelTile *)arg0
+                       withId:(id<JavaUtilList>)arg1;
+
+- (id<JavaUtilList>)removeWithId:(id)arg0;
+
+- (id<JavaUtilList>)replaceWithId:(OrgMapsforgeCoreModelTile *)arg0
+                           withId:(id<JavaUtilList>)arg1;
 
 - (jboolean)requiresTileWithOrgMapsforgeCoreModelTile:(OrgMapsforgeCoreModelTile *)tile;
 
@@ -44,6 +89,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerLabelsTileBasedLabelStore_initWithInt
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerLabelsTileBasedLabelStore *new_OrgMapsforgeMapLayerLabelsTileBasedLabelStore_initWithInt_(jint capacity) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerLabelsTileBasedLabelStore *create_OrgMapsforgeMapLayerLabelsTileBasedLabelStore_initWithInt_(jint capacity);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerLabelsTileBasedLabelStore)
 
-#endif // _OrgMapsforgeMapLayerLabelsTileBasedLabelStore_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerLabelsTileBasedLabelStore")

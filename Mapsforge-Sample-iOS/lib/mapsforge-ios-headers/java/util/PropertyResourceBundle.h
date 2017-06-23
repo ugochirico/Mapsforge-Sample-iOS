@@ -3,10 +3,21 @@
 //  source: android/libcore/luni/src/main/java/java/util/PropertyResourceBundle.java
 //
 
-#ifndef _JavaUtilPropertyResourceBundle_H_
-#define _JavaUtilPropertyResourceBundle_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaUtilPropertyResourceBundle")
+#ifdef RESTRICT_JavaUtilPropertyResourceBundle
+#define INCLUDE_ALL_JavaUtilPropertyResourceBundle 0
+#else
+#define INCLUDE_ALL_JavaUtilPropertyResourceBundle 1
+#endif
+#undef RESTRICT_JavaUtilPropertyResourceBundle
+
+#if !defined (JavaUtilPropertyResourceBundle_) && (INCLUDE_ALL_JavaUtilPropertyResourceBundle || defined(INCLUDE_JavaUtilPropertyResourceBundle))
+#define JavaUtilPropertyResourceBundle_
+
+#define RESTRICT_JavaUtilResourceBundle 1
+#define INCLUDE_JavaUtilResourceBundle 1
 #include "java/util/ResourceBundle.h"
 
 @class JavaIoInputStream;
@@ -15,6 +26,15 @@
 @protocol JavaUtilEnumeration;
 @protocol JavaUtilSet;
 
+/*!
+ @brief <code>PropertyResourceBundle</code> loads resources from an <code>InputStream</code>.All resources are
+  Strings.
+ The resources must be of the form <code>key=value</code>, one
+  resource per line (see Properties).
+ - seealso: ResourceBundle
+ - seealso: Properties
+ @since 1.1
+ */
 @interface JavaUtilPropertyResourceBundle : JavaUtilResourceBundle {
  @public
   JavaUtilProperties *resources_;
@@ -22,8 +42,23 @@
 
 #pragma mark Public
 
+/*!
+ @brief Constructs a new instance of <code>PropertyResourceBundle</code> and loads the
+  properties file from the specified <code>InputStream</code>.
+ @param stream the 
+ <code>InputStream</code> .
+ @throw IOException
+ if an error occurs during a read operation on the
+              <code>InputStream</code>.
+ */
 - (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)stream;
 
+/*!
+ @brief Constructs a new resource bundle with properties read from <code>reader</code>.
+ @param reader the <code>Reader</code>
+ @throw IOException
+ @since 1.6
+ */
 - (instancetype)initWithJavaIoReader:(JavaIoReader *)reader;
 
 - (id<JavaUtilEnumeration>)getKeys;
@@ -44,10 +79,16 @@ FOUNDATION_EXPORT void JavaUtilPropertyResourceBundle_initWithJavaIoInputStream_
 
 FOUNDATION_EXPORT JavaUtilPropertyResourceBundle *new_JavaUtilPropertyResourceBundle_initWithJavaIoInputStream_(JavaIoInputStream *stream) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilPropertyResourceBundle *create_JavaUtilPropertyResourceBundle_initWithJavaIoInputStream_(JavaIoInputStream *stream);
+
 FOUNDATION_EXPORT void JavaUtilPropertyResourceBundle_initWithJavaIoReader_(JavaUtilPropertyResourceBundle *self, JavaIoReader *reader);
 
 FOUNDATION_EXPORT JavaUtilPropertyResourceBundle *new_JavaUtilPropertyResourceBundle_initWithJavaIoReader_(JavaIoReader *reader) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilPropertyResourceBundle *create_JavaUtilPropertyResourceBundle_initWithJavaIoReader_(JavaIoReader *reader);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilPropertyResourceBundle)
 
-#endif // _JavaUtilPropertyResourceBundle_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaUtilPropertyResourceBundle")

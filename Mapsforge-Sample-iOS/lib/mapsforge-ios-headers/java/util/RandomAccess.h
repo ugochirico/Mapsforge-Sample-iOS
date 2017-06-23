@@ -3,12 +3,24 @@
 //  source: android/libcore/luni/src/main/java/java/util/RandomAccess.java
 //
 
-#ifndef _JavaUtilRandomAccess_H_
-#define _JavaUtilRandomAccess_H_
-
 #include "J2ObjC_header.h"
 
-@protocol JavaUtilRandomAccess < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_JavaUtilRandomAccess")
+#ifdef RESTRICT_JavaUtilRandomAccess
+#define INCLUDE_ALL_JavaUtilRandomAccess 0
+#else
+#define INCLUDE_ALL_JavaUtilRandomAccess 1
+#endif
+#undef RESTRICT_JavaUtilRandomAccess
+
+#if !defined (JavaUtilRandomAccess_) && (INCLUDE_ALL_JavaUtilRandomAccess || defined(INCLUDE_JavaUtilRandomAccess))
+#define JavaUtilRandomAccess_
+
+/*!
+ @brief RandomAccess is implemented by <code>List</code> implementations that support fast
+  (usually constant time) random access.
+ */
+@protocol JavaUtilRandomAccess < JavaObject >
 
 @end
 
@@ -16,4 +28,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilRandomAccess)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilRandomAccess)
 
-#endif // _JavaUtilRandomAccess_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaUtilRandomAccess")

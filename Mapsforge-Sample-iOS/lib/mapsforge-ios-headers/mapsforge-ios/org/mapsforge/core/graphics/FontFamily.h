@@ -3,55 +3,84 @@
 //  source: ./org/mapsforge/core/graphics/FontFamily.java
 //
 
-#ifndef _OrgMapsforgeCoreGraphicsFontFamily_H_
-#define _OrgMapsforgeCoreGraphicsFontFamily_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontFamily")
+#ifdef RESTRICT_OrgMapsforgeCoreGraphicsFontFamily
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontFamily 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontFamily 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreGraphicsFontFamily
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (OrgMapsforgeCoreGraphicsFontFamily_) && (INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontFamily || defined(INCLUDE_OrgMapsforgeCoreGraphicsFontFamily))
+#define OrgMapsforgeCoreGraphicsFontFamily_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsFontFamily) {
-  OrgMapsforgeCoreGraphicsFontFamily_DEFAULT = 0,
-  OrgMapsforgeCoreGraphicsFontFamily_MONOSPACE = 1,
-  OrgMapsforgeCoreGraphicsFontFamily_SANS_SERIF = 2,
-  OrgMapsforgeCoreGraphicsFontFamily_SERIF = 3,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, OrgMapsforgeCoreGraphicsFontFamily_Enum) {
+  OrgMapsforgeCoreGraphicsFontFamily_Enum_DEFAULT = 0,
+  OrgMapsforgeCoreGraphicsFontFamily_Enum_MONOSPACE = 1,
+  OrgMapsforgeCoreGraphicsFontFamily_Enum_SANS_SERIF = 2,
+  OrgMapsforgeCoreGraphicsFontFamily_Enum_SERIF = 3,
 };
 
-@interface OrgMapsforgeCoreGraphicsFontFamilyEnum : JavaLangEnum < NSCopying >
+@interface OrgMapsforgeCoreGraphicsFontFamily : JavaLangEnum < NSCopying >
 
 #pragma mark Public
 
-+ (OrgMapsforgeCoreGraphicsFontFamilyEnum *)fromStringWithNSString:(NSString *)value;
++ (OrgMapsforgeCoreGraphicsFontFamily *)fromStringWithNSString:(NSString *)value;
 
-#pragma mark Package-Private
++ (OrgMapsforgeCoreGraphicsFontFamily *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsFontFamilyEnum_values();
 
-+ (OrgMapsforgeCoreGraphicsFontFamilyEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamilyEnum *OrgMapsforgeCoreGraphicsFontFamilyEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsFontFamilyEnum)
+J2OBJC_STATIC_INIT(OrgMapsforgeCoreGraphicsFontFamily)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamilyEnum *OrgMapsforgeCoreGraphicsFontFamilyEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_values_[];
 
-#define OrgMapsforgeCoreGraphicsFontFamilyEnum_DEFAULT OrgMapsforgeCoreGraphicsFontFamilyEnum_values_[OrgMapsforgeCoreGraphicsFontFamily_DEFAULT]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontFamilyEnum, DEFAULT)
+inline OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_get_DEFAULT();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontFamily, DEFAULT)
 
-#define OrgMapsforgeCoreGraphicsFontFamilyEnum_MONOSPACE OrgMapsforgeCoreGraphicsFontFamilyEnum_values_[OrgMapsforgeCoreGraphicsFontFamily_MONOSPACE]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontFamilyEnum, MONOSPACE)
+inline OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_get_MONOSPACE();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontFamily, MONOSPACE)
 
-#define OrgMapsforgeCoreGraphicsFontFamilyEnum_SANS_SERIF OrgMapsforgeCoreGraphicsFontFamilyEnum_values_[OrgMapsforgeCoreGraphicsFontFamily_SANS_SERIF]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontFamilyEnum, SANS_SERIF)
+inline OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_get_SANS_SERIF();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontFamily, SANS_SERIF)
 
-#define OrgMapsforgeCoreGraphicsFontFamilyEnum_SERIF OrgMapsforgeCoreGraphicsFontFamilyEnum_values_[OrgMapsforgeCoreGraphicsFontFamily_SERIF]
-J2OBJC_ENUM_CONSTANT_GETTER(OrgMapsforgeCoreGraphicsFontFamilyEnum, SERIF)
+inline OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_get_SERIF();
+J2OBJC_ENUM_CONSTANT(OrgMapsforgeCoreGraphicsFontFamily, SERIF)
 
-FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamilyEnum *OrgMapsforgeCoreGraphicsFontFamilyEnum_fromStringWithNSString_(NSString *value);
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_fromStringWithNSString_(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsFontFamilyEnum)
+FOUNDATION_EXPORT IOSObjectArray *OrgMapsforgeCoreGraphicsFontFamily_values();
 
-#endif // _OrgMapsforgeCoreGraphicsFontFamily_H_
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT OrgMapsforgeCoreGraphicsFontFamily *OrgMapsforgeCoreGraphicsFontFamily_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreGraphicsFontFamily)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreGraphicsFontFamily")

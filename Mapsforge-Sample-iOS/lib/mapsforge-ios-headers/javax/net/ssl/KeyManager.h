@@ -3,12 +3,26 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/KeyManager.java
 //
 
-#ifndef _JavaxNetSslKeyManager_H_
-#define _JavaxNetSslKeyManager_H_
-
 #include "J2ObjC_header.h"
 
-@protocol JavaxNetSslKeyManager < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslKeyManager")
+#ifdef RESTRICT_JavaxNetSslKeyManager
+#define INCLUDE_ALL_JavaxNetSslKeyManager 0
+#else
+#define INCLUDE_ALL_JavaxNetSslKeyManager 1
+#endif
+#undef RESTRICT_JavaxNetSslKeyManager
+
+#if !defined (JavaxNetSslKeyManager_) && (INCLUDE_ALL_JavaxNetSslKeyManager || defined(INCLUDE_JavaxNetSslKeyManager))
+#define JavaxNetSslKeyManager_
+
+/*!
+ @brief This is the interface to implement in order to mark a class as a JSSE key
+  managers so that key managers can be easily grouped.The key managers are
+  responsible for handling the keys used to authenticate the local side to its
+  peer,
+ */
+@protocol JavaxNetSslKeyManager < JavaObject >
 
 @end
 
@@ -16,4 +30,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaxNetSslKeyManager)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslKeyManager)
 
-#endif // _JavaxNetSslKeyManager_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslKeyManager")

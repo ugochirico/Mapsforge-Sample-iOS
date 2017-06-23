@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/scalebar/MapScaleBar.java
 //
 
-#ifndef _OrgMapsforgeMapScalebarMapScaleBar_H_
-#define _OrgMapsforgeMapScalebarMapScaleBar_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarMapScaleBar")
+#ifdef RESTRICT_OrgMapsforgeMapScalebarMapScaleBar
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarMapScaleBar 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapScalebarMapScaleBar 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapScalebarMapScaleBar
+
+#if !defined (OrgMapsforgeMapScalebarMapScaleBar_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarMapScaleBar || defined(INCLUDE_OrgMapsforgeMapScalebarMapScaleBar))
+#define OrgMapsforgeMapScalebarMapScaleBar_
 
 @class OrgMapsforgeMapModelDisplayModel;
 @class OrgMapsforgeMapModelMapViewDimension;
@@ -71,6 +79,11 @@ FOUNDATION_EXPORT void OrgMapsforgeMapScalebarMapScaleBar_initWithOrgMapsforgeMa
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarMapScaleBar)
 
+#endif
+
+#if !defined (OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue_) && (INCLUDE_ALL_OrgMapsforgeMapScalebarMapScaleBar || defined(INCLUDE_OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue))
+#define OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue_
+
 @interface OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue : NSObject {
  @public
   jint scaleBarLength_;
@@ -90,6 +103,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue
 
 FOUNDATION_EXPORT OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue *new_OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue_initWithInt_withInt_(jint scaleBarLength, jint scaleBarValue) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue *create_OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue_initWithInt_withInt_(jint scaleBarLength, jint scaleBarValue);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapScalebarMapScaleBar_ScaleBarLengthAndValue)
 
-#endif // _OrgMapsforgeMapScalebarMapScaleBar_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapScalebarMapScaleBar")

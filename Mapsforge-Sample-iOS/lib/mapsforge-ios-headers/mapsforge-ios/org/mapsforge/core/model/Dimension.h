@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/core/model/Dimension.java
 //
 
-#ifndef _OrgMapsforgeCoreModelDimension_H_
-#define _OrgMapsforgeCoreModelDimension_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeCoreModelDimension")
+#ifdef RESTRICT_OrgMapsforgeCoreModelDimension
+#define INCLUDE_ALL_OrgMapsforgeCoreModelDimension 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeCoreModelDimension 1
+#endif
+#undef RESTRICT_OrgMapsforgeCoreModelDimension
+
+#if !defined (OrgMapsforgeCoreModelDimension_) && (INCLUDE_ALL_OrgMapsforgeCoreModelDimension || defined(INCLUDE_OrgMapsforgeCoreModelDimension))
+#define OrgMapsforgeCoreModelDimension_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @class OrgMapsforgeCoreModelPoint;
@@ -38,6 +49,10 @@ FOUNDATION_EXPORT void OrgMapsforgeCoreModelDimension_initWithInt_withInt_(OrgMa
 
 FOUNDATION_EXPORT OrgMapsforgeCoreModelDimension *new_OrgMapsforgeCoreModelDimension_initWithInt_withInt_(jint width, jint height) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeCoreModelDimension *create_OrgMapsforgeCoreModelDimension_initWithInt_withInt_(jint width, jint height);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeCoreModelDimension)
 
-#endif // _OrgMapsforgeCoreModelDimension_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeCoreModelDimension")

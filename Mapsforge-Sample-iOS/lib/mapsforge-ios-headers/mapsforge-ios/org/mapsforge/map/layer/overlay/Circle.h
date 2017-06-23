@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/overlay/Circle.java
 //
 
-#ifndef _OrgMapsforgeMapLayerOverlayCircle_H_
-#define _OrgMapsforgeMapLayerOverlayCircle_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerOverlayCircle")
+#ifdef RESTRICT_OrgMapsforgeMapLayerOverlayCircle
+#define INCLUDE_ALL_OrgMapsforgeMapLayerOverlayCircle 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerOverlayCircle 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerOverlayCircle
+
+#if !defined (OrgMapsforgeMapLayerOverlayCircle_) && (INCLUDE_ALL_OrgMapsforgeMapLayerOverlayCircle || defined(INCLUDE_OrgMapsforgeMapLayerOverlayCircle))
+#define OrgMapsforgeMapLayerOverlayCircle_
+
+#define RESTRICT_OrgMapsforgeMapLayerLayer 1
+#define INCLUDE_OrgMapsforgeMapLayerLayer 1
 #include "org/mapsforge/map/layer/Layer.h"
 
 @class OrgMapsforgeCoreModelBoundingBox;
@@ -64,10 +75,16 @@ FOUNDATION_EXPORT void OrgMapsforgeMapLayerOverlayCircle_initWithOrgMapsforgeCor
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayCircle *new_OrgMapsforgeMapLayerOverlayCircle_initWithOrgMapsforgeCoreModelLatLong_withFloat_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_(OrgMapsforgeCoreModelLatLong *latLong, jfloat radius, id<OrgMapsforgeCoreGraphicsPaint> paintFill, id<OrgMapsforgeCoreGraphicsPaint> paintStroke) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayCircle *create_OrgMapsforgeMapLayerOverlayCircle_initWithOrgMapsforgeCoreModelLatLong_withFloat_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_(OrgMapsforgeCoreModelLatLong *latLong, jfloat radius, id<OrgMapsforgeCoreGraphicsPaint> paintFill, id<OrgMapsforgeCoreGraphicsPaint> paintStroke);
+
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerOverlayCircle_initWithOrgMapsforgeCoreModelLatLong_withFloat_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withBoolean_(OrgMapsforgeMapLayerOverlayCircle *self, OrgMapsforgeCoreModelLatLong *latLong, jfloat radius, id<OrgMapsforgeCoreGraphicsPaint> paintFill, id<OrgMapsforgeCoreGraphicsPaint> paintStroke, jboolean keepAligned);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayCircle *new_OrgMapsforgeMapLayerOverlayCircle_initWithOrgMapsforgeCoreModelLatLong_withFloat_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withBoolean_(OrgMapsforgeCoreModelLatLong *latLong, jfloat radius, id<OrgMapsforgeCoreGraphicsPaint> paintFill, id<OrgMapsforgeCoreGraphicsPaint> paintStroke, jboolean keepAligned) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerOverlayCircle *create_OrgMapsforgeMapLayerOverlayCircle_initWithOrgMapsforgeCoreModelLatLong_withFloat_withOrgMapsforgeCoreGraphicsPaint_withOrgMapsforgeCoreGraphicsPaint_withBoolean_(OrgMapsforgeCoreModelLatLong *latLong, jfloat radius, id<OrgMapsforgeCoreGraphicsPaint> paintFill, id<OrgMapsforgeCoreGraphicsPaint> paintStroke, jboolean keepAligned);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerOverlayCircle)
 
-#endif // _OrgMapsforgeMapLayerOverlayCircle_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerOverlayCircle")

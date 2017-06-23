@@ -3,13 +3,24 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/PositiveRule.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRulePositiveRule_H_
-#define _OrgMapsforgeMapRenderthemeRulePositiveRule_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRulePositiveRule")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRulePositiveRule
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRulePositiveRule 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRulePositiveRule 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRulePositiveRule
+
+#if !defined (OrgMapsforgeMapRenderthemeRulePositiveRule_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRulePositiveRule || defined(INCLUDE_OrgMapsforgeMapRenderthemeRulePositiveRule))
+#define OrgMapsforgeMapRenderthemeRulePositiveRule_
+
+#define RESTRICT_OrgMapsforgeMapRenderthemeRuleRule 1
+#define INCLUDE_OrgMapsforgeMapRenderthemeRuleRule 1
 #include "org/mapsforge/map/rendertheme/rule/Rule.h"
 
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+@class OrgMapsforgeMapRenderthemeRuleClosed;
 @class OrgMapsforgeMapRenderthemeRuleRuleBuilder;
 @protocol JavaUtilList;
 @protocol OrgMapsforgeMapRenderthemeRuleAttributeMatcher;
@@ -31,7 +42,7 @@
 
 - (jboolean)matchesWayWithJavaUtilList:(id<JavaUtilList>)tags
                               withByte:(jbyte)zoomLevel
-withOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+withOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 @end
 
@@ -44,6 +55,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRulePositiveRule_initWithOrgMap
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRulePositiveRule *new_OrgMapsforgeMapRenderthemeRulePositiveRule_initWithOrgMapsforgeMapRenderthemeRuleRuleBuilder_withOrgMapsforgeMapRenderthemeRuleAttributeMatcher_withOrgMapsforgeMapRenderthemeRuleAttributeMatcher_(OrgMapsforgeMapRenderthemeRuleRuleBuilder *ruleBuilder, id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher> keyMatcher, id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher> valueMatcher) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRulePositiveRule *create_OrgMapsforgeMapRenderthemeRulePositiveRule_initWithOrgMapsforgeMapRenderthemeRuleRuleBuilder_withOrgMapsforgeMapRenderthemeRuleAttributeMatcher_withOrgMapsforgeMapRenderthemeRuleAttributeMatcher_(OrgMapsforgeMapRenderthemeRuleRuleBuilder *ruleBuilder, id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher> keyMatcher, id<OrgMapsforgeMapRenderthemeRuleAttributeMatcher> valueMatcher);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRulePositiveRule)
 
-#endif // _OrgMapsforgeMapRenderthemeRulePositiveRule_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRulePositiveRule")

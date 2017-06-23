@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/rendertheme/XmlRenderThemeStyleLayer.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_H_
-#define _OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer
+
+#if !defined (OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer || defined(INCLUDE_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer))
+#define OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_
+
+#define RESTRICT_JavaIoSerializable 1
+#define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
 @protocol JavaUtilList;
@@ -53,6 +64,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_initWi
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer *new_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_initWithNSString_withBoolean_withBoolean_withNSString_(NSString *id_, jboolean visible, jboolean enabled, NSString *defaultLanguage) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer *create_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_initWithNSString_withBoolean_withBoolean_withNSString_(NSString *id_, jboolean visible, jboolean enabled, NSString *defaultLanguage);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer)
 
-#endif // _OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeXmlRenderThemeStyleLayer")

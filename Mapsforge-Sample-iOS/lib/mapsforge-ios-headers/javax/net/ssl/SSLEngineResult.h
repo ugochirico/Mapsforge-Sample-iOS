@@ -3,31 +3,76 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/SSLEngineResult.java
 //
 
-#ifndef _JavaxNetSslSSLEngineResult_H_
-#define _JavaxNetSslSSLEngineResult_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
 
-@class JavaxNetSslSSLEngineResult_HandshakeStatusEnum;
-@class JavaxNetSslSSLEngineResult_StatusEnum;
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslSSLEngineResult")
+#ifdef RESTRICT_JavaxNetSslSSLEngineResult
+#define INCLUDE_ALL_JavaxNetSslSSLEngineResult 0
+#else
+#define INCLUDE_ALL_JavaxNetSslSSLEngineResult 1
+#endif
+#undef RESTRICT_JavaxNetSslSSLEngineResult
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (JavaxNetSslSSLEngineResult_) && (INCLUDE_ALL_JavaxNetSslSSLEngineResult || defined(INCLUDE_JavaxNetSslSSLEngineResult))
+#define JavaxNetSslSSLEngineResult_
+
+@class JavaxNetSslSSLEngineResult_HandshakeStatus;
+@class JavaxNetSslSSLEngineResult_Status;
+
+/*!
+ @brief The result object describing the state of the <code>SSLEngine</code> produced
+  by the <code>wrap()</code> and <code>unwrap()</code> operations.
+ */
 @interface JavaxNetSslSSLEngineResult : NSObject
 
 #pragma mark Public
 
-- (instancetype)initWithJavaxNetSslSSLEngineResult_StatusEnum:(JavaxNetSslSSLEngineResult_StatusEnum *)status
-           withJavaxNetSslSSLEngineResult_HandshakeStatusEnum:(JavaxNetSslSSLEngineResult_HandshakeStatusEnum *)handshakeStatus
-                                                      withInt:(jint)bytesConsumed
-                                                      withInt:(jint)bytesProduced;
+/*!
+ @brief Creates a new <code>SSLEngineResult</code> instance with the specified state
+  values.
+ @param status the return value of the 
+ <code>SSLEngine</code>  operation.
+ @param handshakeStatus the status of the current handshake
+ @param bytesConsumed the number of bytes retrieved from the source buffer(s).
+ @param bytesProduced the number of bytes transferred to the destination buffer(s).
+ @throw IllegalArgumentException
+ if <code>status</code> or <code>handshakeStatus</code> is <code>null</code>,
+              or if <code>bytesConsumed</code> or <code>bytesProduces</code> are
+              negative.
+ */
+- (instancetype)initWithJavaxNetSslSSLEngineResult_Status:(JavaxNetSslSSLEngineResult_Status *)status
+           withJavaxNetSslSSLEngineResult_HandshakeStatus:(JavaxNetSslSSLEngineResult_HandshakeStatus *)handshakeStatus
+                                                  withInt:(jint)bytesConsumed
+                                                  withInt:(jint)bytesProduced;
 
+/*!
+ @brief Returns the number of bytes retrieved from the source buffer(s).
+ @return the number of bytes retrieved from the source buffer(s).
+ */
 - (jint)bytesConsumed;
 
+/*!
+ @brief Returns the number of bytes transferred to the destination buffer(s).
+ @return the number of bytes transferred to the destination buffer(s).
+ */
 - (jint)bytesProduced;
 
-- (JavaxNetSslSSLEngineResult_HandshakeStatusEnum *)getHandshakeStatus;
+/*!
+ @brief Returns the status of the current handshake.
+ @return the status of the current handshake.
+ */
+- (JavaxNetSslSSLEngineResult_HandshakeStatus *)getHandshakeStatus;
 
-- (JavaxNetSslSSLEngineResult_StatusEnum *)getStatus;
+/*!
+ @brief Returns the return value of the <code>SSLEngine</code> operation.
+ @return the return value of the <code>SSLEngine</code> operation.
+ */
+- (JavaxNetSslSSLEngineResult_Status *)getStatus;
 
 - (NSString *)description;
 
@@ -35,92 +80,176 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaxNetSslSSLEngineResult)
 
-FOUNDATION_EXPORT void JavaxNetSslSSLEngineResult_initWithJavaxNetSslSSLEngineResult_StatusEnum_withJavaxNetSslSSLEngineResult_HandshakeStatusEnum_withInt_withInt_(JavaxNetSslSSLEngineResult *self, JavaxNetSslSSLEngineResult_StatusEnum *status, JavaxNetSslSSLEngineResult_HandshakeStatusEnum *handshakeStatus, jint bytesConsumed, jint bytesProduced);
+FOUNDATION_EXPORT void JavaxNetSslSSLEngineResult_initWithJavaxNetSslSSLEngineResult_Status_withJavaxNetSslSSLEngineResult_HandshakeStatus_withInt_withInt_(JavaxNetSslSSLEngineResult *self, JavaxNetSslSSLEngineResult_Status *status, JavaxNetSslSSLEngineResult_HandshakeStatus *handshakeStatus, jint bytesConsumed, jint bytesProduced);
 
-FOUNDATION_EXPORT JavaxNetSslSSLEngineResult *new_JavaxNetSslSSLEngineResult_initWithJavaxNetSslSSLEngineResult_StatusEnum_withJavaxNetSslSSLEngineResult_HandshakeStatusEnum_withInt_withInt_(JavaxNetSslSSLEngineResult_StatusEnum *status, JavaxNetSslSSLEngineResult_HandshakeStatusEnum *handshakeStatus, jint bytesConsumed, jint bytesProduced) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult *new_JavaxNetSslSSLEngineResult_initWithJavaxNetSslSSLEngineResult_Status_withJavaxNetSslSSLEngineResult_HandshakeStatus_withInt_withInt_(JavaxNetSslSSLEngineResult_Status *status, JavaxNetSslSSLEngineResult_HandshakeStatus *handshakeStatus, jint bytesConsumed, jint bytesProduced) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult *create_JavaxNetSslSSLEngineResult_initWithJavaxNetSslSSLEngineResult_Status_withJavaxNetSslSSLEngineResult_HandshakeStatus_withInt_withInt_(JavaxNetSslSSLEngineResult_Status *status, JavaxNetSslSSLEngineResult_HandshakeStatus *handshakeStatus, jint bytesConsumed, jint bytesProduced);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLEngineResult)
 
-typedef NS_ENUM(NSUInteger, JavaxNetSslSSLEngineResult_HandshakeStatus) {
-  JavaxNetSslSSLEngineResult_HandshakeStatus_NOT_HANDSHAKING = 0,
-  JavaxNetSslSSLEngineResult_HandshakeStatus_FINISHED = 1,
-  JavaxNetSslSSLEngineResult_HandshakeStatus_NEED_TASK = 2,
-  JavaxNetSslSSLEngineResult_HandshakeStatus_NEED_WRAP = 3,
-  JavaxNetSslSSLEngineResult_HandshakeStatus_NEED_UNWRAP = 4,
+#endif
+
+#if !defined (JavaxNetSslSSLEngineResult_HandshakeStatus_) && (INCLUDE_ALL_JavaxNetSslSSLEngineResult || defined(INCLUDE_JavaxNetSslSSLEngineResult_HandshakeStatus))
+#define JavaxNetSslSSLEngineResult_HandshakeStatus_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, JavaxNetSslSSLEngineResult_HandshakeStatus_Enum) {
+  JavaxNetSslSSLEngineResult_HandshakeStatus_Enum_NOT_HANDSHAKING = 0,
+  JavaxNetSslSSLEngineResult_HandshakeStatus_Enum_FINISHED = 1,
+  JavaxNetSslSSLEngineResult_HandshakeStatus_Enum_NEED_TASK = 2,
+  JavaxNetSslSSLEngineResult_HandshakeStatus_Enum_NEED_WRAP = 3,
+  JavaxNetSslSSLEngineResult_HandshakeStatus_Enum_NEED_UNWRAP = 4,
 };
 
-@interface JavaxNetSslSSLEngineResult_HandshakeStatusEnum : JavaLangEnum < NSCopying >
+/*!
+ @brief The <code>enum</code> describing the state of the current handshake.
+ */
+@interface JavaxNetSslSSLEngineResult_HandshakeStatus : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (JavaxNetSslSSLEngineResult_HandshakeStatus *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values();
 
-+ (JavaxNetSslSSLEngineResult_HandshakeStatusEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_HandshakeStatusEnum *JavaxNetSslSSLEngineResult_HandshakeStatusEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(JavaxNetSslSSLEngineResult_HandshakeStatusEnum)
+J2OBJC_STATIC_INIT(JavaxNetSslSSLEngineResult_HandshakeStatus)
 
-FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_HandshakeStatusEnum *JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_values_[];
 
-#define JavaxNetSslSSLEngineResult_HandshakeStatusEnum_NOT_HANDSHAKING JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values_[JavaxNetSslSSLEngineResult_HandshakeStatus_NOT_HANDSHAKING]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_HandshakeStatusEnum, NOT_HANDSHAKING)
+/*!
+ @brief No handshake in progress.
+ */
+inline JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_get_NOT_HANDSHAKING();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_HandshakeStatus, NOT_HANDSHAKING)
 
-#define JavaxNetSslSSLEngineResult_HandshakeStatusEnum_FINISHED JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values_[JavaxNetSslSSLEngineResult_HandshakeStatus_FINISHED]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_HandshakeStatusEnum, FINISHED)
+/*!
+ @brief The handshake is finished.
+ */
+inline JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_get_FINISHED();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_HandshakeStatus, FINISHED)
 
-#define JavaxNetSslSSLEngineResult_HandshakeStatusEnum_NEED_TASK JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values_[JavaxNetSslSSLEngineResult_HandshakeStatus_NEED_TASK]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_HandshakeStatusEnum, NEED_TASK)
+/*!
+ @brief The results of one (or more) delegated tasks are needed to continue
+  the handshake.
+ */
+inline JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_get_NEED_TASK();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_HandshakeStatus, NEED_TASK)
 
-#define JavaxNetSslSSLEngineResult_HandshakeStatusEnum_NEED_WRAP JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values_[JavaxNetSslSSLEngineResult_HandshakeStatus_NEED_WRAP]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_HandshakeStatusEnum, NEED_WRAP)
+/*!
+ @brief The engine must send data to the remote side to continue the
+  handshake.
+ */
+inline JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_get_NEED_WRAP();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_HandshakeStatus, NEED_WRAP)
 
-#define JavaxNetSslSSLEngineResult_HandshakeStatusEnum_NEED_UNWRAP JavaxNetSslSSLEngineResult_HandshakeStatusEnum_values_[JavaxNetSslSSLEngineResult_HandshakeStatus_NEED_UNWRAP]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_HandshakeStatusEnum, NEED_UNWRAP)
+/*!
+ @brief The engine needs to receive data from the remote side to continue the
+  handshake.
+ */
+inline JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_get_NEED_UNWRAP();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_HandshakeStatus, NEED_UNWRAP)
 
-J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLEngineResult_HandshakeStatusEnum)
+FOUNDATION_EXPORT IOSObjectArray *JavaxNetSslSSLEngineResult_HandshakeStatus_values();
 
-typedef NS_ENUM(NSUInteger, JavaxNetSslSSLEngineResult_Status) {
-  JavaxNetSslSSLEngineResult_Status_BUFFER_OVERFLOW = 0,
-  JavaxNetSslSSLEngineResult_Status_BUFFER_UNDERFLOW = 1,
-  JavaxNetSslSSLEngineResult_Status_CLOSED = 2,
-  JavaxNetSslSSLEngineResult_Status_OK = 3,
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_HandshakeStatus *JavaxNetSslSSLEngineResult_HandshakeStatus_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLEngineResult_HandshakeStatus)
+
+#endif
+
+#if !defined (JavaxNetSslSSLEngineResult_Status_) && (INCLUDE_ALL_JavaxNetSslSSLEngineResult || defined(INCLUDE_JavaxNetSslSSLEngineResult_Status))
+#define JavaxNetSslSSLEngineResult_Status_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, JavaxNetSslSSLEngineResult_Status_Enum) {
+  JavaxNetSslSSLEngineResult_Status_Enum_BUFFER_OVERFLOW = 0,
+  JavaxNetSslSSLEngineResult_Status_Enum_BUFFER_UNDERFLOW = 1,
+  JavaxNetSslSSLEngineResult_Status_Enum_CLOSED = 2,
+  JavaxNetSslSSLEngineResult_Status_Enum_OK = 3,
 };
 
-@interface JavaxNetSslSSLEngineResult_StatusEnum : JavaLangEnum < NSCopying >
+/*!
+ @brief The <code>enum</code> describing the result of the <code>SSLEngine</code>
+  operation.
+ */
+@interface JavaxNetSslSSLEngineResult_Status : JavaLangEnum < NSCopying >
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (JavaxNetSslSSLEngineResult_Status *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *JavaxNetSslSSLEngineResult_StatusEnum_values();
 
-+ (JavaxNetSslSSLEngineResult_StatusEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_StatusEnum *JavaxNetSslSSLEngineResult_StatusEnum_valueOfWithNSString_(NSString *name);
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(JavaxNetSslSSLEngineResult_StatusEnum)
+J2OBJC_STATIC_INIT(JavaxNetSslSSLEngineResult_Status)
 
-FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_StatusEnum *JavaxNetSslSSLEngineResult_StatusEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_values_[];
 
-#define JavaxNetSslSSLEngineResult_StatusEnum_BUFFER_OVERFLOW JavaxNetSslSSLEngineResult_StatusEnum_values_[JavaxNetSslSSLEngineResult_Status_BUFFER_OVERFLOW]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_StatusEnum, BUFFER_OVERFLOW)
+/*!
+ @brief The size of the destination buffer is too small to hold the result of
+  the current operation.
+ */
+inline JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_get_BUFFER_OVERFLOW();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_Status, BUFFER_OVERFLOW)
 
-#define JavaxNetSslSSLEngineResult_StatusEnum_BUFFER_UNDERFLOW JavaxNetSslSSLEngineResult_StatusEnum_values_[JavaxNetSslSSLEngineResult_Status_BUFFER_UNDERFLOW]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_StatusEnum, BUFFER_UNDERFLOW)
+/*!
+ @brief There were not enough bytes available in the source buffer to
+  complete the current operation.
+ */
+inline JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_get_BUFFER_UNDERFLOW();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_Status, BUFFER_UNDERFLOW)
 
-#define JavaxNetSslSSLEngineResult_StatusEnum_CLOSED JavaxNetSslSSLEngineResult_StatusEnum_values_[JavaxNetSslSSLEngineResult_Status_CLOSED]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_StatusEnum, CLOSED)
+/*!
+ @brief The operation closed this side of the communication or was already
+  closed.
+ */
+inline JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_get_CLOSED();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_Status, CLOSED)
 
-#define JavaxNetSslSSLEngineResult_StatusEnum_OK JavaxNetSslSSLEngineResult_StatusEnum_values_[JavaxNetSslSSLEngineResult_Status_OK]
-J2OBJC_ENUM_CONSTANT_GETTER(JavaxNetSslSSLEngineResult_StatusEnum, OK)
+/*!
+ @brief The operation completed successfully.
+ */
+inline JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_get_OK();
+J2OBJC_ENUM_CONSTANT(JavaxNetSslSSLEngineResult_Status, OK)
 
-J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLEngineResult_StatusEnum)
+FOUNDATION_EXPORT IOSObjectArray *JavaxNetSslSSLEngineResult_Status_values();
 
-#endif // _JavaxNetSslSSLEngineResult_H_
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT JavaxNetSslSSLEngineResult_Status *JavaxNetSslSSLEngineResult_Status_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslSSLEngineResult_Status)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslSSLEngineResult")

@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/controller/FrameBufferController.java
 //
 
-#ifndef _OrgMapsforgeMapControllerFrameBufferController_H_
-#define _OrgMapsforgeMapControllerFrameBufferController_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapControllerFrameBufferController")
+#ifdef RESTRICT_OrgMapsforgeMapControllerFrameBufferController
+#define INCLUDE_ALL_OrgMapsforgeMapControllerFrameBufferController 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapControllerFrameBufferController 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapControllerFrameBufferController
+
+#if !defined (OrgMapsforgeMapControllerFrameBufferController_) && (INCLUDE_ALL_OrgMapsforgeMapControllerFrameBufferController || defined(INCLUDE_OrgMapsforgeMapControllerFrameBufferController))
+#define OrgMapsforgeMapControllerFrameBufferController_
+
+#define RESTRICT_OrgMapsforgeMapModelCommonObserver 1
+#define INCLUDE_OrgMapsforgeMapModelCommonObserver 1
 #include "org/mapsforge/map/model/common/Observer.h"
 
 @class OrgMapsforgeMapModelModel;
@@ -31,4 +42,6 @@ FOUNDATION_EXPORT OrgMapsforgeMapControllerFrameBufferController *OrgMapsforgeMa
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapControllerFrameBufferController)
 
-#endif // _OrgMapsforgeMapControllerFrameBufferController_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapControllerFrameBufferController")

@@ -3,22 +3,55 @@
 //  source: android/libcore/luni/src/main/java/java/net/ContentHandler.java
 //
 
-#ifndef _JavaNetContentHandler_H_
-#define _JavaNetContentHandler_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetContentHandler")
+#ifdef RESTRICT_JavaNetContentHandler
+#define INCLUDE_ALL_JavaNetContentHandler 0
+#else
+#define INCLUDE_ALL_JavaNetContentHandler 1
+#endif
+#undef RESTRICT_JavaNetContentHandler
+
+#if !defined (JavaNetContentHandler_) && (INCLUDE_ALL_JavaNetContentHandler || defined(INCLUDE_JavaNetContentHandler))
+#define JavaNetContentHandler_
 
 @class IOSObjectArray;
 @class JavaNetURLConnection;
 
+/*!
+ @brief This class converts the content of a certain format (i.e. a MIME type) into a
+  Java type object.It is created by <code>ContentHandlerFactory</code>.
+ The data
+  values should be accessed via <code>URL</code> or <code>URLConnection</code>.
+ - seealso: ContentHandlerFactory
+ - seealso: URL#getContent()
+ - seealso: URLConnection#getContent()
+ */
 @interface JavaNetContentHandler : NSObject
 
 #pragma mark Public
 
 - (instancetype)init;
 
+/*!
+ @brief Returns the object pointed by the specified URL connection <code>uConn</code>.
+ @param uConn URL connection that points to the desired object.
+ @return object referred by <code>uConn</code>.
+ @throw IOException
+ if an IO error occurs during the retrieval of the object
+ */
 - (id)getContentWithJavaNetURLConnection:(JavaNetURLConnection *)uConn;
 
+/*!
+ @brief Returns the object pointed by the specified URL connection <code>uConn</code>.
+ @param uConn URL connection that points to the desired object.
+ @param types list of acceptable content types.
+ @return resource object pointed by this URL or <code>null</code> if the
+          content doesn't match one of the specified content types.
+ @throw IOException
+ if an error occurred while obtaining the content.
+ */
 - (id)getContentWithJavaNetURLConnection:(JavaNetURLConnection *)uConn
                        withIOSClassArray:(IOSObjectArray *)types;
 
@@ -30,4 +63,6 @@ FOUNDATION_EXPORT void JavaNetContentHandler_init(JavaNetContentHandler *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetContentHandler)
 
-#endif // _JavaNetContentHandler_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetContentHandler")

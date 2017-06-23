@@ -3,10 +3,18 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/RenderTheme.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleRenderTheme_H_
-#define _OrgMapsforgeMapRenderthemeRuleRenderTheme_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderTheme")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderTheme
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderTheme 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderTheme 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleRenderTheme
+
+#if !defined (OrgMapsforgeMapRenderthemeRuleRenderTheme_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderTheme || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleRenderTheme))
+#define OrgMapsforgeMapRenderthemeRuleRenderTheme_
 
 @class OrgMapsforgeCoreModelTile;
 @class OrgMapsforgeMapLayerRendererPolylineContainer;
@@ -63,6 +71,10 @@ FOUNDATION_EXPORT void OrgMapsforgeMapRenderthemeRuleRenderTheme_initWithOrgMaps
 
 FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderTheme *new_OrgMapsforgeMapRenderthemeRuleRenderTheme_initWithOrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_(OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder *renderThemeBuilder) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapRenderthemeRuleRenderTheme *create_OrgMapsforgeMapRenderthemeRuleRenderTheme_initWithOrgMapsforgeMapRenderthemeRuleRenderThemeBuilder_(OrgMapsforgeMapRenderthemeRuleRenderThemeBuilder *renderThemeBuilder);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleRenderTheme)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleRenderTheme_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleRenderTheme")

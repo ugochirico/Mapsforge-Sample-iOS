@@ -3,18 +3,26 @@
 //  source: ./org/mapsforge/map/rendertheme/rule/ClosedMatcher.java
 //
 
-#ifndef _OrgMapsforgeMapRenderthemeRuleClosedMatcher_H_
-#define _OrgMapsforgeMapRenderthemeRuleClosedMatcher_H_
-
 #include "J2ObjC_header.h"
 
-@class OrgMapsforgeMapRenderthemeRuleClosedEnum;
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedMatcher")
+#ifdef RESTRICT_OrgMapsforgeMapRenderthemeRuleClosedMatcher
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedMatcher 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedMatcher 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapRenderthemeRuleClosedMatcher
 
-@protocol OrgMapsforgeMapRenderthemeRuleClosedMatcher < NSObject, JavaObject >
+#if !defined (OrgMapsforgeMapRenderthemeRuleClosedMatcher_) && (INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedMatcher || defined(INCLUDE_OrgMapsforgeMapRenderthemeRuleClosedMatcher))
+#define OrgMapsforgeMapRenderthemeRuleClosedMatcher_
+
+@class OrgMapsforgeMapRenderthemeRuleClosed;
+
+@protocol OrgMapsforgeMapRenderthemeRuleClosedMatcher < JavaObject >
 
 - (jboolean)isCoveredByWithOrgMapsforgeMapRenderthemeRuleClosedMatcher:(id<OrgMapsforgeMapRenderthemeRuleClosedMatcher>)closedMatcher;
 
-- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleClosedEnum:(OrgMapsforgeMapRenderthemeRuleClosedEnum *)closed;
+- (jboolean)matchesWithOrgMapsforgeMapRenderthemeRuleClosed:(OrgMapsforgeMapRenderthemeRuleClosed *)closed;
 
 @end
 
@@ -22,4 +30,6 @@ J2OBJC_EMPTY_STATIC_INIT(OrgMapsforgeMapRenderthemeRuleClosedMatcher)
 
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapRenderthemeRuleClosedMatcher)
 
-#endif // _OrgMapsforgeMapRenderthemeRuleClosedMatcher_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapRenderthemeRuleClosedMatcher")

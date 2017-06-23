@@ -3,12 +3,28 @@
 //  source: android/libcore/luni/src/main/java/javax/net/ssl/TrustManager.java
 //
 
-#ifndef _JavaxNetSslTrustManager_H_
-#define _JavaxNetSslTrustManager_H_
-
 #include "J2ObjC_header.h"
 
-@protocol JavaxNetSslTrustManager < NSObject, JavaObject >
+#pragma push_macro("INCLUDE_ALL_JavaxNetSslTrustManager")
+#ifdef RESTRICT_JavaxNetSslTrustManager
+#define INCLUDE_ALL_JavaxNetSslTrustManager 0
+#else
+#define INCLUDE_ALL_JavaxNetSslTrustManager 1
+#endif
+#undef RESTRICT_JavaxNetSslTrustManager
+
+#if !defined (JavaxNetSslTrustManager_) && (INCLUDE_ALL_JavaxNetSslTrustManager || defined(INCLUDE_JavaxNetSslTrustManager))
+#define JavaxNetSslTrustManager_
+
+/*!
+ @brief The marker interface for JSSE trust managers.The purpose is to group trust
+  managers.
+ The responsibility a trust manager is to handle the trust data used to
+  make trust decisions for deciding whether credentials of a peer should be
+  accepted,
+ - seealso: TrustManagerFactory
+ */
+@protocol JavaxNetSslTrustManager < JavaObject >
 
 @end
 
@@ -16,4 +32,6 @@ J2OBJC_EMPTY_STATIC_INIT(JavaxNetSslTrustManager)
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxNetSslTrustManager)
 
-#endif // _JavaxNetSslTrustManager_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaxNetSslTrustManager")

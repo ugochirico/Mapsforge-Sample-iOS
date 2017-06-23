@@ -3,10 +3,21 @@
 //  source: ./org/mapsforge/map/layer/download/tilesource/OpenCycleMap.java
 //
 
-#ifndef _OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_H_
-#define _OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap")
+#ifdef RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap 0
+#else
+#define INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap 1
+#endif
+#undef RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap
+
+#if !defined (OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_) && (INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap || defined(INCLUDE_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap))
+#define OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_
+
+#define RESTRICT_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource 1
+#define INCLUDE_OrgMapsforgeMapLayerDownloadTilesourceAbstractTileSource 1
 #include "org/mapsforge/map/layer/download/tilesource/AbstractTileSource.h"
 
 @class IOSObjectArray;
@@ -34,13 +45,19 @@
 
 J2OBJC_STATIC_INIT(OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap)
 
-FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_INSTANCE_;
-J2OBJC_STATIC_FIELD_GETTER(OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap, INSTANCE_, OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *)
+inline OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_get_INSTANCE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap, INSTANCE, OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *)
 
 FOUNDATION_EXPORT void OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_initWithNSStringArray_withInt_(OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *self, IOSObjectArray *hostNames, jint port);
 
 FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *new_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_initWithNSStringArray_withInt_(IOSObjectArray *hostNames, jint port) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap *create_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_initWithNSStringArray_withInt_(IOSObjectArray *hostNames, jint port);
+
 J2OBJC_TYPE_LITERAL_HEADER(OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap)
 
-#endif // _OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_OrgMapsforgeMapLayerDownloadTilesourceOpenCycleMap")

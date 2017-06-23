@@ -3,10 +3,21 @@
 //  source: android/libcore/luni/src/main/java/java/net/PlainSocketImpl.java
 //
 
-#ifndef _JavaNetPlainSocketImpl_H_
-#define _JavaNetPlainSocketImpl_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaNetPlainSocketImpl")
+#ifdef RESTRICT_JavaNetPlainSocketImpl
+#define INCLUDE_ALL_JavaNetPlainSocketImpl 0
+#else
+#define INCLUDE_ALL_JavaNetPlainSocketImpl 1
+#endif
+#undef RESTRICT_JavaNetPlainSocketImpl
+
+#if !defined (JavaNetPlainSocketImpl_) && (INCLUDE_ALL_JavaNetPlainSocketImpl || defined(INCLUDE_JavaNetPlainSocketImpl))
+#define JavaNetPlainSocketImpl_
+
+#define RESTRICT_JavaNetSocketImpl 1
+#define INCLUDE_JavaNetSocketImpl 1
 #include "java/net/SocketImpl.h"
 
 @class JavaIoFileDescriptor;
@@ -16,6 +27,8 @@
 @class JavaNetProxy;
 @class JavaNetSocketAddress;
 
+/*!
+ */
 @interface JavaNetPlainSocketImpl : JavaNetSocketImpl
 
 #pragma mark Public
@@ -41,6 +54,9 @@
 - (void)setOptionWithInt:(jint)option
                   withId:(id)value;
 
+/*!
+ @brief Perform an accept for a SOCKS bind.
+ */
 - (void)socksAccept;
 
 #pragma mark Protected
@@ -65,7 +81,7 @@
 
 - (void)createWithBoolean:(jboolean)streaming;
 
-- (void)dealloc;
+- (void)java_finalize;
 
 - (JavaIoInputStream *)getInputStream;
 
@@ -75,8 +91,14 @@
 
 - (void)sendUrgentDataWithInt:(jint)value;
 
+/*!
+ @brief Shutdown the input portion of the socket.
+ */
 - (void)shutdownInput;
 
+/*!
+ @brief Shutdown the output portion of the socket.
+ */
 - (void)shutdownOutput;
 
 - (jboolean)supportsUrgentData;
@@ -89,18 +111,28 @@ FOUNDATION_EXPORT void JavaNetPlainSocketImpl_initWithJavaIoFileDescriptor_(Java
 
 FOUNDATION_EXPORT JavaNetPlainSocketImpl *new_JavaNetPlainSocketImpl_initWithJavaIoFileDescriptor_(JavaIoFileDescriptor *fd) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetPlainSocketImpl *create_JavaNetPlainSocketImpl_initWithJavaIoFileDescriptor_(JavaIoFileDescriptor *fd);
+
 FOUNDATION_EXPORT void JavaNetPlainSocketImpl_initWithJavaNetProxy_(JavaNetPlainSocketImpl *self, JavaNetProxy *proxy);
 
 FOUNDATION_EXPORT JavaNetPlainSocketImpl *new_JavaNetPlainSocketImpl_initWithJavaNetProxy_(JavaNetProxy *proxy) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT JavaNetPlainSocketImpl *create_JavaNetPlainSocketImpl_initWithJavaNetProxy_(JavaNetProxy *proxy);
 
 FOUNDATION_EXPORT void JavaNetPlainSocketImpl_init(JavaNetPlainSocketImpl *self);
 
 FOUNDATION_EXPORT JavaNetPlainSocketImpl *new_JavaNetPlainSocketImpl_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetPlainSocketImpl *create_JavaNetPlainSocketImpl_init();
+
 FOUNDATION_EXPORT void JavaNetPlainSocketImpl_initWithJavaIoFileDescriptor_withInt_withJavaNetInetAddress_withInt_(JavaNetPlainSocketImpl *self, JavaIoFileDescriptor *fd, jint localport, JavaNetInetAddress *addr, jint port);
 
 FOUNDATION_EXPORT JavaNetPlainSocketImpl *new_JavaNetPlainSocketImpl_initWithJavaIoFileDescriptor_withInt_withJavaNetInetAddress_withInt_(JavaIoFileDescriptor *fd, jint localport, JavaNetInetAddress *addr, jint port) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaNetPlainSocketImpl *create_JavaNetPlainSocketImpl_initWithJavaIoFileDescriptor_withInt_withJavaNetInetAddress_withInt_(JavaIoFileDescriptor *fd, jint localport, JavaNetInetAddress *addr, jint port);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetPlainSocketImpl)
 
-#endif // _JavaNetPlainSocketImpl_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaNetPlainSocketImpl")

@@ -3,18 +3,44 @@
 //  source: android/libcore/luni/src/main/java/java/util/concurrent/CancellationException.java
 //
 
-#ifndef _JavaUtilConcurrentCancellationException_H_
-#define _JavaUtilConcurrentCancellationException_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentCancellationException")
+#ifdef RESTRICT_JavaUtilConcurrentCancellationException
+#define INCLUDE_ALL_JavaUtilConcurrentCancellationException 0
+#else
+#define INCLUDE_ALL_JavaUtilConcurrentCancellationException 1
+#endif
+#undef RESTRICT_JavaUtilConcurrentCancellationException
+
+#if !defined (JavaUtilConcurrentCancellationException_) && (INCLUDE_ALL_JavaUtilConcurrentCancellationException || defined(INCLUDE_JavaUtilConcurrentCancellationException))
+#define JavaUtilConcurrentCancellationException_
+
+#define RESTRICT_JavaLangIllegalStateException 1
+#define INCLUDE_JavaLangIllegalStateException 1
 #include "java/lang/IllegalStateException.h"
 
+/*!
+ @brief Exception indicating that the result of a value-producing task,
+  such as a <code>FutureTask</code>, cannot be retrieved because the task
+  was cancelled.
+ @since 1.5
+ @author Doug Lea
+ */
 @interface JavaUtilConcurrentCancellationException : JavaLangIllegalStateException
 
 #pragma mark Public
 
+/*!
+ @brief Constructs a <code>CancellationException</code> with no detail message.
+ */
 - (instancetype)init;
 
+/*!
+ @brief Constructs a <code>CancellationException</code> with the specified detail
+  message.
+ @param message the detail message
+ */
 - (instancetype)initWithNSString:(NSString *)message;
 
 @end
@@ -25,10 +51,16 @@ FOUNDATION_EXPORT void JavaUtilConcurrentCancellationException_init(JavaUtilConc
 
 FOUNDATION_EXPORT JavaUtilConcurrentCancellationException *new_JavaUtilConcurrentCancellationException_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilConcurrentCancellationException *create_JavaUtilConcurrentCancellationException_init();
+
 FOUNDATION_EXPORT void JavaUtilConcurrentCancellationException_initWithNSString_(JavaUtilConcurrentCancellationException *self, NSString *message);
 
 FOUNDATION_EXPORT JavaUtilConcurrentCancellationException *new_JavaUtilConcurrentCancellationException_initWithNSString_(NSString *message) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT JavaUtilConcurrentCancellationException *create_JavaUtilConcurrentCancellationException_initWithNSString_(NSString *message);
+
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentCancellationException)
 
-#endif // _JavaUtilConcurrentCancellationException_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_JavaUtilConcurrentCancellationException")
